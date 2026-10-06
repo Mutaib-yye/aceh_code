@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+# raw + intermediate data stays local (licences, size). Only data/final and samples are committed.
+data/raw/
+data/extracted/
+data/cleaned/
+data/normalized/
+data/deduplicated/
+data/aligned/
+data/eval/cache/
+data/translate_cache/
+*.pkl
+.env

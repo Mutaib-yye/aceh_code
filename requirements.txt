@@ -1,0 +1,10 @@
+pymupdf>=1.24
+pysbd>=0.3.4
+datasketch>=1.6
+rapidfuzz>=3.0
+sacrebleu>=2.4
+rapidocr-onnxruntime>=1.3     # OCR for scanned pages (pure pip, no system install)
+pytest>=8
+# translators (install only what you use)
+# anthropic>=0.40                       -> --provider claude   (ANTHROPIC_API_KEY)
+# transformers torch sentencepiece      -> --provider nllb     (no key; needs one-time model download from Hugging Face)
