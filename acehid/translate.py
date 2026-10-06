@@ -49,6 +49,14 @@ def available_providers():
         pass
     return out
 
+def recommended(avail=None):
+    """Best configured engine: free local NLLB first (no key), then Claude, then Groq. 'copy' only if nothing else exists."""
+    avail = avail or available_providers()
+    for k in ("nllb", "claude", "groq"):
+        if k in avail:
+            return k
+    return "copy"
+
 def _parse(raw):
     txt = re.sub(r"^```(?:json)?|```$", "", raw.strip(), flags=re.M).strip()
     return {x["i"]: x for x in json.loads(txt)}

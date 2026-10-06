@@ -3,6 +3,10 @@
 Turns Acehnese sources (hikayat PDFs, text files) into a **screened, normalized, deduplicated** sentence set, drafts an Indonesian
 translation, and exports **Atlas-style JSON**. It comes with a small web app and a test suite.
 
+**Easiest:** `./start.sh` (opens the app in your browser; `./start.sh --light` skips the translation engine). No API key is needed:
+cleanup, language check, duplicate detection and export work offline, and translation can use the free local NLLB engine
+(first use downloads ~2.5 GB once; **NLLB path is untested here**, since Hugging Face is blocked in the build sandbox).
+
 ```bash
 pip install -r requirements.txt
 python -m acehid fetch-nusax   # evaluation data (CC-BY-SA), once

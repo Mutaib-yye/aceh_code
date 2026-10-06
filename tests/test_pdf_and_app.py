@@ -52,7 +52,10 @@ def test_web_app(tmp_path):
     base = f"http://127.0.0.1:{port}"
     try:
         assert b"Aceh" in urllib.request.urlopen(base + "/").read()
-        st = json.load(urllib.request.urlopen(base + "/api/status")); assert "copy" in st["providers"]
+        st = json.load(urllib.request.urlopen(base + "/api/status")); assert "copy" in st["providers"] and st["recommended"] in st["providers"]
+        bad_key = urllib.request.Request(base + "/api/set_key", data=json.dumps({"provider": "nope", "key": "x"}).encode())
+        with pytest.raises(urllib.error.HTTPError) as e0: urllib.request.urlopen(bad_key)
+        assert e0.value.code == 400
         req = urllib.request.Request(base + "/api/translate_text", data=json.dumps({"text": "Njang djipeugot löen\nTiep uroe tuhan jijak u pasi jimeuen ngon anoe", "provider": "copy"}).encode())
         items = json.load(urllib.request.urlopen(req))["items"]
         assert items[0]["ace_normalized"] == "Nyang jipeugot loen" and items[0]["status"] == "machine_draft"

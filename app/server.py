@@ -54,7 +54,7 @@ class H(BaseHTTPRequestHandler):
             return self._send(200, (HERE / "index.html").read_bytes(), "text/html")
         if u.path == "/api/status":
             return self._send(200, {"providers": translate.available_providers(), "ocr": _ocr_available(), "acehx": STATE["ref_status"],
-                                    "langid_eval": langid.evaluate(), "nusax_fewshot": len(translate._pairs())})
+                                    "langid_eval": langid.evaluate(), "nusax_fewshot": len(translate._pairs()), "recommended": translate.recommended()})
         if u.path == "/favicon.ico":
             return self._send(204, b"", "image/x-icon")
         self._send(404, {"error": "not found"})
@@ -77,6 +77,13 @@ class H(BaseHTTPRequestHandler):
                 return self._send(200, {"summary": pipeline.summary(rows), "pages": len(pages), "ocr_pages": sum(p["method"] == "ocr" for p in pages),
                                         "pages_needing_ocr": sum(p["method"] == "ocr_needed" for p in pages), "rows": rows})
             req = json.loads(body or "{}")
+            if u.path == "/api/set_key":
+                env = {"claude": "ANTHROPIC_API_KEY", "groq": "GROQ_API_KEY"}.get(req.get("provider"))
+                if not env or not str(req.get("key", "")).strip():
+                    return self._send(400, {"error": "provider must be claude or groq and key must not be empty"})
+                os.environ[env] = req["key"].strip()          # kept in this server process only, never written to disk or logged
+                _translators.clear()
+                return self._send(200, {"ok": True, "providers": translate.available_providers()})
             if u.path == "/api/translate_text":
                 sents, _ = screen.split_page(req.get("text", ""), "prose" if "\n" not in req.get("text", "").strip() else "verse")
                 items = []

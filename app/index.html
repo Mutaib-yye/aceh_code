@@ -3,95 +3,133 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Aceh–Indonesia Toolkit</title>
+<title>Aceh–Indonesia Translator</title>
 <style>
-:root{--bg:#f7f7f5;--card:#fff;--ink:#1c1d1f;--mute:#6b6f76;--line:#e2e3e6;--acc:#0b6b57;--acc-ink:#fff;--warn:#9a5b00;--bad:#a4262c;--ok:#1b6e3c;--chip:#eef0f2}
-@media (prefers-color-scheme:dark){:root{--bg:#141516;--card:#1d1f21;--ink:#ececee;--mute:#9a9ea6;--line:#2e3135;--acc:#3dbb9d;--acc-ink:#06241d;--warn:#e0a43c;--bad:#ef7a80;--ok:#5cc489;--chip:#2a2d31}}
+:root{--bg:#fff;--surface:#f8f9fa;--ink:#202124;--mute:#5f6368;--line:#dadce0;--blue:#1a73e8;--blue-ink:#fff;--blue-soft:#e8f0fe;--green:#188038;--green-soft:#e6f4ea;--amber:#b06000;--amber-soft:#fef7e0;--red:#c5221f;--red-soft:#fce8e6;--shadow:0 1px 3px rgba(60,64,67,.25)}
+@media (prefers-color-scheme:dark){:root{--bg:#202124;--surface:#292a2d;--ink:#e8eaed;--mute:#9aa0a6;--line:#3c4043;--blue:#8ab4f8;--blue-ink:#202124;--blue-soft:#2b3a55;--green:#81c995;--green-soft:#1e3a2a;--amber:#fdd663;--amber-soft:#3b3320;--red:#f28b82;--red-soft:#4a2a28;--shadow:none}}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
-main{max-width:1100px;margin:0 auto;padding:20px 16px 60px}
-h1{font-size:20px;margin:0 0 2px} .sub{color:var(--mute);margin:0 0 16px;font-size:13px}
-.tabs{display:flex;gap:4px;margin:0 0 12px;border-bottom:1px solid var(--line)}
-.tab{background:none;border:0;padding:8px 14px;cursor:pointer;color:var(--mute);font:inherit;border-bottom:2px solid transparent}
-.tab[aria-selected=true]{color:var(--ink);border-color:var(--acc);font-weight:600}
-.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;margin-bottom:12px}
-textarea{width:100%;min-height:120px;resize:vertical;font:inherit;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:10px}
-select,button,input[type=file]{font:inherit}
-button.p{background:var(--acc);color:var(--acc-ink);border:0;border-radius:8px;padding:8px 14px;cursor:pointer;font-weight:600}
-button.s{background:var(--chip);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
-button:disabled{opacity:.5;cursor:default}
-select{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:7px}
-.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:10px}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 "Google Sans",Roboto,system-ui,-apple-system,"Segoe UI",sans-serif}
+header{display:flex;align-items:center;gap:12px;padding:12px 24px;border-bottom:1px solid var(--line)}
+header h1{font-size:20px;font-weight:500;margin:0;flex:1}
+.logo{width:32px;height:32px;border-radius:8px;background:var(--blue);color:var(--blue-ink);display:grid;place-items:center;font-weight:700}
+main{max-width:1040px;margin:0 auto;padding:16px 16px 70px}
+.tabs{display:flex;gap:6px;margin:8px 0 16px}
+.tab{border:1px solid var(--line);background:var(--bg);color:var(--mute);padding:8px 18px;border-radius:99px;cursor:pointer;font:inherit}
+.tab[aria-selected=true]{background:var(--blue-soft);color:var(--blue);border-color:transparent;font-weight:600}
+.banner{display:flex;gap:10px;align-items:flex-start;border-radius:12px;padding:10px 14px;margin:0 0 14px;font-size:14px}
+.banner.warn{background:var(--amber-soft);color:var(--ink)} .banner.ok{background:var(--green-soft)} .banner.info{background:var(--blue-soft)}
+.banner button{margin-left:auto}
+.panes{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+@media(max-width:720px){.panes{grid-template-columns:1fr}}
+.pane{padding:12px 16px;min-height:220px;display:flex;flex-direction:column}
+.pane+.pane{background:var(--surface);border-left:1px solid var(--line)}
+.lang{font-size:13px;color:var(--blue);font-weight:600;border-bottom:2px solid var(--blue);display:inline-block;padding-bottom:4px;margin-bottom:10px;align-self:flex-start}
+textarea{flex:1;border:0;outline:0;resize:none;background:transparent;color:var(--ink);font:inherit;font-size:18px;line-height:1.5;min-height:150px}
+.out{flex:1;font-size:18px;white-space:pre-wrap}
+.out.empty{color:var(--mute)}
+.bar{display:flex;align-items:center;gap:10px;margin:12px 0}
+.btn{background:var(--blue);color:var(--blue-ink);border:0;border-radius:99px;padding:9px 24px;font:inherit;font-weight:500;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--blue);border:1px solid var(--line);padding:8px 18px}
+.btn:disabled{opacity:.5;cursor:default}
 .mute{color:var(--mute);font-size:13px}
-.chip{display:inline-block;background:var(--chip);border-radius:99px;padding:1px 9px;font-size:12px;white-space:nowrap}
-.KEEP,.unique,.ace{color:var(--ok)} .REVIEW,.NEAR_DUP_REVIEW,.mixed,.OCR_ERROR{color:var(--warn)} .REMOVE,.NON_ACEH,.FRAGMENT,.DUPLICATE_ACEHX,.DUPLICATE_SELF,.ind{color:var(--bad)}
-table{width:100%;border-collapse:collapse;font-size:13.5px} th{text-align:left;color:var(--mute);font-weight:500;border-bottom:1px solid var(--line);padding:6px 8px;position:sticky;top:0;background:var(--card)}
-td{padding:6px 8px;border-bottom:1px solid var(--line);vertical-align:top}
-.wrap{max-height:520px;overflow:auto;border:1px solid var(--line);border-radius:8px}
-.stats{display:flex;gap:10px;flex-wrap:wrap} .stat{background:var(--chip);border-radius:8px;padding:6px 12px} .stat b{display:block;font-size:18px}
-.note{font-size:13px;color:var(--mute);border-left:3px solid var(--warn);padding:2px 10px;margin:8px 0}
-.err{color:var(--bad)}
+details{margin-top:14px;border:1px solid var(--line);border-radius:12px;padding:8px 14px} summary{cursor:pointer;color:var(--blue);font-weight:500}
+table{width:100%;border-collapse:collapse;font-size:14px} th{text-align:left;color:var(--mute);font-weight:500;padding:8px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg)} td{padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+.wrap{max-height:480px;overflow:auto;border:1px solid var(--line);border-radius:12px}
+.pill{display:inline-block;border-radius:99px;padding:1px 10px;font-size:12px;font-weight:500;white-space:nowrap}
+.good{background:var(--green-soft);color:var(--green)} .look{background:var(--amber-soft);color:var(--amber)} .skip{background:var(--red-soft);color:var(--red)} .neutral{background:var(--surface);color:var(--mute)}
+.drop{border:2px dashed var(--line);border-radius:12px;padding:34px 16px;text-align:center;cursor:pointer;background:var(--surface)}
+.drop.over{border-color:var(--blue);background:var(--blue-soft)} .drop b{color:var(--blue)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:14px 0}
+.card{border:1px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer;background:var(--bg)} .card.sel{border-color:var(--blue);background:var(--blue-soft)}
+.card b{display:block;font-size:26px;font-weight:500} .card span{color:var(--mute);font-size:13px}
+.steps{counter-reset:s;display:flex;gap:18px;flex-wrap:wrap;margin:6px 0 16px;color:var(--mute);font-size:14px}
+.steps div:before{counter-increment:s;content:counter(s);display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--blue);color:var(--blue-ink);font-size:12px;margin-right:6px}
+select,input[type=password]{font:inherit;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:7px 10px}
+.err{color:var(--red)} dialog{border:1px solid var(--line);border-radius:16px;background:var(--bg);color:var(--ink);max-width:480px;padding:20px}
 </style>
 </head>
 <body>
+<header><div class="logo">A</div><h1>Aceh → Indonesia</h1><button class="btn ghost" id="settingsBtn">Settings</button></header>
 <main>
-<h1>Aceh → Indonesia toolkit</h1>
-<p class="sub">Screen, normalize, deduplicate and draft-translate Acehnese text. Every translation is a <b>machine draft</b>, not ground truth.</p>
-<div id="status" class="mute"></div>
+<div id="banner"></div>
 <div class="tabs" role="tablist">
-  <button class="tab" role="tab" aria-selected="true" data-t="t1">Translate text</button>
-  <button class="tab" role="tab" aria-selected="false" data-t="t2">Process a source (PDF / TXT)</button>
+  <button class="tab" role="tab" aria-selected="true" data-t="t1">Translate</button>
+  <button class="tab" role="tab" aria-selected="false" data-t="t2">Prepare a dataset from a PDF</button>
 </div>
 
 <section id="t1">
-  <div class="card">
-    <textarea id="txt" placeholder="Paste Acehnese text (Latin script). One sentence per line, or running text."></textarea>
-    <div class="row"><select class="prov"></select><button class="p" id="go1">Normalize &amp; translate</button><span id="msg1" class="mute"></span></div>
+  <div class="panes">
+    <div class="pane"><span class="lang">Acehnese</span><textarea id="txt" placeholder="Type or paste Acehnese here" spellcheck="false"></textarea></div>
+    <div class="pane"><span class="lang">Indonesian</span><div id="out" class="out empty">Translation appears here</div></div>
   </div>
-  <div id="out1"></div>
+  <div class="bar"><button class="btn" id="go1">Translate</button><span id="msg1" class="mute"></span></div>
+  <p class="mute">Translations are machine drafts. Please have an Acehnese speaker check anything you plan to use.</p>
+  <details id="det" hidden><summary>Details: spelling cleanup and language check</summary>
+    <div class="wrap" style="margin-top:8px"><table id="tbl"></table></div></details>
 </section>
 
 <section id="t2" hidden>
-  <div class="card">
-    <input type="file" id="file" accept=".pdf,.txt,.md">
-    <div class="row">
-      <label class="mute">Layout <select id="layout"><option>auto</option><option>verse</option><option>prose</option></select></label>
-      <label class="mute"><input type="checkbox" id="ocr" checked> OCR scanned pages</label>
-      <button class="p" id="go2">Run pipeline</button><span id="msg2" class="mute"></span>
-    </div>
-    <div class="note">Screening labels rows, it never deletes them. Near-duplicates and low-confidence OCR go to the review sheet.</div>
-  </div>
+  <div class="steps"><div>Add your file</div><div>Check what the app found</div><div>Download</div></div>
+  <div class="drop" id="drop"><b>Choose a PDF or text file</b> or drop it here<div class="mute" id="fname">Scanned pages are read automatically (OCR)</div><input type="file" id="file" accept=".pdf,.txt,.md" hidden></div>
+  <div class="bar"><button class="btn" id="go2" disabled>Start</button><span id="msg2" class="mute"></span></div>
   <div id="out2"></div>
 </section>
 </main>
+
+<dialog id="dlg">
+  <h3 style="margin-top:0">Settings</h3>
+  <p class="mute">Translation engine. The free local engine needs no key. Keys are kept in memory in this app only and are never saved.</p>
+  <div class="bar"><label>Engine <select id="prov"></select></label></div>
+  <div class="bar"><select id="kprov"><option value="claude">Claude key</option><option value="groq">Groq key</option></select><input type="password" id="key" placeholder="paste key" style="flex:1"><button class="btn ghost" id="saveKey">Save</button></div>
+  <div class="bar"><span id="dmsg" class="mute"></span><button class="btn" style="margin-left:auto" id="closeDlg">Done</button></div>
+</dialog>
+
 <script>
 const $=s=>document.querySelector(s), esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-let rows=[], providers={};
+let rows=[], st={}, engine='copy', filter='all', ready=false;
+const NAMES={nllb:'Free local engine (NLLB)',claude:'Claude',groq:'Groq',copy:'No translation (copy only)'};
 document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.setAttribute('aria-selected',x===b));$('#t1').hidden=b.dataset.t!=='t1';$('#t2').hidden=b.dataset.t!=='t2'});
-async function api(path,opt){const r=await fetch(path,opt);const j=await r.json().catch(()=>({error:'bad response'}));if(!r.ok)throw new Error(j.error||r.status);return j}
-function provSelect(){document.querySelectorAll('.prov').forEach(s=>{s.innerHTML=Object.entries(providers).map(([k,v])=>`<option value="${k}">${k==='copy'?'copy source (baseline, no translation)':k+' · '+esc(v)}</option>`).join('')})}
-(async()=>{const st=await api('/api/status');providers=st.providers;provSelect();
- const real=Object.keys(providers).filter(k=>k!=='copy');
- $('#status').innerHTML=`Translators: ${real.length?real.join(', '):'<span class="err">none configured</span> (set ANTHROPIC_API_KEY or GROQ_API_KEY, or pip install transformers torch sentencepiece for NLLB)'} · OCR: ${st.ocr?'yes':'no'} · AcehX duplicate check: ${esc(st.acehx)}`})();
-function chip(c,t){return `<span class="chip ${c}">${esc(t??c)}</span>`}
-$('#go1').onclick=async()=>{const b=$('#go1');b.disabled=true;$('#msg1').textContent='working…';
- try{const j=await api('/api/translate_text',{method:'POST',body:JSON.stringify({text:$('#txt').value,provider:$('#t1 .prov').value})});
-  $('#out1').innerHTML=`<div class="card wrap"><table><tr><th>Acehnese (raw)</th><th>Normalized</th><th>Indonesian (draft)</th><th>Check</th></tr>${j.items.map(i=>`<tr><td>${esc(i.ace_raw)}</td><td>${esc(i.ace_normalized)}<div class="mute">${i.norm_rules.join(', ')}</div></td><td>${esc(i.ind)}<div class="mute">${esc(i.model)}</div></td><td>${chip(i.lang)} <span class="mute">${i.lang_score}</span>${i.confidence==='low'?chip('REVIEW','low confidence'):''}</td></tr>`).join('')}</table></div>`;
-  $('#msg1').textContent=$('#t1 .prov').value==='copy'?'Baseline selected: text is copied, not translated. Configure a translator.':'';
+async function api(path,opt){const r=await fetch(path,opt);const j=await r.json().catch(()=>({error:'The app did not answer. Is it still running?'}));if(!r.ok)throw new Error(j.error||r.status);return j}
+function banner(){const real=Object.keys(st.providers).filter(k=>k!=='copy');
+ $('#banner').innerHTML=real.length?`<div class="banner ok">Translation engine: <b>${NAMES[engine]}</b>${engine==='nllb'?' · the first translation downloads the model once (about 2.5 GB), then it works offline.':''}</div>`
+  :`<div class="banner warn"><div><b>No translation engine yet.</b> Everything else works (cleanup, language check, duplicates), but text is only copied. Pick one: <br>① free, no key: run <code>pip install transformers torch sentencepiece</code> and restart · ② paste a Claude or Groq key in Settings.</div><button class="btn ghost" onclick="$('#dlg').showModal()">Settings</button></div>`;
+ if(!/ready/.test(st.acehx))$('#banner').innerHTML+=`<div class="banner info">Duplicate check against AcehX: ${esc(st.acehx)}</div>`}
+function fillProv(){$('#prov').innerHTML=Object.keys(st.providers).map(k=>`<option value="${k}" ${k===engine?'selected':''}>${NAMES[k]||k}</option>`).join('')}
+async function init(){st=await api('/api/status');engine=st.recommended;banner();fillProv()}
+$('#prov').onchange=e=>{engine=e.target.value;banner()};
+$('#settingsBtn').onclick=()=>$('#dlg').showModal();$('#closeDlg').onclick=()=>$('#dlg').close();
+$('#saveKey').onclick=async()=>{try{const j=await api('/api/set_key',{method:'POST',body:JSON.stringify({provider:$('#kprov').value,key:$('#key').value})});st.providers=j.providers;engine=$('#kprov').value;$('#key').value='';fillProv();banner();$('#dmsg').textContent='Saved for this session'}catch(e){$('#dmsg').innerHTML=`<span class="err">${esc(e.message)}</span>`}};
+const pill=(c,t)=>`<span class="pill ${c}">${esc(t)}</span>`;
+const LANG={ace:pill('good','Acehnese'),ind:pill('skip','Looks Indonesian'),mixed:pill('look','Mixed / unsure')};
+$('#go1').onclick=async()=>{const t=$('#txt').value.trim();if(!t)return;const b=$('#go1');b.disabled=true;$('#msg1').textContent=engine==='nllb'?'Translating… the first time can take a few minutes while the model downloads':'Translating…';
+ try{const j=await api('/api/translate_text',{method:'POST',body:JSON.stringify({text:t,provider:engine})});
+  $('#out').className='out';$('#out').textContent=j.items.map(i=>i.ind).join('\n');
+  $('#det').hidden=false;$('#tbl').innerHTML=`<tr><th>Acehnese</th><th>After spelling cleanup</th><th>Language check</th></tr>`+j.items.map(i=>`<tr><td>${esc(i.ace_raw)}</td><td>${esc(i.ace_normalized)}<div class="mute">${i.norm_rules.length?'changed: '+i.norm_rules.join(', '):'no change'}</div></td><td>${LANG[i.lang]}${i.confidence==='low'?' '+pill('look','model unsure'):''}</td></tr>`).join('');
+  $('#msg1').textContent=engine==='copy'?'No engine configured: the text was copied, not translated.':'';
  }catch(e){$('#msg1').innerHTML=`<span class="err">${esc(e.message)}</span>`}b.disabled=false};
-$('#go2').onclick=async()=>{const f=$('#file').files[0];if(!f)return $('#msg2').textContent='choose a file first';const b=$('#go2');b.disabled=true;$('#msg2').textContent='extracting, screening, deduplicating… (scanned pages are slow)';
- try{const j=await api(`/api/process?layout=${$('#layout').value}&ocr=${$('#ocr').checked?1:0}`,{method:'POST',headers:{'X-Filename':f.name},body:f});rows=j.rows;render(j);$('#msg2').textContent=''}
+// ---- dataset tab
+const drop=$('#drop');drop.onclick=()=>$('#file').click();
+drop.ondragover=e=>{e.preventDefault();drop.classList.add('over')};drop.ondragleave=()=>drop.classList.remove('over');
+drop.ondrop=e=>{e.preventDefault();drop.classList.remove('over');$('#file').files=e.dataTransfer.files;picked()};$('#file').onchange=picked;
+function picked(){const f=$('#file').files[0];if(f){$('#fname').textContent=f.name;$('#go2').disabled=false}}
+$('#go2').onclick=async()=>{const f=$('#file').files[0];const b=$('#go2');b.disabled=true;$('#msg2').textContent='Reading, cleaning and checking for duplicates… scanned pages are slower';
+ try{const j=await api('/api/process?layout=auto&ocr=1',{method:'POST',headers:{'X-Filename':f.name},body:f});rows=j.rows;filter='all';render(j);$('#msg2').textContent=''}
  catch(e){$('#msg2').innerHTML=`<span class="err">${esc(e.message)}</span>`}b.disabled=false};
-function render(j){const s=j.summary,sc=Object.entries(s.screening).map(([k,v])=>`<div class="stat"><b>${v}</b>${k}</div>`).join(''),dd=Object.entries(s.dedup).map(([k,v])=>`<div class="stat"><b>${v}</b>${k}</div>`).join('');
- $('#out2').innerHTML=`<div class="card"><div class="stats"><div class="stat"><b>${j.pages}</b>pages</div><div class="stat"><b>${j.ocr_pages}</b>OCR pages</div><div class="stat"><b>${s.sentences}</b>sentences</div><div class="stat"><b>${s.usable_for_translation}</b>ready to translate</div></div>
- <div class="stats" style="margin-top:8px">${sc}</div><div class="stats" style="margin-top:8px">${dd}</div>
- ${j.pages_needing_ocr?`<div class="note">${j.pages_needing_ocr} scanned page(s) were skipped: OCR is not available.</div>`:''}
- <div class="row"><select class="prov"></select><button class="p" id="tr">Translate ready rows</button><button class="s" id="dl1">Download Atlas JSON</button><button class="s" id="dl2">Download review sheet (CSV)</button><label class="mute"><input type="checkbox" id="drafts"> include machine drafts in JSON</label><span id="msg3" class="mute"></span></div></div>
- <div class="card wrap"><table><tr><th>Page</th><th>Sentence</th><th>Normalized</th><th>Status</th><th>Indonesian (draft)</th></tr>${rows.slice(0,3000).map(r=>`<tr><td>${r.page}</td><td>${esc(r.ace_raw)}</td><td>${esc(r.ace_normalized)}</td><td>${chip(r.screening)} ${chip(r.dedup)}<div class="mute">${esc(r.screen_reason)} ${esc(r.dedup_ref||'')}</div></td><td>${esc(r.ind_raw||'')}</td></tr>`).join('')}</table></div>${rows.length>3000?'<div class="mute">Showing first 3000 rows; downloads contain all.</div>':''}`;
- provSelect();
- $('#tr').onclick=async()=>{$('#tr').disabled=true;$('#msg3').textContent='translating…';try{const k=await api('/api/translate_rows',{method:'POST',body:JSON.stringify({rows,provider:$('#out2 .prov').value})});rows=k.rows;render(j);}catch(e){$('#msg3').innerHTML=`<span class="err">${esc(e.message)}</span>`;$('#tr').disabled=false}};
- const dl=async(path,name,type)=>{const r=await fetch(path,{method:'POST',body:JSON.stringify({rows,include_drafts:$('#drafts').checked})});if(!r.ok){$('#msg3').innerHTML=`<span class="err">${esc((await r.json()).error)}</span>`;return}const a=document.createElement('a');a.href=URL.createObjectURL(await r.blob());a.download=name;a.click()};
+const group=r=>r.dedup==='DUPLICATE_ACEHX'||r.dedup==='DUPLICATE_SELF'?'dup':(r.screening==='KEEP'&&r.dedup==='unique')?'ready':(r.screening==='REVIEW'||r.screening==='OCR_ERROR'||r.dedup==='NEAR_DUP_REVIEW')?'look':'skip';
+const GL={ready:['good','Ready'],look:['look','Needs a look'],dup:['neutral','Duplicate'],skip:['skip','Skipped']};
+const WHY={'header/footer/page':'page number or header','url':'web address','arabic_script':'Arabic script','under_3_words':'too short','over_80_words':'very long','low_letter_ratio':'garbled text','digit_inside_word':'garbled text','language_check:indonesian':'looks Indonesian','mixed_language':'mixed language'};
+function render(j){const c={all:rows.length,ready:0,look:0,dup:0,skip:0};rows.forEach(r=>c[group(r)]++);
+ const card=(k,l)=>`<div class="card ${filter===k?'sel':''}" data-f="${k}"><b>${c[k]}</b><span>${l}</span></div>`;
+ const shown=rows.filter(r=>filter==='all'||group(r)===filter).slice(0,3000);
+ $('#out2').innerHTML=`<div class="cards">${card('all','sentences found')}${card('ready','ready to translate')}${card('look','need a look')}${card('dup','already in AcehX / repeated')}${card('skip','skipped')}</div>
+ ${j.pages_needing_ocr?`<div class="banner warn">${j.pages_needing_ocr} scanned page(s) skipped: OCR is not available.</div>`:''}
+ <div class="bar"><button class="btn" id="tr" ${c.ready?'':'disabled'}>Translate ready sentences</button><button class="btn ghost" id="dl1">Download dataset (JSON)</button><button class="btn ghost" id="dl2">Download review sheet (CSV)</button><label class="mute"><input type="checkbox" id="drafts"> include machine drafts in the JSON</label><span id="msg3" class="mute"></span></div>
+ <div class="wrap"><table><tr><th>Page</th><th>Acehnese</th><th>Status</th><th>Indonesian (draft)</th></tr>${shown.map(r=>{const g=group(r);return `<tr><td>${r.page}</td><td>${esc(r.ace_raw)}${r.ace_normalized!==r.ace_raw?`<div class="mute">cleaned: ${esc(r.ace_normalized)}</div>`:''}</td><td>${pill(...GL[g])}<div class="mute">${esc(WHY[r.screen_reason]||r.screen_reason||'')} ${r.dedup==='DUPLICATE_ACEHX'?'in AcehX '+esc(r.dedup_ref):r.dedup==='NEAR_DUP_REVIEW'?'almost the same as '+esc(r.dedup_ref):r.dedup==='DUPLICATE_SELF'?'repeated in this file':''}</div></td><td>${esc(r.ind_raw||'')}</td></tr>`}).join('')}</table></div>`;
+ document.querySelectorAll('.card').forEach(x=>x.onclick=()=>{filter=x.dataset.f;render(j)});
+ $('#tr').onclick=async()=>{$('#tr').disabled=true;$('#msg3').textContent='Translating…';try{const k=await api('/api/translate_rows',{method:'POST',body:JSON.stringify({rows,provider:engine})});rows=k.rows;render(j)}catch(e){$('#msg3').innerHTML=`<span class="err">${esc(e.message)}</span>`;$('#tr').disabled=false}};
+ const dl=async(path,name)=>{const r=await fetch(path,{method:'POST',body:JSON.stringify({rows,include_drafts:$('#drafts').checked})});if(!r.ok){$('#msg3').innerHTML=`<span class="err">${esc((await r.json()).error)}</span>`;return}const a=document.createElement('a');a.href=URL.createObjectURL(await r.blob());a.download=name;a.click()};
  $('#dl1').onclick=()=>dl('/api/export','atlas_master.json');$('#dl2').onclick=()=>dl('/api/review_csv','review_sheet.csv')}
+init();
 </script>
 </body>
 </html>
