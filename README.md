@@ -42,7 +42,22 @@ Nothing here has been trained. No translation quality number exists for any real
 Rows are **labelled, never deleted**: `KEEP / REVIEW / REMOVE / NON_ACEH / FRAGMENT / OCR_ERROR`, and `unique / DUPLICATE_ACEHX / DUPLICATE_SELF / NEAR_DUP_REVIEW`.
 Only `KEEP` + `unique` rows are translated. Near-duplicates go to a human.
 
-## Translation: three ways, measure before trusting
+## Train our own model (fine-tune NLLB)
+
+```bash
+# free Colab T4: open notebooks/train_colab.ipynb and run all cells, or on any GPU machine:
+pip install torch transformers sentencepiece
+python -m acehid train --epochs 5                         # NusaX train pairs
+python -m acehid train --extra data/final/train.json      # + reviewed hikayat pairs (never unreviewed machine drafts)
+python -m acehid eval --provider nllb --model models/ace-id-nllb     # score our model with the same eval as the baselines
+```
+Model selection uses NusaX **validation**; the NusaX **test** set is scored once at the end, for the base model and ours, and written to `models/ace-id-nllb/training_log.json`
+(hyperparameters, per-epoch loss and dev scores). A leak check refuses to train if a training sentence also appears in validation/test.
+**Honest expectation:** 500 pairs is very small, so the gain over base NLLB may be modest or zero; report whatever the log says.
+The training loop is smoke-tested on a tiny random model (no quality claim); the real run on NLLB-600M has **not** been done yet (needs a GPU and Hugging Face).
+Once a trained model exists, point the app at it: `TRANSLATE_MODEL=models/ace-id-nllb python -m acehid serve`.
+
+## Translation providers (for drafts and baselines)
 
 ```bash
 # 1. Claude (best chance for literary text; needs an API key in the environment)
