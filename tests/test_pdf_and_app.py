@@ -59,6 +59,9 @@ def test_web_app(tmp_path):
         req = urllib.request.Request(base + "/api/translate_text", data=json.dumps({"text": "Njang djipeugot löen\nTiep uroe tuhan jijak u pasi jimeuen ngon anoe", "provider": "copy"}).encode())
         items = json.load(urllib.request.urlopen(req))["items"]
         assert items[0]["ace_normalized"] == "Nyang jipeugot loen" and items[0]["status"] == "machine_draft"
+        req = urllib.request.Request(base + "/api/translate_text", data=json.dumps({"text": "Lon\nTiep uroe tuhan jijak u pasi", "provider": "copy"}).encode())
+        items = json.load(urllib.request.urlopen(req))["items"]
+        assert items[0]["status"] == "too_short" and items[0]["ind"] == "" and items[1]["status"] == "machine_draft"
         req = urllib.request.Request(base + "/api/process?ocr=0", data="\n".join(ACE).encode(), headers={"X-Filename": "../../evil.txt"})
         j = json.load(urllib.request.urlopen(req)); assert j["summary"]["sentences"] >= 1
         req = urllib.request.Request(base + "/api/review_csv", data=json.dumps({"rows": j["rows"]}).encode())

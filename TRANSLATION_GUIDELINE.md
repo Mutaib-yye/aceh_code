@@ -23,6 +23,8 @@ PUEBI pass is **not implemented** and must come from the official guidelines/KBB
 - Screening: `lang=mixed` (code-mixed Acehnese/Indonesian) → REVIEW; `lang=ind` → NON_ACEH.
 - OCR text is marked `ocr` / `ocr_low_conf` (OCR drops diacritics: `è → e`) and low-confidence pages go to REVIEW.
 
+- **Minimum length (Andrie):** a sentence needs at least 3 words to be translated; shorter ones are skipped (single words have many meanings). Enforced in screening (`FRAGMENT`), the translate stage and the web app.
+
 ## Statuses and quality
 `machine_draft` (quality low) → `reviewed` (medium) → `human_validated` (high). `human_translated` (NusaX) = high.
 Only reviewed/validated/human rows enter the train split by default.

@@ -103,7 +103,7 @@ const pill=(c,t)=>`<span class="pill ${c}">${esc(t)}</span>`;
 const LANG={ace:pill('good','Acehnese'),ind:pill('skip','Looks Indonesian'),mixed:pill('look','Mixed / unsure')};
 $('#go1').onclick=async()=>{const t=$('#txt').value.trim();if(!t)return;const b=$('#go1');b.disabled=true;$('#msg1').textContent=engine==='nllb'?'Translating… the first time can take a few minutes while the model downloads':'Translating…';
  try{const j=await api('/api/translate_text',{method:'POST',body:JSON.stringify({text:t,provider:engine})});
-  $('#out').className='out';$('#out').textContent=j.items.map(i=>i.ind).join('\n');
+  $('#out').className='out';$('#out').textContent=j.items.map(i=>i.status==='too_short'?'(needs at least 3 words)':i.ind).join('\n');
   $('#det').hidden=false;$('#tbl').innerHTML=`<tr><th>Acehnese</th><th>After spelling cleanup</th><th>Language check</th></tr>`+j.items.map(i=>`<tr><td>${esc(i.ace_raw)}</td><td>${esc(i.ace_normalized)}<div class="mute">${i.norm_rules.length?'changed: '+i.norm_rules.join(', '):'no change'}</div></td><td>${LANG[i.lang]}${i.confidence==='low'?' '+pill('look','model unsure'):''}</td></tr>`).join('');
   $('#msg1').textContent=engine==='copy'?'No engine configured: the text was copied, not translated.':'';
  }catch(e){$('#msg1').innerHTML=`<span class="err">${esc(e.message)}</span>`}b.disabled=false};

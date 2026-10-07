@@ -92,8 +92,11 @@ class H(BaseHTTPRequestHandler):
                     lang, sc = langid.classify(norm) if len(norm.split()) >= 3 else ("ace", 0.0)
                     items.append({"ace_raw": s, "ace_normalized": norm, "norm_rules": rules, "lang": lang, "lang_score": sc})
                 prov = req.get("provider", "copy")
-                res = _translator(prov).translate([i["ace_normalized"] for i in items]) if items else []
-                for i, r in zip(items, res): i.update(ind=r["ind"], confidence=r["confidence"], model=_translator(prov).tag, status="machine_draft")
+                ok = [i for i in items if len(i["ace_normalized"].split()) >= translate.MIN_WORDS]   # rule: at least 3 words to translate
+                res = _translator(prov).translate([i["ace_normalized"] for i in ok]) if ok else []
+                for i, r in zip(ok, res): i.update(ind=r["ind"], confidence=r["confidence"], model=_translator(prov).tag, status="machine_draft")
+                for i in items:
+                    if "status" not in i: i.update(ind="", confidence="n/a", model="", status="too_short")
                 return self._send(200, {"items": items})
             if u.path == "/api/translate_rows":
                 rows = req["rows"]; tr = _translator(req.get("provider", "copy"))

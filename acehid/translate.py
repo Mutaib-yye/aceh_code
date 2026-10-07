@@ -14,6 +14,7 @@ from .common import *
 
 DEFAULT_MODELS = {"claude": "claude-sonnet-5-5", "groq": "llama-3.3-70b-versatile", "nllb": "facebook/nllb-200-distilled-600M", "copy": "copy"}
 BATCH = 20
+MIN_WORDS = 3   # Andrie's rule: a sentence needs at least 3 words to be translated (single words are ambiguous)
 
 SYSTEM = """You translate Acehnese (Latin script) into standard Indonesian (EYD/PUEBI spelling).
 Rules: keep personal and place names unchanged; keep titles (Teungku, Cut, Sultan, Po, Habib) unchanged; translate meaning, not word-for-word;
@@ -120,7 +121,7 @@ class Translator:
 def run(rows, translator, limit=None, done=None, on_progress=None):
     """Translate rows with screening==KEEP and dedup==unique. Resumable via `done` {id: row}."""
     done = done if done is not None else {}
-    todo = [r for r in rows if r["id"] not in done and r.get("screening") == "KEEP" and r.get("dedup") == "unique"][:limit]
+    todo = [r for r in rows if r["id"] not in done and r.get("screening") == "KEEP" and r.get("dedup") == "unique" and len(r["ace_normalized"].split()) >= MIN_WORDS][:limit]
     for b in range(0, len(todo), BATCH):
         chunk = todo[b:b + BATCH]
         res = translator.translate([r["ace_normalized"] for r in chunk])
