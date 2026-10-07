@@ -83,7 +83,7 @@ class Translator:
                 return r.json()["choices"][0]["message"]["content"]
             raise RuntimeError("Groq rate limit: try a smaller batch or wait")
         import anthropic
-        m = anthropic.Anthropic().messages.create(model=self.model, max_tokens=4000, system=system, messages=[{"role": "user", "content": user}])
+        m = anthropic.Anthropic().messages.create(model=self.model, max_tokens=16000, system=system, output_config={"effort": "low"}, messages=[{"role": "user", "content": user}])
         return m.content[0].text
 
     def _nllb_translate(self, texts):
