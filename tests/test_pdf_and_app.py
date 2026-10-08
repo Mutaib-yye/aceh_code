@@ -3,12 +3,8 @@ from conftest import make_pdf, ACE
 from acehid import extract, pipeline, dedupe
 from acehid.common import key_hash, write_jsonl
 
-def ocr_ok():
-    try:
-        import rapidocr_onnxruntime  # noqa
-        return True
-    except Exception:
-        return False
+import importlib.util
+OCR_BACKENDS = [b for b in ("rapidocr", "rapidocr_onnxruntime") if importlib.util.find_spec(b)]
 
 def test_digital_pdf_end_to_end(tmp_path):
     pdf = make_pdf(tmp_path / "h.pdf", [[ACE[i % 6], ACE[(i + 1) % 6]] for i in range(6)])
@@ -28,8 +24,10 @@ def test_duplicates_against_reference_are_found_in_pdf(tmp_path):
     _, rows = pipeline.process_files([str(pdf)], ref=ref)
     assert any(r["dedup"] == "DUPLICATE_ACEHX" for r in rows) and any(r["dedup"] == "unique" for r in rows)
 
-@pytest.mark.skipif(not ocr_ok(), reason="rapidocr not installed")
-def test_scanned_pdf_goes_through_ocr(tmp_path):
+@pytest.mark.skipif(not OCR_BACKENDS, reason="no OCR package installed")
+@pytest.mark.parametrize("backend", OCR_BACKENDS)
+def test_scanned_pdf_goes_through_ocr(tmp_path, monkeypatch, backend):
+    monkeypatch.setattr(extract, "ocr_backend", lambda: backend); monkeypatch.setattr(extract, "_ocr", None)
     src = make_pdf(tmp_path / "t.pdf", [[ACE[1], ACE[3]]])
     img = pymupdf.open(str(src))[0].get_pixmap(dpi=200)
     doc = pymupdf.open(); pg = doc.new_page(); pg.insert_image(pg.rect, pixmap=img); doc.save(str(tmp_path / "scan.pdf"))

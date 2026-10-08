@@ -18,8 +18,13 @@ def main(argv=None):
     sub.add_parser("fetch-nusax", help="download NusaX-MT csv files from GitHub into data/raw/external/nusax")
     sub.add_parser("nusax", help="NusaX-MT -> Atlas format (data/final/nusax)")
     p = sub.add_parser("eval", help="chrF/BLEU/TER on NusaX valid+test"); p.add_argument("--provider", nargs="+", default=["copy"]); p.add_argument("--model"); p.add_argument("--fewshot", type=int, default=5); p.add_argument("--limit", type=int)
-    p = sub.add_parser("train", help="fine-tune NLLB on Aceh->Indonesian pairs (GPU/Colab recommended)"); p.add_argument("--base", default="facebook/nllb-200-distilled-600M"); p.add_argument("--out", default="models/ace-id-nllb")
-    p.add_argument("--extra", nargs="*", default=[], help="extra reviewed pair files [{ace,ind}], e.g. data/final/train.json"); p.add_argument("--epochs", type=int, default=5); p.add_argument("--lr", type=float, default=1e-4); p.add_argument("--batch-size", type=int, default=8)
+    p = sub.add_parser("flores", help="FLORES-200 ace_Latn/ind_Latn (tar, zip or folder) -> data/final/flores"); p.add_argument("path")
+    p = sub.add_parser("build-train", help="NusaX + FLORES (+ reviewed extra pairs) -> leak-checked data/final/combined")
+    p.add_argument("--extra", nargs="*", default=[], help="reviewed pair files [{ace,ind}] added to TRAIN, e.g. data/final/train.json")
+    p.add_argument("--extra-test", nargs="*", default=[], help="name=path extra TEST sets, e.g. hikayat=data/final/test.json")
+    p = sub.add_parser("train", help="fine-tune NLLB on data/final/combined (GPU/Colab recommended)"); p.add_argument("--base", default="facebook/nllb-200-distilled-600M"); p.add_argument("--out", default="models/ace-id-nllb")
+    p.add_argument("--data", default="data/final/combined"); p.add_argument("--epochs", type=int, default=10, help="maximum; stops early when validation stops improving")
+    p.add_argument("--lr", type=float, default=1e-4); p.add_argument("--batch-size", type=int, default=8); p.add_argument("--patience", type=int, default=2)
     sub.add_parser("langid-build", help="retrain the language-check model from AcehX + NusaX train")
     p = sub.add_parser("serve", help="web app"); p.add_argument("--port", type=int, default=8000); p.add_argument("--host", default="127.0.0.1"); p.add_argument("--open", action="store_true", help="open the browser")
     p = sub.add_parser("all", help="2-5 + export on data/raw/hikayat (translate separately)"); p.add_argument("--no-ocr", action="store_true")
@@ -66,9 +71,15 @@ def main(argv=None):
         res = [evalnusax.evaluate(Translator(p, a.model, a.fewshot), limit=a.limit) for p in a.provider]
         print(evalnusax.write_report(res))
         json.dump(res, open(P("reports/eval_nusax.json"), "w"), indent=1)
+    elif a.cmd == "flores":
+        from . import flores; print(json.dumps(flores.run(a.path)))
+    elif a.cmd == "build-train":
+        from . import corpus; print(json.dumps(corpus.build(extra=a.extra, extra_test=a.extra_test), indent=1))
     elif a.cmd == "train":
-        from . import train
-        train.train(a.base, a.out, a.extra, a.epochs, a.lr, a.batch_size)
+        from . import train, corpus
+        if not (P(a.data) / "manifest.json").exists():
+            corpus.build(a.data)
+        train.train(a.base, a.out, a.data, a.epochs, a.lr, a.batch_size, patience=a.patience)
     elif a.cmd == "langid-build":
         from . import langid; print(json.dumps(langid.build(), indent=1))
     elif a.cmd == "serve":

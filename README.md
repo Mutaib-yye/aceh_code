@@ -3,7 +3,7 @@
 Turns Acehnese sources (hikayat PDFs, text files) into a **screened, normalized, deduplicated** sentence set, drafts an Indonesian
 translation, and exports **Atlas-style JSON**. It comes with a small web app and a test suite.
 
-**Easiest:** `./start.sh` (opens the app in your browser; `./start.sh --light` skips the translation engine). No API key is needed:
+**Easiest:** `./start.sh` (macOS/Linux, Python 3.10–3.14; opens the app in your browser; `./start.sh --light` skips the translation engine). No API key is needed:
 cleanup, language check, duplicate detection and export work offline, and translation can use the free local NLLB engine
 (first use downloads ~2.5 GB once; **NLLB path is untested here**, since Hugging Face is blocked in the build sandbox).
 
@@ -12,7 +12,7 @@ pip install -r requirements.txt
 python -m acehid fetch-nusax   # evaluation data (CC-BY-SA), once
 # put AcehX .txt files in data/raw/acehx/ then: python -m acehid audit   (needed for the duplicate check)
 python -m acehid serve          # web app on http://127.0.0.1:8000
-python -m pytest tests -q       # 21 tests, no network needed
+python -m pytest tests -q       # no network needed
 ```
 
 ## What works today (tested) and what does not
@@ -44,18 +44,30 @@ Only `KEEP` + `unique` rows are translated. Near-duplicates go to a human.
 
 ## Train our own model (fine-tune NLLB)
 
+**Easiest: Google Colab (free GPU, nothing to install on your Mac).** Open `notebooks/train_colab.ipynb` in Colab
+(File → Open notebook → GitHub → `Mutaib-yye/aceh_code`, branch `claude/dataset-product-build-108xu8`), set Runtime → T4 GPU, Run all.
+It prints a base-vs-fine-tuned table and saves the model to your Google Drive. On any GPU machine:
+
 ```bash
-# free Colab T4: open notebooks/train_colab.ipynb and run all cells, or on any GPU machine:
-pip install torch transformers sentencepiece
-python -m acehid train --epochs 5                         # NusaX train pairs
-python -m acehid train --extra data/final/train.json      # + reviewed hikayat pairs (never unreviewed machine drafts)
-python -m acehid eval --provider nllb --model models/ace-id-nllb     # score our model with the same eval as the baselines
+pip install -r requirements.txt torch transformers sentencepiece
+python -m acehid flores ~/Downloads/flores200_dataset.tar   # once: FLORES-200 ace/ind -> data/final/flores (CC-BY-SA)
+python -m acehid build-train                               # NusaX + FLORES -> leak-checked data/final/combined
+python -m acehid build-train --extra data/final/train.json --extra-test hikayat=data/final/test.json   # + REVIEWED hikayat pairs
+python -m acehid train                                     # max 10 epochs, early stopping -> models/ace-id-nllb/RESULTS.md
 ```
-Model selection uses NusaX **validation**; the NusaX **test** set is scored once at the end, for the base model and ours, and written to `models/ace-id-nllb/training_log.json`
-(hyperparameters, per-epoch loss and dev scores). A leak check refuses to train if a training sentence also appears in validation/test.
-**Honest expectation:** 500 pairs is very small, so the gain over base NLLB may be modest or zero; report whatever the log says.
-The training loop is smoke-tested on a tiny random model (no quality claim); the real run on NLLB-600M has **not** been done yet (needs a GPU and Hugging Face).
-Once a trained model exists, point the app at it: `TRANSLATE_MODEL=models/ace-id-nllb python -m acehid serve`.
+
+| set | from | used for |
+|---|---|---|
+| train | NusaX train (500) + FLORES dev minus 200 (~797) + reviewed extra pairs | gradient updates |
+| validation | NusaX valid (100) + 200 FLORES dev | picking the best epoch, early stopping |
+| test_nusax / test_flores | NusaX test (400) / FLORES devtest (1,012) | scored **once** at the end, base vs fine-tuned |
+
+A training pair is dropped if either side matches a validation/test sentence (case, diacritics, punctuation and old spelling ignored)
+or its Acehnese side is ≥ 90 % similar to one; `train` also refuses to start if any leak remains. Metrics: chrF++ (main, as in the
+NLLB paper), chrF, BLEU. Results go to `models/ace-id-nllb/RESULTS.md` (with example translations) and `reports/finetune_results.md`.
+Copy the trained `ace-id-nllb` folder into `models/` and the web app uses it automatically.
+The loop is smoke-tested end to end on a tiny random model; the real NLLB run happens on Colab (Hugging Face is blocked in the build sandbox).
+NLLB weights are CC-BY-NC 4.0, so the fine-tuned model is for research / non-commercial use.
 
 ## Translation providers (for drafts and baselines)
 

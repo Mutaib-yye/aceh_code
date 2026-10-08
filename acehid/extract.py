@@ -12,12 +12,31 @@ from .common import *
 EXTS = (".pdf", ".txt", ".md")
 _ocr = None
 
+def ocr_backend():
+    """'rapidocr' (v3, any Python), 'rapidocr_onnxruntime' (v1, Python < 3.13) or None. Cheap: does not load models."""
+    import importlib.util
+    for name in ("rapidocr", "rapidocr_onnxruntime"):
+        if importlib.util.find_spec(name):
+            return name
+    return None
+
 def _get_ocr():
     global _ocr
     if _ocr is None:
         try:
-            from rapidocr_onnxruntime import RapidOCR
-            _ocr = RapidOCR()
+            if ocr_backend() == "rapidocr":
+                from rapidocr import RapidOCR
+                eng = RapidOCR()
+                def run(img):
+                    r = eng(img)
+                    if r.boxes is None or not r.txts:
+                        return []
+                    return [(b.tolist(), t, s) for b, t, s in zip(r.boxes, r.txts, r.scores)]
+            else:
+                from rapidocr_onnxruntime import RapidOCR
+                eng = RapidOCR()
+                run = lambda img: eng(img)[0] or []
+            _ocr = run
         except Exception:
             _ocr = False
     return _ocr
@@ -29,7 +48,7 @@ def ocr_page(page, dpi=200):
     import numpy as np
     pix = page.get_pixmap(dpi=dpi)
     img = np.frombuffer(pix.samples, dtype=np.uint8).reshape(pix.height, pix.width, pix.n)
-    res, _ = eng(img[:, :, :3] if pix.n >= 3 else img)
+    res = eng(np.ascontiguousarray(img[:, :, :3]) if pix.n >= 3 else img)
     if not res:
         return "", 0.0
     # reading order: top->bottom, then left->right (box = 4 corner points); lines sharing a baseline are merged

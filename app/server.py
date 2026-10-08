@@ -32,11 +32,8 @@ def _translator(provider):
     return _translators[provider]
 
 def _ocr_available():
-    try:
-        import rapidocr_onnxruntime  # noqa
-        return True
-    except Exception:
-        return False
+    from acehid.extract import ocr_backend
+    return ocr_backend() is not None
 
 class H(BaseHTTPRequestHandler):
     def log_message(self, *a): pass

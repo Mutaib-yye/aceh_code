@@ -4,7 +4,7 @@ Providers (select with provider=...; keys come from environment variables ONLY, 
   claude : pip install anthropic ; ANTHROPIC_API_KEY ; model via TRANSLATE_MODEL (default below)
   groq   : requests              ; GROQ_API_KEY      ; model via TRANSLATE_MODEL (check Groq's current model list)
   nllb   : pip install transformers torch sentencepiece ; runs locally/Colab, no key. NLLB-200 supports ace_Latn -> ind_Latn.
-           model via TRANSLATE_MODEL (default facebook/nllb-200-distilled-600M). Needs a one-time model download from Hugging Face.
+           model via TRANSLATE_MODEL (default: our fine-tuned models/ace-id-nllb if present, else facebook/nllb-200-distilled-600M).
   copy   : baseline that returns the Acehnese text unchanged (floor for chrF/BLEU; NOT a translator)
 
 LLM providers get k few-shot examples retrieved from NusaX-MT train (most similar Acehnese sentences), see `fewshot`.
@@ -13,6 +13,12 @@ import os, json, re, time, csv, functools
 from .common import *
 
 DEFAULT_MODELS = {"claude": "claude-sonnet-5-5", "groq": "llama-3.3-70b-versatile", "nllb": "facebook/nllb-200-distilled-600M", "copy": "copy"}
+FINETUNED = ROOT / "models/ace-id-nllb"     # unzip the model trained in Colab here; the app then uses it instead of the base NLLB
+
+def default_model(provider):
+    if provider == "nllb" and (FINETUNED / "config.json").exists():
+        return str(FINETUNED)
+    return DEFAULT_MODELS[provider]
 BATCH = 20
 MIN_WORDS = 3   # Andrie's rule: a sentence needs at least 3 words to be translated (single words are ambiguous)
 
@@ -45,7 +51,7 @@ def available_providers():
         out["groq"] = DEFAULT_MODELS["groq"]
     try:
         import transformers, torch  # noqa
-        out["nllb"] = DEFAULT_MODELS["nllb"]
+        out["nllb"] = default_model("nllb")
     except Exception:
         pass
     return out
@@ -65,7 +71,7 @@ def _parse(raw):
 class Translator:
     def __init__(self, provider="claude", model=None, k_fewshot=5):
         self.provider, self.k = provider, k_fewshot
-        self.model = model or os.environ.get("TRANSLATE_MODEL") or DEFAULT_MODELS[provider]
+        self.model = model or os.environ.get("TRANSLATE_MODEL") or default_model(provider)
         self.tag = f"{provider}:{self.model}" + (f":fs{k_fewshot}" if provider in ("claude", "groq") and k_fewshot else "")
         self._nllb = None
 
@@ -91,7 +97,7 @@ class Translator:
         if self._nllb is None:
             from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
             tok = AutoTokenizer.from_pretrained(self.model, src_lang="ace_Latn")
-            self._nllb = (tok, AutoModelForSeq2SeqLM.from_pretrained(self.model))
+            self._nllb = (tok, AutoModelForSeq2SeqLM.from_pretrained(self.model).float().eval())   # .float(): the Drive copy is saved in fp16
         tok, mdl = self._nllb
         enc = tok(texts, return_tensors="pt", padding=True, truncation=True, max_length=256)
         out = mdl.generate(**enc, forced_bos_token_id=tok.convert_tokens_to_ids("ind_Latn"), max_new_tokens=256, num_beams=4)

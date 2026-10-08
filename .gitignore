@@ -12,3 +12,8 @@ data/eval/cache/
 data/translate_cache/
 *.pkl
 .env
+data/processed/
+data/inbox/
+models/
+.venv/
+venv/
