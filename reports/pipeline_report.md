@@ -1,43 +1,49 @@
-# Pipeline report (2026-10-06)
+# Pipeline report (updated 2026-10-08)
 
-All numbers below were measured in this repo, except where marked **not measured**.
+All numbers below were measured in this repo, except where marked **not measured yet**.
 
-## Inputs
-| Source | Result |
-|---|---|
-| AcehX (11 files) | 164,778 non-empty lines; 159,851 unique after case/diacritic/punctuation/old-spelling folding → **3.0 % duplicates** (4,927). 1,515 duplicate keys occur in more than one file. 73 Arabic-script lines. **No Indonesian side**: it is monolingual, so it cannot train a translator. |
-| Language check on AcehX (lines ≥ 3 words) | 162,236 Acehnese · 1,318 code-mixed/unsure · 567 Indonesian |
-| NusaX-MT | 1,000 human-translated pairs (500/100/400). 0 exact overlap with AcehX. |
-| Lyrics CSV/JSON | Excluded: 8 garbled rows, copyrighted, no Indonesian side. |
-| Hikayat PDFs | **Not received.** |
+## Data
+| Source | Result | Used for |
+|---|---|---|
+| NusaX-MT (CC-BY-SA 4.0) | 1,000 human-translated pairs (500 / 100 / 400) | train / validation / test |
+| FLORES-200 (CC-BY-SA 4.0) | 997 dev + 1,012 devtest; downloaded by the Colab notebook (blocked in the build sandbox) | train (+200 validation) / test |
+| Hikayat Abu Sammah (Depdikbud; reuse terms to confirm) | 1,856 aligned verse pairs, 1,654 KEEP: train 1,432 / validation 79 / test 143 (page blocks); 199 REVIEW. Details: `reports/hikayat_abu_sammah.md` | train / validation / test |
+| AcehX (licence unknown) | 164,778 lines, 159,851 unique (3.0 % duplicates), **no Indonesian side**; contains 199 lines of Hikayat Abu Sammah (`corpus_Iskandar_file_4.txt`) | duplicate check + OCR spelling reference only |
+| Data Syair dan Lagu.rar | 83 PDFs, 343 pages (108 scanned): ~60 copyrighted songs (excluded), 4 monolingual hikayat, 4 syair, the Razali Abdullah dictionary (96 scanned pages, copyrighted), 3 possibly bilingual papers on pantun / oral tradition (not yet checked). `scan-archive` report | not used yet |
+| Lyrics CSV/JSON | 8 garbled rows, copyrighted, no Indonesian side | excluded |
+| Quran (Acehnese, Tgk. Mahjiddin Jusuf × Kemenag Indonesian) | 6,236 verses; 5,466 after length filter | off by default (`--quran`), ask Andrie |
 
-## Language check (held out)
-Character 1–4-gram naive Bayes; Acehnese side trained on AcehX, Indonesian side on NusaX **train** only; evaluated on NusaX valid+test (never seen).
-| split | n per side | Acehnese→ace | Acehnese→ind | Indonesian→ind | Indonesian→ace | unsure |
-|---|---|---|---|---|---|---|
-| valid | 100 | 98.0 % | 0.0 % | 100 % | 0.0 % | 1.0 % |
-| test | 400 | 96.0 % | 0.75 % | 99.5 % | 0.0 % | 1.9 % |
+Leak control for training (`build-train`): any training pair whose Acehnese or Indonesian side matches a validation/test
+sentence (case, diacritics, punctuation, old spelling ignored) or is ≥ 90 % similar on the Acehnese side is dropped; `train`
+refuses to start if any leak remains. Current build without FLORES: 1,932 training pairs, 0 leaks.
 
-## Pipeline checks on realistic inputs (generated PDFs)
-- 300 AcehX lines (every 5th upper-cased) rendered to a PDF with running headers and page numbers → 252 sentences; **241 flagged DUPLICATE_ACEHX**, 7 NEAR_DUP_REVIEW, 4 unique (residual comes from lines truncated/merged at page layout), headers and page numbers removed.
-- 120 NusaX test sentences (zero overlap with AcehX) as wrapped prose → 232 sentences (sentence splitting turns 120 reviews into 232), 202 KEEP, 8 REVIEW (code-mixed), 14 FRAGMENT, 8 NON_ACEH; 231 unique, 1 DUPLICATE_ACEHX (a short sentence that does occur in AcehX).
-- Scanned page (image-only PDF) → OCR text recovered with confidence > 0.5, and flagged `ocr`; with OCR disabled the page is flagged `ocr_needed`, not dropped.
-- Export QC rejected 40/40 "translations" produced by the copy baseline (`identical_to_source`), as intended.
-- Test suite: 21 passed (normalization, language check on held-out data, screening, hyphenation, verse layout, dedupe variants, OCR, export gates, source-level split, review round trip, web app).
+## Quality checks
+- Language check (character n-grams, trained on AcehX + NusaX train, tested on NusaX valid+test): Acehnese recognised 96–98 %,
+  Indonesian 99.5–100 %.
+- Hikayat OCR: word error rate 0.8 % (RapidOCR 300 dpi) vs 11.3 % for the PDF's own text layer, on 16 hand-typed lines.
+- Hikayat alignment: 40 / 40 random KEEP pairs correct (developer check; an Acehnese speaker should confirm a sample).
+- Vocabulary: 13.5–14 % of the words in the test sets never occur in training; only 66 % of AcehX running words occur in training.
+  Expect weak translations for unfamiliar words, names and dialect forms.
 
-## Baseline translation score (NusaX, sacreBLEU)
-| system | split | n | chrF | BLEU | TER |
-|---|---|---|---|---|---|
-| copy source (no translation) | valid | 100 | 37.5 | 7.53 | 82.93 |
-| copy source (no translation) | test | 400 | 35.89 | 6.31 | 85.09 |
+## Translation scores (sacreBLEU)
+| system | test set | chrF | BLEU |
+|---|---|---|---|
+| copy source (no translation, the floor) | NusaX test (400) | 35.89 | 6.31 |
+| base NLLB-200 600M | NusaX / FLORES / hikayat test | **not measured yet** | |
+| our fine-tuned model | NusaX / FLORES / hikayat test | **not measured yet** | |
 
-**Not measured:** NLLB, Claude, Groq. No API key was available and Hugging Face is blocked from the build sandbox. Run `python -m acehid eval --provider copy nllb claude` where you have access.
+The Colab notebook (`notebooks/train_colab.ipynb`) measures base vs fine-tuned on every test set and writes
+`models/ace-id-nllb/RESULTS.md`; copy that table here after the run.
 
-## Bug found and fixed in the inherited code
-The old header/footer remover deleted any line repeating on ≥ 30 % of pages, **anywhere on the page**, which would have removed legitimate refrains in verse. It now only considers the first/last two lines of a page and requires ≥ 3 repeats.
+## Software
+- `python -m acehid ...`: extract (PDF text layer + OCR), screen, normalize, dedupe (exact + near vs AcehX), review sheet,
+  translate (drafts), export (Atlas JSON), flores, hikayat-pairs, scan-archive, build-train, train, eval, serve.
+- Translator app for Hugging Face Spaces (`space/`), checked on desktop, phone and dark mode with a test model.
+- Test suite: 61 tests pass (`python -m pytest tests`). The notebook was rehearsed end to end with a small stand-in model.
 
 ## Not done / limits
-- No real hikayat input has been processed; layout detection (verse vs prose) and sentence splitting are tuned on synthetic pages only.
-- Dedup does not catch paraphrases. Normalization of Indonesian output to PUEBI is not implemented.
-- No model has been trained or fine-tuned; no human review has been done.
-- Extra datasets (FLORES-200, Acehnese Wikipedia, OPUS, Hugging Face `ace`) were **not downloaded**: those hosts are denied by this environment's network policy. They are listed in `config/sources.csv` as candidates to verify.
+- No real NLLB training or scoring yet (needs the Colab GPU run).
+- No human review of translations or of the Hikayat alignment beyond the developer's checks.
+- Atlas JSON schema is unconfirmed (plan section 17); Indonesian output is not normalized to PUEBI.
+- Dedup finds spelling/format variants, not paraphrases.
+- Licences to confirm with Andrie: Hikayat Abu Sammah (Depdikbud), AcehX, Quran translation.

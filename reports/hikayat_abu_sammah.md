@@ -38,5 +38,7 @@ train 1432, validation 79 (pages 47-48), test 143 (pages 50-53).
   only when both neighbouring pairs are strong matches, otherwise REVIEW.
 - **OCR repair:** 223 single-letter repairs proposed on the full text and all were read: about 4 were doubtful (e.g. *merab-raba* → *merah-raba*);
   words shorter than 5 letters are never changed (in Indonesian *bak* "like" and *nang* are real words, not OCR slips).
-- Remaining known noise: a few OCR slips the repair cannot decide; the Indonesian is a 1980s literary translation (some
+- Remaining known noise: a few OCR slips the repair cannot decide; the Indonesian is an older literary translation (some
   archaic words, *Mesjid*, *ananda*), not modern everyday Indonesian.
+- These checks were made by the developer (Claude). An Acehnese speaker should confirm a random sample of ~50 pairs
+  (`data/review/abu_sammah_review.csv` holds the 199 uncertain ones).

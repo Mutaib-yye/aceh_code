@@ -1,5 +1,14 @@
 # Aceh → Indonesia toolkit
 
+## Train the model and publish the app (about 1 hour, free)
+
+1. **Hugging Face token** (once): sign up at huggingface.co → Settings → Access Tokens → *Create new token* → type **Write** → copy it (starts with `hf_`). Never paste it in chats or commit it.
+2. **Colab:** open [the notebook](https://colab.research.google.com/github/Mutaib-yye/aceh_code/blob/claude/dataset-product-build-108xu8/notebooks/train_colab.ipynb) → *Runtime → Change runtime type → T4 GPU → Save* → *Runtime → Run all* → paste the token when asked → keep the tab open.
+3. **Result:** the last cell prints the app link `https://huggingface.co/spaces/<your-name>/penerjemah-aceh` (first start takes 5–10 minutes) and the results table (base vs fine-tuned).
+
+The model files are uploaded **private** (the app is public) until Andrie confirms the data licences; to change, set
+`MODEL_PRIVATE = False` in the first cell. If training fails, the notebook still publishes the app with the base model.
+
 Turns Acehnese sources (hikayat PDFs, text files) into a **screened, normalized, deduplicated** sentence set, drafts an Indonesian
 translation, and exports **Atlas-style JSON**. It comes with a small web app and a test suite.
 
