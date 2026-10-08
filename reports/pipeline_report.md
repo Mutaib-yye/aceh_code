@@ -39,7 +39,7 @@ The Colab notebook (`notebooks/train_colab.ipynb`) measures base vs fine-tuned o
 - `python -m acehid ...`: extract (PDF text layer + OCR), screen, normalize, dedupe (exact + near vs AcehX), review sheet,
   translate (drafts), export (Atlas JSON), flores, hikayat-pairs, scan-archive, build-train, train, eval, serve.
 - Translator app (`space/`): runs on your own computer with `./run_app.sh` (http://127.0.0.1:7860, offline after the model is fetched once); `notebooks/demo_colab.ipynb` runs it in Colab. Hosting it as a Hugging Face Space needs a paid plan since 2026 (HTTP 402), so we do not use that. Checked on desktop, phone and dark mode with a test model.
-- Test suite: 68 tests pass (`python -m pytest tests`). The notebook was rehearsed end to end with a small stand-in model.
+- Test suite: 69 tests pass (`python -m pytest tests`). The notebook was rehearsed end to end with a small stand-in model.
 
 ## Not done / limits
 - No real NLLB training or scoring yet (needs the Colab GPU run).
