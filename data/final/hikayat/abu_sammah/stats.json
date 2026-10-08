@@ -1,0 +1,51 @@
+{
+ "ace_lines": 1882,
+ "ind_lines": 1892,
+ "ace_dropped": {
+  "heading": 2,
+  "page_no": 47,
+  "footnote": 0,
+  "low_conf": 8,
+  "garbage": 0,
+  "rejoined": 3
+ },
+ "ind_dropped": {
+  "heading": 2,
+  "page_no": 46,
+  "footnote": 4,
+  "low_conf": 8,
+  "garbage": 0,
+  "rejoined": 5
+ },
+ "pairs": 1856,
+ "align_kinds": {
+  "1-1": 1856
+ },
+ "unaligned_ace": 26,
+ "unaligned_ind": 36,
+ "ocr_words_fixed": {
+  "ace": 159,
+  "ind": 64
+ },
+ "screening": {
+  "KEEP": 1654,
+  "REVIEW": 199,
+  "REMOVE": 3
+ },
+ "splits": {
+  "train": 1432,
+  "validation": 79,
+  "test": 143
+ },
+ "atlas_records": 1467,
+ "review_rows": 209,
+ "dedup": {
+  "DUPLICATE_ACEHX": 199,
+  "unique": 1647,
+  "NEAR_DUP_REVIEW": 10
+ },
+ "split_pages": {
+  "test": "50-53",
+  "validation": "47-48"
+ }
+}

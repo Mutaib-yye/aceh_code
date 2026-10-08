@@ -70,6 +70,18 @@ def results_md(run):
             rows.append("| " + " | ".join(x.replace("|", "/") for x in (s["ace"], s["ref"], s["base"], s["finetuned"])) + " |")
     return "\n".join(rows) + "\n"
 
+def model_card(run):
+    """README.md for the Hugging Face model repo (metadata header + the results table)."""
+    names = {"nusax": "NusaX-MT", "flores": "FLORES-200", "hikayat": "Hikayat Abu Sammah (Depdikbud)"}
+    srcs = ", ".join(names.get(k, k) for k in run.get("train_by_source", {})) or "NusaX-MT"
+    return ("---\nlicense: cc-by-nc-4.0\nbase_model: " + run["base"] + "\nlanguage:\n- ace\n- id\npipeline_tag: translation\n"
+            "tags:\n- acehnese\n- nllb\n- translation\n---\n\n"
+            f"# Acehnese → Indonesian (fine-tuned {run['base'].split('/')[-1]})\n\n"
+            f"Fine-tuned on {run['train_pairs']} human-translated sentence/verse pairs ({srcs}). Input is normalized as in "
+            "https://github.com/Mutaib-yye/aceh_code (`acehid/normalize.py`); use `src_lang='ace_Latn'` and force `ind_Latn`.\n"
+            "Non-commercial use (NLLB weights are CC-BY-NC 4.0). Machine translation: have important text checked by a speaker.\n\n"
+            + results_md(run).split("\n", 1)[1])
+
 def train(base=DEFAULT_BASE, out="models/ace-id-nllb", data_dir=DATA, epochs=10, lr=1e-4, batch_size=8, max_len=128, seed=0,
           patience=2, warmup=0.1, label_smoothing=0.1, eval_beams=4, n_samples=8, log=print):
     import torch
@@ -138,5 +150,6 @@ def train(base=DEFAULT_BASE, out="models/ace-id-nllb", data_dir=DATA, epochs=10,
     json.dump(run, open(ROOT / out / "training_log.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     md = results_md(run)
     (ROOT / out / "RESULTS.md").write_text(md, encoding="utf-8")
+    (ROOT / out / "README.md").write_text(model_card(run), encoding="utf-8")
     (ROOT / "reports").mkdir(exist_ok=True); (ROOT / "reports/finetune_results.md").write_text(md, encoding="utf-8")
     return run

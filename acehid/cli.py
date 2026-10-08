@@ -17,11 +17,17 @@ def main(argv=None):
     p = sub.add_parser("export", help="7. QC + Atlas JSON + source-level split"); p.add_argument("--inp", default="data/aligned/hikayat_translated.jsonl"); p.add_argument("--version", default="ace-id-v0.1"); p.add_argument("--include-drafts", action="store_true")
     sub.add_parser("fetch-nusax", help="download NusaX-MT csv files from GitHub into data/raw/external/nusax")
     sub.add_parser("nusax", help="NusaX-MT -> Atlas format (data/final/nusax)")
+    sub.add_parser("fetch-quran", help="Quran: Acehnese (Tgk. Mahjiddin Jusuf) + Indonesian editions from GitHub -> data/raw/external/quran (spelling reference; optional training source)")
     p = sub.add_parser("eval", help="chrF/BLEU/TER on NusaX valid+test"); p.add_argument("--provider", nargs="+", default=["copy"]); p.add_argument("--model"); p.add_argument("--fewshot", type=int, default=5); p.add_argument("--limit", type=int)
     p = sub.add_parser("flores", help="FLORES-200 ace_Latn/ind_Latn (tar, zip or folder) -> data/final/flores"); p.add_argument("path")
+    p = sub.add_parser("hikayat-pairs", help="bilingual hikayat book (Acehnese section + Indonesian section) -> aligned pairs")
+    p.add_argument("pdf"); p.add_argument("--ace-pages", required=True, help="e.g. 14-59"); p.add_argument("--ind-pages", required=True, help="e.g. 60-105")
+    p.add_argument("--test-pages", required=True, help="Acehnese pages held out for testing, e.g. 50-53"); p.add_argument("--valid-pages", required=True)
+    p.add_argument("--slug", default="abu_sammah"); p.add_argument("--source-id", default="HIK_ABU_SAMMAH"); p.add_argument("--title", default="Hikayat Abu Sammah")
     p = sub.add_parser("build-train", help="NusaX + FLORES (+ reviewed extra pairs) -> leak-checked data/final/combined")
     p.add_argument("--extra", nargs="*", default=[], help="reviewed pair files [{ace,ind}] added to TRAIN, e.g. data/final/train.json")
     p.add_argument("--extra-test", nargs="*", default=[], help="name=path extra TEST sets, e.g. hikayat=data/final/test.json")
+    p.add_argument("--quran", action="store_true", help="add Acehnese Quran verse pairs to TRAIN (run fetch-quran first; licence: ask Andrie)")
     p = sub.add_parser("train", help="fine-tune NLLB on data/final/combined (GPU/Colab recommended)"); p.add_argument("--base", default="facebook/nllb-200-distilled-600M"); p.add_argument("--out", default="models/ace-id-nllb")
     p.add_argument("--data", default="data/final/combined"); p.add_argument("--epochs", type=int, default=10, help="maximum; stops early when validation stops improving")
     p.add_argument("--lr", type=float, default=1e-4); p.add_argument("--batch-size", type=int, default=8); p.add_argument("--patience", type=int, default=2)
@@ -63,6 +69,12 @@ def main(argv=None):
         for sp in ("train", "valid", "test"):
             urllib.request.urlretrieve(f"https://raw.githubusercontent.com/IndoNLP/nusax/main/datasets/mt/{sp}.csv", d / f"{sp}.csv")
         print("downloaded to", d)
+    elif a.cmd == "fetch-quran":
+        import urllib.request
+        d = P("data/raw/external/quran"); d.mkdir(parents=True, exist_ok=True)
+        for ed in ("ace-tgkhmahjiddinju", "ind-indonesianislam", "ind-kingfahdcomplex", "ind-thesabiqcompany"):
+            urllib.request.urlretrieve(f"https://raw.githubusercontent.com/fawazahmed0/quran-api/1/editions/{ed}.json", d / f"{ed}.json")
+        print("downloaded to", d)
     elif a.cmd == "nusax":
         from . import nusax; nusax.run()
     elif a.cmd == "eval":
@@ -73,8 +85,11 @@ def main(argv=None):
         json.dump(res, open(P("reports/eval_nusax.json"), "w"), indent=1)
     elif a.cmd == "flores":
         from . import flores; print(json.dumps(flores.run(a.path)))
+    elif a.cmd == "hikayat-pairs":
+        from . import bilingual
+        print(json.dumps(bilingual.run(a.pdf, a.ace_pages, a.ind_pages, a.test_pages, a.valid_pages, a.slug, a.source_id, a.title), indent=1))
     elif a.cmd == "build-train":
-        from . import corpus; print(json.dumps(corpus.build(extra=a.extra, extra_test=a.extra_test), indent=1))
+        from . import corpus; print(json.dumps(corpus.build(extra=a.extra, extra_test=a.extra_test, quran=a.quran), indent=1))
     elif a.cmd == "train":
         from . import train, corpus
         if not (P(a.data) / "manifest.json").exists():
