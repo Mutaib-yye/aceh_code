@@ -62,12 +62,15 @@ def ensure_model(target=LOCAL, ask=input, zip_search=(Path.home() / "Downloads",
     print("Using the base NLLB-200 model (not fine-tuned). The first start downloads it once (about 2.5 GB).")
     return BASE_MODEL
 
-def load_space_app():
-    space = ROOT / "space"
-    sys.path.insert(0, str(space))                                  # space/app.py does `from core import ...`
-    spec = importlib.util.spec_from_file_location("space_app", space / "app.py")
-    mod = importlib.util.module_from_spec(spec); spec.loader.exec_module(mod)
+def _load(name, path):
+    spec = importlib.util.spec_from_file_location(name, path)
+    mod = importlib.util.module_from_spec(spec); sys.modules[name] = mod; spec.loader.exec_module(mod)
     return mod
+
+def load_space_app():
+    """space/app.py by path (the repo also has an `app` package, the local pipeline web app); its `from core import` finds core."""
+    _load("core", ROOT / "space/core.py")
+    return _load("space_app", ROOT / "space/app.py")
 
 def run(model=None, share=False, port=7860, open_browser=True, **launch_extra):
     model = model or ensure_model()
