@@ -114,11 +114,11 @@ class _FakeApi:
 def _cell(nb, marker):
     return next("".join(c["source"]) for c in nb["cells"] if c["cell_type"] == "code" and marker in "".join(c["source"]))
 
-def _run_publish_cell(tmp_path, monkeypatch, trained, refuse_space=False):
-    import huggingface_hub
+def _run_save_cell(tmp_path, monkeypatch, trained, token="hf_test", download_zip=False):
+    import huggingface_hub, os
     nb = json.load(open(ROOT / "notebooks/train_colab.ipynb", encoding="utf-8"))
-    src = _cell(nb, "save the model on Hugging Face")
-    _FakeApi.calls, _FakeApi.refuse_space = [], refuse_space
+    src = _cell(nb, "save your trained model")
+    _FakeApi.calls, _FakeApi.refuse_space = [], False
     monkeypatch.setattr(huggingface_hub, "HfApi", _FakeApi)
     monkeypatch.chdir(tmp_path)
     (tmp_path / "models/ace-id-nllb").mkdir(parents=True)
@@ -126,30 +126,25 @@ def _run_publish_cell(tmp_path, monkeypatch, trained, refuse_space=False):
         (tmp_path / "models/ace-id-nllb" / f).write_text("x")
     class Saver:
         def half(self): return self
-        def save_pretrained(self, d): import os; os.makedirs(d, exist_ok=True)
-    ns = {"model": Saver(), "tok": Saver(), "HF_TOKEN": "hf_test", "TRAINED": trained, "MODEL_PRIVATE": True}
+        def save_pretrained(self, d): os.makedirs(d, exist_ok=True); open(os.path.join(d, "config.json"), "w").write("{}")
+    ns = {"model": Saver(), "tok": Saver(), "HF_TOKEN": token, "TRAINED": trained, "DOWNLOAD_ZIP": download_zip, "os": os, "REPO": str(tmp_path)}
     exec(src, ns)
-    return _FakeApi.calls, ns
+    return _FakeApi.calls
 
-def test_notebook_publish_cell_trained_private_model_public_app(tmp_path, monkeypatch):
-    """The app's variable and secret must be set BEFORE the app files are uploaded (the first build reads them)."""
-    calls, ns = _run_publish_cell(tmp_path, monkeypatch, trained=True)
+def test_notebook_saves_trained_model_privately_and_never_creates_a_space(tmp_path, monkeypatch):
+    calls = _run_save_cell(tmp_path, monkeypatch, trained=True)
     assert calls == [("init", "hf_test"), ("create", "muttu/ace-id-nllb", None, True), ("settings", "muttu/ace-id-nllb", True),
-                     ("upload", "muttu/ace-id-nllb", "models/ace-id-nllb-fp16"),
-                     ("create", "muttu/penerjemah-aceh", "space", False), ("var", "muttu/penerjemah-aceh", "MODEL_ID", "muttu/ace-id-nllb"),
-                     ("secret", "muttu/penerjemah-aceh", "HF_TOKEN", "hf_test"), ("upload", "muttu/penerjemah-aceh", "space")]
-    assert ns["APP_ONLINE"] is True and (tmp_path / "models/ace-id-nllb-fp16/RESULTS.md").exists()
+                     ("upload", "muttu/ace-id-nllb", "models/ace-id-nllb-fp16")]
+    assert not (tmp_path / "ace-id-nllb.zip").exists()
 
-def test_notebook_publish_cell_survives_paid_plan_refusal(tmp_path, monkeypatch, capsys):
-    """Hugging Face answers 402 for a Gradio Space on a free account: the model must still be saved and the cell must not crash."""
-    calls, ns = _run_publish_cell(tmp_path, monkeypatch, trained=True, refuse_space=True)
-    assert ("upload", "muttu/ace-id-nllb", "models/ace-id-nllb-fp16") in calls and not any(c[0] == "var" for c in calls)
-    assert ns["APP_ONLINE"] is False and "Payment required" in capsys.readouterr().out
+def test_notebook_without_token_makes_a_zip_the_mac_launcher_can_use(tmp_path, monkeypatch):
+    import zipfile
+    calls = _run_save_cell(tmp_path, monkeypatch, trained=True, token="")
+    assert calls == [] and zipfile.ZipFile(tmp_path / "ace-id-nllb.zip").namelist()   # zip of the model folder
+    assert "config.json" in zipfile.ZipFile(tmp_path / "ace-id-nllb.zip").namelist()
 
-def test_notebook_publish_cell_without_training_still_tries_app_with_base_model(tmp_path, monkeypatch):
-    calls, ns = _run_publish_cell(tmp_path, monkeypatch, trained=False)
-    assert calls == [("init", "hf_test"), ("create", "muttu/penerjemah-aceh", "space", False),
-                     ("var", "muttu/penerjemah-aceh", "MODEL_ID", "facebook/nllb-200-distilled-600M"), ("upload", "muttu/penerjemah-aceh", "space")]
+def test_notebook_without_training_saves_nothing(tmp_path, monkeypatch, capsys):
+    assert _run_save_cell(tmp_path, monkeypatch, trained=False) == [] and "no model to save" in capsys.readouterr().out
 
 def test_both_notebooks_end_by_starting_the_app_with_a_public_link():
     for name in ("train_colab.ipynb", "demo_colab.ipynb"):

@@ -34,6 +34,9 @@ def main(argv=None):
     p.add_argument("--data", default="data/final/combined"); p.add_argument("--epochs", type=int, default=10, help="maximum; stops early when validation stops improving")
     p.add_argument("--lr", type=float, default=1e-4); p.add_argument("--batch-size", type=int, default=8); p.add_argument("--patience", type=int, default=2)
     sub.add_parser("langid-build", help="retrain the language-check model from AcehX + NusaX train")
+    p = sub.add_parser("app", help="translator app on this computer (http://127.0.0.1:7860), uses your trained model")
+    p.add_argument("--model", help="model folder or id (default: models/ace-id-nllb, fetched once)"); p.add_argument("--share", action="store_true", help="also make a temporary public link")
+    p.add_argument("--port", type=int, default=7860)
     p = sub.add_parser("serve", help="web app"); p.add_argument("--port", type=int, default=8000); p.add_argument("--host", default="127.0.0.1"); p.add_argument("--open", action="store_true", help="open the browser")
     p = sub.add_parser("all", help="2-5 + export on data/raw/hikayat (translate separately)"); p.add_argument("--no-ocr", action="store_true")
     a = ap.parse_args(argv)
@@ -101,6 +104,8 @@ def main(argv=None):
         train.train(a.base, a.out, a.data, a.epochs, a.lr, a.batch_size, patience=a.patience)
     elif a.cmd == "langid-build":
         from . import langid; print(json.dumps(langid.build(), indent=1))
+    elif a.cmd == "app":
+        from . import local_app; local_app.run(a.model, share=a.share, port=a.port)
     elif a.cmd == "serve":
         from app.server import serve
         if a.open:
