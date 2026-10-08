@@ -1,13 +1,14 @@
 # Aceh → Indonesia toolkit
 
-## Train the model and publish the app (about 1 hour, free)
+## Train the model and start the app (free)
 
 1. **Hugging Face token** (once): sign up at huggingface.co → Settings → Access Tokens → *Create new token* → type **Write** → copy it (starts with `hf_`). Never paste it in chats or commit it.
-2. **Colab:** open [the notebook](https://colab.research.google.com/github/Mutaib-yye/aceh_code/blob/claude/dataset-product-build-108xu8/notebooks/train_colab.ipynb) → *Runtime → Change runtime type → T4 GPU → Save* → *Runtime → Run all* → paste the token when asked → keep the tab open.
-3. **Result:** the last cell prints the app link `https://huggingface.co/spaces/<your-name>/penerjemah-aceh` (first start takes 5–10 minutes) and the results table (base vs fine-tuned).
+2. **Train (once, about 1 hour):** open [train_colab.ipynb](https://colab.research.google.com/github/Mutaib-yye/aceh_code/blob/claude/dataset-product-build-108xu8/notebooks/train_colab.ipynb) → *Runtime → Change runtime type → T4 GPU → Save* → *Runtime → Run all* → paste the token → keep the tab open. It shows the results table (base vs fine-tuned), saves your model (private) on Hugging Face, and the last cell prints the app link `https://xxxx.gradio.live`.
+3. **Start the app any other day (about 5 minutes, no training):** open [demo_colab.ipynb](https://colab.research.google.com/github/Mutaib-yye/aceh_code/blob/claude/dataset-product-build-108xu8/notebooks/demo_colab.ipynb) → T4 GPU → *Run all* → paste the token → open the printed `gradio.live` link.
 
-The model files are uploaded **private** (the app is public) until Andrie confirms the data licences; to change, set
-`MODEL_PRIVATE = False` in the first cell. If training fails, the notebook still publishes the app with the base model.
+The `gradio.live` link is free and public but only works while the Colab tab runs (a few hours). A permanent app page
+(Hugging Face Space, code in `space/`) now needs a paid Hugging Face plan; the training notebook tries it and says so if refused.
+The model files stay **private** until Andrie confirms the data licences (`MODEL_PRIVATE` in the first cell).
 
 Turns Acehnese sources (hikayat PDFs, text files) into a **screened, normalized, deduplicated** sentence set, drafts an Indonesian
 translation, and exports **Atlas-style JSON**. It comes with a small web app and a test suite.
