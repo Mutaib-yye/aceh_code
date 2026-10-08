@@ -5,6 +5,8 @@
 1. **Train (once, about 1 hour, free GPU):** open [train_colab.ipynb](https://colab.research.google.com/github/Mutaib-yye/aceh_code/blob/claude/dataset-product-build-108xu8/notebooks/train_colab.ipynb) → *Runtime → Change runtime type → T4 GPU → Save* → *Runtime → Run all* → paste your Hugging Face token (huggingface.co/settings/tokens, type *Write*) → keep the tab open. It shows the results table and stores your model privately in your account (or, without a token, downloads it as `ace-id-nllb.zip`).
 2. **Run the app on your Mac:** `cd ~/aceh_code && git pull && ./run_app.sh` (or double-click `run_app.command`). The first time it installs and fetches your model once (from `~/Downloads/ace-id-nllb*.zip` or from your account, asking for the token); then the browser opens **http://127.0.0.1:7860**. Every later start takes seconds and works offline. No training again.
 
+**Windows:** download the code as a ZIP (GitHub → green **Code** button → *Download ZIP*) and unzip it. Install Python 3.12 from python.org and tick *Add python.exe to PATH*. Double-click `run_app.bat`. It's the same as on a Mac: the first run takes 10 minutes or more, then the browser opens http://127.0.0.1:7860. Without a graphics card, translations take a few seconds each.
+
 `./run_app.sh --share` also prints a temporary public link (while the window stays open). `notebooks/demo_colab.ipynb` runs the app in Colab instead.
 
 ## Share it with friends or present it (Mac or Linux)
