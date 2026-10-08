@@ -76,10 +76,15 @@ def launch_kwargs():
                            font=[gr.themes.GoogleFont("Inter"), "system-ui", "sans-serif"])
     return dict(theme=theme, css=CSS, js=SHORTCUT_JS)
 
-if __name__ == "__main__":
+def start(model_id=None, share=False, **launch_extra):
+    """Load the model (falls back to the base NLLB if it cannot) and serve the app. share=True gives a free public
+    *.gradio.live link, which works as long as this process (e.g. the Colab tab) keeps running."""
     try:
-        engine = Engine()
-    except Exception as e:                                   # wrong/missing MODEL_ID: still serve, with the base model
-        print(f"could not load {os.environ.get('MODEL_ID')!r} ({e}); falling back to {BASE_MODEL}")
+        engine = Engine(model_id)
+    except Exception as e:                                   # wrong/missing model id or no access: still serve, with the base model
+        print(f"could not load {model_id or os.environ.get('MODEL_ID')!r} ({e}); falling back to {BASE_MODEL}")
         engine = Engine(BASE_MODEL)
-    build_ui(engine).queue(default_concurrency_limit=1, max_size=40).launch(**launch_kwargs())
+    return build_ui(engine).queue(default_concurrency_limit=1, max_size=40).launch(share=share, **launch_kwargs(), **launch_extra)
+
+if __name__ == "__main__":
+    start(share=os.environ.get("SHARE") == "1")

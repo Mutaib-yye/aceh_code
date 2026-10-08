@@ -98,20 +98,27 @@ def test_committed_hikayat_split_is_leak_free():
     assert_no_leak([(r["ace"], r["ind"]) for r in tr], [(r["ace"], r["ind"]) for r in va + te])
 
 class _FakeApi:
-    calls = []
+    calls, refuse_space = [], False
     def __init__(self, token): self.calls.append(("init", token))
     def whoami(self): return {"name": "muttu"}
-    def create_repo(self, repo_id, **kw): self.calls.append(("create", repo_id, kw.get("repo_type"), kw.get("private")))
+    def create_repo(self, repo_id, **kw):
+        if kw.get("repo_type") == "space" and self.refuse_space:
+            e = RuntimeError("Client error '402 Payment Required' for url 'https://huggingface.co/api/repos/create'")
+            e.server_message = "Payment required"; raise e
+        self.calls.append(("create", repo_id, kw.get("repo_type"), kw.get("private")))
     def update_repo_settings(self, repo_id, **kw): self.calls.append(("settings", repo_id, kw.get("private")))
     def upload_folder(self, repo_id, folder_path, **kw): self.calls.append(("upload", repo_id, folder_path))
     def add_space_variable(self, repo_id, key, value): self.calls.append(("var", repo_id, key, value))
     def add_space_secret(self, repo_id, key, value): self.calls.append(("secret", repo_id, key, value))
 
-def _run_publish_cell(tmp_path, monkeypatch, trained):
+def _cell(nb, marker):
+    return next("".join(c["source"]) for c in nb["cells"] if c["cell_type"] == "code" and marker in "".join(c["source"]))
+
+def _run_publish_cell(tmp_path, monkeypatch, trained, refuse_space=False):
     import huggingface_hub
     nb = json.load(open(ROOT / "notebooks/train_colab.ipynb", encoding="utf-8"))
-    src = "".join(nb["cells"][-1]["source"])
-    _FakeApi.calls = []
+    src = _cell(nb, "save the model on Hugging Face")
+    _FakeApi.calls, _FakeApi.refuse_space = [], refuse_space
     monkeypatch.setattr(huggingface_hub, "HfApi", _FakeApi)
     monkeypatch.chdir(tmp_path)
     (tmp_path / "models/ace-id-nllb").mkdir(parents=True)
@@ -120,19 +127,32 @@ def _run_publish_cell(tmp_path, monkeypatch, trained):
     class Saver:
         def half(self): return self
         def save_pretrained(self, d): import os; os.makedirs(d, exist_ok=True)
-    exec(src, {"model": Saver(), "tok": Saver(), "HF_TOKEN": "hf_test", "TRAINED": trained, "MODEL_PRIVATE": True})
-    return _FakeApi.calls
+    ns = {"model": Saver(), "tok": Saver(), "HF_TOKEN": "hf_test", "TRAINED": trained, "MODEL_PRIVATE": True}
+    exec(src, ns)
+    return _FakeApi.calls, ns
 
 def test_notebook_publish_cell_trained_private_model_public_app(tmp_path, monkeypatch):
     """The app's variable and secret must be set BEFORE the app files are uploaded (the first build reads them)."""
-    calls = _run_publish_cell(tmp_path, monkeypatch, trained=True)
+    calls, ns = _run_publish_cell(tmp_path, monkeypatch, trained=True)
     assert calls == [("init", "hf_test"), ("create", "muttu/ace-id-nllb", None, True), ("settings", "muttu/ace-id-nllb", True),
                      ("upload", "muttu/ace-id-nllb", "models/ace-id-nllb-fp16"),
                      ("create", "muttu/penerjemah-aceh", "space", False), ("var", "muttu/penerjemah-aceh", "MODEL_ID", "muttu/ace-id-nllb"),
                      ("secret", "muttu/penerjemah-aceh", "HF_TOKEN", "hf_test"), ("upload", "muttu/penerjemah-aceh", "space")]
-    assert (tmp_path / "models/ace-id-nllb-fp16/RESULTS.md").exists()
+    assert ns["APP_ONLINE"] is True and (tmp_path / "models/ace-id-nllb-fp16/RESULTS.md").exists()
 
-def test_notebook_publish_cell_without_training_still_publishes_app_with_base_model(tmp_path, monkeypatch):
-    calls = _run_publish_cell(tmp_path, monkeypatch, trained=False)
+def test_notebook_publish_cell_survives_paid_plan_refusal(tmp_path, monkeypatch, capsys):
+    """Hugging Face answers 402 for a Gradio Space on a free account: the model must still be saved and the cell must not crash."""
+    calls, ns = _run_publish_cell(tmp_path, monkeypatch, trained=True, refuse_space=True)
+    assert ("upload", "muttu/ace-id-nllb", "models/ace-id-nllb-fp16") in calls and not any(c[0] == "var" for c in calls)
+    assert ns["APP_ONLINE"] is False and "Payment required" in capsys.readouterr().out
+
+def test_notebook_publish_cell_without_training_still_tries_app_with_base_model(tmp_path, monkeypatch):
+    calls, ns = _run_publish_cell(tmp_path, monkeypatch, trained=False)
     assert calls == [("init", "hf_test"), ("create", "muttu/penerjemah-aceh", "space", False),
                      ("var", "muttu/penerjemah-aceh", "MODEL_ID", "facebook/nllb-200-distilled-600M"), ("upload", "muttu/penerjemah-aceh", "space")]
+
+def test_both_notebooks_end_by_starting_the_app_with_a_public_link():
+    for name in ("train_colab.ipynb", "demo_colab.ipynb"):
+        nb = json.load(open(ROOT / "notebooks" / name, encoding="utf-8"))
+        last = "".join(nb["cells"][-1]["source"])
+        assert "app.start(" in last and "share=True" in last, name

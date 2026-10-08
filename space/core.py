@@ -62,13 +62,14 @@ def accuracy_markdown(info, model_id):
 
 # --- engine ------------------------------------------------------------------------------------------------------------
 class Engine:
-    def __init__(self, model_id=None, beams=4, batch_size=8):
+    def __init__(self, model_id=None, beams=4, batch_size=8, device=None):
         import torch
         from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
         self.model_id = model_id or os.environ.get("MODEL_ID") or BASE_MODEL
         self.torch, self.beams, self.batch_size = torch, beams, batch_size
+        self.device = device or ("cuda" if torch.cuda.is_available() else "cpu")      # GPU when run in Colab, CPU on a server
         self.tok = AutoTokenizer.from_pretrained(self.model_id, src_lang=SRC)
-        self.model = AutoModelForSeq2SeqLM.from_pretrained(self.model_id).float().eval()   # .float(): our upload is fp16 to save space
+        self.model = AutoModelForSeq2SeqLM.from_pretrained(self.model_id).float().to(self.device).eval()   # .float(): our upload is fp16
         self.bos = self.tok.convert_tokens_to_ids(TGT)
         self.info = load_info(self.model_id)
         self.cache = {}
@@ -77,7 +78,7 @@ class Engine:
         out = []
         for b in range(0, len(sents), self.batch_size):
             chunk = sents[b:b + self.batch_size]
-            enc = self.tok(chunk, return_tensors="pt", padding=True, truncation=True, max_length=200)
+            enc = self.tok(chunk, return_tensors="pt", padding=True, truncation=True, max_length=200).to(self.device)
             with self.torch.inference_mode():
                 gen = self.model.generate(**enc, forced_bos_token_id=self.bos, num_beams=self.beams,
                                           max_new_tokens=min(256, int(enc["input_ids"].shape[1] * 2) + 10))
