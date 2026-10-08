@@ -7,6 +7,19 @@
 
 `./run_app.sh --share` also prints a temporary public link (while the window stays open). `notebooks/demo_colab.ipynb` runs the app in Colab instead.
 
+## Share it with friends or present it (Mac or Linux)
+
+**Friends:**
+1. Get the code: `git clone https://github.com/Mutaib-yye/aceh_code && cd aceh_code`
+2. Get the model file `ace-id-nllb.zip` (about 1.2 GB) from the presenter, on a USB stick, by AirDrop, or from a Dropbox/WeTransfer link. Put it in your **Downloads** folder and keep its name.
+3. Run `./run_app.sh`. The first run takes about 10 minutes: it installs Python packages and unpacks the model. Then the browser opens http://127.0.0.1:7860. Later runs take seconds and work offline. Needs Python 3.10 or newer.
+
+**Presenter (you):** the zip comes from the Colab notebook's last cell ("make the model zip"), or from your Mac after the app has run once:
+`cd ~/aceh_code/models && zip -r ~/Desktop/ace-id-nllb.zip ace-id-nllb`
+Don't send it through Google Drive: yours is full.
+
+The model is for classroom and research use only (NLLB weights are CC-BY-NC 4.0). Publishing it publicly waits for Andrie's confirmation of the data licences.
+
 Turns Acehnese sources (hikayat PDFs, text files) into a **screened, normalized, deduplicated** sentence set, drafts an Indonesian
 translation, and exports **Atlas-style JSON**. It comes with a small web app and a test suite.
 
