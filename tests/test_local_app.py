@@ -53,3 +53,14 @@ def test_app_serves_translations_on_localhost(tmp_path):
     finally:
         import gradio as gr
         gr.close_all()
+
+def test_local_model_run_sets_offline_mode(tmp_path, monkeypatch):
+    import os
+    d = _model_dir(tmp_path / "m")
+    monkeypatch.delenv("HF_HUB_OFFLINE", raising=False)
+    captured = {}
+    monkeypatch.setattr(local_app, "load_space_app", lambda: type("A", (), {"start": staticmethod(lambda model, **kw: captured.update(model=model, kw=kw))}))
+    local_app.run(str(d), open_browser=False)
+    assert os.environ.get("HF_HUB_OFFLINE") == "1" and captured["model"] == str(d)
+    assert captured["kw"]["server_name"] == "127.0.0.1" and captured["kw"]["server_port"] == 7860
+    monkeypatch.delenv("HF_HUB_OFFLINE", raising=False)

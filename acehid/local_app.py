@@ -74,6 +74,8 @@ def load_space_app():
 
 def run(model=None, share=False, port=7860, open_browser=True, **launch_extra):
     model = model or ensure_model()
+    if Path(model).is_dir():
+        os.environ.setdefault("HF_HUB_OFFLINE", "1")                # model is on this computer: never touch the network
     print(f"model: {model}")
     print(f"starting the app at http://127.0.0.1:{port}  (stop with Ctrl+C)")
     return load_space_app().start(model, share=share, server_name="127.0.0.1", server_port=port, inbrowser=open_browser, **launch_extra)
