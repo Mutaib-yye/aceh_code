@@ -20,6 +20,8 @@ def main(argv=None):
     sub.add_parser("fetch-quran", help="Quran: Acehnese (Tgk. Mahjiddin Jusuf) + Indonesian editions from GitHub -> data/raw/external/quran (spelling reference; optional training source)")
     p = sub.add_parser("eval", help="chrF/BLEU/TER on NusaX valid+test"); p.add_argument("--provider", nargs="+", default=["copy"]); p.add_argument("--model"); p.add_argument("--fewshot", type=int, default=5); p.add_argument("--limit", type=int)
     p = sub.add_parser("flores", help="FLORES-200 ace_Latn/ind_Latn (tar, zip or folder) -> data/final/flores"); p.add_argument("path")
+    p = sub.add_parser("scan-archive", help="inventory a RAR/ZIP/folder of PDFs: pages, text layer, language, bilingual candidates (counts only)")
+    p.add_argument("src")
     p = sub.add_parser("hikayat-pairs", help="bilingual hikayat book (Acehnese section + Indonesian section) -> aligned pairs")
     p.add_argument("pdf"); p.add_argument("--ace-pages", required=True, help="e.g. 14-59"); p.add_argument("--ind-pages", required=True, help="e.g. 60-105")
     p.add_argument("--test-pages", required=True, help="Acehnese pages held out for testing, e.g. 50-53"); p.add_argument("--valid-pages", required=True)
@@ -85,6 +87,8 @@ def main(argv=None):
         json.dump(res, open(P("reports/eval_nusax.json"), "w"), indent=1)
     elif a.cmd == "flores":
         from . import flores; print(json.dumps(flores.run(a.path)))
+    elif a.cmd == "scan-archive":
+        from . import archive_scan; archive_scan.scan(a.src)
     elif a.cmd == "hikayat-pairs":
         from . import bilingual
         print(json.dumps(bilingual.run(a.pdf, a.ace_pages, a.ind_pages, a.test_pages, a.valid_pages, a.slug, a.source_id, a.title), indent=1))
