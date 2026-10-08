@@ -97,19 +97,22 @@ def test_committed_hikayat_split_is_leak_free():
     from acehid.train import assert_no_leak
     assert_no_leak([(r["ace"], r["ind"]) for r in tr], [(r["ace"], r["ind"]) for r in va + te])
 
-def test_notebook_publish_cell_calls_hugging_face_in_the_right_order(tmp_path, monkeypatch):
-    """Runs the notebook's last cell against a fake HfApi: the Space variable must be set BEFORE the app files are uploaded."""
+class _FakeApi:
+    calls = []
+    def __init__(self, token): self.calls.append(("init", token))
+    def whoami(self): return {"name": "muttu"}
+    def create_repo(self, repo_id, **kw): self.calls.append(("create", repo_id, kw.get("repo_type"), kw.get("private")))
+    def update_repo_settings(self, repo_id, **kw): self.calls.append(("settings", repo_id, kw.get("private")))
+    def upload_folder(self, repo_id, folder_path, **kw): self.calls.append(("upload", repo_id, folder_path))
+    def add_space_variable(self, repo_id, key, value): self.calls.append(("var", repo_id, key, value))
+    def add_space_secret(self, repo_id, key, value): self.calls.append(("secret", repo_id, key, value))
+
+def _run_publish_cell(tmp_path, monkeypatch, trained):
     import huggingface_hub
     nb = json.load(open(ROOT / "notebooks/train_colab.ipynb", encoding="utf-8"))
     src = "".join(nb["cells"][-1]["source"])
-    calls = []
-    class FakeApi:
-        def __init__(self, token): calls.append(("init", token))
-        def whoami(self): return {"name": "muttu"}
-        def create_repo(self, repo_id, **kw): calls.append(("create", repo_id, kw.get("repo_type")))
-        def upload_folder(self, repo_id, folder_path, **kw): calls.append(("upload", repo_id, folder_path))
-        def add_space_variable(self, repo_id, key, value): calls.append(("var", repo_id, key, value))
-    monkeypatch.setattr(huggingface_hub, "HfApi", FakeApi)
+    _FakeApi.calls = []
+    monkeypatch.setattr(huggingface_hub, "HfApi", _FakeApi)
     monkeypatch.chdir(tmp_path)
     (tmp_path / "models/ace-id-nllb").mkdir(parents=True)
     for f in ("training_log.json", "RESULTS.md", "README.md"):
@@ -117,8 +120,19 @@ def test_notebook_publish_cell_calls_hugging_face_in_the_right_order(tmp_path, m
     class Saver:
         def half(self): return self
         def save_pretrained(self, d): import os; os.makedirs(d, exist_ok=True)
-    exec(src, {"model": Saver(), "tok": Saver(), "HF_TOKEN": "hf_test"})
-    assert calls == [("init", "hf_test"), ("create", "muttu/ace-id-nllb", None), ("upload", "muttu/ace-id-nllb", "models/ace-id-nllb-fp16"),
-                     ("create", "muttu/penerjemah-aceh", "space"), ("var", "muttu/penerjemah-aceh", "MODEL_ID", "muttu/ace-id-nllb"),
-                     ("upload", "muttu/penerjemah-aceh", "space")]
+    exec(src, {"model": Saver(), "tok": Saver(), "HF_TOKEN": "hf_test", "TRAINED": trained, "MODEL_PRIVATE": True})
+    return _FakeApi.calls
+
+def test_notebook_publish_cell_trained_private_model_public_app(tmp_path, monkeypatch):
+    """The app's variable and secret must be set BEFORE the app files are uploaded (the first build reads them)."""
+    calls = _run_publish_cell(tmp_path, monkeypatch, trained=True)
+    assert calls == [("init", "hf_test"), ("create", "muttu/ace-id-nllb", None, True), ("settings", "muttu/ace-id-nllb", True),
+                     ("upload", "muttu/ace-id-nllb", "models/ace-id-nllb-fp16"),
+                     ("create", "muttu/penerjemah-aceh", "space", False), ("var", "muttu/penerjemah-aceh", "MODEL_ID", "muttu/ace-id-nllb"),
+                     ("secret", "muttu/penerjemah-aceh", "HF_TOKEN", "hf_test"), ("upload", "muttu/penerjemah-aceh", "space")]
     assert (tmp_path / "models/ace-id-nllb-fp16/RESULTS.md").exists()
+
+def test_notebook_publish_cell_without_training_still_publishes_app_with_base_model(tmp_path, monkeypatch):
+    calls = _run_publish_cell(tmp_path, monkeypatch, trained=False)
+    assert calls == [("init", "hf_test"), ("create", "muttu/penerjemah-aceh", "space", False),
+                     ("var", "muttu/penerjemah-aceh", "MODEL_ID", "facebook/nllb-200-distilled-600M"), ("upload", "muttu/penerjemah-aceh", "space")]
