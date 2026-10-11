@@ -39,6 +39,7 @@ def main(argv=None):
     p.add_argument("--lr", type=float, default=1e-4); p.add_argument("--batch-size", type=int, default=8); p.add_argument("--patience", type=int, default=2)
     sub.add_parser("langid-build", help="retrain the language-check model from AcehX + NusaX train")
     p = sub.add_parser("import-tmx", help="OPUS TMX (Wikipedia ace-id) -> filtered pairs in data/final/wikipedia/pairs.json"); p.add_argument("tmx")
+    p = sub.add_parser("malik-mawot", help="Hikayat Malik Mawot thesis PDF (verse + translation) -> data/human/malik_mawot_pairs.json"); p.add_argument("pdf")
     p = sub.add_parser("kamus-build", help="personal lookup: build the local text of your Kamus Budaya PDF (data/raw/kamus/, git-ignored)"); p.add_argument("pdf")
     p = sub.add_parser("kamus", help="personal lookup of an Acehnese word in the Kamus Budaya (run kamus-build first)"); p.add_argument("word", nargs="+")
     p = sub.add_parser("app", help="translator app on this computer (http://127.0.0.1:7860), uses your trained model")
@@ -117,6 +118,8 @@ def main(argv=None):
         from . import langid; print(json.dumps(langid.build(), indent=1))
     elif a.cmd == "import-tmx":
         from . import tmx; print(json.dumps(tmx.run(a.tmx)))
+    elif a.cmd == "malik-mawot":
+        from . import malik_mawot; print(json.dumps(malik_mawot.run(a.pdf)))
     elif a.cmd == "kamus-build":
         from . import kamus; n, out = kamus.build(a.pdf); print(f"{n} pages -> {out}")
     elif a.cmd == "kamus":
