@@ -19,3 +19,6 @@ models/
 venv/
 data/final/combined/
 data/human/
+# the Kamus Budaya book is copyrighted (Balai Bahasa Provinsi Aceh): never commit it
+Kamus*.pdf
+Kamus%20*.pdf
