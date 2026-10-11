@@ -40,6 +40,7 @@ def main(argv=None):
     sub.add_parser("langid-build", help="retrain the language-check model from AcehX + NusaX train")
     p = sub.add_parser("import-tmx", help="OPUS TMX (Wikipedia ace-id) -> filtered pairs in data/final/wikipedia/pairs.json"); p.add_argument("tmx")
     p = sub.add_parser("malik-mawot", help="Hikayat Malik Mawot thesis PDF (verse + translation) -> data/human/malik_mawot_pairs.json"); p.add_argument("pdf")
+    p = sub.add_parser("seed-pivot", help="NLLB-Seed Acehnese+English -> Acehnese+Indonesian (Indonesian by NLLB, machine target); GPU recommended -> data/final/seed_pivot/pairs.json"); p.add_argument("--limit", type=int)
     p = sub.add_parser("kamus-build", help="personal lookup: build the local text of your Kamus Budaya PDF (data/raw/kamus/, git-ignored)"); p.add_argument("pdf")
     p = sub.add_parser("kamus", help="personal lookup of an Acehnese word in the Kamus Budaya (run kamus-build first)"); p.add_argument("word", nargs="+")
     p = sub.add_parser("app", help="translator app on this computer (http://127.0.0.1:7860), uses your trained model")
@@ -120,6 +121,8 @@ def main(argv=None):
         from . import tmx; print(json.dumps(tmx.run(a.tmx)))
     elif a.cmd == "malik-mawot":
         from . import malik_mawot; print(json.dumps(malik_mawot.run(a.pdf)))
+    elif a.cmd == "seed-pivot":
+        from . import pivot; print(json.dumps(pivot.run(limit=a.limit)))
     elif a.cmd == "kamus-build":
         from . import kamus; n, out = kamus.build(a.pdf); print(f"{n} pages -> {out}")
     elif a.cmd == "kamus":

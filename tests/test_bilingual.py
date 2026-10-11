@@ -155,5 +155,5 @@ def test_both_notebooks_end_by_starting_the_app_with_a_public_link():
 def test_notebook_trains_on_wikipedia_and_malik_mawot_pairs():
     nb = json.load(open(ROOT / "notebooks/train_colab.ipynb", encoding="utf-8"))
     src = _cell(nb, "build-train")
-    assert "data/final/wikipedia/pairs.json" in src and "malik-mawot" in src and "--extra {' '.join(extras)}" in src
+    assert "data/final/wikipedia/pairs.json" in src and "malik-mawot" in src and "--extra {' '.join(extras)}" in src and "seed-pivot" in src
     assert (ROOT / "data/final/wikipedia/pairs.json").exists() and (ROOT / "SKRIPSI FULL INAYATI.pdf").exists()
