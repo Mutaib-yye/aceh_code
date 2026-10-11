@@ -33,9 +33,11 @@ def test_split_sentences():
 class FakeEngine(core.Engine):
     """Engine without a model: 'translates' by upper-casing, counting calls, so the text logic is tested exactly."""
     def __init__(self):
-        self.model_id, self.info, self.cache, self.calls = "fake", None, {}, []
+        self.model_id, self.info, self.cache, self.calls, self.beams = "fake", None, {}, [], 4
     def _generate(self, sents):
         self.calls.append(list(sents)); return [s.upper() for s in sents]
+    def explain(self, normalized, indonesian=None):
+        return normalized.split(), (indonesian or "").split()
 
 def test_translate_keeps_lines_normalizes_caches_and_warns():
     e = FakeEngine()
@@ -81,10 +83,23 @@ def test_ui_builds_and_translate_event_works():
     demo = app.build_ui(FakeEngine())
     assert isinstance(demo, gr.Blocks)
     fn = next(d.fn for d in demo.fns.values() if d.api_name == "translate")
-    out, notes, details = fn("Gobnyan geujak u pasi uroe nyoe.")
+    out, notes, details, how = fn("Gobnyan geujak u pasi uroe nyoe.")
     assert out == "GOBNYAN GEUJAK U PASI UROE NYOE." and notes.visible is False and details[0][2] == out
+    assert "Langkah 1" in how and "`Gobnyan`" in how and "Langkah 2" in how
     assert app.launch_kwargs()["css"] and app.EXAMPLES
     test = {r["ace"] for r in json.load(open(ROOT / "data/final/nusax/test.json", encoding="utf-8"))}
     hik = ROOT / "data/final/hikayat/abu_sammah/test.json"
     test |= {r["ace"] for r in json.load(open(hik, encoding="utf-8"))} if hik.exists() else set()
     assert all(e in test for e in app.EXAMPLES), "demo examples must come from a test set (never trained on)"
+
+def test_explain_shows_real_encoder_and_decoder_tokens(tmp_path):
+    pytest.importorskip("torch"); spm = pytest.importorskip("sentencepiece")
+    from transformers import NllbTokenizer
+    (tmp_path / "c.txt").write_text("Gobnyan geujak u pasi\nDia pergi ke pantai\nAneuek miet\nAnak kecil", encoding="utf-8")
+    spm.SentencePieceTrainer.train(input=str(tmp_path / "c.txt"), model_prefix=str(tmp_path / "sp"), vocab_size=40, model_type="bpe", hard_vocab_limit=False, minloglevel=2)
+    tok = NllbTokenizer(vocab_file=str(tmp_path / "sp.model"), src_lang="ace_Latn", tgt_lang="ind_Latn")
+    e = core.Engine.__new__(core.Engine)
+    e.tok, e.beams = tok, 4
+    src, tgt = e.explain("Gobnyan geujak", "Dia pergi")
+    assert src[0] == "ace_Latn" and src[-1] == "</s>"            # encoder: Acehnese language token ... end of sentence
+    assert tgt[0] == "ind_Latn" and tgt[-1] == "</s>"            # decoder: starts from the Indonesian language token

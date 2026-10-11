@@ -32,6 +32,19 @@ CSS = """
 SHORTCUT_JS = """() => { document.addEventListener('keydown', e => {
   if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') { const b = document.querySelector('#go'); if (b) b.click(); } }); }"""
 
+def explain_md(engine, details):
+    if not details:
+        return ""
+    _, norm, ind = details[0]
+    src, tgt = engine.explain(norm, ind)
+    code = lambda ts: " ".join(f"`{t}`" for t in ts)
+    return ("**Langkah 1 · Encoder (membaca bahasa Aceh).** Teks yang sudah dinormalisasi dipecah menjadi potongan kata (token):\n\n"
+            + code(src)
+            + f"\n\n**Langkah 2 · Decoder (menulis bahasa Indonesia).** Ditulis satu token per langkah, dengan {engine.beams} kandidat (beam search), "
+              "dimulai dari token bahasa `ind_Latn`:\n\n" + code(tgt)
+            + "\n\n**Langkah 3 · Hasil.** Potongan token digabung kembali menjadi kalimat Indonesia di atas.\n\n"
+              "*Hanya kalimat pertama yang ditampilkan. Pasangan kalimat (Aceh ↔ Indonesia) ada di “Detail per kalimat”.*")
+
 def build_ui(engine):
     finetuned = engine.info is not None and "tests" in (engine.info or {})
     pill = ('<span class="pill ok">Model khusus Aceh (fine-tuned)</span>' if finetuned
@@ -39,7 +52,8 @@ def build_ui(engine):
 
     def run(text):
         out, details, notes = engine.translate(text)
-        return out, gr.Markdown(value="\n\n".join(f"⚠️ {n}" for n in notes), visible=bool(notes)), details
+        return (out, gr.Markdown(value="\n\n".join(f"⚠️ {n}" for n in notes), visible=bool(notes)), details,
+                explain_md(engine, details))
 
     with gr.Blocks(title="Penerjemah Aceh → Indonesia") as demo:
         gr.HTML(f"""<div id="hero"><h1>Penerjemah <span>Aceh → Indonesia</span></h1>
@@ -59,6 +73,8 @@ def build_ui(engine):
             gr.Markdown("Ejaan dinormalisasi seperti data latih (mis. *löen → loen*, *njang → nyang*) sebelum diterjemahkan.")
             details = gr.Dataframe(headers=["Bahasa Aceh", "Dinormalisasi", "Bahasa Indonesia"], datatype=["str", "str", "str"],
                                    interactive=False, wrap=True)
+        with gr.Accordion("Cara kerja model · How the model works (encoder → decoder)", open=False):
+            how = gr.Markdown("Klik *Terjemahkan* untuk melihat token yang dibaca dan ditulis model.")
         with gr.Accordion("Seberapa akurat? · How accurate is it?", open=False):
             gr.Markdown(accuracy_markdown(engine.info, engine.model_id))
             gr.Markdown("Terjemahan mesin tidak pernah 100 % sempurna. Untuk teks penting, mintalah penutur bahasa Aceh memeriksanya. "
@@ -66,9 +82,9 @@ def build_ui(engine):
         trained = f"fine-tuned on {sources_text(engine.info)}" if finetuned else "base model"
         gr.HTML(f'<div id="foot">Model: Meta NLLB-200 (CC-BY-NC 4.0), {trained} · '
                 'Universitas Syiah Kuala research project · non-commercial use</div>')
-        go.click(run, inp, [out, notes, details], api_name="translate")
-        inp.submit(run, inp, [out, notes, details])
-        clear.click(lambda: ("", "", gr.Markdown(value="", visible=False), []), None, [inp, out, notes, details])
+        go.click(run, inp, [out, notes, details, how], api_name="translate")
+        inp.submit(run, inp, [out, notes, details, how])
+        clear.click(lambda: ("", "", gr.Markdown(value="", visible=False), [], ""), None, [inp, out, notes, details, how])
     return demo
 
 def launch_kwargs():

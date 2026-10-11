@@ -20,6 +20,10 @@ def main(argv=None):
     sub.add_parser("fetch-quran", help="Quran: Acehnese (Tgk. Mahjiddin Jusuf) + Indonesian editions from GitHub -> data/raw/external/quran (spelling reference; optional training source)")
     p = sub.add_parser("eval", help="chrF/BLEU/TER on NusaX valid+test"); p.add_argument("--provider", nargs="+", default=["copy"]); p.add_argument("--model"); p.add_argument("--fewshot", type=int, default=5); p.add_argument("--limit", type=int)
     p = sub.add_parser("flores", help="FLORES-200 ace_Latn/ind_Latn (tar, zip or folder) -> data/final/flores"); p.add_argument("path")
+    p = sub.add_parser("make-sheets", help="translation sheets for Acehnese speakers: sentences + words (data/human/sheets/)")
+    p.add_argument("--sentences", type=int, default=200); p.add_argument("--words", type=int, default=300)
+    p = sub.add_parser("import-sheets", help="import the filled sheets: only rows with a translator AND a different checker")
+    p.add_argument("--sentences"); p.add_argument("--words")
     p = sub.add_parser("scan-archive", help="inventory a RAR/ZIP/folder of PDFs: pages, text layer, language, bilingual candidates (counts only)")
     p.add_argument("src")
     p = sub.add_parser("hikayat-pairs", help="bilingual hikayat book (Acehnese section + Indonesian section) -> aligned pairs")
@@ -90,6 +94,10 @@ def main(argv=None):
         json.dump(res, open(P("reports/eval_nusax.json"), "w"), indent=1)
     elif a.cmd == "flores":
         from . import flores; print(json.dumps(flores.run(a.path)))
+    elif a.cmd == "make-sheets":
+        from . import sheets; print(json.dumps({"sentences": sheets.make_sentence_sheet(n=a.sentences), "words": sheets.make_word_sheet(n=a.words)}))
+    elif a.cmd == "import-sheets":
+        from . import sheets; print(json.dumps(sheets.import_sheets(a.sentences, a.words)))
     elif a.cmd == "scan-archive":
         from . import archive_scan; archive_scan.scan(a.src)
     elif a.cmd == "hikayat-pairs":

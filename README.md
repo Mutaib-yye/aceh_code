@@ -9,6 +9,15 @@
 
 `./run_app.sh --share` also prints a temporary public link (while the window stays open). `notebooks/demo_colab.ipynb` runs the app in Colab instead.
 
+## Getting human-translated pairs (translation sheets)
+
+The Indonesian side must come from people who speak Acehnese, never from a machine (including AI assistants).
+
+1. `python -m acehid make-sheets` writes two sheets to `data/human/sheets/`: **sentences.csv** (200 Acehnese sentences not yet in our data) and **words.csv** (300 frequent Acehnese words with example sentences), plus **TRANSLATOR_GUIDE.txt** for the translators.
+2. Each sentence needs a **translator** and a different **checker**. Rows marked `?` or with the same person twice are not used.
+3. `python -m acehid import-sheets --sentences <filled sentences.csv> --words <filled words.csv>` writes `data/human/pairs.json` and `data/human/glossary.csv`, containing only accepted rows.
+4. Accepted pairs can be added to training with `python -m acehid build-train --extra data/human/pairs.json`, and the leak check still applies.
+
 ## Share it with friends or present it (Mac or Linux)
 
 **Friends:**

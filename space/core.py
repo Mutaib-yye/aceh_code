@@ -109,3 +109,12 @@ class Engine:
         if any(len(n.split()) < MIN_WORDS for n in flat):
             notes.append("Single words and very short phrases are often ambiguous. A full sentence gives a better translation.")
         return out, details, notes
+
+    def explain(self, normalized, indonesian=None):
+        """The real subword tokens: what the encoder reads (Acehnese) and what the decoder writes (Indonesian)."""
+        src = self.tok.convert_ids_to_tokens(self.tok(normalized).input_ids)
+        tgt = []
+        if indonesian:
+            self.tok.tgt_lang = TGT
+            tgt = self.tok.convert_ids_to_tokens(self.tok(text_target=indonesian).input_ids)
+        return src, tgt

@@ -49,7 +49,7 @@ def test_app_serves_translations_on_localhost(tmp_path):
     try:
         from gradio_client import Client
         out = Client("http://127.0.0.1:7871/", verbose=False).predict("Gobnyan geujak u pasi.", api_name="/translate")
-        assert isinstance(out[0], str) and len(out) == 3
+        assert isinstance(out[0], str) and len(out) == 4
     finally:
         import gradio as gr
         gr.close_all()
