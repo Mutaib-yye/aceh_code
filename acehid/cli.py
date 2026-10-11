@@ -38,6 +38,8 @@ def main(argv=None):
     p.add_argument("--data", default="data/final/combined"); p.add_argument("--epochs", type=int, default=10, help="maximum; stops early when validation stops improving")
     p.add_argument("--lr", type=float, default=1e-4); p.add_argument("--batch-size", type=int, default=8); p.add_argument("--patience", type=int, default=2)
     sub.add_parser("langid-build", help="retrain the language-check model from AcehX + NusaX train")
+    p = sub.add_parser("kamus-build", help="personal lookup: build the local text of your Kamus Budaya PDF (data/raw/kamus/, git-ignored)"); p.add_argument("pdf")
+    p = sub.add_parser("kamus", help="personal lookup of an Acehnese word in the Kamus Budaya (run kamus-build first)"); p.add_argument("word", nargs="+")
     p = sub.add_parser("app", help="translator app on this computer (http://127.0.0.1:7860), uses your trained model")
     p.add_argument("--model", help="model folder or id (default: models/ace-id-nllb, fetched once)"); p.add_argument("--share", action="store_true", help="also make a temporary public link")
     p.add_argument("--port", type=int, default=7860)
@@ -112,6 +114,10 @@ def main(argv=None):
         train.train(a.base, a.out, a.data, a.epochs, a.lr, a.batch_size, patience=a.patience)
     elif a.cmd == "langid-build":
         from . import langid; print(json.dumps(langid.build(), indent=1))
+    elif a.cmd == "kamus-build":
+        from . import kamus; n, out = kamus.build(a.pdf); print(f"{n} pages -> {out}")
+    elif a.cmd == "kamus":
+        from . import kamus; kamus.show(" ".join(a.word))
     elif a.cmd == "app":
         from . import local_app; local_app.run(a.model, share=a.share, port=a.port)
     elif a.cmd == "serve":
