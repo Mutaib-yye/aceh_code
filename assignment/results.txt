@@ -1,0 +1,6 @@
+sentences: 10000  train: 9000  test: 1000
+vocab: 15275  unique trigrams: 85877
+Perplexity unigram: 1865.00
+Perplexity trigram (add-k): 8598.29
+Perplexity trigram (interpolated): 2592.17
+Top TF-IDF terms: ['pajoh', 'jalo', 'baronet', 'makin', 'jampang', 'djimarit', 'igoc', 'djeueb', 'mendendam', 'dri']

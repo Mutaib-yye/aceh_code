@@ -1,0 +1,21 @@
+sentence_id,sentence,top_terms(tfidf)
+0,bak watee agama eseulam ka,eseulam:1.315; agama:1.163; watee:0.947; ka:0.637; bak:0.583
+1,kamoe na meuteurimong peusanan keu gata bak ayahteu di gamping,meuteurimong:0.952; peusanan:0.952; ayahteu:0.952; gamping:0.952; gata:0.561
+2,tapi hana cit leumah ureueng di sinan,leumah:0.973; sinan:0.850; tapi:0.755; cit:0.645; ureueng:0.523
+3,ci tadeungo saboh masakan aceh nyang jibaca le ngonteuh,ngonteuh:1.057; masakan:1.012; jibaca:0.956; tadeungo:0.849; ci:0.786
+4,raga dabeueh kah pat kapeuduek,kapeuduek:1.903; raga:1.603; dabeueh:1.603; pat:1.171; kah:1.090
+5,geupeunyata cit sabang nyan lam areuti mandum wilayah kotamadya seubagoe banda industri,kotamadya:0.793; industri:0.717; geupeunyata:0.689; sabang:0.668; areuti:0.668
+6,but tan di jalani lagee janji,jalani:1.586; but:1.250; janji:1.202; tan:1.050; lagee:0.780
+7,agam akan seureng jijak boh inong tunggai dan pasangan leumo aneuk leumo,leumo:1.240; tunggai:0.793; seureng:0.689; pasangan:0.689; akan:0.522
+8,naga komodo kadang kadang jijak mita manusia atawa manyet nibak kubu nyang hana dalam,kadang:0.951; manyet:0.614; kubu:0.531; komodo:0.497; naga:0.484
+9,hn guna bahasa lam donya,hn:1.653; guna:1.453; bahasa:1.362; donya:1.100; lam:0.670
+10,pante cermin nakeuh saboh gampong nyang na lam keucamatan jaya,cermin:0.952; jaya:0.699; pante:0.650; keucamatan:0.546; gampong:0.470
+11,menyo droe glak keunamit jak laju,keunamit:1.586; glak:1.519; menyo:1.336; laju:0.789; droe:0.781
+12,lawang nakeuh gampoeng di peudada,lawang:1.903; peudada:1.765; gampoeng:1.106; nakeuh:0.692; di:0.594
+13,niet ngon hate nyang wajeb that lafadh sunat,lafadh:1.190; niet:0.915; sunat:0.915; wajeb:0.851; hate:0.769
+14,mahasiswa bebas geupakeek bus kampus hana biaya,geupakeek:1.360; bus:1.302; biaya:1.261; bebas:1.229; kampus:1.082
+15,bukel meubantu bak peukureueng penggunaan keureutah,peukureueng:1.519; meubantu:1.434; penggunaan:1.403; bukel:1.377; keureutah:1.377
+16,aneuek peusantren di peugah salah,peusantren:1.822; aneuek:1.362; salah:1.138; peugah:1.048; di:0.594
+17,meunyoe hana bagah geupeutamong lam umpangnyan kayem that rhot lom teuma lazem jih sigoe peuteungoh rametnyan na dua atawa trok limong boh kiree meuteume sigoe beuot nyang kheueh jeuet ureueng meuramet hana treb geujak mita kiree geuwoe inan meuteume geumanoe meuteume seumayang isya sira geukhaza seumayang mugreb,meuteume:0.528; kiree:0.388; sigoe:0.311; seumayang:0.266; umpangnyan:0.202
+18,dangdeunak jipaksa keurija le mak mo jih tiep uroe jak pot on rumpuen lam blang atawa lam paya,jipaksa:0.490; dangdeunak:0.468; mo:0.468; rumpuen:0.445; pot:0.434
+19,jaweueb peulandoek pajan teuma katem muplueng muplueng ngon kee,muplueng:1.911; katem:0.935; peulandoek:0.868; pajan:0.826; jaweueb:0.802
