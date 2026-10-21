@@ -15,7 +15,7 @@ All numbers below were measured in this repo, except where marked **not measured
 
 Leak control for training (`build-train`): any training pair whose Acehnese or Indonesian side matches a validation/test
 sentence (case, diacritics, punctuation, old spelling ignored) or is ≥ 90 % similar on the Acehnese side is dropped; `train`
-refuses to start if any leak remains. Current build without FLORES: 1,932 training pairs, 0 leaks.
+refuses to start if any leak remains. Current build without FLORES: 8,123 training pairs, 0 leaks (hikayat Abu Sammah 1,432; Quran 5,466; NusaX 500; Wikipedia 375; hikayat Malik Mawot 350). The NLLB-Seed pivot (`seed-pivot`, about 5,750 pairs with machine Indonesian) is added by the Colab notebook when `USE_SEED_PIVOT` is on.
 
 ## Quality checks
 - Language check (character n-grams, trained on AcehX + NusaX train, tested on NusaX valid+test): Acehnese recognised 96–98 %,
@@ -47,3 +47,12 @@ The Colab notebook (`notebooks/train_colab.ipynb`) measures base vs fine-tuned o
 - Atlas JSON schema is unconfirmed (plan section 17); Indonesian output is not normalized to PUEBI.
 - Dedup finds spelling/format variants, not paraphrases.
 - Licences to confirm with Andrie: Hikayat Abu Sammah (Depdikbud), AcehX, Quran translation.
+
+## Added later
+- `import-tmx`: Wikipedia ace-id TMX -> 375 filtered pairs (`data/final/wikipedia/pairs.json`, CC-BY-SA).
+- `malik-mawot`: thesis edition (verse + translation) -> 350 pairs, `data/human/malik_mawot_pairs.json` (git-ignored).
+- `seed-pivot`: NLLB-Seed Acehnese + English -> Acehnese + Indonesian (NLLB machine translation); GPU.
+- `kamus-build` / `kamus`: personal lookup in the Kamus Budaya book (local text in `data/raw/kamus/`).
+- App: optional word-by-word panel from the 1985 dictionary list (`data/glossary/`), meanings ranked by the translation.
+- `compare-approaches`: direct vs transfer baselines on the NusaX test (chrF++ 32.0 copy / 35.5 direct / 39.2 transfer). See `reports/mt_approaches.md`.
+- Tests: 86.
