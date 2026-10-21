@@ -22,3 +22,5 @@ data/human/
 # the Kamus Budaya book is copyrighted (Balai Bahasa Provinsi Aceh): never commit it
 Kamus*.pdf
 Kamus%20*.pdf
+# Kamus Aceh-Indonesia (1985) word list: source book is copyrighted, keep the CSV local
+data/glossary/

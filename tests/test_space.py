@@ -83,9 +83,10 @@ def test_ui_builds_and_translate_event_works():
     demo = app.build_ui(FakeEngine())
     assert isinstance(demo, gr.Blocks)
     fn = next(d.fn for d in demo.fns.values() if d.api_name == "translate")
-    out, notes, details, how = fn("Gobnyan geujak u pasi uroe nyoe.")
+    out, notes, details, how, words = fn("Gobnyan geujak u pasi uroe nyoe.")
     assert out == "GOBNYAN GEUJAK U PASI UROE NYOE." and notes.visible is False and details[0][2] == out
     assert "Langkah 1" in how and "`Gobnyan`" in how and "Langkah 2" in how
+    assert words == ""                                                  # no glossary loaded: the panel stays empty
     assert app.launch_kwargs()["css"] and app.EXAMPLES
     test = {r["ace"] for r in json.load(open(ROOT / "data/final/nusax/test.json", encoding="utf-8"))}
     hik = ROOT / "data/final/hikayat/abu_sammah/test.json"
@@ -103,3 +104,28 @@ def test_explain_shows_real_encoder_and_decoder_tokens(tmp_path):
     src, tgt = e.explain("Gobnyan geujak", "Dia pergi")
     assert src[0] == "ace_Latn" and src[-1] == "</s>"            # encoder: Acehnese language token ... end of sentence
     assert tgt[0] == "ind_Latn" and tgt[-1] == "</s>"            # decoder: starts from the Indonesian language token
+
+
+GLOSS = ("input,target,error_category,error_type,severity,source,wer,translate_ind,sentiment\n"
+         "zaaba,zaaba,none,none,none,x,0,sejenis pohon,neutral\n"
+         "zaaba,zaaba,none,none,none,x,0,pagar dari bambu,neutral\n"
+         "zaabé; zaabu,\"zaabé, zaabu\",none,none,none,x,0,kata ujian kedua,neutral\n"
+         "zaabo,zaabx,orthographic,character_substitution,minor,x,0.2,salah ejaan buatan,neutral\n")
+
+def test_glossary_loads_variants_skips_misspellings_and_ranks_meanings_by_the_translation(tmp_path):
+    p = tmp_path / "g.csv"; p.write_text(GLOSS, encoding="utf-8")
+    g = core.Glossary.load(str(p))
+    assert core.Glossary.load(str(tmp_path / "none.csv")) is None
+    found = dict(g.lookup("Zaaba dan ZAABU, zaabx", "ada pagar bambu di sini"))
+    assert list(found) == ["Zaaba", "ZAABU"]                              # accents/case ignored; the misspelling row is not a headword
+    assert found["Zaaba"][0] == ("pagar dari bambu", 2) and found["Zaaba"][1][1] == 0   # the meaning matching the translation comes first
+    assert found["ZAABU"] == [("kata ujian kedua", 0)]
+
+def test_words_panel_marks_the_best_meaning_and_stays_empty_without_glossary(tmp_path):
+    p = tmp_path / "g.csv"; p.write_text(GLOSS, encoding="utf-8")
+    app = load_space_app()
+    e = FakeEngine(); e.glossary = core.Glossary.load(str(p))
+    md = app.words_md(e, [["Zaaba", "Zaaba", "ada pagar bambu"]])
+    assert "**Zaaba** (beberapa arti) — ✓ pagar dari bambu / sejenis pohon" in md and "Kamus Aceh-Indonesia (1985)" in md
+    e.glossary = None
+    assert app.words_md(e, [["Zaaba", "Zaaba", "x"]]) == ""

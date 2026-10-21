@@ -45,6 +45,29 @@ def explain_md(engine, details):
             + "\n\n**Langkah 3 · Hasil.** Potongan token digabung kembali menjadi kalimat Indonesia di atas.\n\n"
               "*Hanya kalimat pertama yang ditampilkan. Pasangan kalimat (Aceh ↔ Indonesia) ada di “Detail per kalimat”.*")
 
+GLOSSARY_NOTE = ("*Sumber: Kamus Aceh-Indonesia (1985), seri A–L, diekstrak otomatis dan belum divalidasi penuh. "
+                 "Hanya kata berawalan A–L yang ada. Tanda ✓ = arti yang paling cocok dengan terjemahan di atas.*")
+
+def words_md(engine, details, limit=30):
+    """Word-by-word panel from the optional glossary; for words with several meanings the best match is marked."""
+    glossary = getattr(engine, "glossary", None)
+    if not details or not glossary:
+        return ""
+    lines, seen = [], set()
+    for _, norm, ind in details:
+        for word, meanings in glossary.lookup(norm, ind):
+            if word.lower() in seen or len(lines) >= limit:
+                continue
+            seen.add(word.lower())
+            top = meanings[:3]
+            if len(top) == 1:
+                lines.append(f"- **{word}** — {top[0][0][:140]}")
+            else:
+                best_is_clear = top[0][1] > top[1][1]
+                lines.append(f"- **{word}** (beberapa arti) — " + " / ".join(
+                    f"{'✓ ' if best_is_clear and i == 0 else ''}{m[:110]}" for i, (m, _) in enumerate(top)))
+    return "\n".join(lines + ["", GLOSSARY_NOTE]) if lines else "Tidak ada kata berawalan A–L yang cocok di kamus.\n\n" + GLOSSARY_NOTE
+
 def build_ui(engine):
     finetuned = engine.info is not None and "tests" in (engine.info or {})
     pill = ('<span class="pill ok">Model khusus Aceh (fine-tuned)</span>' if finetuned
@@ -53,7 +76,7 @@ def build_ui(engine):
     def run(text):
         out, details, notes = engine.translate(text)
         return (out, gr.Markdown(value="\n\n".join(f"⚠️ {n}" for n in notes), visible=bool(notes)), details,
-                explain_md(engine, details))
+                explain_md(engine, details), words_md(engine, details))
 
     with gr.Blocks(title="Penerjemah Aceh → Indonesia") as demo:
         gr.HTML(f"""<div id="hero"><h1>Penerjemah <span>Aceh → Indonesia</span></h1>
@@ -75,6 +98,8 @@ def build_ui(engine):
                                    interactive=False, wrap=True)
         with gr.Accordion("Cara kerja model · How the model works (encoder → decoder)", open=False):
             how = gr.Markdown("Klik *Terjemahkan* untuk melihat token yang dibaca dan ditulis model.")
+        with gr.Accordion("Kata per kata · Word by word (kamus)", open=False, visible=bool(getattr(engine, "glossary", None))):
+            words = gr.Markdown("Klik *Terjemahkan* untuk melihat arti kata dari kamus.")
         with gr.Accordion("Seberapa akurat? · How accurate is it?", open=False):
             gr.Markdown(accuracy_markdown(engine.info, engine.model_id))
             gr.Markdown("Terjemahan mesin tidak pernah 100 % sempurna. Untuk teks penting, mintalah penutur bahasa Aceh memeriksanya. "
@@ -82,9 +107,9 @@ def build_ui(engine):
         trained = f"fine-tuned on {sources_text(engine.info)}" if finetuned else "base model"
         gr.HTML(f'<div id="foot">Model: Meta NLLB-200 (CC-BY-NC 4.0), {trained} · '
                 'Universitas Syiah Kuala research project · non-commercial use</div>')
-        go.click(run, inp, [out, notes, details, how], api_name="translate")
-        inp.submit(run, inp, [out, notes, details, how])
-        clear.click(lambda: ("", "", gr.Markdown(value="", visible=False), [], ""), None, [inp, out, notes, details, how])
+        go.click(run, inp, [out, notes, details, how, words], api_name="translate")
+        inp.submit(run, inp, [out, notes, details, how, words])
+        clear.click(lambda: ("", "", gr.Markdown(value="", visible=False), [], "", ""), None, [inp, out, notes, details, how, words])
     return demo
 
 def launch_kwargs():

@@ -3,7 +3,7 @@
 Model: MODEL_ID env var / Space variable (our fine-tuned NLLB, e.g. <user>/ace-id-nllb), default: base NLLB-200 600M.
 Input is normalized exactly like the training data (same rules as acehid/normalize.py; tests/test_space.py checks they agree),
 split into sentences (NLLB is trained on single sentences), translated in batches with beam search, and cached."""
-import os, re, json, unicodedata
+import os, re, csv, json, unicodedata
 
 BASE_MODEL = "facebook/nllb-200-distilled-600M"
 SRC, TGT = "ace_Latn", "ind_Latn"
@@ -29,6 +29,58 @@ def normalize(s):
 
 def split_sentences(line):
     return [s for s in re.split(r"(?<=[.!?])\s+", line.strip()) if s]
+
+# --- word glossary (optional): Kamus Aceh-Indonesia (1985) A-L, a local CSV that is not part of the repo --------------------
+GLOSSARY_PATH = os.environ.get("GLOSSARY") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "glossary",
+                                                          "kamus_aceh_indonesia_1985.csv")
+WORD = re.compile(r"[^\W\d_]+(?:[-'’][^\W\d_]+)*")
+
+def _fold(s):
+    """Lower case, no accents, no apostrophes: ampéh, 'ampeh and AMPEH are the same key."""
+    s = "".join(c for c in unicodedata.normalize("NFD", s) if unicodedata.category(c) != "Mn")
+    return re.sub(r"['’`´]", "", s).lower().strip()
+
+STOP = {"yang", "dan", "untuk", "dengan", "dari", "pada", "itu", "ini", "atau", "ada", "tidak", "dalam", "akan", "juga", "bagi", "oleh"}
+
+def _content(s):
+    """Folded words that can carry a meaning: 3+ letters, not a common function word."""
+    return {_fold(w) for w in WORD.findall(s) if len(w) >= 3} - STOP
+
+class Glossary:
+    """Acehnese headword -> Indonesian meanings. When a word has several meanings, the one that shares most words with the
+    model's Indonesian translation is ranked first: a simple word-sense disambiguation aid."""
+    def __init__(self, entries):
+        self.entries = entries
+
+    @classmethod
+    def load(cls, path=None):
+        path = path or GLOSSARY_PATH
+        if not os.path.isfile(path):
+            return None
+        entries = {}
+        with open(path, encoding="utf-8-sig", newline="") as f:
+            for r in csv.DictReader(f):
+                meaning = " ".join((r.get("translate_ind") or "").split())
+                if r.get("error_category", "none") != "none" or not meaning:      # skip the synthetic misspelling rows
+                    continue
+                for head in (r.get("target") or "").split(","):
+                    key = _fold(head)
+                    if len(key) >= 2 and meaning not in entries.setdefault(key, []):
+                        entries[key].append(meaning)
+        return cls(entries) if entries else None
+
+    def lookup(self, text, indonesian=""):
+        """-> [(word as typed, [(meaning, overlap with the translation)] best first)] for the words found in the glossary."""
+        out_words = _content(indonesian)
+        seen, found = set(), []
+        for w in WORD.findall(text):
+            key = _fold(w)
+            if key in seen or key not in self.entries:
+                continue
+            seen.add(key)
+            scored = [(m, len(_content(m) & out_words)) for m in self.entries[key]]
+            found.append((w, sorted(scored, key=lambda t: -t[1])))
+        return found
 
 # --- accuracy numbers shipped with the model (training_log.json written by `python -m acehid train`) --------------------
 SOURCE_NAMES = {"nusax": "NusaX-MT", "flores": "FLORES-200", "hikayat": "Hikayat Abu Sammah (Depdikbud)"}
@@ -72,6 +124,7 @@ class Engine:
         self.model = AutoModelForSeq2SeqLM.from_pretrained(self.model_id).float().to(self.device).eval()   # .float(): our upload is fp16
         self.bos = self.tok.convert_tokens_to_ids(TGT)
         self.info = load_info(self.model_id)
+        self.glossary = Glossary.load()
         self.cache = {}
 
     def _generate(self, sents):

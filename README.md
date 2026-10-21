@@ -158,3 +158,10 @@ Andrie said the format is in the plan but never sent a sample. If the real Atlas
 ## Layout
 
 `acehid/` (audit, extract, screen, normalize, dedupe, translate, evalnusax, export, review, nusax, flores, bilingual, corpus, train, langid, cli) · `space/` (hosted translator) · `app/` (web app) · `tests/` · `config/` (sources.csv, language model) · `reports/` · `data/final/`.
+
+## Word-by-word dictionary panel (optional)
+
+If the file `data/glossary/kamus_aceh_indonesia_1985.csv` exists (the Kamus Aceh-Indonesia 1985, A–L, word list from Andrie), the app shows a
+"Kata per kata" panel: the meaning of each Acehnese word found in your text, and for words with several meanings the one that best matches
+the model's translation is marked ✓. Copy the CSV into that folder on your computer; without it the panel is simply hidden. The file is
+git-ignored because the source book is copyrighted. The extraction is automatic and not fully validated, so check important words in the book.
