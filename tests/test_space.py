@@ -129,3 +129,28 @@ def test_words_panel_marks_the_best_meaning_and_stays_empty_without_glossary(tmp
     assert "**Zaaba** (beberapa arti) — ✓ pagar dari bambu / sejenis pohon" in md and "Kamus Aceh-Indonesia (1985)" in md
     e.glossary = None
     assert app.words_md(e, [["Zaaba", "Zaaba", "x"]]) == ""
+
+
+HEAD = "input,target,error_category,error_type,severity,source,wer,translate_ind,sentiment\n"
+
+def test_find_glossary_finds_the_csv_wherever_it_is(tmp_path, monkeypatch):
+    monkeypatch.delenv("GLOSSARY", raising=False)
+    root = tmp_path / "proj"; (root / "a/b").mkdir(parents=True)
+    assert core.find_glossary(roots=[root]) is None
+    (root / "other.csv").write_text(HEAD)                                  # no 'kamus' in the name: ignored
+    (root / "a/b/kamus_wrong_columns.csv").write_text("x,y\n1,2\n")         # right name, wrong header: ignored
+    assert core.find_glossary(roots=[root]) is None
+    deep = root / "a/b/Kamus aceh copy.csv"; deep.write_text(HEAD)         # renamed, in a sub-sub-folder
+    assert core.find_glossary(roots=[root]) == str(deep)
+    (root / "data").mkdir(); exact = root / "data" / "kamus_aceh_indonesia_1985.csv"; exact.write_text(HEAD)
+    assert core.find_glossary(roots=[root]) == str(exact)                  # the expected place wins over a deep copy
+    monkeypatch.setenv("GLOSSARY", str(deep))
+    assert core.find_glossary(roots=[root]) == str(deep)                   # $GLOSSARY wins over everything
+
+def test_glossary_load_searches_by_itself(tmp_path, monkeypatch):
+    monkeypatch.delenv("GLOSSARY", raising=False); monkeypatch.chdir(tmp_path)
+    (tmp_path / "Downloads").mkdir(); (tmp_path / "Downloads" / "kamusbahasaaceh-indo.csv").write_text(HEAD + "zaaba,zaaba,none,none,none,x,0,rumah,neutral\n")
+    monkeypatch.setattr(core, "__file__", str(tmp_path / "space" / "core.py"))      # the 'repo' is the empty tmp folder, not the real one
+    monkeypatch.setattr(core.os.path, "expanduser", lambda p: str(tmp_path) if p == "~" else p)
+    g = core.Glossary.load()
+    assert g is not None and "zaaba" in g.entries

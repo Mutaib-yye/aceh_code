@@ -163,9 +163,11 @@ def test_notebook_compares_approaches_for_the_professor(tmp_path, monkeypatch, c
     nb = json.load(open(ROOT / "notebooks/train_colab.ipynb", encoding="utf-8"))
     src = _cell(nb, "compare-approaches")
     monkeypatch.chdir(tmp_path)
-    for d in ("data/glossary", "reports", "models/ace-id-nllb"):
+    for d in ("data/deep/er", "reports", "models/ace-id-nllb", "space"):
         os.makedirs(d)
-    open("data/glossary/kamus_aceh_indonesia_1985.csv", "w").write("x")
+    import shutil; shutil.copy(ROOT / "space/core.py", "space/core.py")
+    open("data/deep/er/Kamus renamed copy.csv", "w").write("input,target,error_category,translate_ind\n")   # any folder, any name with 'kamus'
+
     json.dump({"_n": 400, "copy (Acehnese text unchanged)": {"chrF++": 32.0, "BLEU": 6.3}, "transfer (rules + dictionary)": {"chrF++": 39.2, "BLEU": 9.1}},
               open("reports/mt_approaches.json", "w"))
     json.dump({"tests": {"nusax": {"base": {"chrF++": 40.0, "BLEU": 10.0}, "finetuned": {"chrF++": 55.5, "BLEU": 20.5}}}}, open("models/ace-id-nllb/training_log.json", "w"))
@@ -178,5 +180,6 @@ def test_notebook_compares_approaches_for_the_professor(tmp_path, monkeypatch, c
 def test_notebook_comparison_cell_is_skipped_without_the_dictionary(tmp_path, monkeypatch, capsys):
     nb = json.load(open(ROOT / "notebooks/train_colab.ipynb", encoding="utf-8"))
     monkeypatch.chdir(tmp_path)
+    import os, shutil; os.makedirs("space"); shutil.copy(ROOT / "space/core.py", "space/core.py")
     exec(_cell(nb, "compare-approaches"), {"USE_SEED_PIVOT": False})
     assert "skipped" in capsys.readouterr().out
