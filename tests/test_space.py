@@ -154,3 +154,32 @@ def test_glossary_load_searches_by_itself(tmp_path, monkeypatch):
     monkeypatch.setattr(core.os.path, "expanduser", lambda p: str(tmp_path) if p == "~" else p)
     g = core.Glossary.load()
     assert g is not None and "zaaba" in g.entries
+
+class _Resp:
+    def __init__(self, data): self.data = data
+    def read(self): return self.data
+    def __enter__(self): return self
+    def __exit__(self, *a): return False
+
+def test_fetch_glossary_downloads_validates_and_tries_the_next_url(tmp_path, monkeypatch):
+    import urllib.request
+    good = (HEAD + "zaaba,zaaba,none,none,none,x,0,rumah,neutral\n").encode()
+    calls = []
+    def fake(url, timeout=0):
+        calls.append(url)
+        if url == "bad": raise OSError("no network")
+        return _Resp(good if url == "ok" else b"<html>not found</html>")
+    monkeypatch.setattr(urllib.request, "urlopen", fake)
+    dest = tmp_path / "data" / "glossary" / "k.csv"
+    assert core.fetch_glossary(str(dest), urls=["bad", "html", "ok"]) == str(dest) and calls == ["bad", "html", "ok"]
+    assert core.Glossary.load(str(dest)) is not None
+    dest.unlink()
+    assert core.fetch_glossary(str(dest), urls=["html"]) is None and not dest.exists()      # wrong content is thrown away
+
+def test_glossary_load_fetches_from_the_repo_when_not_on_this_computer(tmp_path, monkeypatch):
+    monkeypatch.delenv("GLOSSARY", raising=False); monkeypatch.chdir(tmp_path)
+    monkeypatch.setattr(core, "__file__", str(tmp_path / "space" / "core.py"))
+    monkeypatch.setattr(core.os.path, "expanduser", lambda p: str(tmp_path) if p == "~" else p)
+    fetched = tmp_path / "got.csv"; fetched.write_text(HEAD + "zaaba,zaaba,none,none,none,x,0,rumah,neutral\n")
+    monkeypatch.setattr(core, "fetch_glossary", lambda *a, **k: str(fetched))
+    assert "zaaba" in core.Glossary.load().entries

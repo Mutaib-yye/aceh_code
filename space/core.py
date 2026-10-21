@@ -73,6 +73,27 @@ def find_glossary(roots=None):
                     return os.path.join(dirpath, name)
     return None
 
+GLOSSARY_URLS = ["https://raw.githubusercontent.com/Mutaib-yye/aceh_code/claude/dataset-product-build-108xu8/data/kamus_aceh_indonesia_1985.csv",
+                 "https://raw.githubusercontent.com/Mutaib-yye/aceh_code/claude/dataset-product-build-108xu8/data/glossary/kamus_aceh_indonesia_1985.csv"]
+
+def fetch_glossary(dest=None, urls=None):
+    """Download the dictionary CSV from the project's GitHub repo (works while the repo is public) into data/glossary/. -> path or None."""
+    import urllib.request
+    dest = dest or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "glossary", GLOSSARY_NAME)
+    for url in urls or GLOSSARY_URLS:
+        try:
+            with urllib.request.urlopen(url, timeout=15) as r:
+                data = r.read()
+            os.makedirs(os.path.dirname(dest), exist_ok=True)
+            with open(dest, "wb") as f:
+                f.write(data)
+            if _is_glossary(dest):
+                return dest
+            os.remove(dest)
+        except Exception:
+            continue
+    return None
+
 WORD = re.compile(r"[^\W\d_]+(?:[-'’][^\W\d_]+)*")
 
 def _fold(s):
@@ -94,7 +115,7 @@ class Glossary:
 
     @classmethod
     def load(cls, path=None):
-        path = path or find_glossary()
+        path = path or find_glossary() or fetch_glossary()          # not on this computer: fetch it from the repo once
         if not path or not os.path.isfile(path):
             return None
         entries = {}
