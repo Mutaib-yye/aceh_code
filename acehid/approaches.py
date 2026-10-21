@@ -24,7 +24,7 @@ def load_glossary(path=None):
     core = importlib.util.module_from_spec(spec); spec.loader.exec_module(core)
     g = core.Glossary.load(path)
     if g is None:
-        raise FileNotFoundError("dictionary CSV not found anywhere in the project, Downloads or Desktop (put kamusbahasaaceh-indo.csv in data/glossary/)")
+        raise FileNotFoundError("could not download the dictionary list from GitHub (is the repo public and are you online?)")
     return g, core._fold
 
 def short_gloss(meaning):

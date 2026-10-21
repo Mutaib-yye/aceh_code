@@ -161,7 +161,7 @@ Andrie said the format is in the plan but never sent a sample. If the real Atlas
 
 ## Word-by-word dictionary panel (optional)
 
-If the file `data/glossary/kamus_aceh_indonesia_1985.csv` exists (the Kamus Aceh-Indonesia 1985, A–L, word list from Andrie), the app shows a
+The app shows, when the dictionary list is available (Kamus Aceh-Indonesia 1985, A–L, word list from Andrie), a
 "Kata per kata" panel: the meaning of each Acehnese word found in your text, and for words with several meanings the one that best matches
-the model's translation is marked ✓. Copy the CSV into that folder on your computer; without it the panel is simply hidden. The file is
-git-ignored because the source book is copyrighted. The extraction is automatic and not fully validated, so check important words in the book.
+the model's translation is marked ✓. Nothing to install: the first time the app (or the Colab notebook) starts, it downloads the CSV from this GitHub repo into `data/glossary/`
+(needs the repo to be public and internet; without it the panel is simply hidden). The extraction is automatic and not fully validated, so check important words in the book.

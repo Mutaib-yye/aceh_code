@@ -30,10 +30,8 @@ def normalize(s):
 def split_sentences(line):
     return [s for s in re.split(r"(?<=[.!?])\s+", line.strip()) if s]
 
-# --- word glossary (optional): Kamus Aceh-Indonesia (1985) A-L, a local CSV that is not part of the repo --------------------
+# --- word glossary (optional): Kamus Aceh-Indonesia (1985) A-L, downloaded from the project's repo once ------
 GLOSSARY_NAME = "kamus_aceh_indonesia_1985.csv"
-SKIP_DIRS = {"models", "node_modules", "__pycache__", "raw", "extracted", "Library"}
-
 def _is_glossary(path):
     """A CSV counts only if its header has the dictionary's columns (so another CSV is never picked up by mistake)."""
     try:
@@ -43,35 +41,13 @@ def _is_glossary(path):
         return False
     return "translate_ind" in head and "target" in head
 
-def find_glossary(roots=None):
-    """Path of the dictionary CSV wherever it is, or None. Order: $GLOSSARY; then, in each root, data/glossary, data, the root itself,
-    and any folder up to 4 levels down (skipping hidden and big folders). Default roots: the repo, the current folder, Downloads, Desktop
-    (the last two only one level deep). The file may be renamed: any *kamus*.csv with the right header columns is accepted."""
-    env = os.environ.get("GLOSSARY")
-    if env and _is_glossary(env):
-        return env
-    repo = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
-    home = os.path.expanduser("~")
-    roots = [(os.path.abspath(r), 4) for r in roots] if roots else [(repo, 4), (os.getcwd(), 4), (os.path.join(home, "Downloads"), 1), (os.path.join(home, "Desktop"), 1)]
-    seen = set()
-    for root, depth in roots:
-        if not os.path.isdir(root) or root in seen:
-            continue
-        seen.add(root)
-        for sub in ("data/glossary", "data", ""):                         # the expected places first
-            d = os.path.join(root, sub)
-            if os.path.isdir(d):
-                for name in sorted(os.listdir(d), key=lambda n: n != GLOSSARY_NAME):
-                    if name.lower().endswith(".csv") and "kamus" in name.lower() and _is_glossary(os.path.join(d, name)):
-                        return os.path.join(d, name)
-        for dirpath, dirs, files in os.walk(root):                         # then anywhere below
-            dirs[:] = [x for x in dirs if not x.startswith(".") and x not in SKIP_DIRS]
-            if dirpath[len(root):].count(os.sep) >= depth:
-                dirs[:] = []
-            for name in files:
-                if name.lower().endswith(".csv") and "kamus" in name.lower() and _is_glossary(os.path.join(dirpath, name)):
-                    return os.path.join(dirpath, name)
-    return None
+def glossary_dest():
+    return os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "glossary", GLOSSARY_NAME))
+
+def ensure_glossary():
+    """The one fixed place for the dictionary list (data/glossary/): use it if it is there, otherwise download it from GitHub. -> path or None."""
+    dest = glossary_dest()
+    return dest if _is_glossary(dest) else fetch_glossary(dest)
 
 GLOSSARY_URLS = ["https://raw.githubusercontent.com/Mutaib-yye/aceh_code/claude/dataset-product-build-108xu8/data/kamus_aceh_indonesia_1985.csv",
                  "https://raw.githubusercontent.com/Mutaib-yye/aceh_code/claude/dataset-product-build-108xu8/data/glossary/kamus_aceh_indonesia_1985.csv"]
@@ -79,7 +55,7 @@ GLOSSARY_URLS = ["https://raw.githubusercontent.com/Mutaib-yye/aceh_code/claude/
 def fetch_glossary(dest=None, urls=None):
     """Download the dictionary CSV from the project's GitHub repo (works while the repo is public) into data/glossary/. -> path or None."""
     import urllib.request
-    dest = dest or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "glossary", GLOSSARY_NAME)
+    dest = dest or glossary_dest()
     for url in urls or GLOSSARY_URLS:
         try:
             with urllib.request.urlopen(url, timeout=15) as r:
@@ -115,7 +91,7 @@ class Glossary:
 
     @classmethod
     def load(cls, path=None):
-        path = path or find_glossary() or fetch_glossary()          # not on this computer: fetch it from the repo once
+        path = path or ensure_glossary()
         if not path or not os.path.isfile(path):
             return None
         entries = {}
