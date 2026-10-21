@@ -157,3 +157,26 @@ def test_notebook_trains_on_wikipedia_and_malik_mawot_pairs():
     src = _cell(nb, "build-train")
     assert "data/final/wikipedia/pairs.json" in src and "malik-mawot" in src and "--extra {' '.join(extras)}" in src and "seed-pivot" in src
     assert (ROOT / "data/final/wikipedia/pairs.json").exists() and (ROOT / "SKRIPSI FULL INAYATI.pdf").exists()
+
+def test_notebook_compares_approaches_for_the_professor(tmp_path, monkeypatch, capsys):
+    import subprocess, os
+    nb = json.load(open(ROOT / "notebooks/train_colab.ipynb", encoding="utf-8"))
+    src = _cell(nb, "compare-approaches")
+    monkeypatch.chdir(tmp_path)
+    for d in ("data/glossary", "reports", "models/ace-id-nllb"):
+        os.makedirs(d)
+    open("data/glossary/kamus_aceh_indonesia_1985.csv", "w").write("x")
+    json.dump({"_n": 400, "copy (Acehnese text unchanged)": {"chrF++": 32.0, "BLEU": 6.3}, "transfer (rules + dictionary)": {"chrF++": 39.2, "BLEU": 9.1}},
+              open("reports/mt_approaches.json", "w"))
+    json.dump({"tests": {"nusax": {"base": {"chrF++": 40.0, "BLEU": 10.0}, "finetuned": {"chrF++": 55.5, "BLEU": 20.5}}}}, open("models/ace-id-nllb/training_log.json", "w"))
+    ran = []
+    monkeypatch.setattr(subprocess, "run", lambda cmd, **kw: ran.append(cmd))
+    exec(src, {"USE_SEED_PIVOT": True})
+    out = capsys.readouterr().out
+    assert ran and ran[0][-1] == "compare-approaches" and "transfer (rules + dictionary)" in out and "55.5 / 20.5" in out and "Seed pivot is ON" in out
+
+def test_notebook_comparison_cell_is_skipped_without_the_dictionary(tmp_path, monkeypatch, capsys):
+    nb = json.load(open(ROOT / "notebooks/train_colab.ipynb", encoding="utf-8"))
+    monkeypatch.chdir(tmp_path)
+    exec(_cell(nb, "compare-approaches"), {"USE_SEED_PIVOT": False})
+    assert "skipped" in capsys.readouterr().out
