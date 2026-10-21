@@ -1,0 +1,35 @@
+{
+ "copy (Acehnese text unchanged)": {
+  "chrF++": 32.0,
+  "BLEU": 6.3
+ },
+ "direct (dictionary, word for word)": {
+  "chrF++": 35.5,
+  "BLEU": 6.1
+ },
+ "transfer (rules + dictionary)": {
+  "chrF++": 39.2,
+  "BLEU": 9.1
+ },
+ "_n": 400,
+ "_examples": [
+  {
+   "ace": "Toe ngon hotel lon dom, jak ngon tapak, disinoe le that pilehan makananjih, teumpat nyang luwah, bereh",
+   "ref": "Dekat dengan hotel saya menginap, hanya ditempuh jalan kaki, di sini banyak sekali pilihan makanannya, tempat yang luas, dan menyenangkan",
+   "direct": "Toe meuteumee hotel padam bermalam, jak meuteumee tapak, disinoe banyak that pilehan makananjih, teumpat nyang luwah, bereh",
+   "transfer": "Toe dengan hotel saya bermalam, jak dengan kita pajak gadai, disinoe banyak that pilehan makananjih, teumpat yang luwah, bereh"
+  },
+  {
+   "ace": "Nyo beutoi, jih teungoh jaga warong.",
+   "ref": "Iya benar, dia sedang jaga warung.",
+   "direct": "Nyo betul, u kot teungoh tidak tidur warong.",
+   "transfer": "Nyo betul, u kot teungoh tidak tidur warong."
+  },
+  {
+   "ace": "On rumpunjih lumayan tapi bieng saos padang cukop peuget kecewa, kamoe dijok bieng niet asoe, keuneulheueh hana kamoe pajoh bieng nyan dan kamoe jok pulang teuma",
+   "ref": "Kangkungnya lumayan tapi kepiting saus padangnya mengecewakan kami dikasih kepiting yang kopong akhir kami tidak makan keptingnya dan dikembalikan.",
+   "direct": "On rumpunjih lumayan tapi kepiting saos padang cukup peuget kecewa, kami dijok kepiting niet isi, keuneulheueh tidak ada kami pajoh kepiting nyan cair) kami memberikan pulang teuma",
+   "transfer": "On rumpunjih lumayan tapi kepiting saos padang cukup peuget kecewa, kami dijok kepiting niet isi, keuneulheueh tidak kami pajoh kepiting nyan dan kami memberikan pulang teuma"
+  }
+ ]
+}
