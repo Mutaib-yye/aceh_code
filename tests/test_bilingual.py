@@ -185,3 +185,9 @@ def test_notebook_comparison_cell_is_skipped_without_the_dictionary(tmp_path, mo
     monkeypatch.setattr(urllib.request, "urlopen", no_net)
     exec(_cell(nb, "compare-approaches"), {"USE_SEED_PIVOT": False})
     assert "skipped" in capsys.readouterr().out
+
+def test_notebook_adds_andries_clean_pairs_with_an_upload_fallback():
+    nb = json.load(open(ROOT / "notebooks/train_colab.ipynb", encoding="utf-8"))
+    src = _cell(nb, "build-train {extra}")
+    assert "USE_ANDRIE_PAIRS = True" in src and "data/human/andrie_test_clean_pairs.json" in src and "extras.append(ANDRIE)" in src
+    assert src.index("extras.append(ANDRIE)") < src.index("build-train {extra}")
