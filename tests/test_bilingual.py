@@ -191,3 +191,4 @@ def test_notebook_adds_andries_clean_pairs_with_an_upload_fallback():
     src = _cell(nb, "build-train {extra}")
     assert "USE_ANDRIE_PAIRS = True" in src and "data/human/andrie_test_clean_pairs.json" in src and "extras.append(ANDRIE)" in src
     assert src.index("extras.append(ANDRIE)") < src.index("build-train {extra}")
+    assert "raw.githubusercontent.com" in src and src.index("raw.githubusercontent.com") < src.index("google.colab import files")   # GitHub first, upload only as fallback
