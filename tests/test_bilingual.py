@@ -186,9 +186,9 @@ def test_notebook_comparison_cell_is_skipped_without_the_dictionary(tmp_path, mo
     exec(_cell(nb, "compare-approaches"), {"USE_SEED_PIVOT": False})
     assert "skipped" in capsys.readouterr().out
 
-def test_notebook_adds_andries_clean_pairs_with_an_upload_fallback():
+def test_notebook_adds_team_pairs_from_github_before_building():
     nb = json.load(open(ROOT / "notebooks/train_colab.ipynb", encoding="utf-8"))
     src = _cell(nb, "build-train {extra}")
-    assert "USE_ANDRIE_PAIRS = True" in src and "data/human/andrie_test_clean_pairs.json" in src and "extras.append(ANDRIE)" in src
-    assert src.index("extras.append(ANDRIE)") < src.index("build-train {extra}")
-    assert "raw.githubusercontent.com" in src and src.index("raw.githubusercontent.com") < src.index("google.colab import files")   # GitHub first, upload only as fallback
+    assert "USE_HUMAN_PAIRS = True" in src and "data/human/andrie_test_clean_pairs.json" in src and "data/human/cerpen_sentence_pairs.json" in src
+    assert "raw.githubusercontent.com" in src and "extras.append(path)" in src
+    assert src.index("extras.append(path)") < src.index("build-train {extra}")
