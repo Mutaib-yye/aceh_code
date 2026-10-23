@@ -48,8 +48,8 @@ Score: chrF++ (0–100, higher is better); BLEU in brackets. Measured with `pyth
 | Copy (Acehnese text left unchanged) | 32.0 | 6.3 |
 | Direct (dictionary, word for word) | 35.5 | 6.1 |
 | Transfer (rules + dictionary) | 39.2 | 9.1 |
-| Neural, base NLLB-200 (not fine-tuned) | [fill in from Colab] | [fill in] |
-| Neural, fine-tuned on our data | [fill in from Colab] | [fill in] |
+| Neural, base NLLB-200 (not fine-tuned) | 38.7 | 13.5 |
+| Neural, fine-tuned on our data | 57.1 | 30.8 |
 
 ## Limits you should state
 - The dictionary covers only words beginning A–L, and its extraction is automatic and not fully validated, so some meanings are noisy.

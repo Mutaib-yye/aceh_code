@@ -42,7 +42,7 @@ The Colab notebook (`notebooks/train_colab.ipynb`) measures base vs fine-tuned o
 - Test suite: 73 tests pass (`python -m pytest tests`). The notebook was rehearsed end to end with a small stand-in model.
 
 ## Not done / limits
-- No real NLLB training or scoring yet (needs the Colab GPU run).
+- Colab run (22-23 Oct 2026, T4): 17,547 training pairs, best epoch 3 of 5. chrF++ base -> fine-tuned: NusaX 38.66 -> 57.15, FLORES 46.27 -> 52.81, hikayat 23.98 -> 60.92. Full output: `reports/colab_run_results.md`. Not yet tested: training without the Seed pivot.
 - No human review of translations or of the Hikayat alignment beyond the developer's checks.
 - Atlas JSON schema is unconfirmed (plan section 17); Indonesian output is not normalized to PUEBI.
 - Dedup finds spelling/format variants, not paraphrases.
