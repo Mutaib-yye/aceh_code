@@ -110,7 +110,7 @@ async function badge(s, name, x, y, d, fillScheme, iconColor) {
   s.addImage({ data: await icon(name, iconColor || HEX.white), x: x + pad, y: y + pad, w: d - 2 * pad, h: d - 2 * pad, altText: name.replace("Fa", "") + " icon" });
 }
 function stat(s, x, y, w, num, label, o = {}) {
-  T(s, num, { x, y, w, h: 0.8, fontSize: o.size || 44, bold: true, color: o.color || C.accent1, fontFace: "Georgia", objectName: "Stat " + label });
+  T(s, num, { x, y, w, h: 0.8, fontSize: o.size || 44, bold: true, color: o.color || C.accent1, objectName: "Stat " + label });
   T(s, label, { x, y: y + (o.size ? o.size / 60 : 0.8), w, h: o.lh || 0.6, fontSize: 14, color: C.accent5 });
 }
 const arrow = (s, x, y) => s.addShape(pres.shapes.RIGHT_ARROW, { x: x + 0.01, y, w: 0.22, h: 0.28, fill: { color: C.accent1 }, line: { color: C.accent1, width: 0 }, objectName: "Flow arrow" });
@@ -131,9 +131,9 @@ const unusedChartText = { catAxisLabelFontFace: "+mn-lt", valAxisLabelFontFace: 
   for (const [x, y, d, col, tr] of [[8.9, 1.0, 3.6, HEX.teal, 25], [10.6, 3.2, 2.5, HEX.gold, 20], [8.6, 4.4, 2.2, HEX.teal, 45]]) {
     s.addShape(pres.shapes.OVAL, { x, y, w: d, h: d, fill: { color: col, transparency: tr }, line: { color: col, width: 0 }, objectName: "Lingkaran hias" });
   }
-  T(s, "17.547", { x: 9.2, y: 2.05, w: 3.0, h: 0.8, fontSize: 40, bold: true, color: C.background1, fontFace: "Georgia", align: "center" });
+  T(s, "17.547", { x: 9.2, y: 2.05, w: 3.0, h: 0.8, fontSize: 40, bold: true, color: C.background1, align: "center" });
   T(s, "pasangan kalimat latih", { x: 9.2, y: 2.85, w: 3.0, h: 0.4, fontSize: 15, color: C.background1, align: "center" });
-  T(s, "57,1", { x: 10.6, y: 3.95, w: 2.5, h: 0.7, fontSize: 36, bold: true, color: C.text2, fontFace: "Georgia", align: "center" });
+  T(s, "57,1", { x: 10.6, y: 3.95, w: 2.5, h: 0.7, fontSize: 36, bold: true, color: C.text2, align: "center" });
   T(s, "chrF++ di NusaX", { x: 10.6, y: 4.6, w: 2.5, h: 0.4, fontSize: 14, color: C.text2, align: "center" });
   s.addNotes("Selamat pagi. Kami Kelompok 2 Proyek AcehX. Kami membuat penerjemah dari bahasa Aceh ke bahasa Indonesia. Kami melatih model NLLB-200 dengan 17.547 pasangan kalimat yang kami kumpulkan dan bersihkan, mengujinya pada kalimat yang belum pernah dilihat model, lalu membuat aplikasi yang bisa dijalankan di komputer sendiri.");
 
@@ -146,7 +146,7 @@ const unusedChartText = { catAxisLabelFontFace: "+mn-lt", valAxisLabelFontFace: 
     card(s, x, y, 3.93, 1.5, "Kartu anggota");
     const ini = n.split(" ").filter((w) => /^[A-Z]/.test(w)).slice(0, 2).map((w) => w[0]).join("");
     s.addShape(pres.shapes.OVAL, { x: x + 0.3, y: y + 0.32, w: 0.86, h: 0.86, fill: { color: C.accent1 }, line: { color: C.accent1, width: 0 }, objectName: "Inisial" });
-    T(s, ini, { x: x + 0.3, y: y + 0.32, w: 0.86, h: 0.86, fontSize: 20, bold: true, color: C.background1, align: "center", valign: "middle", fontFace: "Georgia" });
+    T(s, ini, { x: x + 0.3, y: y + 0.32, w: 0.86, h: 0.86, fontSize: 20, bold: true, color: C.background1, align: "center", valign: "middle" });
     T(s, n, { x: x + 1.4, y, w: 2.4, h: 1.5, fontSize: 17, bold: true, valign: "middle" });
   });
   T(s, "Proyek AcehX · Universitas Syiah Kuala", { x: 0.6, y: 6.8, w: 8, h: 0.3, fontSize: 12, color: C.accent5 });
@@ -158,7 +158,7 @@ const unusedChartText = { catAxisLabelFontFace: "+mn-lt", valAxisLabelFontFace: 
   header(s, "Gambaran", "Proyek kami secara singkat");
   [["17.547", "pasangan latih dari sembilan sumber"], ["57,1", "chrF++ di NusaX, naik dari 38,7"], ["+36,9", "kenaikan chrF++ pada syair hikayat"]].forEach(([n, l], i) => {
     const x = 0.6 + i * 4.1; card(s, x, 1.6, 3.93, 1.9, "Kartu angka");
-    T(s, n, { x: x + 0.3, y: 1.8, w: 3.4, h: 0.9, fontSize: 48, bold: true, color: C.accent1, fontFace: "Georgia" }); T(s, l, { x: x + 0.3, y: 2.75, w: 3.4, h: 0.6, fontSize: 15 });
+    T(s, n, { x: x + 0.3, y: 1.8, w: 3.4, h: 0.9, fontSize: 48, bold: true, color: C.accent1 }); T(s, l, { x: x + 0.3, y: 2.75, w: 3.4, h: 0.6, fontSize: 15 });
   });
   const gl = [["FaDatabase", "Data", "Sembilan sumber: korpus terbuka, buku hasil pindai, skripsi, dan terjemahan tim. Sudah dibersihkan dan diperiksa."],
               ["FaCogs", "Teknik", "OCR, penyejajaran, augmentasi pivot, fine-tuning, serta perbandingan direct, transfer, dan neural."],
@@ -242,7 +242,7 @@ const unusedChartText = { catAxisLabelFontFace: "+mn-lt", valAxisLabelFontFace: 
   for (let i = 0; i < 3; i++) {
     const x = 0.6 + i * 4.1; card(s, x, 1.6, 3.93, 2.9, "Kartu metrik");
     await badge(s, ms[i][0], x + 0.3, 1.85, 0.75, C.accent1);
-    T(s, ms[i][1], { x: x + 1.3, y: 1.9, w: 2.4, h: 0.65, fontSize: 24, bold: true, fontFace: "Georgia", valign: "middle" });
+    T(s, ms[i][1], { x: x + 1.3, y: 1.9, w: 2.4, h: 0.65, fontSize: 24, bold: true, valign: "middle" });
     T(s, ms[i][2], { x: x + 0.3, y: 2.9, w: 3.4, h: 1.5, fontSize: 15, color: C.accent5 });
   }
   card(s, 0.6, 4.8, 12.13, 2.0, "Kartu catatan", C.text2);
@@ -282,7 +282,7 @@ const unusedChartText = { catAxisLabelFontFace: "+mn-lt", valAxisLabelFontFace: 
   T(s, [{ text: "Cerita: 11.103 kalimat, 103 di antaranya berpasangan", options: { bullet: true, breakLine: true } }, { text: "Lagu: 6 koleksi, 3.675 larik. Puisi: 1 koleksi, 1.596 larik", options: { bullet: true } }], { x: 0.9, y: 5.45, w: 7.0, h: 1.2, fontSize: 14, paraSpaceAfter: 6 });
   [["63.346", "teks unik dari 63.367 baris TXT (21 duplikat)"], ["15.995", "teks unik dari 16.374 rekaman CSV"]].forEach(([n, l], i) => {
     const y = 1.55 + i * 2.7; card(s, 8.6, y, 4.13, 2.5, "Kartu angka");
-    T(s, n, { x: 8.9, y: y + 0.3, w: 3.6, h: 0.9, fontSize: 44, bold: true, color: C.accent1, fontFace: "Georgia" }); T(s, l, { x: 8.9, y: y + 1.3, w: 3.6, h: 1.0, fontSize: 15, color: C.accent5 });
+    T(s, n, { x: 8.9, y: y + 0.3, w: 3.6, h: 0.9, fontSize: 44, bold: true, color: C.accent1 }); T(s, l, { x: 8.9, y: y + 1.3, w: 3.6, h: 1.0, fontSize: 15, color: C.accent5 });
   });
   s.addNotes("Ini hasil audit korpus AcehX. Ada empat berkas. Corpus TXT punya 63.367 baris Aceh tanpa terjemahan. Dua berkas CSV, cerita dan lagu-puisi, punya 16.374 rekaman, dan hanya 103 yang punya dua sisi bahasa. Berkas JSONL punya 5.000 rekaman dengan 4.146 kandidat pasangan. Kami memisahkan jumlah unit dari jumlah pasangan, karena sebagian besar bahan masih satu bahasa.");
 
@@ -294,7 +294,7 @@ const unusedChartText = { catAxisLabelFontFace: "+mn-lt", valAxisLabelFontFace: 
   T(s, [{ text: "KEEP: lolos pemeriksaan awal", options: { bullet: true, breakLine: true } }, { text: "REVIEW: perlu ditinjau lagi", options: { bullet: true, breakLine: true } }, { text: "DROP: dikeluarkan, tetap disimpan untuk penelusuran", options: { bullet: true } }], { x: 0.9, y: 5.0, w: 7.1, h: 1.7, fontSize: 15, paraSpaceAfter: 6 });
   [["2,31%", "duplikat (379 dari 16.374). Batas di brief: 5%"], ["80", "templat menghasilkan 10.000 unit cerita; partisi nanti dibuat per templat"], ["Penutur", "meninjau rekaman REVIEW: langkah berikutnya"]].forEach(([n, l], i) => {
     const y = 1.6 + i * 1.75; card(s, 8.6, y, 4.13, 1.55, "Kartu angka");
-    T(s, n, { x: 8.85, y: y + 0.15, w: 3.7, h: 0.7, fontSize: 30, bold: true, color: C.accent1, fontFace: "Georgia", valign: "middle" }); T(s, l, { x: 8.85, y: y + 0.85, w: 3.7, h: 0.65, fontSize: 13, color: C.accent5 });
+    T(s, n, { x: 8.85, y: y + 0.15, w: 3.7, h: 0.7, fontSize: 30, bold: true, color: C.accent1, valign: "middle" }); T(s, l, { x: 8.85, y: y + 0.85, w: 3.7, h: 0.65, fontSize: 13, color: C.accent5 });
   });
   s.addNotes("Setiap rekaman diberi status. KEEP berarti lolos pemeriksaan awal, REVIEW berarti perlu ditinjau lagi, DROP berarti dikeluarkan tetapi tetap disimpan. Ada 4.433 KEEP, 11.562 REVIEW, dan 379 DROP. Semua DROP adalah duplikat persis, sekitar 2,31 persen, di bawah batas 5 persen di brief. Status ini adalah penyaringan awal, bukan pengesahan mutu. Peninjauan oleh penutur adalah langkah berikutnya.");
 
@@ -305,7 +305,7 @@ const unusedChartText = { catAxisLabelFontFace: "+mn-lt", valAxisLabelFontFace: 
   card(s, 8.9, 1.6, 3.83, 1.45, "Kartu angka"); stat(s, 9.15, 1.68, 3.4, "379", "validasi: 200 FLORES, 79 hikayat, 100 NusaX", { size: 34, lh: 0.7 });
   card(s, 8.9, 3.25, 3.83, 2.1, "Kartu angka");
   T(s, "Set uji (tidak dilatih)", { x: 9.15, y: 3.35, w: 3.4, h: 0.4, fontSize: 15, bold: true });
-  [["400", "NusaX"], ["1.012", "FLORES"], ["143", "Hikayat"]].forEach(([n, l], i) => { T(s, n, { x: 9.15, y: 3.8 + i * 0.5, w: 1.3, h: 0.45, fontSize: 22, bold: true, color: C.accent1, fontFace: "Georgia", valign: "middle" }); T(s, l, { x: 10.5, y: 3.8 + i * 0.5, w: 2.1, h: 0.45, fontSize: 14, color: C.accent5, valign: "middle" }); });
+  [["400", "NusaX"], ["1.012", "FLORES"], ["143", "Hikayat"]].forEach(([n, l], i) => { T(s, n, { x: 9.15, y: 3.8 + i * 0.5, w: 1.3, h: 0.45, fontSize: 22, bold: true, color: C.accent1, valign: "middle" }); T(s, l, { x: 10.5, y: 3.8 + i * 0.5, w: 2.1, h: 0.45, fontSize: 14, color: C.accent5, valign: "middle" }); });
   card(s, 8.9, 5.55, 3.83, 1.25, "Kartu angka"); T(s, "17.618 kandidat menjadi 17.547 setelah 1 pasangan mirip dan 70 duplikat dibuang", { x: 9.15, y: 5.6, w: 3.4, h: 1.15, fontSize: 13, valign: "middle" });
   s.addNotes("Inilah isi pelatihan yang sebenarnya, tercatat di manifest: 17.547 pasangan. Al-Qur'an dan data pivot adalah bagian terbesar, disusul terjemahan tim dan hikayat. Awalnya ada 17.618 kandidat. Satu pasangan yang terlalu mirip dan 70 duplikat dibuang, dan tidak ada kecocokan persis dengan data yang dilindungi. Validasi 379 pasangan dipakai memilih epoch terbaik. Tiga set uji dipisah sepenuhnya.");
 
@@ -322,7 +322,7 @@ const unusedChartText = { catAxisLabelFontFace: "+mn-lt", valAxisLabelFontFace: 
   [["11,3% → 0,8%", "kata salah: teks bawaan PDF dibanding OCR kami (contoh yang diperiksa tangan)"], ["1.856", "pasangan bait hasil penyejajaran"], ["1.654", "pasangan berlabel KEEP (199 berlabel REVIEW)"], ["40 dari 40", "pasangan KEEP acak yang diperiksa tangan ternyata benar"]].forEach(([n, l], i) => {
     const x = 7.7 + (i % 2) * 2.6, y = 1.55 + Math.floor(i / 2) * 2.55;
     card(s, x, y, 2.45, 2.35, "Kartu angka");
-    T(s, n, { x: x + 0.15, y: y + 0.2, w: 2.15, h: 0.8, fontSize: i === 0 ? 20 : i === 3 ? 24 : 30, bold: true, color: C.accent1, fontFace: "Georgia", valign: "middle" });
+    T(s, n, { x: x + 0.15, y: y + 0.2, w: 2.15, h: 0.8, fontSize: i === 0 ? 20 : i === 3 ? 24 : 30, bold: true, color: C.accent1, valign: "middle" });
     T(s, l, { x: x + 0.15, y: y + 1.1, w: 2.15, h: 1.15, fontSize: 12, color: C.accent5 });
   });
   s.addNotes("Hikayat Abu Sammah adalah buku cetak hasil pindai. Bagian Aceh dan bagian Indonesia ada di halaman berbeda. Teks bawaan PDF kurang baik: 11,3 persen kata salah pada contoh yang kami periksa tangan. Setelah kami baca ulang dengan OCR 300 dpi, kata salah turun menjadi 0,8 persen. Lalu kami bersihkan dan sejajarkan bait dengan pemrograman dinamis. Dari 40 pasangan KEEP acak yang kami periksa, 40 benar.");
@@ -340,7 +340,7 @@ const unusedChartText = { catAxisLabelFontFace: "+mn-lt", valAxisLabelFontFace: 
     card(s, x, 1.55, 3.93, 5.2, "Kartu sumber");
     await badge(s, cols[i][0], x + 0.3, 1.8, 0.8, C.accent1);
     T(s, cols[i][1], { x: x + 1.25, y: 1.85, w: 2.55, h: 0.7, fontSize: 17, bold: true, valign: "middle" });
-    cols[i][2].forEach(([n, l], k) => { T(s, n, { x: x + 0.3, y: 2.9 + k * 1.05, w: 1.7, h: 0.7, fontSize: 32, bold: true, color: k ? C.accent1 : C.accent5, fontFace: "Georgia", valign: "middle" }); T(s, l, { x: x + 2.0, y: 2.9 + k * 1.05, w: 1.75, h: 0.7, fontSize: 12, color: C.accent5, valign: "middle" }); });
+    cols[i][2].forEach(([n, l], k) => { T(s, n, { x: x + 0.3, y: 2.9 + k * 1.05, w: 1.7, h: 0.7, fontSize: 32, bold: true, color: k ? C.accent1 : C.accent5, valign: "middle" }); T(s, l, { x: x + 2.0, y: 2.9 + k * 1.05, w: 1.75, h: 0.7, fontSize: 12, color: C.accent5, valign: "middle" }); });
     T(s, cols[i][3], { x: x + 0.3, y: 5.2, w: 3.35, h: 1.4, fontSize: 14 });
   }
   s.addNotes("Tiga sumber yang lebih kecil, masing-masing butuh cara baca sendiri. Malik Mawot adalah skripsi dengan baris Aceh yang diikuti terjemahannya. Kami pisahkan per baris, buang catatan kaki, dan simpan hanya pasangan yang lolos pemeriksaan kemiripan dan bahasa. Berkas tim menghasilkan 2.798 pasangan bersih. Lima cerpen menghasilkan 96 pasangan kalimat.");
@@ -385,11 +385,11 @@ const unusedChartText = { catAxisLabelFontFace: "+mn-lt", valAxisLabelFontFace: 
   s = pres.addSlide({ masterName: "CONTENT", sectionTitle: "Data" });
   header(s, "Desain evaluasi", "Menjaga ujian tetap jujur");
   const hs = ["Halaman uji dan validasi dijaga sebagai satu blok, jadi bait yang bersebelahan tidak terpisah", "Pasangan latih yang sama dengan kalimat validasi atau uji dibuang, tanpa memandang huruf besar, aksen, tanda baca, dan ejaan lama", "Pasangan latih yang 90% atau lebih mirip dengan kalimat uji dibuang", "Skrip pelatihan menolak mulai jika masih ada satu kebocoran", "Epoch terbaik dipilih dari validasi saja, tidak dari set uji"];
-  hs.forEach((t, i) => { const y = 1.6 + i * 1.05; card(s, 0.6, y, 7.3, 0.9, "Kartu aturan"); T(s, String(i + 1), { x: 0.8, y, w: 0.5, h: 0.9, fontSize: 24, bold: true, color: C.accent1, fontFace: "Georgia", valign: "middle" }); T(s, t, { x: 1.4, y, w: 6.35, h: 0.9, fontSize: 13, valign: "middle" }); });
+  hs.forEach((t, i) => { const y = 1.6 + i * 1.05; card(s, 0.6, y, 7.3, 0.9, "Kartu aturan"); T(s, String(i + 1), { x: 0.8, y, w: 0.5, h: 0.9, fontSize: 24, bold: true, color: C.accent1, valign: "middle" }); T(s, t, { x: 1.4, y, w: 6.35, h: 0.9, fontSize: 13, valign: "middle" }); });
   [["Latih", "17.547", HEX.teal, HEX.white], ["Validasi", "379", HEX.gold, HEX.ink], ["Uji", "1.555", HEX.deep, HEX.white]].forEach(([n, v, col, tc], i) => {
     const y = 1.6 + i * 1.75;
     s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x: 8.5, y, w: 4.23, h: 1.55, rectRadius: 0.12, fill: { color: col }, line: { color: col, width: 0 }, objectName: "Kotak pembagian" });
-    T(s, v, { x: 8.8, y: y + 0.15, w: 3.6, h: 0.8, fontSize: 40, bold: true, color: tc, fontFace: "Georgia" });
+    T(s, v, { x: 8.8, y: y + 0.15, w: 3.6, h: 0.8, fontSize: 40, bold: true, color: tc });
     T(s, n + (i === 2 ? " (400 + 1.012 + 143)" : ""), { x: 8.8, y: y + 0.95, w: 3.6, h: 0.45, fontSize: 14, color: tc });
   });
   s.addNotes("Skor hanya berarti jika model belum pernah melihat kalimat ujian. Karena itu kami melindunginya berlapis. Halaman dijaga satu blok, kecocokan persis dan hampir sama dibuang, dan skrip pelatihan berhenti jika ada kebocoran. Pada run yang tercatat, jumlah kecocokan persis dengan data yang dilindungi adalah nol. Epoch terbaik dipilih dari validasi, jadi set uji hanya dipakai sekali di akhir.");
@@ -417,7 +417,7 @@ const unusedChartText = { catAxisLabelFontFace: "+mn-lt", valAxisLabelFontFace: 
   lineChart(s, { x: 0.6, y: 1.5, w: 7.9, h: 5.3, title: "chrF++ validasi per epoch", labels: ["Dasar", "Epoch 1", "Epoch 2", "Epoch 3", "Epoch 4", "Epoch 5"], values: [41.43, 52.85, 54.67, 55.72, 55.33, 55.01], min: 40, max: 58, ticks: [40, 44, 48, 52, 56], color: HEX.teal });
   [["Epoch 3 dari 5", "dipilih; berhenti setelah 2 epoch tanpa kenaikan"], ["3,39 → 2,31", "loss latih, epoch 1 sampai 5"], ["GPU T4", "Google Colab, 17.547 pasangan"]].forEach(([n, l], i) => {
     const y = 1.6 + i * 1.75; card(s, 8.9, y, 3.83, 1.55, "Kartu angka");
-    T(s, n, { x: 9.15, y: y + 0.18, w: 3.4, h: 0.7, fontSize: 26, bold: true, color: C.accent1, fontFace: "Georgia" }); T(s, l, { x: 9.15, y: y + 0.88, w: 3.4, h: 0.6, fontSize: 13, color: C.accent5 });
+    T(s, n, { x: 9.15, y: y + 0.18, w: 3.4, h: 0.7, fontSize: 26, bold: true, color: C.accent1 }); T(s, l, { x: 9.15, y: y + 0.88, w: 3.4, h: 0.6, fontSize: 13, color: C.accent5 });
   });
   s.addNotes("Skor validasi model dasar adalah 41,43. Setelah epoch pertama naik menjadi 52,85, dan mencapai 55,72 di epoch ketiga. Setelah itu sedikit turun, padahal loss latih terus turun. Itu tanda model mulai menghafal data latih. Pelatihan berhenti dini setelah epoch kelima dan kami memakai epoch ketiga, yang terbaik pada validasi.");
 
@@ -442,7 +442,7 @@ const unusedChartText = { catAxisLabelFontFace: "+mn-lt", valAxisLabelFontFace: 
   hBars(s, { x: 0.6, y: 1.5, w: 7.9, h: 5.3, title: "chrF++ pada 400 kalimat uji NusaX", labels: ["Salin sumber (tanpa terjemah)", "Direct (kamus)", "Transfer (aturan)", "NLLB dasar", "NLLB fine-tuned"], values: [32.0, 35.5, 39.2, 38.7, 57.1], colors: [HEX.mist, HEX.slate, HEX.slate, HEX.mist, HEX.teal], max: 65, labelW: 3.0, fmt: (v) => nf(v, 1), fontSize: 14 });
   [["+3,5", "Direct dibanding menyalin sumber"], ["+3,7", "Transfer dibanding direct"], ["+17,9", "Neural fine-tuned dibanding transfer"]].forEach(([n, l], i) => {
     const y = 1.6 + i * 1.75; card(s, 8.9, y, 3.83, 1.55, "Kartu angka");
-    T(s, n, { x: 9.15, y: y + 0.2, w: 3.4, h: 0.7, fontSize: 36, bold: true, color: C.accent1, fontFace: "Georgia" }); T(s, l, { x: 9.15, y: y + 0.95, w: 3.4, h: 0.5, fontSize: 13, color: C.accent5 });
+    T(s, n, { x: 9.15, y: y + 0.2, w: 3.4, h: 0.7, fontSize: 36, bold: true, color: C.accent1 }); T(s, l, { x: 9.15, y: y + 0.95, w: 3.4, h: 0.5, fontSize: 13, color: C.accent5 });
   });
   s.addNotes("Ini menjawab pertanyaan dosen tentang pendekatan klasik. Menyalin teks Aceh tanpa diterjemahkan menghasilkan 32,0. Pendekatan direct dengan kamus kata demi kata mencapai 35,5. Dengan analisis dan aturan transfer menjadi 39,2. Model neural yang di-fine-tune mencapai 57,1. Catatan: pada BLEU, NLLB dasar (13,5) lebih tinggi dari transfer (9,1), dan direct (6,1) sedikit di bawah menyalin sumber (6,3). Kesamaan huruf dan kesesuaian susunan kata tidak selalu naik bersama.");
 
@@ -496,7 +496,7 @@ const unusedChartText = { catAxisLabelFontFace: "+mn-lt", valAxisLabelFontFace: 
   T(s, "keude: kedai, toko …", { x: 8.35, y: 3.15, w: 4.0, h: 0.75, fontSize: 14, bold: true, color: C.background1, valign: "middle" });
   s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x: 7.7, y: 4.05, w: 4.75, h: 0.7, rectRadius: 0.1, fill: { color: C.text1 }, line: { color: C.text1, width: 0 }, objectName: "Arti lain" });
   T(s, "keude: endapan sisa masakan berkuah", { x: 7.85, y: 4.05, w: 4.5, h: 0.7, fontSize: 14, color: C.background2, valign: "middle" });
-  [["5.260", "kata di kamus"], ["266", "kata punya banyak arti"]].forEach(([n, l], i) => { const x = 7.4 + i * 2.75; card(s, x, 5.2, 2.58, 1.6, "Kartu angka"); T(s, n, { x: x + 0.2, y: 5.3, w: 2.2, h: 0.7, fontSize: 32, bold: true, color: C.accent1, fontFace: "Georgia" }); T(s, l, { x: x + 0.2, y: 6.0, w: 2.2, h: 0.6, fontSize: 13, color: C.accent5 }); });
+  [["5.260", "kata di kamus"], ["266", "kata punya banyak arti"]].forEach(([n, l], i) => { const x = 7.4 + i * 2.75; card(s, x, 5.2, 2.58, 1.6, "Kartu angka"); T(s, n, { x: x + 0.2, y: 5.3, w: 2.2, h: 0.7, fontSize: 32, bold: true, color: C.accent1 }); T(s, l, { x: x + 0.2, y: 6.0, w: 2.2, h: 0.6, fontSize: 13, color: C.accent5 }); });
   s.addNotes("Banyak kata Aceh punya lebih dari satu arti. Untuk tiap kata dalam kalimat, modul kami mencari semua artinya di daftar Kamus Aceh-Indonesia 1985. Setiap arti diberi skor menurut berapa banyak kata isinya yang sama dengan terjemahan model, lalu arti terbaik diberi tanda centang jika jelas unggul. Pada contoh, keude punya dua arti dan yang menyebut toko cocok dengan terjemahan. Ini tampil di aplikasi sebagai panel Kata per kata.");
 
   // ================= 25 CONTOH TERJEMAHAN =================
@@ -561,7 +561,7 @@ const unusedChartText = { catAxisLabelFontFace: "+mn-lt", valAxisLabelFontFace: 
   header(s, "Kualitas", "Bisa diulang, diuji, dan terdokumentasi");
   [["91", "tes otomatis", "Pemeriksaan kebocoran, normalisasi, OCR, penyejajaran, pelatihan, aplikasi"], ["1", "perintah per tahap", "Tiap langkah jalan dari baris perintah acehid"], ["Git", "kode dan data di repositori", "Daftar sumber dan lisensi di config/sources.csv"]].forEach(([n, l, d], i) => {
     const x = 0.6 + i * 4.1; card(s, x, 1.6, 3.93, 2.5, "Kartu angka");
-    T(s, n, { x: x + 0.3, y: 1.75, w: 3.3, h: 0.9, fontSize: 48, bold: true, color: C.accent1, fontFace: "Georgia" }); T(s, l, { x: x + 0.3, y: 2.65, w: 3.4, h: 0.4, fontSize: 15, bold: true }); T(s, d, { x: x + 0.3, y: 3.1, w: 3.4, h: 0.95, fontSize: 12, color: C.accent5 });
+    T(s, n, { x: x + 0.3, y: 1.75, w: 3.3, h: 0.9, fontSize: 48, bold: true, color: C.accent1 }); T(s, l, { x: x + 0.3, y: 2.65, w: 3.4, h: 0.4, fontSize: 15, bold: true }); T(s, d, { x: x + 0.3, y: 3.1, w: 3.4, h: 0.95, fontSize: 12, color: C.accent5 });
   });
   card(s, 0.6, 4.4, 6.0, 2.4, "Kartu alat");
   T(s, "Alat", { x: 0.9, y: 4.55, w: 5, h: 0.4, fontSize: 18, bold: true });
@@ -605,7 +605,7 @@ const unusedChartText = { catAxisLabelFontFace: "+mn-lt", valAxisLabelFontFace: 
   const rf = ["Vaswani dkk., \"Attention Is All You Need\", NeurIPS, 2017.", "NLLB Team dkk., \"No Language Left Behind: Scaling Human-Centered Machine Translation\", 2022.", "Winata dkk., \"NusaX: Multilingual Parallel Sentiment Dataset for 10 Indonesian Local Languages\", EACL, 2023.", "Papineni dkk., \"Bleu: a Method for Automatic Evaluation of Machine Translation\", ACL, 2002.", "Popović, \"chrF: character n-gram F-score for automatic MT evaluation\", WMT, 2015; \"chrF++: words helping character n-grams\", WMT, 2017.", "Post, \"A Call for Clarity in Reporting BLEU Scores\", WMT, 2018.", "Gebru dkk., \"Datasheets for Datasets\", Communications of the ACM, 2021.", "Meta AI, model card facebook/nllb-200-distilled-600M, Hugging Face."];
   rf.forEach((t, i) => {
     const y = 1.55 + i * 0.66; card(s, 0.6, y, 12.13, 0.58, "Kartu rujukan");
-    T(s, String(i + 1), { x: 0.8, y, w: 0.5, h: 0.58, fontSize: 16, bold: true, color: C.accent1, fontFace: "Georgia", valign: "middle" });
+    T(s, String(i + 1), { x: 0.8, y, w: 0.5, h: 0.58, fontSize: 16, bold: true, color: C.accent1, valign: "middle" });
     T(s, t, { x: 1.4, y, w: 11.2, h: 0.58, fontSize: 13, valign: "middle" });
   });
   s.addNotes("Rujukan utama dari makalah kami: Transformer, NLLB, NusaX, ukuran BLEU, chrF, dan chrF++, panduan pelaporan BLEU, Datasheets for Datasets, dan model card NLLB.");
