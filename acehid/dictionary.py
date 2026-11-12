@@ -1,12 +1,15 @@
 """Word lookup in the Kamus Aceh-Indonesia (1985) list that Andrie shared (A-L only, extracted automatically, not fully validated).
 
-The list is copyrighted and unvalidated, so it stays in data/raw/kamus/ (git-ignored), is not training data, and the app shows
-every entry with its page and validation status. Lookup is a separate tool from sentence translation."""
+The list is unvalidated and copyrighted, so it is not training data and the app shows every entry with its page and validation
+status. It lives in the project's one fixed place, data/glossary/ (space/core.py ensure_glossary() downloads it from the repo when
+missing); data/raw/kamus/ is still accepted for a copy placed by hand. Lookup is a separate tool from sentence translation."""
 import csv, re, bisect
 from pathlib import Path
 from .common import ROOT, strip_diacritics
 
-CSV = ROOT / "data/raw/kamus/kamus_aceh_indonesia_1985.csv"
+NAME = "kamus_aceh_indonesia_1985.csv"
+CSV = ROOT / "data/glossary" / NAME
+FALLBACKS = (ROOT / "data/raw/kamus" / NAME,)
 
 def fold(s):
     """Lower case, no accents, no apostrophes: 'ab, ab and AB all match."""
@@ -19,6 +22,8 @@ def _status(source):
 class Dictionary:
     def __init__(self, path=CSV):
         self.path, self.entries, self.by_key, self.keys = Path(path), [], {}, []
+        if not self.path.exists() and Path(path) == CSV:
+            self.path = next((f for f in FALLBACKS if f.exists()), self.path)
         if self.path.exists():
             self._load()
 

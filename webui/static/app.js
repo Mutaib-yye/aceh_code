@@ -130,7 +130,7 @@ function entryNode(e) {
 }
 function dictResult(box, d) {
   box.replaceChildren();
-  if (!d.loaded) { box.append(el("p", { class: "muted" }, "Kamus belum dimuat: letakkan data/raw/kamus/kamus_aceh_indonesia_1985.csv lalu mulai ulang aplikasi.")); return; }
+  if (!d.loaded) { box.append(el("p", { class: "muted" }, "Kamus belum dimuat: file kamus_aceh_indonesia_1985.csv harus ada di folder data/glossary/ (aplikasi mengunduhnya otomatis bila ada koneksi internet). Mulai ulang aplikasi setelah file ada.")); return; }
   const sec = (title, list) => { if (list.length) box.append(el("h3", {}, title), ...list.map(entryNode)); };
   sec("Kata ditemukan", d.exact); sec("Kata yang diawali '" + d.q + "'", d.prefix); sec("Arti mengandung '" + d.q + "'", d.meaning);
   if (!d.found) box.append(el("p", { class: "muted" }, `Kata "${d.q}" tidak ada di kamus (kamus ini hanya mencakup A–L). Tidak ada arti yang dikarang.`));

@@ -93,5 +93,9 @@ def run_web(model=None, port=7860, open_browser=True):
         print(f"could not load {model!r} ({e}); falling back to {BASE_MODEL}")
         engine = core.Engine(BASE_MODEL)
     from webui.server import serve
+    try:
+        core.ensure_glossary()                      # the dictionary list: data/glossary/, downloaded from the repo once if missing
+    except Exception:
+        pass
     print(f"model: {model}")
     return serve(engine, "127.0.0.1", port, open_browser)
