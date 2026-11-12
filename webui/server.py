@@ -4,6 +4,7 @@ The page (webui/static) talks to this server only through the JSON API below, so
   GET  /api/status        model, dictionary and feedback status          POST /api/translate  text -> translation (+ alternatives)
   GET  /api/dictionary    ?q=word search the Kamus list                  POST /api/batch      one translation per input line
   POST /api/explain       tokens + dictionary entries for a sentence     POST /api/feedback   rating / correction (needs consent)
+  POST /api/transcribe    16 kHz mono WAV -> Acehnese text (Meta MMS; the model downloads on first use)
   GET  /api/evaluation    scores from the model's training_log.json      GET  /api/feedback.csv  export for review
 History is kept in the browser (localStorage) and never sent here. Feedback is stored in data/feedback/ (git-ignored) only when the
 user ticks the consent box; it is for human review and is never used to train automatically."""
@@ -13,22 +14,25 @@ from pathlib import Path
 from urllib.parse import urlparse, parse_qs
 from acehid.common import ROOT
 from acehid.dictionary import Dictionary
+from webui import asr
 
 STATIC = Path(__file__).parent / "static"
 FEEDBACK = ROOT / "data/feedback/feedback.jsonl"
-MAX_CHARS, MAX_BATCH_LINES, MAX_BODY = 5000, 200, 1 << 20
+MAX_CHARS, MAX_BATCH_LINES, MAX_BODY, MAX_AUDIO = 5000, 200, 1 << 20, 4 << 20
 ERROR_TYPES = {"vocabulary", "word_order", "missing_meaning", "dialect", "other"}
 _lock = threading.Lock()                      # one translation at a time: the model is not thread-safe
 
 class State:
-    def __init__(self, engine, dictionary=None, feedback_path=FEEDBACK):
+    def __init__(self, engine, dictionary=None, feedback_path=FEEDBACK, recognizer=None):
         self.engine, self.dictionary, self.feedback_path = engine, dictionary or Dictionary(), Path(feedback_path)
+        self.recognizer = recognizer if recognizer is not None else asr.Recognizer()
 
     def status(self):
         e = self.engine
         return {"model_id": e.model_id, "finetuned": bool((e.info or {}).get("tests")), "max_chars": MAX_CHARS,
                 "max_batch_lines": MAX_BATCH_LINES, "dictionary": {"loaded": self.dictionary.loaded, "entries": len(self.dictionary.entries)},
-                "voice": False}
+                "voice": {"model": self.recognizer.model_id, "language": self.recognizer.lang, "loaded": self.recognizer.loaded,
+                          "max_seconds": asr.MAX_SECONDS}}
 
     def translate(self, d):
         text = (d.get("text") or "").strip()
@@ -60,6 +64,10 @@ class State:
         with _lock:
             tgt = self.engine.translate_lines([l.strip() for l in lines], normalize_input=d.get("normalize", True) is not False)
         return {"rows": [{"src": s, "tgt": t} for s, t in zip(lines, tgt)]}
+
+    def transcribe(self, data):
+        """WAV bytes (16 kHz, 16-bit, mono) -> {'text': ...}. Loads the speech model on first use."""
+        return {"text": self.recognizer.transcribe(data)}
 
     def dictionary_search(self, q):
         if not self.dictionary.loaded:
@@ -139,6 +147,15 @@ def make_handler(state):
             self._send(200, f.read_bytes(), mimetypes.guess_type(f.name)[0] or "application/octet-stream")
 
         def do_POST(self):
+            if urlparse(self.path).path == "/api/transcribe":
+                try:
+                    n = int(self.headers.get("Content-Length") or 0)
+                    if n > MAX_AUDIO: return self._send(413, {"error": "Rekaman terlalu besar · recording too large"})
+                    return self._send(200, state.transcribe(self.rfile.read(n)))
+                except ValueError as e:
+                    return self._send(400, {"error": str(e)})
+                except Exception as e:
+                    return self._send(500, {"error": f"Voice model error: {e}"})
             routes = {"/api/translate": state.translate, "/api/batch": state.batch, "/api/explain": state.explain, "/api/feedback": state.feedback}
             fn = routes.get(urlparse(self.path).path)
             if not fn: return self._send(404, {"error": "not found"})

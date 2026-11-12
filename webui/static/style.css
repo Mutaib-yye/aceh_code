@@ -74,6 +74,8 @@ i[data-i] svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:
 .chip,.outline,.primary,.card,.link,.pill-btn{font:inherit;cursor:pointer;color:var(--text)}
 .chip{display:inline-flex;align-items:center;gap:7px;padding:7px 13px;border-radius:12px;border:1px solid var(--line);background:rgba(3,10,30,.3);font-size:.85rem;font-weight:600}
 :root[data-theme="light"] .chip{background:#fff}
+.chip.rec{border-color:#ef4444;color:#fff;background:#dc2626;animation:pulse 1.2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 6px rgba(239,68,68,.25)}}
 .chip.round{width:38px;height:38px;padding:0;justify-content:center;border-radius:50%;color:var(--accent)}
 .chip:hover:not(:disabled),.outline:hover:not(:disabled),.card:hover:not(:disabled),.pill-btn:hover{border-color:var(--accent);box-shadow:0 0 14px var(--glow)}
 button:disabled{opacity:.45;cursor:not-allowed}

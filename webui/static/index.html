@@ -77,7 +77,7 @@
           <div class="pane" id="paneIn">
             <div class="pane-head"><span class="lang"><span class="lang-ico"><i data-i="chat"></i></span>Bahasa Aceh</span>
               <span class="tools">
-                <button class="chip round" id="mic" type="button" disabled title="Input suara belum tersedia: belum ada pengenalan suara bahasa Aceh yang diuji · voice input is not available yet" aria-label="Input suara (belum tersedia)"><i data-i="mic"></i></button>
+                <button class="chip round" id="mic" type="button" title="Bicara dalam bahasa Aceh (eksperimental) · speak Acehnese (experimental)" aria-label="Input suara"><i data-i="mic"></i></button>
                 <button class="chip" id="paste" type="button"><i data-i="clipboard"></i>Paste</button>
                 <button class="chip" id="copyIn" type="button"><i data-i="copy"></i>Copy input</button></span></div>
             <textarea id="inp" rows="7" maxlength="5000" spellcheck="false" placeholder="Tulis atau tempel teks Bahasa Aceh di sini…&#10;&#10;Contoh: Lon ka jak u blang." aria-label="Teks bahasa Aceh"></textarea>
@@ -107,13 +107,14 @@
           <label><input type="checkbox" id="optAlt"> Tampilkan alternatif <small>(satu kalimat)</small></label>
           <button class="link" id="viewNorm" type="button" hidden>Lihat teks ternormalisasi</button>
         </div>
+        <div id="voiceMsg" class="msg note" role="status" hidden></div>
         <div id="msg" class="msg" role="alert" hidden></div>
         <pre id="normBox" class="box mono" hidden></pre>
         <div id="alts" class="box" hidden><h3>Alternatif terjemahan</h3><p class="muted">Ini kandidat lain dari model, bukan jaminan benar; nada atau konteksnya bisa berbeda. Terjemahan utama tidak berubah kecuali Anda memilih.</p><ul id="altList"></ul></div>
 
         <div class="cards">
           <button class="card c1" id="cDict" type="button"><i class="ci" data-i="book"></i><span><b>Aceh Dictionary</b><small>Look up word meanings</small></span><i class="go" data-i="arrow"></i></button>
-          <button class="card c2 off" type="button" disabled title="Belum tersedia: belum ada pengenalan suara bahasa Aceh yang diuji"><i class="ci" data-i="wave"></i><span><b>Voice Input</b><small>Belum tersedia</small></span><i class="go" data-i="arrow"></i></button>
+          <button class="card c2" id="cVoice" type="button"><i class="ci" data-i="wave"></i><span><b>Voice Input</b><small>Speak in Acehnese (eksperimental)</small></span><i class="go" data-i="arrow"></i></button>
           <button class="card c3" id="cAlt" type="button"><i class="ci" data-i="repeat"></i><span><b>Alternative Translations</b><small>See multiple options</small></span><i class="go" data-i="arrow"></i></button>
           <button class="card c4" id="cExplain" type="button"><i class="ci" data-i="file"></i><span><b>Translation Explanation</b><small>Understand the result</small></span><i class="go" data-i="arrow"></i></button>
           <button class="card c5" id="cFeed" type="button"><i class="ci" data-i="star"></i><span><b>Give Feedback</b><small>Help us improve</small></span><i class="go" data-i="arrow"></i></button>
@@ -189,7 +190,8 @@
       <div class="box"><h3>Batasan</h3><ul>
         <li>Data latih bergaya ulasan, Wikipedia dan hikayat; ragam lain (dialek, tulisan informal) bisa kurang akurat.</li>
         <li>Kata atau frasa yang sangat pendek sering ambigu: kalimat utuh memberi hasil lebih baik.</li>
-        <li>Kamus hanya mencakup huruf A–L dan belum divalidasi penuh. Input suara belum tersedia karena belum ada pengenal suara bahasa Aceh yang diuji.</li></ul></div>
+        <li>Kamus hanya mencakup huruf A–L dan belum divalidasi penuh.</li>
+        <li>Input suara memakai model Meta MMS (bahasa Aceh) yang berjalan di komputer ini: audio tidak dikirim ke mana pun. Uji kecil kami: pada 10 rekaman (pembacaan Deklarasi HAM dalam bahasa Aceh, satu pembicara, data uji LibriVox Indonesia) tingkat kesalahan huruf 12 % dan kata 46 % (ejaan bervariasi). Hasil pada suara lain, logat, atau tempat bising bisa lebih buruk: selalu periksa dan edit teksnya sebelum menerjemahkan. Pertama kali dipakai, model (±4 GB) diunduh sekali.</li></ul></div>
       <div class="box" id="privacy"><h3>Pengaturan &amp; privasi</h3>
         <label class="check"><input type="checkbox" id="setNorm" checked> Normalisasi ejaan aktif secara default</label>
         <label class="check"><input type="checkbox" id="setHist" checked> Simpan riwayat di browser ini</label>

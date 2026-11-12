@@ -96,7 +96,89 @@ def test_evaluation_only_shows_real_scores(app):
 
 def test_status_and_bad_json(app):
     call, _ = app
-    s = J(call("/api/status"))[1]; assert s["model_id"] == "fake/model" and s["finetuned"] is False and s["voice"] is False
+    s = J(call("/api/status"))[1]; assert s["model_id"] == "fake/model" and s["finetuned"] is False and s["voice"]["language"] == "ace"
     req = urllib.request.Request(call.__closure__[0].cell_contents + "/api/translate", data=b"{bad", method="POST")
     with pytest.raises(urllib.error.HTTPError) as e: urllib.request.urlopen(req)
     assert e.value.code == 400
+
+# ---- voice input -------------------------------------------------------------------------------------------------------
+import io, wave, struct, math
+from webui import asr
+
+def _wav(seconds=1.0, sr=16000, amp=0.3, channels=1, width=2):
+    n = int(seconds * sr); buf = io.BytesIO()
+    with wave.open(buf, "wb") as w:
+        w.setnchannels(channels); w.setsampwidth(width); w.setframerate(sr)
+        w.writeframes(b"".join(struct.pack("<h", int(amp * 32767 * math.sin(i / 20))) * channels for i in range(n)))
+    return buf.getvalue()
+
+class FakeRecognizer(asr.Recognizer):
+    """Real audio validation (Recognizer.transcribe), fake speech model."""
+    def load(self):
+        self.model = object()
+        self.torch = type("T", (), {"inference_mode": staticmethod(lambda: __import__("contextlib").nullcontext()), "argmax": staticmethod(lambda x, dim: [0])})
+        self.processor = type("P", (), {"__call__": lambda self, a, sampling_rate, return_tensors: {}, "decode": lambda self, ids: "teks dari suara"})()
+        self.model = lambda **kw: type("O", (), {"logits": None})()
+
+@pytest.fixture
+def voice(tmp_path):
+    state = server.State(FakeEngine(), Dictionary(tmp_path / "none.csv"), tmp_path / "f.jsonl", recognizer=FakeRecognizer())
+    httpd = ThreadingHTTPServer(("127.0.0.1", 0), server.make_handler(state))
+    threading.Thread(target=httpd.serve_forever, daemon=True).start()
+    base = f"http://127.0.0.1:{httpd.server_address[1]}"
+    def post(data):
+        req = urllib.request.Request(base + "/api/transcribe", data=data, headers={"Content-Type": "audio/wav"})
+        try:
+            with urllib.request.urlopen(req) as r: return r.status, json.loads(r.read())
+        except urllib.error.HTTPError as e: return e.code, json.loads(e.read())
+    yield post, state
+    httpd.shutdown(); httpd.server_close()
+
+def test_transcribe_returns_text_and_status_reports_the_model(voice):
+    post, state = voice
+    assert post(_wav()) == (200, {"text": "teks dari suara"})
+    v = state.status()["voice"]; assert v["model"] == "facebook/mms-1b-all" and v["language"] == "ace" and v["loaded"] is True
+
+@pytest.mark.parametrize("data,why", [
+    (b"not a wav", "WAV"), (_wav(sr=44100), "16 kHz"), (_wav(channels=2), "mono"), (_wav(seconds=0.1), "pendek"),
+    (_wav(amp=0.0), "Tidak ada suara"), (_wav(seconds=91), "panjang")])
+def test_transcribe_rejects_bad_audio_with_a_clear_message(voice, data, why):
+    post, _ = voice
+    code, d = post(data); assert code in (400, 413) and (why in d["error"] or code == 413)
+
+def test_wav_helper_roundtrip():
+    a, sr = asr.wav_to_float(_wav(0.5, amp=0.5)); assert sr == 16000 and len(a) == 8000 and 0.4 < float(abs(a).max()) <= 0.5
+
+# ---- the real Engine code paths (alternatives, batch, no-normalize, explain) on a tiny local model ------------------------
+@pytest.fixture(scope="module")
+def tiny_engine(tmp_path_factory):
+    pytest.importorskip("torch"); spm = pytest.importorskip("sentencepiece")
+    from transformers import NllbTokenizer, M2M100Config, M2M100ForConditionalGeneration
+    import sys, importlib.util
+    from acehid.common import ROOT
+    tmp = tmp_path_factory.mktemp("tiny")
+    (tmp / "c.txt").write_text("Gobnyan geujak u pasi\nDia pergi ke pantai\nAneuek miet\nAnak kecil\nLon ka jak u blang\nSaya sudah pergi", encoding="utf-8")
+    spm.SentencePieceTrainer.train(input=str(tmp / "c.txt"), model_prefix=str(tmp / "sp"), vocab_size=40, model_type="bpe", hard_vocab_limit=False, minloglevel=2)
+    tok = NllbTokenizer(vocab_file=str(tmp / "sp.model"), src_lang="ace_Latn", tgt_lang="ind_Latn")
+    cfg = M2M100Config(vocab_size=len(tok), d_model=16, encoder_layers=1, decoder_layers=1, encoder_attention_heads=2, decoder_attention_heads=2,
+                       encoder_ffn_dim=32, decoder_ffn_dim=32, max_position_embeddings=600, pad_token_id=tok.pad_token_id,
+                       bos_token_id=tok.bos_token_id, eos_token_id=tok.eos_token_id, decoder_start_token_id=tok.eos_token_id)
+    d = tmp / "m"; M2M100ForConditionalGeneration(cfg).save_pretrained(d); tok.save_pretrained(d)
+    spec = importlib.util.spec_from_file_location("core", ROOT / "space/core.py"); core = importlib.util.module_from_spec(spec); sys.modules["core"] = core; spec.loader.exec_module(core)
+    return core.Engine(str(d), beams=4)
+
+def test_engine_alternatives_batch_and_no_normalize(tiny_engine):
+    e = tiny_engine
+    main = e.translate_sentences(["gobnyan geujak u pasi"])[0]
+    alts = e.alternatives("gobnyan geujak u pasi", 2)
+    assert len(alts) <= 2 and main not in alts and len(set(alts)) == len(alts)
+    rows = e.translate_lines(["gobnyan geujak", "", "lon ka jak u blang"]); assert len(rows) == 3 and rows[1] == "" and all(isinstance(r, str) for r in rows)
+    out, det, _ = e.translate("Njang djipeugot", normalize_input=False); assert det[0][1] == "Njang djipeugot"
+    out, det, _ = e.translate("Njang djipeugot"); assert det[0][1] == "Nyang jipeugot"
+    src, tgt = e.explain("lon ka jak", "saya"); assert src and tgt
+
+def test_whole_app_with_a_real_engine(tiny_engine, tmp_path):
+    state = server.State(tiny_engine, Dictionary(tmp_path / "none.csv"), tmp_path / "f.jsonl", recognizer=FakeRecognizer())
+    d = state.translate({"text": "Gobnyan geujak u pasi", "alternatives": True}); assert isinstance(d["translation"], str) and len(d["alternatives"]) <= 2
+    b = state.batch({"text": "lon ka jak\n\ngobnyan geujak"}); assert [r["src"] for r in b["rows"]] == ["lon ka jak", "", "gobnyan geujak"] and b["rows"][1]["tgt"] == ""
+    x = state.explain({"text": "lon ka jak", "translation": d["translation"]}); assert x["src_tokens"] and x["words"][0]["word"] == "lon"

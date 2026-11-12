@@ -83,8 +83,8 @@ def run(model=None, share=False, port=7860, open_browser=True, **launch_extra):
 def run_web(model=None, port=7860, open_browser=True):
     """The AcehTranslate AI interface (webui/): plain Python server, no Gradio needed. Same model lookup as run()."""
     model = model or ensure_model()
-    if Path(model).is_dir():
-        os.environ.setdefault("HF_HUB_OFFLINE", "1")
+    # No HF_HUB_OFFLINE here (unlike run()): a model folder loads without the network anyway, and the voice model must be able to
+    # download itself the first time the microphone is used.
     _load("core", ROOT / "space/core.py")
     core = sys.modules["core"]
     try:

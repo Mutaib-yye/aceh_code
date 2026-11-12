@@ -2,14 +2,14 @@
 
 The list is unvalidated and copyrighted, so it is not training data and the app shows every entry with its page and validation
 status. It lives in the project's one fixed place, data/glossary/ (space/core.py ensure_glossary() downloads it from the repo when
-missing); data/raw/kamus/ is still accepted for a copy placed by hand. Lookup is a separate tool from sentence translation."""
+missing); the copy committed as data/kamus_aceh_indonesia_1985.csv and data/raw/kamus/ are also accepted. Lookup is a separate tool from sentence translation."""
 import csv, re, bisect
 from pathlib import Path
 from .common import ROOT, strip_diacritics
 
 NAME = "kamus_aceh_indonesia_1985.csv"
 CSV = ROOT / "data/glossary" / NAME
-FALLBACKS = (ROOT / "data/raw/kamus" / NAME,)
+FALLBACKS = (ROOT / "data" / NAME, ROOT / "data/raw/kamus" / NAME)
 
 def fold(s):
     """Lower case, no accents, no apostrophes: 'ab, ab and AB all match."""

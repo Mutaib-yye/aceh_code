@@ -215,6 +215,62 @@ $("down").addEventListener("click", () => sendFeedback("down"));
 $("fbSend").addEventListener("click", () => { if (!$("fbFix").value.trim()) { $("fbMsg").textContent = "Tulis koreksi dulu, atau pakai 👍/👎."; return; }
   if (!$("fbConsent").checked) { $("fbMsg").textContent = "Centang persetujuan agar koreksi disimpan."; return; } sendFeedback("down"); });
 
+/* ---------- voice input (Meta MMS on this computer; experimental) ---------- */
+const VOICE_MIN_MS = 400;
+let rec = null;
+const vmsg = t => showMsg($("voiceMsg"), t, true);
+function wavFromFloat(pcm, sr) {
+  const v = new DataView(new ArrayBuffer(44 + pcm.length * 2)), w = (o, t) => [...t].forEach((c, i) => v.setUint8(o + i, c.charCodeAt(0)));
+  w(0, "RIFF"); v.setUint32(4, 36 + pcm.length * 2, true); w(8, "WAVE"); w(12, "fmt "); v.setUint32(16, 16, true); v.setUint16(20, 1, true); v.setUint16(22, 1, true);
+  v.setUint32(24, sr, true); v.setUint32(28, sr * 2, true); v.setUint16(32, 2, true); v.setUint16(34, 16, true); w(36, "data"); v.setUint32(40, pcm.length * 2, true);
+  for (let i = 0; i < pcm.length; i++) v.setInt16(44 + i * 2, Math.max(-1, Math.min(1, pcm[i])) * 32767, true);
+  return new Blob([v], { type: "audio/wav" });
+}
+async function toWav16k(blob) {                                       // any browser format -> 16 kHz mono 16-bit WAV
+  const ctx = new (window.AudioContext || window.webkitAudioContext)();
+  const audio = await ctx.decodeAudioData(await blob.arrayBuffer()); ctx.close();
+  const off = new OfflineAudioContext(1, Math.max(1, Math.ceil(audio.duration * 16000)), 16000), src = off.createBufferSource();
+  src.buffer = audio; src.connect(off.destination); src.start();
+  return wavFromFloat((await off.startRendering()).getChannelData(0), 16000);
+}
+async function sendAudio(blob) {
+  const first = !(STATUS.voice && STATUS.voice.loaded);
+  vmsg(first ? "Memproses suara… Pertama kali model suara (±4 GB) diunduh dulu: bisa beberapa menit. · First use downloads the speech model." : "Memproses suara…");
+  try {
+    const r = await fetch("/api/transcribe", { method: "POST", headers: { "Content-Type": "audio/wav" }, body: await toWav16k(blob) });
+    const d = await r.json().catch(() => ({}));
+    if (!r.ok) throw new Error(d.error || `Server error (${r.status})`);
+    if (STATUS.voice) STATUS.voice.loaded = true;
+    if (!d.text) { vmsg("Tidak ada ucapan yang dikenali. Coba bicara lebih jelas dan dekat dengan mikrofon."); return; }
+    inp.value = (inp.value.trim() ? inp.value.trim() + "\n" : "") + d.text; updateCount(); inp.focus();
+    vmsg("Teks dari suara (eksperimental, bisa salah dengar bahasa Aceh): periksa dan edit dulu sebelum menerjemahkan.");
+  } catch (e) { showMsg($("voiceMsg"), "", true); showMsg($("msg"), e.message); }
+}
+async function toggleVoice() {
+  if (rec) { rec.stop(); return; }
+  if (!navigator.mediaDevices || !window.MediaRecorder) { showMsg($("msg"), "Browser ini tidak mendukung perekaman suara. Coba Chrome, Edge atau Firefox terbaru."); return; }
+  if (!store.get("voiceOk", false)) {
+    if (!confirm("Input suara (eksperimental)\n\n• Memakai model Meta MMS yang berjalan di komputer ini; audio tidak dikirim ke luar.\n• Pertama kali, model ±4 GB diunduh sekali.\n• Uji kecil: kesalahan huruf 12 %, kata 46 %. Selalu periksa dan edit teksnya sebelum menerjemahkan.\n\nLanjutkan dan izinkan mikrofon?")) return;
+    store.set("voiceOk", true);
+  }
+  showMsg($("msg"), "");
+  let stream;
+  try { stream = await navigator.mediaDevices.getUserMedia({ audio: true }); }
+  catch (e) { showMsg($("msg"), e.name === "NotFoundError" ? "Mikrofon tidak ditemukan." : "Izin mikrofon ditolak. Izinkan mikrofon di pengaturan browser lalu coba lagi."); return; }
+  const chunks = [], mr = new MediaRecorder(stream), t0 = Date.now();
+  rec = mr; $("mic").classList.add("rec"); vmsg("Merekam… klik mikrofon lagi untuk berhenti · recording, click again to stop.");
+  const auto = setTimeout(() => mr.state === "recording" && mr.stop(), ((STATUS.voice && STATUS.voice.max_seconds) || 90) * 1000 - 500);
+  mr.ondataavailable = e => e.data.size && chunks.push(e.data);
+  mr.onstop = () => {
+    clearTimeout(auto); stream.getTracks().forEach(t => t.stop()); $("mic").classList.remove("rec"); rec = null;
+    if (Date.now() - t0 < VOICE_MIN_MS || !chunks.length) { vmsg("Rekaman terlalu pendek."); return; }
+    sendAudio(new Blob(chunks, { type: mr.mimeType || "audio/webm" }));
+  };
+  mr.start();
+}
+$("mic").addEventListener("click", toggleVoice);
+$("cVoice").addEventListener("click", toggleVoice);
+
 /* ---------- batch ---------- */
 let BATCH = [];
 $("batchIn").addEventListener("input", () => { const n = $("batchIn").value.split("\n").filter(l => l.trim()).length; $("batchCount").textContent = `${n} baris`; });
