@@ -11,7 +11,7 @@ if not exist ".venv\Scripts\python.exe" (
 )
 
 call ".venv\Scripts\activate.bat"
-python -c "import gradio, transformers, torch, sentencepiece" >nul 2>nul
+python -c "import transformers, torch, sentencepiece" >nul 2>nul
 if errorlevel 1 goto install
 
 :run
@@ -24,7 +24,7 @@ exit /b 0
 :install
 echo Installing. The first time only, this takes 10 minutes or more.
 python -m pip install -q --upgrade pip
-python -m pip install -q "gradio==6.29.1" "transformers==5.19.0" "sentencepiece>=0.2" torch huggingface_hub
+python -m pip install -q "transformers==5.19.0" "sentencepiece>=0.2" torch huggingface_hub
 if errorlevel 1 goto install_failed
 goto run
 
