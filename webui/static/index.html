@@ -8,59 +8,99 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#3b82f6"/></linearGradient>
+  <symbol id="logo" viewBox="0 0 64 64"><path d="M32 5 59 54H5z" fill="none" stroke="url(#lg)" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M32 18 46 30H18z" fill="url(#lg)" opacity=".9"/><path d="M20 33h24v5H20zM22 38v12M28 38v12M36 38v12M42 38v12" fill="none" stroke="url(#lg)" stroke-width="2.6" stroke-linecap="round"/></symbol>
+</defs></svg>
+
 <div class="shell">
   <aside class="side" id="side">
     <a class="brand" href="#translate" aria-label="AcehTranslate AI">
-      <svg viewBox="0 0 48 48" width="40" height="40" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#3b82f6"/></linearGradient></defs><path d="M24 4 44 40H4z" fill="none" stroke="url(#lg)" stroke-width="3.5" stroke-linejoin="round"/><path d="M14 33h20M18 33V25l6-5 6 5v8" fill="none" stroke="url(#lg)" stroke-width="3" stroke-linejoin="round"/></svg>
+      <svg class="brand-logo" aria-hidden="true"><use href="#logo"/></svg>
       <span class="brand-text"><b>AcehTranslate <em>AI</em></b><small>Bridge Our Language</small></span>
     </a>
     <nav class="nav" id="nav" aria-label="Navigasi">
-      <a href="#translate" data-page="translate">Translate</a>
-      <a href="#dictionary" data-page="dictionary">Dictionary</a>
-      <a href="#history" data-page="history">History</a>
-      <a href="#evaluation" data-page="evaluation">Evaluation</a>
-      <a href="#about" data-page="about">About</a>
+      <a href="#translate" data-page="translate"><i data-i="home"></i>Translate</a>
+      <a href="#dictionary" data-page="dictionary"><i data-i="book"></i>Dictionary</a>
+      <a href="#history" data-page="history"><i data-i="clock"></i>History</a>
+      <a href="#evaluation" data-page="evaluation"><i data-i="chart"></i>Evaluation</a>
+      <a href="#about" data-page="about"><i data-i="info"></i>About</a>
     </nav>
     <button class="theme" id="theme" type="button" aria-label="Ganti tema · toggle theme"><span class="sun">☀</span><span class="moon">☾</span></button>
+    <svg class="side-art" viewBox="0 0 200 90" aria-hidden="true"><path d="M0 90V70l14-6 8 10 10-22 10 18 12-8 10 12 14-20 12 16 10-10 12 14 14-12 14 8 10-6 10 8 10-6v33z" fill="currentColor"/></svg>
   </aside>
 
   <main class="main">
+    <div class="topbar">
+      <a class="pill-btn" href="#history"><i data-i="clock"></i>Translation History</a>
+      <button class="pill-btn round" id="theme2" type="button" aria-label="Ganti tema · toggle theme">☾</button>
+    </div>
+
     <header class="hero">
-      <h1>AcehTranslate <span>AI</span></h1>
-      <p class="sub">Neural Machine Translation for Acehnese → Indonesian</p>
-      <p class="tag">Translate · Explore · Preserve Our Language</p>
-      <div class="badges"><span class="badge" id="modelBadge">…</span><span class="badge">Aceh → Indonesia</span></div>
+      <svg class="hero-scene" viewBox="0 0 620 260" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
+        <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a1a4a"/><stop offset=".7" stop-color="#173a82"/><stop offset="1" stop-color="#25508f"/></linearGradient></defs>
+        <rect width="620" height="260" fill="url(#sky)"/>
+        <g fill="#cfe8ff" opacity=".85"><circle cx="60" cy="30" r="1.4"/><circle cx="130" cy="60" r="1"/><circle cx="210" cy="22" r="1.6"/><circle cx="300" cy="48" r="1"/><circle cx="380" cy="16" r="1.4"/><circle cx="450" cy="70" r="1"/><circle cx="520" cy="28" r="1.6"/><circle cx="580" cy="62" r="1"/><circle cx="260" cy="85" r="1"/><circle cx="90" cy="100" r="1.2"/></g>
+        <circle cx="520" cy="46" r="20" fill="#e6f3ff" opacity=".9"/><circle cx="528" cy="42" r="19" fill="#173a82" opacity=".9"/>
+        <!-- palms -->
+        <g fill="#06122e"><path d="M70 260c4-50 6-90 2-130h6c4 40 2 80-2 130z"/><path d="M75 130c-30-6-48 4-60 22 20-8 40-10 60-8zM75 130c28-10 46-4 62 12-20-6-40-6-62-4zM75 130c-14-20-8-38 6-48 0 20 2 34-6 48zM75 130c16-20 34-26 52-20-18 4-34 10-52 20z"/>
+          <path d="M590 260c-3-40-4-72-1-100h5c3 28 2 60-1 100z"/><path d="M592 160c-24-4-40 4-50 18 16-6 32-8 50-6zM592 160c22-8 38-2 50 10-16-4-32-4-50-2zM592 160c-10-16-6-30 6-38 0 16 0 28-6 38z"/></g>
+        <!-- Rumoh Aceh -->
+        <g fill="#050f27">
+          <path d="M215 118c40-26 120-26 170 0l20 30H195z"/>                    <!-- big roof -->
+          <path d="M205 150h200v6H205z"/><path d="M215 156h180v34H215z"/>        <!-- walls -->
+          <path d="M228 190h6v50h-6zM258 190h6v50h-6zM288 190h6v50h-6zM318 190h6v50h-6zM348 190h6v50h-6zM378 190h6v50h-6z"/> <!-- stilts -->
+          <path d="M395 190l22 50h-8l-22-50z"/><path d="M180 240h250v4H180z"/>    <!-- stairs, ground -->
+          <path d="M205 118l-14-20 22 14zM405 118l14-20-22 14z"/>              <!-- horn ends -->
+        </g>
+        <g fill="#ffd36b" opacity=".92"><rect x="240" y="164" width="10" height="14" rx="1"/><rect x="272" y="164" width="10" height="14" rx="1"/><rect x="304" y="164" width="10" height="14" rx="1"/><rect x="336" y="164" width="10" height="14" rx="1"/><rect x="368" y="164" width="10" height="14" rx="1"/></g>
+        <rect y="238" width="620" height="22" fill="#050f27"/>
+      </svg>
+      <div class="hero-fade"></div>
+      <div class="hero-in">
+        <svg class="hero-logo" aria-hidden="true"><use href="#logo"/></svg>
+        <div>
+          <h1>AcehTranslate <span>AI</span></h1>
+          <p class="sub">Neural Machine Translation for Acehnese Language</p>
+          <p class="tag">Translate · Explore · Preserve Our Language</p>
+        </div>
+        <blockquote class="quote">“Melestarikan Bahasa Aceh,<br>Membangun Masa Depan”</blockquote>
+      </div>
+      <div class="badges" id="badges"><span class="badge"><i data-i="zap"></i><span id="modelBadge">…</span></span><span class="badge" id="qualBadge" hidden><i data-i="chart"></i><span></span></span><span class="badge"><i data-i="globe"></i>Aceh → Indonesia</span></div>
     </header>
 
     <!-- TRANSLATE -->
     <section class="page" id="page-translate">
-      <div class="modes" role="tablist"><button class="mode on" data-mode="single" type="button">Teks · Text</button><button class="mode" data-mode="batch" type="button">Batch Translation</button></div>
-
       <div id="single">
         <div class="panes">
           <div class="pane" id="paneIn">
-            <div class="pane-head"><span class="lang">Bahasa Aceh</span>
+            <div class="pane-head"><span class="lang"><span class="lang-ico"><i data-i="chat"></i></span>Bahasa Aceh</span>
               <span class="tools">
-                <button class="chip" id="mic" type="button" disabled title="Input suara belum tersedia: belum ada pengenalan suara bahasa Aceh yang diuji · voice input is not available yet">🎤</button>
-                <button class="chip" id="paste" type="button">Paste</button>
-                <button class="chip" id="copyIn" type="button">Copy input</button></span></div>
-            <textarea id="inp" rows="7" maxlength="5000" spellcheck="false" placeholder="Tulis atau tempel teks Bahasa Aceh di sini…&#10;Contoh: Lon ka jak u blang." aria-label="Teks bahasa Aceh"></textarea>
+                <button class="chip round" id="mic" type="button" disabled title="Input suara belum tersedia: belum ada pengenalan suara bahasa Aceh yang diuji · voice input is not available yet" aria-label="Input suara (belum tersedia)"><i data-i="mic"></i></button>
+                <button class="chip" id="paste" type="button"><i data-i="clipboard"></i>Paste</button>
+                <button class="chip" id="copyIn" type="button"><i data-i="copy"></i>Copy input</button></span></div>
+            <textarea id="inp" rows="7" maxlength="5000" spellcheck="false" placeholder="Tulis atau tempel teks Bahasa Aceh di sini…&#10;&#10;Contoh: Lon ka jak u blang." aria-label="Teks bahasa Aceh"></textarea>
             <div class="pane-foot"><span id="count">0 / 5000 karakter · 0 kata</span></div>
           </div>
-          <button class="go-arrow" id="swap" type="button" tabindex="-1" aria-hidden="true">→</button>
+          <button class="go-arrow" id="swap" type="button" tabindex="-1" aria-hidden="true"><i data-i="arrow"></i></button>
           <div class="pane out" id="paneOut">
-            <div class="pane-head"><span class="lang">Bahasa Indonesia</span>
-              <span class="tools"><button class="chip" id="copyOut" type="button" disabled>Copy</button><button class="chip" id="download" type="button" disabled>Download</button></span></div>
+            <div class="pane-head"><span class="lang"><span class="lang-ico flag"></span>Bahasa Indonesia</span>
+              <span class="tools"><button class="chip" id="copyOut" type="button" disabled><i data-i="copy"></i>Copy</button><button class="chip" id="download" type="button" disabled><i data-i="download"></i>Download</button></span></div>
             <div id="outText" class="out-text placeholder" aria-live="polite">Terjemahan akan muncul di sini…</div>
+            <svg class="watermark" viewBox="0 0 64 64" aria-hidden="true"><rect x="6" y="10" width="34" height="34" rx="6" fill="currentColor" opacity=".55"/><text x="23" y="36" font-size="24" font-weight="700" text-anchor="middle" fill="#0e1b3d">A</text><rect x="26" y="26" width="32" height="30" rx="6" fill="currentColor" opacity=".8"/><text x="42" y="48" font-size="20" font-weight="700" text-anchor="middle" fill="#0e1b3d">文</text></svg>
             <div id="loading" class="loading" hidden><span class="spin"></span> Menerjemahkan…</div>
             <div class="pane-foot"><span id="outFoot"></span></div>
           </div>
         </div>
 
         <div class="actions">
-          <button class="ghost" id="clear" type="button">Clear</button>
-          <button class="primary" id="translate" type="button">Translate</button>
-          <span class="hint">Ctrl/⌘ + Enter</span>
+          <button class="pill-btn" id="batchBtn" type="button"><i data-i="layers"></i>Batch Translation</button>
+          <span class="center">
+            <button class="primary" id="translate" type="button"><i data-i="spark"></i><span>Translate</span></button>
+            <button class="outline" id="clear" type="button"><i data-i="trash"></i>Clear</button>
+          </span>
+          <span class="shortcut"><i data-i="kbd"></i>Shortcut: Ctrl + Enter</span>
         </div>
         <div class="opts">
           <label><input type="checkbox" id="optNorm" checked> Normalisasi ejaan <small>(seperti data latih)</small></label>
@@ -69,15 +109,14 @@
         </div>
         <div id="msg" class="msg" role="alert" hidden></div>
         <pre id="normBox" class="box mono" hidden></pre>
-
         <div id="alts" class="box" hidden><h3>Alternatif terjemahan</h3><p class="muted">Ini kandidat lain dari model, bukan jaminan benar; nada atau konteksnya bisa berbeda. Terjemahan utama tidak berubah kecuali Anda memilih.</p><ul id="altList"></ul></div>
 
         <div class="cards">
-          <button class="card" id="cDict" type="button"><b>Aceh Dictionary</b><small>Cari arti kata</small></button>
-          <button class="card" id="cAlt" type="button"><b>Alternative Translations</b><small>Lihat pilihan lain</small></button>
-          <button class="card" id="cExplain" type="button"><b>Translation Explanation</b><small>Pahami hasilnya</small></button>
-          <button class="card" id="cFeed" type="button"><b>Give Feedback</b><small>Bantu kami memperbaiki</small></button>
-          <button class="card off" type="button" disabled title="Belum tersedia"><b>Voice Input</b><small>Belum tersedia</small></button>
+          <button class="card c1" id="cDict" type="button"><i class="ci" data-i="book"></i><span><b>Aceh Dictionary</b><small>Look up word meanings</small></span><i class="go" data-i="arrow"></i></button>
+          <button class="card c2 off" type="button" disabled title="Belum tersedia: belum ada pengenalan suara bahasa Aceh yang diuji"><i class="ci" data-i="wave"></i><span><b>Voice Input</b><small>Belum tersedia</small></span><i class="go" data-i="arrow"></i></button>
+          <button class="card c3" id="cAlt" type="button"><i class="ci" data-i="repeat"></i><span><b>Alternative Translations</b><small>See multiple options</small></span><i class="go" data-i="arrow"></i></button>
+          <button class="card c4" id="cExplain" type="button"><i class="ci" data-i="file"></i><span><b>Translation Explanation</b><small>Understand the result</small></span><i class="go" data-i="arrow"></i></button>
+          <button class="card c5" id="cFeed" type="button"><i class="ci" data-i="star"></i><span><b>Give Feedback</b><small>Help us improve</small></span><i class="go" data-i="arrow"></i></button>
         </div>
 
         <div id="words" class="box" hidden><h3>Cari arti kata <small>(klik kata)</small></h3><div id="chips" class="chips"></div><div id="wordOut"></div></div>
@@ -90,15 +129,24 @@
           <label class="check"><input type="checkbox" id="fbConsent"> Saya setuju teks dan koreksi saya disimpan untuk ditinjau manusia. Tanpa centang ini hanya penilaian 👍/👎 yang disimpan, tanpa teks. Data tidak dipakai melatih model secara otomatis.</label>
           <button class="primary small" id="fbSend" type="button">Kirim</button> <span id="fbMsg" class="muted"></span>
         </div>
+
+        <div class="bottom">
+          <section class="bcard wide"><div class="bhead"><h3><i data-i="clock"></i>Recent Translations</h3><a href="#history">View All →</a></div><div id="recent"></div></section>
+          <section class="bcard"><div class="bhead"><h3><i data-i="book"></i>Kamus</h3><span class="state" id="kState">…</span></div>
+            <div class="kv"><span>Entri</span><b id="kEntries">–</b></div><div class="kv"><span>Sumber</span><b>Kamus Aceh–Indonesia (1985)</b></div><div class="kv"><span>Cakupan</span><b>huruf A–L</b></div><div class="kv"><span>Status</span><b>belum divalidasi penuh</b></div>
+            <a class="pill-btn small" href="#dictionary">Buka kamus →</a></section>
+          <section class="bcard"><div class="bhead"><h3><i data-i="chart"></i>Translation Quality</h3><a href="#evaluation">View Evaluation →</a></div><div id="qual" class="muted">Memuat…</div></section>
+        </div>
       </div>
 
       <div id="batch" hidden>
-        <div class="panes">
-          <div class="pane"><div class="pane-head"><span class="lang">Bahasa Aceh · satu kalimat per baris</span></div>
+        <div class="panes one">
+          <div class="pane"><div class="pane-head"><span class="lang"><span class="lang-ico"><i data-i="layers"></i></span>Batch · satu kalimat per baris</span></div>
             <textarea id="batchIn" rows="9" placeholder="Satu kalimat per baris. Baris kosong dipertahankan."></textarea>
             <div class="pane-foot"><span id="batchCount">0 baris</span></div></div>
         </div>
-        <div class="actions"><button class="ghost" id="batchClear" type="button">Clear</button><button class="primary" id="batchGo" type="button">Translate</button></div>
+        <div class="actions"><button class="pill-btn" id="batchBack" type="button">← Kembali ke teks</button>
+          <span class="center"><button class="primary" id="batchGo" type="button"><i data-i="spark"></i><span>Translate</span></button><button class="outline" id="batchClear" type="button"><i data-i="trash"></i>Clear</button></span><span></span></div>
         <div id="batchMsg" class="msg" role="alert" hidden></div>
         <div id="batchOut" class="box" hidden>
           <div class="row between"><h3>Hasil</h3><span><button class="chip" id="batchCopy" type="button">Copy All</button> <button class="chip" id="batchDl" type="button">Download</button></span></div>
@@ -117,7 +165,7 @@
 
     <!-- HISTORY -->
     <section class="page" id="page-history" hidden>
-      <div class="row between"><h2>Riwayat terjemahan</h2><button class="ghost small" id="histClear" type="button">Clear All History</button></div>
+      <div class="row between"><h2>Riwayat terjemahan</h2><button class="outline small" id="histClear" type="button">Clear All History</button></div>
       <p class="muted">Riwayat disimpan <b>hanya di browser ini</b> (localStorage), tidak dikirim ke server, dan bisa Anda hapus kapan saja. Jangan menerjemahkan teks sensitif bila komputer ini dipakai bersama.</p>
       <input id="hq" class="search" type="search" placeholder="Cari di teks Aceh atau Indonesia…" aria-label="Cari riwayat">
       <div id="hlist"></div>
@@ -142,14 +190,15 @@
         <li>Data latih bergaya ulasan, Wikipedia dan hikayat; ragam lain (dialek, tulisan informal) bisa kurang akurat.</li>
         <li>Kata atau frasa yang sangat pendek sering ambigu: kalimat utuh memberi hasil lebih baik.</li>
         <li>Kamus hanya mencakup huruf A–L dan belum divalidasi penuh. Input suara belum tersedia karena belum ada pengenal suara bahasa Aceh yang diuji.</li></ul></div>
-      <div class="box"><h3>Pengaturan &amp; privasi</h3>
+      <div class="box" id="privacy"><h3>Pengaturan &amp; privasi</h3>
         <label class="check"><input type="checkbox" id="setNorm" checked> Normalisasi ejaan aktif secara default</label>
         <label class="check"><input type="checkbox" id="setHist" checked> Simpan riwayat di browser ini</label>
         <p class="muted">Riwayat tersimpan di browser Anda saja. Masukan (feedback) hanya disimpan bila Anda mencentang persetujuan, di komputer yang menjalankan aplikasi ini.</p>
-        <button class="ghost small" id="setClear" type="button">Hapus semua riwayat</button></div>
+        <button class="outline small" id="setClear" type="button">Hapus semua riwayat</button></div>
     </section>
 
-    <footer class="foot">AcehTranslate AI · Machine Translation Project for Acehnese Language · non-commercial use <span id="footModel"></span></footer>
+    <footer class="foot"><span class="foot-l"><svg class="foot-logo" aria-hidden="true"><use href="#logo"/></svg><b>AcehTranslate AI</b> · Machine Translation Project for Acehnese Language <span id="footModel"></span></span>
+      <span class="foot-r"><a href="#about">Privacy &amp; Info</a><a href="https://github.com/Mutaib-yye/aceh_code" target="_blank" rel="noopener">GitHub</a></span></footer>
   </main>
 </div>
 <script src="app.js"></script>

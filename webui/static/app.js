@@ -18,7 +18,11 @@ async function api(path, body) {
   if (!r.ok) throw new Error(d.error || `Server error (${r.status})`);
   return d;
 }
-const flash = (btn, txt) => { const o = btn.textContent; btn.textContent = txt; setTimeout(() => btn.textContent = o, 1200); };
+const flash = (btn, txt) => {
+  const t = [...btn.childNodes].reverse().find(n => n.nodeType === 3 && n.textContent.trim());
+  if (!t) { const o = btn.textContent; btn.textContent = txt; setTimeout(() => btn.textContent = o, 1200); return; }
+  const o = t.textContent; t.textContent = txt; setTimeout(() => t.textContent = o, 1200);
+};
 async function copy(text, btn) {
   try { await navigator.clipboard.writeText(text); flash(btn, "Disalin ✓"); }
   catch (e) { const t = el("textarea"); t.value = text; document.body.append(t); t.select(); document.execCommand("copy"); t.remove(); flash(btn, "Disalin ✓"); }
@@ -28,11 +32,39 @@ function save(name, text, type = "text/plain") {
   document.body.append(a); a.click(); a.remove();
 }
 
+/* ---------- icons ---------- */
+const ICONS = {
+  home: '<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>',
+  book: '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>',
+  clock: '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
+  chart: '<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>',
+  info: '<circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>',
+  mic: '<path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/>',
+  clipboard: '<path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/>',
+  copy: '<rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>',
+  download: '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>',
+  layers: '<polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>',
+  trash: '<polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/>',
+  arrow: '<line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>',
+  star: '<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>',
+  repeat: '<polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/>',
+  file: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>',
+  zap: '<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>',
+  globe: '<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>',
+  spark: '<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/>',
+  kbd: '<rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/>',
+  chat: '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>',
+  wave: '<line x1="4" y1="10" x2="4" y2="14"/><line x1="8" y1="6" x2="8" y2="18"/><line x1="12" y1="3" x2="12" y2="21"/><line x1="16" y1="7" x2="16" y2="17"/><line x1="20" y1="10" x2="20" y2="14"/>',
+};
+document.querySelectorAll("i[data-i]").forEach(n => { n.innerHTML = `<svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[n.dataset.i] || ""}</svg>`; });
+
 /* ---------- theme + navigation ---------- */
 const root = document.documentElement;
 function setTheme(t) { root.setAttribute("data-theme", t); store.set("theme", t); }
 setTheme(store.get("theme", "dark"));
-$("theme").addEventListener("click", () => setTheme(root.getAttribute("data-theme") === "dark" ? "light" : "dark"));
+const flip = () => { setTheme(root.getAttribute("data-theme") === "dark" ? "light" : "dark"); $("theme2").textContent = root.getAttribute("data-theme") === "dark" ? "☾" : "☀"; };
+$("theme").addEventListener("click", flip); $("theme2").addEventListener("click", flip);
+$("theme2").textContent = root.getAttribute("data-theme") === "dark" ? "☾" : "☀";
 
 const PAGES = ["translate", "dictionary", "history", "evaluation", "about"];
 function route() {
@@ -51,8 +83,11 @@ async function loadStatus() {
   try {
     STATUS = await api("/api/status");
     const b = $("modelBadge");
-    b.textContent = STATUS.finetuned ? "Fine-tuned model" : "Model dasar NLLB-200 · belum di-fine-tune";
-    b.classList.toggle("warn", !STATUS.finetuned);
+    b.textContent = STATUS.finetuned ? "Fine-tuned Model" : "Model dasar NLLB-200 · belum di-fine-tune";
+    b.parentElement.classList.toggle("warn", !STATUS.finetuned);
+    const k = STATUS.dictionary || {};
+    $("kEntries").textContent = k.loaded ? k.entries.toLocaleString("id-ID") : "–";
+    $("kState").textContent = k.loaded ? "Aktif" : "Belum dimuat"; $("kState").classList.toggle("off", !k.loaded);
     $("aboutModel").textContent = `Model aktif: ${STATUS.model_id}.`;
     $("footModel").textContent = "· " + STATUS.model_id;
     $("inp").maxLength = STATUS.max_chars;
@@ -69,7 +104,7 @@ function updateCount() {
 }
 function showMsg(box, text, note) { box.hidden = !text; box.textContent = text || ""; box.classList.toggle("note", !!note); }
 function busy(on) {
-  $("translate").disabled = on; $("loading").hidden = !on; $("translate").textContent = on ? "Menerjemahkan…" : "Translate";
+  $("translate").disabled = on; $("loading").hidden = !on; $("translate").querySelector("span").textContent = on ? "Menerjemahkan…" : "Translate";
   if (on) { $("outText").classList.add("placeholder"); }
 }
 function setOut(text) {
@@ -117,10 +152,8 @@ $("optNorm").addEventListener("change", e => { store.set("normalize", e.target.c
 $("setNorm").addEventListener("change", e => { store.set("normalize", e.target.checked); $("optNorm").checked = e.target.checked; });
 $("optNorm").checked = $("setNorm").checked = store.get("normalize", true);
 
-document.querySelectorAll(".mode").forEach(b => b.addEventListener("click", () => {
-  document.querySelectorAll(".mode").forEach(x => x.classList.toggle("on", x === b));
-  $("single").hidden = b.dataset.mode !== "single"; $("batch").hidden = b.dataset.mode !== "batch";
-}));
+const showBatch = on => { $("single").hidden = on; $("batch").hidden = !on; if (on) $("batchIn").focus(); };
+$("batchBtn").addEventListener("click", () => showBatch(true)); $("batchBack").addEventListener("click", () => showBatch(false));
 
 /* ---------- word lookup, explain, feedback, alternatives cards ---------- */
 function entryNode(e) {
@@ -188,14 +221,14 @@ $("batchIn").addEventListener("input", () => { const n = $("batchIn").value.spli
 async function doBatch() {
   showMsg($("batchMsg"), ""); const text = $("batchIn").value;
   if (!text.trim()) { showMsg($("batchMsg"), "Teks masih kosong · please enter some lines."); return; }
-  $("batchGo").disabled = true; $("batchGo").textContent = "Menerjemahkan…";
+  $("batchGo").disabled = true; $("batchGo").querySelector("span").textContent = "Menerjemahkan…";
   try {
     const d = await api("/api/batch", { text, normalize: $("optNorm").checked });
     BATCH = d.rows; const tb = $("batchRows"); tb.replaceChildren();
     d.rows.forEach((r, i) => tb.append(el("tr", {}, el("td", {}, r.src.trim() ? String(i + 1) : ""), el("td", {}, r.src), el("td", {}, r.tgt))));
     $("batchOut").hidden = false;
   } catch (e) { showMsg($("batchMsg"), e.message); }
-  finally { $("batchGo").disabled = false; $("batchGo").textContent = "Translate"; }
+  finally { $("batchGo").disabled = false; $("batchGo").querySelector("span").textContent = "Translate"; }
 }
 $("batchGo").addEventListener("click", doBatch);
 $("batchClear").addEventListener("click", () => { $("batchIn").value = ""; $("batchOut").hidden = true; $("batchCount").textContent = "0 baris"; showMsg($("batchMsg"), ""); });
@@ -212,7 +245,7 @@ function addHistory(src, tgt) {
   if (!store.get("keepHistory", true)) return;
   const h = history().filter(x => !(x.src === src && x.tgt === tgt));
   h.unshift({ id: Date.now() + Math.random(), src, tgt, t: new Date().toISOString() });
-  store.set(HK, h.slice(0, 500));
+  store.set(HK, h.slice(0, 500)); renderRecent();
 }
 function renderHistory() {
   const q = $("hq").value.trim().toLowerCase(), box = $("hlist");
@@ -224,10 +257,20 @@ function renderHistory() {
     el("div", { class: "row", style: "margin-top:8px" },
       el("button", { class: "chip", onclick: () => { inp.value = x.src; location.hash = "translate"; updateCount(); setOut(x.tgt); LAST = { src: x.src, tgt: x.tgt, details: [] }; } }, "Buka"),
       el("button", { class: "chip", onclick: e => copy(x.tgt, e.target) }, "Copy"),
-      el("button", { class: "chip", onclick: () => { store.set(HK, history().filter(y => y.id !== x.id)); renderHistory(); } }, "Hapus")))));
+      el("button", { class: "chip", onclick: () => { store.set(HK, history().filter(y => y.id !== x.id)); renderHistory(); renderRecent(); } }, "Hapus")))));
 }
 $("hq").addEventListener("input", renderHistory);
-function clearAll() { if (confirm("Hapus semua riwayat terjemahan di browser ini? Tindakan ini tidak bisa dibatalkan.")) { store.set(HK, []); renderHistory(); } }
+function ago(iso) {
+  const m = Math.max(0, Math.round((Date.now() - new Date(iso)) / 60000));
+  return m < 1 ? "baru saja" : m < 60 ? `${m} mnt lalu` : m < 1440 ? `${Math.round(m / 60)} jam lalu` : `${Math.round(m / 1440)} hari lalu`;
+}
+function renderRecent() {
+  const box = $("recent"), h = history().slice(0, 4); box.replaceChildren();
+  if (!h.length) { box.append(el("p", { class: "muted" }, "Belum ada terjemahan. Hasil Anda muncul di sini (hanya di browser ini).")); return; }
+  h.forEach(x => box.append(el("div", { class: "rrow" }, el("span", { title: x.src }, x.src), el("span", { class: "a arrow" }, "→"), el("span", { title: x.tgt }, x.tgt),
+    el("button", { type: "button", "aria-label": "Copy terjemahan", onclick: e => copy(x.tgt, e.currentTarget) }, el("span", { class: "muted" }, ago(x.t)), "⧉"))));
+}
+function clearAll() { if (confirm("Hapus semua riwayat terjemahan di browser ini? Tindakan ini tidak bisa dibatalkan.")) { store.set(HK, []); renderHistory(); renderRecent(); } }
 $("histClear").addEventListener("click", clearAll); $("setClear").addEventListener("click", clearAll);
 $("setHist").checked = store.get("keepHistory", true);
 $("setHist").addEventListener("change", e => store.set("keepHistory", e.target.checked));
@@ -247,4 +290,16 @@ async function loadEval() {
   } catch (e) { box.replaceChildren(el("p", { class: "msg" }, e.message)); }
 }
 
-updateCount(); route(); loadStatus();
+async function loadQuality() {
+  const box = $("qual");
+  try {
+    const d = await api("/api/evaluation");
+    if (!d.available || !d.rows.length) { box.textContent = "Belum ada hasil evaluasi untuk model ini."; return; }
+    const best = d.rows[0], pct = Math.max(0, Math.min(100, Number(best.model) || 0));
+    box.className = ""; box.replaceChildren(el("div", { class: "qring" }, el("div", { class: "ring", style: `--p:${pct}` }, el("b", {}, String(best.model))),
+      el("div", { class: "qlist" }, el("div", { class: "kv" }, el("span", {}, "Metrik"), el("b", {}, "chrF++")), el("div", { class: "kv" }, el("span", {}, "Set uji"), el("b", {}, best.set.split(" (")[0])),
+        el("div", { class: "kv" }, el("span", {}, "NLLB dasar"), el("b", {}, String(best.base))))));
+    const qb = $("qualBadge"); qb.hidden = false; qb.querySelector("span").textContent = `chrF++ ${best.model}`;
+  } catch (e) { box.textContent = "Skor tidak bisa dimuat."; }
+}
+updateCount(); renderRecent(); route(); loadStatus(); loadQuality();
