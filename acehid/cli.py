@@ -44,7 +44,8 @@ def main(argv=None):
     p = sub.add_parser("kamus-build", help="personal lookup: build the local text of your Kamus Budaya PDF (data/raw/kamus/, git-ignored)"); p.add_argument("pdf")
     p = sub.add_parser("kamus", help="personal lookup of an Acehnese word in the Kamus Budaya (run kamus-build first)"); p.add_argument("word", nargs="+")
     p = sub.add_parser("app", help="translator app on this computer (http://127.0.0.1:7860), uses your trained model")
-    p.add_argument("--model", help="model folder or id (default: models/ace-id-nllb, fetched once)"); p.add_argument("--share", action="store_true", help="also make a temporary public link")
+    p.add_argument("--model", help="model folder or id (default: models/ace-id-nllb, fetched once)"); p.add_argument("--share", action="store_true", help="also make a temporary public link (uses the classic Gradio page)")
+    p.add_argument("--classic", action="store_true", help="the older Gradio page instead of AcehTranslate AI")
     p.add_argument("--port", type=int, default=7860)
     p = sub.add_parser("serve", help="web app"); p.add_argument("--port", type=int, default=8000); p.add_argument("--host", default="127.0.0.1"); p.add_argument("--open", action="store_true", help="open the browser")
     p = sub.add_parser("all", help="2-5 + export on data/raw/hikayat (translate separately)"); p.add_argument("--no-ocr", action="store_true")
@@ -128,7 +129,9 @@ def main(argv=None):
     elif a.cmd == "kamus":
         from . import kamus; kamus.show(" ".join(a.word))
     elif a.cmd == "app":
-        from . import local_app; local_app.run(a.model, share=a.share, port=a.port)
+        from . import local_app
+        if a.share or a.classic: local_app.run(a.model, share=a.share, port=a.port)
+        else: local_app.run_web(a.model, port=a.port)
     elif a.cmd == "serve":
         from app.server import serve
         if a.open:

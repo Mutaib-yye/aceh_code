@@ -79,3 +79,19 @@ def run(model=None, share=False, port=7860, open_browser=True, **launch_extra):
     print(f"model: {model}")
     print(f"starting the app at http://127.0.0.1:{port}  (stop with Ctrl+C)")
     return load_space_app().start(model, share=share, server_name="127.0.0.1", server_port=port, inbrowser=open_browser, **launch_extra)
+
+def run_web(model=None, port=7860, open_browser=True):
+    """The AcehTranslate AI interface (webui/): plain Python server, no Gradio needed. Same model lookup as run()."""
+    model = model or ensure_model()
+    if Path(model).is_dir():
+        os.environ.setdefault("HF_HUB_OFFLINE", "1")
+    _load("core", ROOT / "space/core.py")
+    core = sys.modules["core"]
+    try:
+        engine = core.Engine(model)
+    except Exception as e:
+        print(f"could not load {model!r} ({e}); falling back to {BASE_MODEL}")
+        engine = core.Engine(BASE_MODEL)
+    from webui.server import serve
+    print(f"model: {model}")
+    return serve(engine, "127.0.0.1", port, open_browser)

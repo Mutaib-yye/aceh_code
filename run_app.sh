@@ -11,10 +11,11 @@ done
 if [ -x .venv/bin/python ] && ! .venv/bin/python -c 'import sys' 2>/dev/null; then rm -rf .venv; fi
 [ -d .venv ] || "$PY" -m venv .venv || { echo "Could not create .venv with $PY"; exit 1; }
 . .venv/bin/activate
-if ! python -c 'import gradio, transformers, torch, sentencepiece' 2>/dev/null; then
+if ! python -c 'import transformers, torch, sentencepiece' 2>/dev/null; then
   echo "Installing (first time only, a few minutes)..."
   python -m pip install -q --upgrade pip >/dev/null 2>&1
-  python -m pip install -q "gradio==6.29.1" "transformers==5.19.0" "sentencepiece>=0.2" torch huggingface_hub \
+  python -m pip install -q "transformers==5.19.0" "sentencepiece>=0.2" torch huggingface_hub \
     || { echo "Install failed. Copy the error above and send it to Claude."; exit 1; }
 fi
+case " $* " in *" --share "*|*" --classic "*) python -c 'import gradio' 2>/dev/null || python -m pip install -q "gradio==6.29.1";; esac
 python -m acehid app "$@"
