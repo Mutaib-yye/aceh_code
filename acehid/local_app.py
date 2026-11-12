@@ -99,3 +99,40 @@ def run_web(model=None, port=7860, open_browser=True):
         pass
     print(f"model: {model}")
     return serve(engine, "127.0.0.1", port, open_browser)
+
+def doctor(port=7860, model=None):
+    """`./run_app.sh --doctor` / `run_app.bat --doctor`: a checklist to paste into a message when the app does not start."""
+    import platform, shutil, socket, urllib.request
+    rows = []
+    def add(ok, name, detail=""):
+        rows.append(f"[{'OK' if ok else '!!'}] {name}" + (f": {detail}" if detail else ""))
+    add(sys.version_info >= (3, 10), "Python 3.10+", f"{platform.python_version()} on {platform.system()} {platform.machine()}")
+    for mod in ("torch", "transformers", "sentencepiece", "huggingface_hub", "numpy"):
+        try:
+            m = __import__(mod); add(True, mod, getattr(m, "__version__", ""))
+        except Exception as e:
+            add(False, mod, f"not installed ({e.__class__.__name__}); re-run the launcher to install")
+    target = Path(model) if model else LOCAL
+    zips = list((Path.home() / "Downloads").glob("ace-id-nllb*.zip")) if (Path.home() / "Downloads").exists() else []
+    add(True, "trained model",
+        f"found in {target}" if _has_model(target) else ("zip in Downloads (will be unpacked)" if zips else
+        "not on this computer yet (normal before the first start): the app asks for the Hugging Face token and downloads it once"))
+    from .dictionary import Dictionary
+    d = Dictionary(); add(d.loaded, "dictionary", f"{len(d.entries)} entries from {d.path.name}" if d.loaded else "word list not found")
+    free = shutil.disk_usage(ROOT).free / 1e9
+    add(free > 6, "free disk space", f"{free:.1f} GB (model 1.2 GB; voice model +4 GB; packages ~3 GB)")
+    try:
+        urllib.request.urlopen(urllib.request.Request("https://huggingface.co", method="HEAD"), timeout=8); add(True, "internet to huggingface.co")
+    except Exception as e:
+        add(False, "internet to huggingface.co", f"{e.__class__.__name__}: needed once for the model and for the voice model")
+    try:
+        from huggingface_hub import try_to_load_from_cache
+        cached = isinstance(try_to_load_from_cache("facebook/mms-1b-all", "config.json"), str)
+        add(True, "voice model (Meta MMS)", "already downloaded" if cached else "not downloaded yet: downloads (about 4 GB) the first time the microphone is used")
+    except Exception:
+        add(True, "voice model (Meta MMS)", "will download on first use")
+    with socket.socket() as s:
+        add(s.connect_ex(("127.0.0.1", port)) != 0, f"port {port} free", "" if s.connect_ex(("127.0.0.1", port)) != 0 else "something is already running there: close it or use --port 7861")
+    add((ROOT / "webui/static/index.html").exists(), "app files", str(ROOT))
+    print("\n".join(rows)); print("\nIf any line shows [!!], copy this whole list into your message.")
+    return all(r.startswith("[OK]") for r in rows)

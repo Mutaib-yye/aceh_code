@@ -1,0 +1,32 @@
+name: webui
+# Runs the app's tests on Windows, macOS and Linux, so a Windows-only problem shows up here and not on a teammate's PC.
+on:
+  push:
+    branches: ["claude/dataset-product-build-108xu8"]
+  workflow_dispatch:
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install pytest pymupdf pysbd datasketch rapidfuzz sacrebleu "transformers==5.19.0" "sentencepiece>=0.2" huggingface_hub numpy soundfile "gradio==6.29.1"
+      - name: torch (CPU build on Windows and Linux)
+        if: runner.os != 'macOS'
+        run: python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - name: torch (macOS)
+        if: runner.os == 'macOS'
+        run: python -m pip install torch
+      - name: tests of the app
+        run: python -m pytest tests/test_webui.py tests/test_local_app.py tests/test_space.py tests/test_kamus.py -q
+      - name: checklist the launcher can print
+        run: python -m acehid app --doctor
+        continue-on-error: true

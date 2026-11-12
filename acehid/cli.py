@@ -47,6 +47,7 @@ def main(argv=None):
     p = sub.add_parser("app", help="translator app on this computer (http://127.0.0.1:7860), uses your trained model")
     p.add_argument("--model", help="model folder or id (default: models/ace-id-nllb, fetched once)"); p.add_argument("--share", action="store_true", help="also make a temporary public link (uses the classic Gradio page)")
     p.add_argument("--classic", action="store_true", help="the older Gradio page instead of AcehTranslate AI")
+    p.add_argument("--doctor", action="store_true", help="print a checklist (Python, packages, model, dictionary, internet, disk, port) and exit")
     p.add_argument("--port", type=int, default=7860)
     p = sub.add_parser("serve", help="web app"); p.add_argument("--port", type=int, default=8000); p.add_argument("--host", default="127.0.0.1"); p.add_argument("--open", action="store_true", help="open the browser")
     p = sub.add_parser("all", help="2-5 + export on data/raw/hikayat (translate separately)"); p.add_argument("--no-ocr", action="store_true")
@@ -133,6 +134,7 @@ def main(argv=None):
         from . import kamus; kamus.show(" ".join(a.word))
     elif a.cmd == "app":
         from . import local_app
+        if a.doctor: raise SystemExit(0 if local_app.doctor(a.port, a.model) else 1)
         if a.share or a.classic: local_app.run(a.model, share=a.share, port=a.port)
         else: local_app.run_web(a.model, port=a.port)
     elif a.cmd == "serve":
