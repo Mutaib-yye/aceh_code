@@ -183,15 +183,40 @@ class Engine:
             self.cache.clear()
         return [self.cache[s] for s in sents]
 
-    def translate(self, text):
-        """-> (indonesian_text, details [[acehnese, normalized, indonesian]], notes [str]). Keeps the line structure."""
+    def alternatives(self, sentence, n=2):
+        """Other beam-search candidates for ONE normalized sentence (not the main translation). They are the model's own
+        runner-up outputs, so they can differ in wording or tone and are not guaranteed to be correct."""
+        enc = self.tok([sentence], return_tensors="pt", truncation=True, max_length=200).to(self.device)
+        beams = max(self.beams, n + 2)
+        with self.torch.inference_mode():
+            gen = self.model.generate(**enc, forced_bos_token_id=self.bos, num_beams=beams, num_return_sequences=beams,
+                                      max_new_tokens=min(256, int(enc["input_ids"].shape[1] * 2) + 10))
+        main = self.translate_sentences([sentence])[0]
+        out = []
+        for t in self.tok.batch_decode(gen, skip_special_tokens=True):
+            t = t.strip()
+            if t and t != main and t not in out:
+                out.append(t)
+        return out[:n]
+
+    def translate_lines(self, lines, normalize_input=True):
+        """One Indonesian string per input line (blank lines stay blank), for batch mode."""
+        prep = [[(normalize(s) if normalize_input else s) for s in split_sentences(l)] for l in lines]
+        flat = [s for l in prep for s in l]
+        res = dict(zip(flat, self.translate_sentences(flat)))
+        return [" ".join(res[s] for s in l) for l in prep]
+
+    def translate(self, text, normalize_input=True):
+        """-> (indonesian_text, details [[acehnese, normalized, indonesian]], notes [str]). Keeps the line structure.
+        normalize_input=False sends the user's spelling to the model unchanged (only whitespace is tidied)."""
+        norm = normalize if normalize_input else (lambda s: re.sub(r"\s+", " ", s).strip())
         notes = []
         text = (text or "").strip()
         if not text:
             return "", [], notes
         if len(text) > MAX_CHARS:
             text = text[:MAX_CHARS]; notes.append(f"Only the first {MAX_CHARS} characters were translated.")
-        lines = [[(s, normalize(s)) for s in split_sentences(l)] for l in text.splitlines()]
+        lines = [[(s, norm(s)) for s in split_sentences(l)] for l in text.splitlines()]
         flat = [n for l in lines for _, n in l]
         res = dict(zip(flat, self.translate_sentences(flat)))
         out = "\n".join(" ".join(res[n] for _, n in l) for l in lines)
