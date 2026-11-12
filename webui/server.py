@@ -20,6 +20,7 @@ STATIC = Path(__file__).parent / "static"
 FEEDBACK = ROOT / "data/feedback/feedback.jsonl"
 MAX_CHARS, MAX_BATCH_LINES, MAX_BODY, MAX_AUDIO = 5000, 200, 1 << 20, 4 << 20
 ERROR_TYPES = {"vocabulary", "word_order", "missing_meaning", "dialect", "other"}
+TYPES = {".html": "text/html", ".css": "text/css", ".js": "text/javascript", ".svg": "image/svg+xml"}   # not from the Windows registry
 _lock = threading.Lock()                      # one translation at a time: the model is not thread-safe
 
 class State:
@@ -144,7 +145,7 @@ def make_handler(state):
             f = (STATIC / rel).resolve()
             if STATIC.resolve() not in f.parents or not f.is_file():
                 return self._send(404, {"error": "not found"})
-            self._send(200, f.read_bytes(), mimetypes.guess_type(f.name)[0] or "application/octet-stream")
+            self._send(200, f.read_bytes(), TYPES.get(f.suffix) or mimetypes.guess_type(f.name)[0] or "application/octet-stream")
 
         def do_POST(self):
             if urlparse(self.path).path == "/api/transcribe":

@@ -41,6 +41,9 @@ def test_page_and_assets_served(app):
     call, _ = app
     code, html = call("/"); assert code == 200 and b"AcehTranslate" in html
     assert call("/app.js")[0] == 200 and call("/style.css")[0] == 200
+    import urllib.request as u
+    base = call.__closure__[0].cell_contents
+    assert u.urlopen(base + "/style.css").headers["Content-Type"].startswith("text/css") and u.urlopen(base + "/app.js").headers["Content-Type"].startswith("text/javascript")
     assert call("/../server.py")[0] == 404 and call("/nothing")[0] == 404
 
 def test_translate_and_errors(app):
