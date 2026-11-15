@@ -121,6 +121,18 @@ def test_numbered_packs_leave_the_translator_blank_and_still_rotate_the_checker(
     _many(tmp_path, monkeypatch)
     sheets.make_packs(None, per_person=20, out=tmp_path / "packs", count=3)
     rows = list(csv.DictReader(open(tmp_path / "packs/02_pack-2.csv", encoding="utf-8-sig")))
-    assert len(rows) == 20 and all(r["translator"] == "" and r["checker"] == "" for r in rows) and rows[0]["id"] == "P02-001"
+    assert len(rows) == 20 and all(r["translator"] == sheets.PH_TRANSLATOR and r["checker"] == sheets.PH_CHECKER for r in rows) and rows[0]["id"] == "P02-001"
     assert "| Pack 1 | 01_pack-1.csv | Pack 3 |" in (tmp_path / "packs/PACKS.md").read_text(encoding="utf-8")
     with pytest.raises(ValueError): sheets.make_packs(None, 20, out=tmp_path / "p")
+
+
+def test_a_placeholder_left_in_a_cell_is_never_accepted_as_a_name(tmp_path, monkeypatch):
+    _project(tmp_path, monkeypatch)
+    f = tmp_path / "p.csv"
+    with open(f, "w", encoding="utf-8-sig", newline="") as h:
+        w = csv.DictWriter(h, sheets.SENT_COLS); w.writeheader()
+        w.writerow({"id": "1", "acehnese": ACE[2], "indonesian": "Ibu bilang tidak.", "translator": "Ana", "checker": sheets.PH_CHECKER, "verdict": "ok"})   # checker never filled in
+        w.writerow({"id": "2", "acehnese": ACE[3], "indonesian": "Ayah pergi.", "translator": sheets.PH_TRANSLATOR, "checker": "Budi", "verdict": "ok"})      # translator never filled in
+        w.writerow({"id": "3", "acehnese": ACE[4], "indonesian": "Kami makan.", "translator": "Ana", "checker": "Budi", "verdict": "ok"})
+    st = sheets.import_sheets(sentences=f, outdir=tmp_path / "human")
+    assert st["sentences_accepted"] == 1 and [r["id"] for r in json.load(open(tmp_path / "human/pairs.json", encoding="utf-8"))] == ["3"]

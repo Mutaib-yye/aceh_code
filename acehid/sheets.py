@@ -12,6 +12,7 @@ from .normalize import normalize
 SENT_COLS = ["id", "acehnese", "indonesian", "translator", "checker", "verdict", "notes"]
 WORD_COLS = ["id", "acehnese_word", "example_acehnese", "indonesian_meaning", "translator", "checker", "notes"]
 MIN_WORDS, MAX_WORDS = 4, 25
+PH_TRANSLATOR, PH_CHECKER = "<NAMA ANDA>", "<NAMA PEMERIKSA>"      # placeholders in numbered packs: replace with your name
 OUT = ROOT / "data/human/sheets"
 GUIDE = """TRANSLATOR GUIDE (Acehnese -> Indonesian)
 
@@ -89,8 +90,8 @@ def _slug(name):
 def make_packs(people=None, per_person=25, seed=0, out=OUT.parent / "packs", count=None):
     """One sheet of `per_person` (20-30) different AcehX sentences for each person, plus PACKS.md saying who checks whose pack.
     Nobody checks their own pack: pack i is checked by the owner of pack i-1 (the first by the last).
-    Give `people` (names are put in the translator column) or just `count` (numbered packs with a BLANK translator column: each
-    person writes their own name there, and the checker writes theirs)."""
+    Give `people` (names are put in the translator column) or just `count` (numbered packs whose translator and checker columns hold a
+    <placeholder>: each person replaces it with their own name; a placeholder left in place is never counted as a name)."""
     if people:
         people = [p.strip() for p in people if p.strip()]
         names = people
@@ -115,7 +116,7 @@ def make_packs(people=None, per_person=25, seed=0, out=OUT.parent / "packs", cou
         with open(out / fname, "w", encoding="utf-8-sig", newline="") as f:
             w = csv.DictWriter(f, SENT_COLS); w.writeheader()
             for j, (src, line, t) in enumerate(mine, 1):
-                w.writerow({"id": f"P{i + 1:02d}-{j:03d}", "acehnese": t, "indonesian": "", "translator": who if people else "", "checker": "", "verdict": "",
+                w.writerow({"id": f"P{i + 1:02d}-{j:03d}", "acehnese": t, "indonesian": "", "translator": who if people else PH_TRANSLATOR, "checker": "" if people else PH_CHECKER, "verdict": "",
                             "notes": f"{src}:{line}"})
         lines.append(f"| {who} | {fname} | {names[(i - 1) % len(names)]} |")
     (out / "PACKS.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
@@ -153,9 +154,15 @@ def make_word_sheet(out=OUT, n=300):
     return len(top)
 
 
+def _name(v):
+    """A person's name, or "" when the cell is empty or still holds a <placeholder>."""
+    v = (v or "").strip()
+    return "" if v.startswith("<") and v.endswith(">") else v
+
+
 def _accepted(r, field):
-    filled = r.get(field, "").strip() and r.get("translator", "").strip() and r.get("checker", "").strip()
-    return bool(filled) and r["translator"].strip().lower() != r["checker"].strip().lower()
+    filled = r.get(field, "").strip() and _name(r.get("translator")) and _name(r.get("checker"))
+    return bool(filled) and _name(r["translator"]).lower() != _name(r["checker"]).lower()
 
 
 def import_sheets(sentences=None, words=None, outdir=ROOT / "data/human"):
@@ -174,7 +181,7 @@ def import_sheets(sentences=None, words=None, outdir=ROOT / "data/human"):
                 stats["sentences_in"] += 1
                 if _accepted(r, "indonesian") and "?" not in r["indonesian"]:
                     row = {"id": r["id"], "ace": normalize(r["acehnese"])[0], "ind": r["indonesian"].strip(),
-                           "source": "human (translator + independent checker)", "translator": r["translator"].strip(), "checker": r["checker"].strip()}
+                           "source": "human (translator + independent checker)", "translator": _name(r["translator"]), "checker": _name(r["checker"])}
                     pairs.append(row)
                     if (r.get("verdict") or "").strip().lower() == "ok":
                         golden.append(row)
