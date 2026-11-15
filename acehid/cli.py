@@ -23,7 +23,7 @@ def main(argv=None):
     p = sub.add_parser("make-sheets", help="translation sheets for Acehnese speakers: sentences + words (data/human/sheets/)")
     p.add_argument("--sentences", type=int, default=200); p.add_argument("--words", type=int, default=300)
     p = sub.add_parser("make-packs", help="one pack of 20-30 AcehX sentences per person to translate, plus who checks whom (data/human/packs/)")
-    p.add_argument("--people", required=True, help='comma-separated names, e.g. "Mutaib,Andrie,Muttu"'); p.add_argument("--per-person", type=int, default=25)
+    p.add_argument("--people", help='comma-separated names, e.g. "Mutaib,Andrie,Muttu"'); p.add_argument("--count", type=int, help="or just a number of packs: translators write their own name in the sheet"); p.add_argument("--per-person", type=int, default=25)
     p.add_argument("--seed", type=int, default=0)
     p = sub.add_parser("dict-build", help="Balai Bahasa dictionary PDFs -> word lookup + example-sentence candidates (data/raw/kamus/books/, git-ignored)")
     p.add_argument("--maritim"); p.add_argument("--budaya", nargs="*"); p.add_argument("--bergambar")
@@ -43,6 +43,9 @@ def main(argv=None):
     p.add_argument("--data", default="data/final/combined"); p.add_argument("--epochs", type=int, default=10, help="maximum; stops early when validation stops improving")
     p.add_argument("--lr", type=float, default=1e-4); p.add_argument("--batch-size", type=int, default=8); p.add_argument("--patience", type=int, default=2)
     p.add_argument("--direction", default="both", choices=["both", "ace-ind", "ind-ace"], help="both = Acehnese->Indonesian and Indonesian->Acehnese in one model")
+    p = sub.add_parser("eval-golden", help="score a trained model on the golden corpus (or any pair file) WITHOUT training")
+    p.add_argument("--model", default="models/ace-id-nllb"); p.add_argument("--pairs", default="data/human/golden.json")
+    p.add_argument("--direction", default="both", choices=["both", "ace-ind", "ind-ace"]); p.add_argument("--with-base", action="store_true", help="also score the untouched NLLB base model")
     sub.add_parser("langid-build", help="retrain the language-check model from AcehX + NusaX train")
     p = sub.add_parser("import-tmx", help="OPUS TMX (Wikipedia ace-id) -> filtered pairs in data/final/wikipedia/pairs.json"); p.add_argument("tmx")
     p = sub.add_parser("malik-mawot", help="Hikayat Malik Mawot thesis PDF (verse + translation) -> data/human/malik_mawot_pairs.json"); p.add_argument("pdf")
@@ -115,7 +118,7 @@ def main(argv=None):
     elif a.cmd == "dict-build":
         from . import books; print(json.dumps(books.build(a.maritim, a.budaya, a.bergambar), ensure_ascii=False))
     elif a.cmd == "make-packs":
-        from . import sheets; print(json.dumps(sheets.make_packs(a.people.split(","), a.per_person, a.seed)))
+        from . import sheets; print(json.dumps(sheets.make_packs(a.people.split(",") if a.people else None, a.per_person, a.seed, count=a.count)))
     elif a.cmd == "scan-archive":
         from . import archive_scan; archive_scan.scan(a.src)
     elif a.cmd == "hikayat-pairs":
@@ -123,6 +126,8 @@ def main(argv=None):
         print(json.dumps(bilingual.run(a.pdf, a.ace_pages, a.ind_pages, a.test_pages, a.valid_pages, a.slug, a.source_id, a.title), indent=1))
     elif a.cmd == "build-train":
         from . import corpus; print(json.dumps(corpus.build(extra=a.extra, extra_test=a.extra_test, quran=a.quran), indent=1))
+    elif a.cmd == "eval-golden":
+        from . import train; print(json.dumps(train.evaluate(a.model, a.pairs, train.DEFAULT_BASE if a.with_base else None, a.direction), indent=1))
     elif a.cmd == "train":
         from . import train, corpus
         if not (P(a.data) / "manifest.json").exists():

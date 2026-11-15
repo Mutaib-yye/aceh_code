@@ -114,3 +114,13 @@ def test_import_expands_wildcards_itself(tmp_path, monkeypatch):
             w.writerow({"id": n, "acehnese": ACE[2], "indonesian": "Ibu bilang tidak.", "translator": who, "checker": "Cut", "verdict": "ok"})
     st = sheets.import_sheets(sentences=[str(tmp_path / "0*.csv")], outdir=tmp_path / "human")
     assert st["sentences_in"] == 2 and st["golden"] == 2
+
+
+def test_numbered_packs_leave_the_translator_blank_and_still_rotate_the_checker(tmp_path, monkeypatch):
+    import pytest
+    _many(tmp_path, monkeypatch)
+    sheets.make_packs(None, per_person=20, out=tmp_path / "packs", count=3)
+    rows = list(csv.DictReader(open(tmp_path / "packs/02_pack-2.csv", encoding="utf-8-sig")))
+    assert len(rows) == 20 and all(r["translator"] == "" and r["checker"] == "" for r in rows) and rows[0]["id"] == "P02-001"
+    assert "| Pack 1 | 01_pack-1.csv | Pack 3 |" in (tmp_path / "packs/PACKS.md").read_text(encoding="utf-8")
+    with pytest.raises(ValueError): sheets.make_packs(None, 20, out=tmp_path / "p")

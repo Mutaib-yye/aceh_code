@@ -80,3 +80,15 @@ def test_one_direction_only_and_bad_direction(tmp_path, data_root):
                       direction="ind-ace", log=lambda *_: None)
     assert run["tests"] == {} and set(run["tests_rev"]) == {"nusax", "flores"}
     with pytest.raises(ValueError): train.directions_of("xx")
+
+
+def test_evaluate_scores_a_trained_model_on_the_golden_file_without_training(tmp_path, data_root):
+    import pytest
+    root, texts = data_root
+    base = tiny_model(tmp_path, texts)
+    gold = tmp_path / "golden.json"
+    gold.write_text(json.dumps([{"ace": a, "ind": i} for a, i in zip(texts[0:6:2], texts[1:6:2])]), encoding="utf-8")
+    r = train.evaluate(base, str(gold), base=base, direction="both", max_len=48, beams=1)
+    assert r["n"] == 3 and set(r["model"]) == {"ace-ind", "ind-ace"} == set(r["base"]) and set(r["model"]["ace-ind"]) == {"chrF++", "chrF", "BLEU"}
+    empty = tmp_path / "empty.json"; empty.write_text("[]", encoding="utf-8")
+    with pytest.raises(ValueError, match="import-sheets"): train.evaluate(base, str(empty))

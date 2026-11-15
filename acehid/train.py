@@ -13,6 +13,7 @@ Metrics: chrF++ (main, as in the NLLB paper), chrF, BLEU (sacreBLEU). Output: <o
 Needs: pip install torch transformers sentencepiece sacrebleu. GPU strongly recommended (free Colab T4: ~15-30 min).
 """
 import json, random, time, os, math
+from pathlib import Path
 from .common import *
 
 DEFAULT_BASE = "facebook/nllb-200-distilled-600M"
@@ -83,6 +84,23 @@ def dev_score(model, tok, dev, device, dirs, **kw):
         return per[dirs[0]]
     mean = {k: round(sum(m[k] for m in per.values()) / len(per), 2) for k in next(iter(per.values()))}
     return {**mean, **per}
+
+def evaluate(model, pairs_path="data/human/golden.json", base=None, direction="both", max_len=128, beams=4):
+    """Score an ALREADY TRAINED model on a pair file (default: the golden corpus), no training. `base` also scores the untouched base model
+    for comparison. -> {"n": N, "model": {"ace-ind": {...}, "ind-ace": {...}}, "base": {...}}"""
+    import torch
+    from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+    path = Path(pairs_path); path = path if path.is_absolute() else ROOT / path
+    pairs = load_pairs(path)
+    if not pairs:
+        raise ValueError(f"{path} has no pairs yet: run import-sheets on the checked sheets first")
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    out = {"n": len(pairs), "file": str(pairs_path)}
+    for name, src in (("model", model),) + ((("base", base),) if base else ()):
+        tok = AutoTokenizer.from_pretrained(src); m = AutoModelForSeq2SeqLM.from_pretrained(src).float().to(device)
+        out[name] = {d: score(m, tok, pairs, device, direction=d, max_len=max_len, beams=beams) for d in directions_of(direction)}
+        del m
+    return out
 
 def results_md(run):
     both = bool(run.get("tests_rev")) and bool(run["tests"])

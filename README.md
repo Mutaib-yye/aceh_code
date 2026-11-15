@@ -16,12 +16,13 @@
 ## Prof's brief: AcehX sentences, manual validation, both directions
 
 1. **Each person translates 20–30 AcehX sentences.** The cleaned corpus is committed in `data/raw/acehx/` (its index is built automatically). Run
-   `acehid.bat make-packs` (Windows) or `./acehid.sh make-packs` (Mac/Linux), which is `python -m acehid make-packs`, as --people "Name1,Name2,Name3,Name4" --per-person 25`. Everyone gets their own sheet in `data/human/packs/` (no sentence in two
+   `acehid.bat make-packs` (Windows) or `./acehid.sh make-packs` (Mac/Linux), which is `python -m acehid make-packs`, with `--count 8` for numbered packs (people write their own name in the sheet) or as --people "Name1,Name2,Name3,Name4" --per-person 25`. Everyone gets their own sheet in `data/human/packs/` (no sentence in two
    packs) and `PACKS.md` says who checks whose pack: nobody checks their own. The translator fills `indonesian`; the checker fills `checker` and `verdict`
    (`ok` = agree as it is, `fixed` = changed, say what in `notes`). Never machine translation.
 2. **Import:** `python -m acehid import-sheets --sentences data/human/packs/0*.csv`. Rows with a translator and a *different* checker become the
    **parallel corpus** (`data/human/pairs.json`); those with verdict `ok` are also the **golden corpus** (`data/human/golden.json`): two people agree
    without edits, so it is used only as a test set (`build-train --extra-test golden=data/human/golden.json`; the Colab notebook does this by itself when the file exists).
+   To score a model you already trained on the golden corpus **without training again**: `acehid.bat eval-golden --with-base`.
 3. **Both directions:** `python -m acehid train --direction both` (default) fine-tunes one NLLB model for Acehnese → Indonesian *and* Indonesian → Acehnese;
    each direction is scored on its own test sets (`training_log.json`: `tests` and `tests_rev`). The app has a swap button; a direction that has no evaluation
    yet is labelled as such. Use `DIRECTION = 'ace-ind'` in the notebook for the old one-way training.

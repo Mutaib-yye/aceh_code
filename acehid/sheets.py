@@ -86,34 +86,42 @@ def _slug(name):
     return re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-") or "person"
 
 
-def make_packs(people, per_person=25, seed=0, out=OUT.parent / "packs"):
+def make_packs(people=None, per_person=25, seed=0, out=OUT.parent / "packs", count=None):
     """One sheet of `per_person` (20-30) different AcehX sentences for each person, plus PACKS.md saying who checks whose pack.
-    Nobody checks their own pack: person i's pack is checked by person i+1 (the last by the first)."""
-    people = [p.strip() for p in people if p.strip()]
-    if len(people) < 2:
+    Nobody checks their own pack: pack i is checked by the owner of pack i-1 (the first by the last).
+    Give `people` (names are put in the translator column) or just `count` (numbered packs with a BLANK translator column: each
+    person writes their own name there, and the checker writes theirs)."""
+    if people:
+        people = [p.strip() for p in people if p.strip()]
+        names = people
+    else:
+        if not count:
+            raise ValueError("give the names, or --count for numbered packs")
+        names = [f"Pack {i + 1}" for i in range(count)]
+    if len(names) < 2:
         raise ValueError("need at least two people: every pack is checked by someone else")
     if not 20 <= per_person <= 30:
         raise ValueError("the prof's brief is 20-30 sentences per person")
     _, ace = _candidates(seed)
-    need = per_person * len(people)
+    need = per_person * len(names)
     if len(ace) < need:
         raise ValueError(f"only {len(ace)} usable sentences, {need} needed")
     out = Path(out); out.mkdir(parents=True, exist_ok=True)
     lines = ["# Translation packs", "", f"{per_person} sentences each. Translate your own pack, then check the pack named in the last column.", "",
              "| person | pack file | checks the pack of |", "|---|---|---|"]
-    for i, who in enumerate(people):
+    for i, who in enumerate(names):
         mine = ace[i * per_person:(i + 1) * per_person]
         fname = f"{i + 1:02d}_{_slug(who)}.csv"
         with open(out / fname, "w", encoding="utf-8-sig", newline="") as f:
             w = csv.DictWriter(f, SENT_COLS); w.writeheader()
             for j, (src, line, t) in enumerate(mine, 1):
-                w.writerow({"id": f"P{i + 1:02d}-{j:03d}", "acehnese": t, "indonesian": "", "translator": who, "checker": "", "verdict": "",
+                w.writerow({"id": f"P{i + 1:02d}-{j:03d}", "acehnese": t, "indonesian": "", "translator": who if people else "", "checker": "", "verdict": "",
                             "notes": f"{src}:{line}"})
-        lines.append(f"| {who} | {fname} | {people[(i - 1) % len(people)]} |")
+        lines.append(f"| {who} | {fname} | {names[(i - 1) % len(names)]} |")
     (out / "PACKS.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     (out / "TRANSLATOR_GUIDE.txt").write_text(GUIDE, encoding="utf-8")
-    log("packs", people=len(people), per_person=per_person)
-    return {"people": len(people), "sentences": need, "dir": str(out)}
+    log("packs", people=len(names), per_person=per_person)
+    return {"people": len(names), "sentences": need, "dir": str(out)}
 
 
 def make_word_sheet(out=OUT, n=300):
