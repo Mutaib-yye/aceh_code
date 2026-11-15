@@ -108,10 +108,10 @@ def test_packs_build_the_corpus_index_by_themselves_on_a_fresh_clone(tmp_path, m
 
 def test_import_expands_wildcards_itself(tmp_path, monkeypatch):
     _project(tmp_path, monkeypatch)
-    for n, who in (("01_a.csv", "Ana"), ("02_b.csv", "Budi")):
+    for k, (n, who) in enumerate((("01_a.csv", "Ana"), ("02_b.csv", "Budi"))):
         with open(tmp_path / n, "w", encoding="utf-8-sig", newline="") as h:
             w = csv.DictWriter(h, sheets.SENT_COLS); w.writeheader()
-            w.writerow({"id": n, "acehnese": ACE[2], "indonesian": "Ibu bilang tidak.", "translator": who, "checker": "Cut", "verdict": "ok"})
+            w.writerow({"id": n, "acehnese": ACE[2 + k], "indonesian": "Ibu bilang tidak.", "translator": who, "checker": "Cut", "verdict": "ok"})
     st = sheets.import_sheets(sentences=[str(tmp_path / "0*.csv")], outdir=tmp_path / "human")
     assert st["sentences_in"] == 2 and st["golden"] == 2
 
@@ -136,3 +136,15 @@ def test_a_placeholder_left_in_a_cell_is_never_accepted_as_a_name(tmp_path, monk
         w.writerow({"id": "3", "acehnese": ACE[4], "indonesian": "Kami makan.", "translator": "Ana", "checker": "Budi", "verdict": "ok"})
     st = sheets.import_sheets(sentences=f, outdir=tmp_path / "human")
     assert st["sentences_accepted"] == 1 and [r["id"] for r in json.load(open(tmp_path / "human/pairs.json", encoding="utf-8"))] == ["3"]
+
+
+def test_a_sentence_two_students_both_got_is_imported_once(tmp_path, monkeypatch):
+    _project(tmp_path, monkeypatch)
+    paths = []
+    for n, who, chk in (("a.csv", "Ana", "Cut"), ("b.csv", "Budi", "Cut")):
+        f = tmp_path / n; paths.append(f)
+        with open(f, "w", encoding="utf-8-sig", newline="") as h:
+            w = csv.DictWriter(h, sheets.SENT_COLS); w.writeheader()
+            w.writerow({"id": n, "acehnese": ACE[2], "indonesian": "Ibu bilang tidak.", "translator": who, "checker": chk, "verdict": "ok"})
+    st = sheets.import_sheets(sentences=paths, outdir=tmp_path / "human")
+    assert st["sentences_in"] == 2 and st["sentences_accepted"] == 1 and st["duplicates"] == 1

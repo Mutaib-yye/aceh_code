@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AcehX · Lembar Terjemahan</title>
+<style>
+:root{--bg:#f4f7fb;--card:#fff;--ink:#102033;--mut:#5a6b82;--line:#d3dcea;--acc:#0b7fa8;--acc2:#1d4ed8;--warn:#92400e;--ok:#047857;--bad:#b91c1c}
+@media (prefers-color-scheme:dark){:root{--bg:#0b1428;--card:#10203f;--ink:#e8eefb;--mut:#a7b6d4;--line:#27407a;--acc:#22d3ee;--acc2:#60a5fa;--warn:#fcd34d;--ok:#6ee7b7;--bad:#fca5a5}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:980px;margin:0 auto;padding:20px 16px 60px}
+h1{margin:.2em 0 .1em;font-size:1.6rem}h2{font-size:1.15rem;margin:1.2em 0 .4em}
+p{margin:.4em 0}.mut{color:var(--mut)}
+.tabs{display:flex;gap:8px;margin:16px 0}.tab{padding:10px 18px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;font:inherit;font-weight:600}
+.tab.on{background:linear-gradient(135deg,#0b7fa8,#1d4ed8);color:#fff;border-color:transparent}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:12px 0}
+label{display:block;font-weight:600;margin:.6em 0 .2em}
+input[type=text],input[type=file],textarea,select{width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit}
+textarea{min-height:64px;resize:vertical}
+button.go{padding:12px 22px;border-radius:999px;border:0;background:linear-gradient(135deg,#0b7fa8,#1d4ed8);color:#fff;font:inherit;font-weight:700;cursor:pointer;margin:10px 8px 0 0}
+button.go:disabled{opacity:.45;cursor:not-allowed}
+.row{border-top:1px solid var(--line);padding:12px 0}.row:first-child{border-top:0}
+.src{font-weight:600}.no{color:var(--mut);font-size:.85rem}
+.msg{padding:10px 14px;border-radius:10px;border:1px solid var(--warn);color:var(--warn);margin:10px 0}.msg.ok{border-color:var(--ok);color:var(--ok)}.msg.bad{border-color:var(--bad);color:var(--bad)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:700px){.two{grid-template-columns:1fr}}
+.bar{position:sticky;bottom:0;background:var(--bg);padding:10px 0;border-top:1px solid var(--line)}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<main>
+<h1>AcehX · Lembar Terjemahan</h1>
+<p class="mut">Aceh → Indonesia, 25 kalimat per orang · 25 sentences per person. Tidak perlu Excel, tidak perlu internet setelah halaman dibuka. Everything runs in this page; nothing is uploaded.</p>
+<div class="tabs"><button class="tab on" id="tabT" type="button">1 · Menerjemahkan</button><button class="tab" id="tabC" type="button">2 · Memeriksa teman</button></div>
+
+<section id="viewT">
+  <div class="card">
+    <div class="two"><div><label for="name">Nama Anda · your name</label><input type="text" id="name" autocomplete="name" placeholder="mis. Mutaib Bin Mehraj Rather"></div>
+    <div><label for="npm">NPM / nomor mahasiswa · student number</label><input type="text" id="npm" inputmode="numeric" placeholder="mis. 250820701100010"></div></div>
+    <p class="mut">NPM menentukan 25 kalimat Anda, sehingga setiap orang mendapat kalimat yang berbeda tanpa perlu berkoordinasi. Memasukkan NPM yang sama lagi akan memberi kalimat yang sama dan memulihkan jawaban Anda yang tersimpan di browser ini.</p>
+    <button class="go" id="start" type="button">Buat lembar saya · make my sheet</button>
+  </div>
+  <div id="sheet" hidden>
+    <div class="card"><b>Aturan · rules</b>
+      <ul><li>Terjemahkan ke bahasa Indonesia baku <b>dari pengetahuan Anda sendiri</b>. Jangan pakai Google Translate, ChatGPT, atau mesin terjemahan apa pun.</li>
+      <li>Ragu pada sebuah kata? Tulis <b>?</b> dan beri catatan. Jangan menebak. Nama orang, gelar (Teungku, Cut, Po, Habib) dan tempat tetap seperti aslinya.</li>
+      <li>Jawaban tersimpan otomatis di browser ini. Setelah selesai tekan <b>Unduh CSV</b> dan kirim file-nya.</li></ul></div>
+    <div id="rowsT"></div>
+    <div class="bar"><span id="progress" class="mut"></span><br><button class="go" id="dl" type="button">Unduh CSV · download</button></div>
+  </div>
+</section>
+
+<section id="viewC" hidden>
+  <div class="card">
+    <p>Periksa lembar milik <b>teman yang berbeda</b> (bukan lembar Anda sendiri). Minta file CSV-nya, lalu buka di sini.</p>
+    <label for="cname">Nama Anda (pemeriksa) · your name (checker)</label><input type="text" id="cname" placeholder="nama pemeriksa">
+    <label for="cfile">File CSV teman · your friend's CSV</label><input type="file" id="cfile" accept=".csv,text/csv">
+    <div id="cmsg"></div>
+  </div>
+  <div id="sheetC" hidden>
+    <div id="rowsC"></div>
+    <div class="bar"><span id="cprogress" class="mut"></span><br><button class="go" id="cdl" type="button">Unduh CSV yang sudah diperiksa · download checked file</button></div>
+  </div>
+</section>
+</main>
+<script>
+"use strict";
+const FILES = /*FILES*/[];
+const POOL = /*POOL*/[];          // [file index, line, sentence]
+const PER = 25, COLS = ["id","acehnese","indonesian","translator","checker","verdict","notes"];
+const $ = id => document.getElementById(id);
+const store = { get(k){ try { return JSON.parse(localStorage.getItem(k)); } catch(e){ return null; } }, set(k,v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} } };
+function fnv(s){ let h = 0x811c9dc5; for (const c of s) { h ^= c.charCodeAt(0); h = Math.imul(h, 0x01000193) >>> 0; } return h >>> 0; }
+const esc = v => '"' + String(v == null ? "" : v).replace(/"/g, '""') + '"';
+function toCSV(rows){ return "﻿" + [COLS.map(esc).join(","), ...rows.map(r => COLS.map(c => esc(r[c])).join(","))].join("\r\n") + "\r\n"; }
+function save(name, text){ const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([text], {type:"text/csv;charset=utf-8"})); a.download = name; document.body.append(a); a.click(); a.remove(); }
+function parseCSV(t){
+  if (t.charCodeAt(0) === 0xFEFF) t = t.slice(1);
+  const rows = []; let row = [], f = "", q = false;
+  for (let i = 0; i < t.length; i++) { const c = t[i];
+    if (q) { if (c === '"') { if (t[i+1] === '"') { f += '"'; i++; } else q = false; } else f += c; }
+    else if (c === '"') q = true; else if (c === ",") { row.push(f); f = ""; }
+    else if (c === "\n" || c === "\r") { if (c === "\r" && t[i+1] === "\n") i++; row.push(f); f = ""; rows.push(row); row = []; }
+    else f += c; }
+  if (f || row.length) { row.push(f); rows.push(row); }
+  return rows.filter(r => r.some(x => x.trim()));
+}
+const slug = s => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "x";
+function el(tag, props, ...kids){ const n = document.createElement(tag); for (const [k,v] of Object.entries(props||{})) { if (k === "class") n.className = v; else if (k.startsWith("on")) n.addEventListener(k.slice(2), v); else n.setAttribute(k, v); } for (const c of kids.flat()) if (c != null) n.append(c.nodeType ? c : document.createTextNode(c)); return n; }
+
+/* tabs */
+$("tabT").onclick = () => { $("viewT").hidden = false; $("viewC").hidden = true; $("tabT").classList.add("on"); $("tabC").classList.remove("on"); };
+$("tabC").onclick = () => { $("viewT").hidden = true; $("viewC").hidden = false; $("tabC").classList.add("on"); $("tabT").classList.remove("on"); };
+
+/* translator */
+let ME = null;
+$("start").onclick = () => {
+  const name = $("name").value.trim(), npm = $("npm").value.replace(/\s+/g, "");
+  if (!name || npm.length < 5) { alert("Isi nama dan NPM (minimal 5 karakter). · Fill in your name and student number."); return; }
+  if (POOL.length < PER) { alert("Daftar kalimat kosong."); return; }
+  const blocks = Math.floor(POOL.length / PER), b = fnv(npm) % blocks;
+  const key = "acehx_sheet_" + npm, saved = store.get(key) || {};
+  ME = { name, npm, key, block: b, rows: POOL.slice(b * PER, b * PER + PER).map((s, i) => ({ id: "N" + npm + "-" + String(i + 1).padStart(3, "0"), acehnese: s[2], src: FILES[s[0]] + ":" + s[1], indonesian: (saved.t || [])[i] || "" })) };
+  $("sheet").hidden = false; render();
+};
+function render(){
+  const box = $("rowsT"); box.replaceChildren();
+  ME.rows.forEach((r, i) => box.append(el("div", {class: "row"}, el("div", {class: "no"}, `${i + 1} / ${PER}`), el("div", {class: "src"}, r.acehnese),
+    el("textarea", {"aria-label": "Terjemahan Indonesia untuk kalimat " + (i + 1), placeholder: "Terjemahan bahasa Indonesia…", oninput: e => { r.indonesian = e.target.value; store.set(ME.key, {t: ME.rows.map(x => x.indonesian)}); prog(); }}, r.indonesian))));
+  prog();
+}
+function prog(){ const n = ME.rows.filter(r => r.indonesian.trim()).length; $("progress").textContent = `${n} dari ${PER} kalimat diterjemahkan · translated`; }
+$("dl").onclick = () => {
+  const n = ME.rows.filter(r => r.indonesian.trim()).length;
+  if (n < PER && !confirm(`Baru ${n} dari ${PER} kalimat terisi. Unduh sekarang? · Only ${n} of ${PER} are filled. Download anyway?`)) return;
+  save(`AcehX_${ME.npm}_${slug(ME.name)}.csv`, toCSV(ME.rows.map(r => ({ id: r.id, acehnese: r.acehnese, indonesian: r.indonesian.trim(), translator: ME.name, checker: "<NAMA PEMERIKSA>", verdict: "", notes: r.src }))));
+};
+
+/* checker */
+let CK = null;
+$("cfile").onchange = async e => {
+  const f = e.target.files[0]; if (!f) return; $("cmsg").replaceChildren();
+  const rows = parseCSV(await f.text()), head = rows[0] || [], idx = Object.fromEntries(COLS.map(c => [c, head.indexOf(c)]));
+  if (COLS.some(c => idx[c] < 0)) { $("cmsg").append(el("div", {class: "msg bad"}, "File ini bukan lembar AcehX yang benar (kolom tidak lengkap). · Not an AcehX sheet.")); return; }
+  CK = { file: f.name, rows: rows.slice(1).map(r => Object.fromEntries(COLS.map(c => [c, r[idx[c]] || ""]))) };
+  CK.rows.forEach(r => { r.orig = r.indonesian; r.v = ""; });
+  $("sheetC").hidden = false; renderC();
+};
+function renderC(){
+  const box = $("rowsC"); box.replaceChildren();
+  CK.rows.forEach((r, i) => {
+    const ta = el("textarea", {"aria-label": "Terjemahan untuk diperiksa " + (i + 1), oninput: e => { r.indonesian = e.target.value; if (r.indonesian.trim() !== r.orig.trim() && r.v !== "fixed") { r.v = "fixed"; sel.value = "fixed"; } progC(); }}, r.indonesian);
+    const sel = el("select", {"aria-label": "Keputusan " + (i + 1), onchange: e => { r.v = e.target.value; progC(); }}, el("option", {value: ""}, "– pilih –"), el("option", {value: "ok"}, "ok: benar, tidak diubah"), el("option", {value: "fixed"}, "fixed: saya ubah"));
+    const note = el("input", {type: "text", placeholder: "catatan (wajib bila fixed)", value: r.notes, oninput: e => { r.notes = e.target.value; }});
+    box.append(el("div", {class: "row"}, el("div", {class: "no"}, `${i + 1} / ${CK.rows.length} · penerjemah: ${r.translator}`), el("div", {class: "src"}, r.acehnese), ta, el("div", {class: "two"}, sel, note)));
+  });
+  progC();
+}
+function progC(){ const n = CK.rows.filter(r => r.v).length; $("cprogress").textContent = `${n} dari ${CK.rows.length} baris sudah diperiksa · checked`; }
+$("cdl").onclick = () => {
+  const name = $("cname").value.trim(); if (!name) { alert("Isi nama pemeriksa. · Fill in the checker name."); return; }
+  if (CK.rows.some(r => r.translator.trim().toLowerCase() === name.toLowerCase())) { alert("Anda tidak boleh memeriksa lembar Anda sendiri. · You cannot check your own sheet."); return; }
+  const need = CK.rows.filter(r => r.v === "fixed" && !r.notes.trim() ); if (need.length && !confirm(`${need.length} baris 'fixed' belum diberi catatan. Lanjut? · ${need.length} fixed rows have no note. Continue?`)) return;
+  const out = CK.rows.map(r => ({ id: r.id, acehnese: r.acehnese, indonesian: r.indonesian.trim(), translator: r.translator, checker: r.v ? name : "<NAMA PEMERIKSA>", verdict: r.v, notes: r.notes }));
+  save(CK.file.replace(/\.csv$/i, "") + `_diperiksa_${slug(name)}.csv`, toCSV(out));
+};
+</script>
+</body>
+</html>

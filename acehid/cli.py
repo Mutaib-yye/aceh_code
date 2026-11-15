@@ -27,6 +27,7 @@ def main(argv=None):
     p.add_argument("--seed", type=int, default=0)
     p = sub.add_parser("dict-build", help="Balai Bahasa dictionary PDFs -> word lookup + example-sentence candidates (data/raw/kamus/books/, git-ignored)")
     p.add_argument("--maritim"); p.add_argument("--budaya", nargs="*"); p.add_argument("--bergambar")
+    sub.add_parser("sheet-maker", help="build tools/AcehX_sheet_maker.html: one page where each student makes their own sheet of 25 sentences")
     p = sub.add_parser("import-sheets", help="import the filled sheets: only rows with a translator AND a different checker")
     p.add_argument("--sentences", nargs="+", help="one or more filled sentence sheets (e.g. all the packs)"); p.add_argument("--words")
     p = sub.add_parser("scan-archive", help="inventory a RAR/ZIP/folder of PDFs: pages, text layer, language, bilingual candidates (counts only)")
@@ -117,6 +118,8 @@ def main(argv=None):
         from . import sheets; print(json.dumps(sheets.import_sheets(a.sentences, a.words)))
     elif a.cmd == "dict-build":
         from . import books; print(json.dumps(books.build(a.maritim, a.budaya, a.bergambar), ensure_ascii=False))
+    elif a.cmd == "sheet-maker":
+        from . import sheetmaker; print(json.dumps(sheetmaker.build()))
     elif a.cmd == "make-packs":
         from . import sheets; print(json.dumps(sheets.make_packs(a.people.split(",") if a.people else None, a.per_person, a.seed, count=a.count)))
     elif a.cmd == "scan-archive":

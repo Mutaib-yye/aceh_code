@@ -170,8 +170,8 @@ def import_sheets(sentences=None, words=None, outdir=ROOT / "data/human"):
     Writes pairs.json = the PARALLEL corpus (every accepted row), golden.json = the GOLDEN corpus (accepted rows whose checker
     verdict is "ok": two people agree without edits; evaluation only, never trained on) and glossary.csv. Returns counts."""
     outdir = Path(outdir); outdir.mkdir(parents=True, exist_ok=True)
-    stats = {"sentences_in": 0, "sentences_accepted": 0, "golden": 0, "words_in": 0, "words_accepted": 0}
-    pairs, golden = [], []
+    stats = {"sentences_in": 0, "sentences_accepted": 0, "golden": 0, "duplicates": 0, "words_in": 0, "words_accepted": 0}
+    pairs, golden, seen_ace = [], [], set()
     if sentences:
         import glob
         given = [sentences] if isinstance(sentences, (str, Path)) else list(sentences)
@@ -180,6 +180,11 @@ def import_sheets(sentences=None, words=None, outdir=ROOT / "data/human"):
             for r in csv.DictReader(open(path, encoding="utf-8-sig")):
                 stats["sentences_in"] += 1
                 if _accepted(r, "indonesian") and "?" not in r["indonesian"]:
+                    k = match_key(r["acehnese"])
+                    if k in seen_ace:                         # two students got the same sentence: keep the first, count the rest
+                        stats["duplicates"] += 1
+                        continue
+                    seen_ace.add(k)
                     row = {"id": r["id"], "ace": normalize(r["acehnese"])[0], "ind": r["indonesian"].strip(),
                            "source": "human (translator + independent checker)", "translator": _name(r["translator"]), "checker": _name(r["checker"])}
                     pairs.append(row)

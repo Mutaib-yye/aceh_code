@@ -15,7 +15,11 @@
 
 ## Prof's brief: AcehX sentences, manual validation, both directions
 
-1. **Each person translates 20–30 AcehX sentences.** The cleaned corpus is committed in `data/raw/acehx/` (its index is built automatically). Run
+0. **Easiest for a class: let every student make their own sheet.** Share the single file `tools/AcehX_sheet_maker.html` (rebuild with
+   `python -m acehid sheet-maker`). Each student opens it, types name + student number (NPM), and gets their own 25 sentences (the NPM decides which, so
+   different students get different ones with no coordination), translates **in the page**, and downloads a CSV. Students then swap files and check a friend's sheet
+   in the page's second tab. Collect the CSVs and run step 2. A sentence two students both got is imported once.
+1. **Or, with named packs: each person translates 20–30 AcehX sentences.** The cleaned corpus is committed in `data/raw/acehx/` (its index is built automatically). Run
    `acehid.bat make-packs` (Windows) or `./acehid.sh make-packs` (Mac/Linux), which is `python -m acehid make-packs`, with `--count 8` for numbered packs (people write their own name in the sheet) or as --people "Name1,Name2,Name3,Name4" --per-person 25`. Everyone gets their own sheet in `data/human/packs/` (no sentence in two
    packs) and `PACKS.md` says who checks whose pack: nobody checks their own. The translator fills `indonesian`; the checker fills `checker` and `verdict`
    (`ok` = agree as it is, `fixed` = changed, say what in `notes`). Never machine translation.
