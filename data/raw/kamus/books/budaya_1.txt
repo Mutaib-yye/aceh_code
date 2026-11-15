@@ -1,0 +1,4266 @@
+##### PAGE pdf1
+KAMUS
+BUDAYA
+A C E H — I N D O N E S I A
+BALAI BAHASA PROVINSI ACEH
+BADAN PENGEMBANGAN DAN PEMBINAAN BAHASA
+KEMENTERIAN PENDIDIKAN, 
+KEBUDAYAAN, RISET, DAN TEKNOLOGI
+MILIK NEGARA
+TIDAK DIPERDAGANGKAN
+
+##### PAGE pdf2
+Diterbitkan oleh:
+Balai Bahasa Provinsi Aceh
+Jalan Panglima Nyak Makam No.21,
+Lampineung, Banda Aceh, 23125
+pos-el: balaibahasaaceh@kemdikbud.go.id
+
+##### PAGE pdf3
+Kamus Budaya
+Aceh—Indonesia
+Balai Bahasa Provinsi Aceh
+Badan Pengembangan dan Pembinaan Bahasa
+Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi
+2022
+
+##### PAGE pdf4
+Kamus Budaya Aceh-Indonesia
+Penyusun:
+Zulfahmirda Matondang
+Istika Suri
+Cut Ida Agustina
+Penyunting:
+Syarifah Zurriyati
+Zainun
+Baun Thoib Soaloon S.G.R.
+Ibrahim Sembiring
+Irawan Syahdi
+Murhaban
+ISBN:
+Desain Sampul dan Tata Letak:
+Istika Suri
+Penerbit:
+Balai Bahasa Provinsi Aceh 
+Jalan T. Panglima Nyak Makam No. 21 Lampineung,
+Kecamatan Kuta Alam, Kota Banda Aceh, Aceh 23125
+Anggota IKAPI NO.: 013/DIA/2013
+Telepon: (0651) 7551056
+Faksimile: (0651) 7551687
+Pos-el: balaibahasaaceh@kemdikbud.go.id
+Cetakan pertama, November 2022
+Hak Cipta Dilindungi Undang-Undang
+Isi buku ini, baik sebagian maupun seluruhnya, dilarang diperbanyak dalam bentuk apapun 
+tanpa izin tertulis dari penerbit, kecuali dalam hal pengutipan untuk keperluan penulisan artikel 
+atau karangan ilmiah.
+Katalog dalam Terbitan
+306.598.113	
+Zulfahmirda Matondang: Istika Suri; Cut Ida Agustina
+ZUL	
+Budaya Aceh Kamus-Indonesia/Penyusun, Zulfahmirda
+k	
+Matondang: Istika Suri; Cut Ida Agustina
+—-Banda Aceh: Balai Bahasa Provinsi Aceh, 2022.
+x 151 hlm.; 15 x 21 cm
+ISBN:
+1. Bahasa Aceh—Kamus Budaya. 2. Bahasa Aceh-Indonesia- 
+Kamus I. Judul	
+	
+	
+	
+	
+	
+	
+306.598.113
+978-623-194-244-9
+978-623-194-244-9
+
+##### PAGE pdf5
+Kamus Budaya Aceh-Indonesia | iii
+KATA PENGANTAR
+KEPALA BALAI BAHASA PROVINSI ACEH
+Aceh sebagai salah satu bahasa di Provinsi Aceh memiliki 
+banyak penutur yang tersebar di berbagai wilayah. Bahasa Aceh 
+merupakan identitas budaya masyarakat. Seiring perkembangan zaman, 
+budaya masyarakat Aceh tidak terlepas dari berbagai pengaruh yang 
+berdampak pada penggunaan bahasa daerah dalam kehidupan sehari-
+hari, misalnya dalam hal pemilihan kosakata. Ada beberapa kosakata 
+bahasa Aceh yang dahulu dikenal dalam kehidupan masyarakat, kini 
+mulai menjadi kosakata yang intensitas penggunaannya menurun. Salah 
+satu upaya untuk mengatasinya adalah melakukan pendokumentasian 
+terhadap kosakata bahasa Aceh melalui penyusunan kamus bahasa 
+daerah. 
+Menyadari betapa pentingnya fungsi kamus bahasa daerah 
+sebagai media informasi nilai-nilai budaya suatu masyarakat dan 
+mencegah kepunahan suatu bahasa, Balai Bahasa Provinsi Aceh 
+menerbitkan Kamus Budaya Aceh—Indonesia tahun 2022. Kehadiran 
+kamus ini diharapkan dapat menjadi kebanggaan masyarakat Aceh, 
+memotivasi akademisi atau pecinta bahasa Aceh untuk memajukan 
+bahasa daerah, memperkaya khazanah kepustakaan perkamusan 
+Indonesia, dan turut serta dalam mencerdaskan anak bangsa. 
+Apresiasi dan penghargaan kepada tim penyusun, penyunting, 
+dan semua pihak yang terlibat dalam penyusunan Kamus Budaya 
+Aceh—Indonesia tahun 2022. Semoga Balai Bahasa Provinsi Aceh 
+senantiasa menghadirkan produk leksikografi lainnya yang bermanfaat 
+bagi masyarakat.  
+	
+	
+	
+	
+Banda Aceh, 28 Oktober 2022
+	
+	
+	
+	
+Kepala,
+	
+	
+	
+	
+Karyono, S.Pd., M.Hum.  
+
+##### PAGE pdf6
+ iv | Kamus Budaya Aceh-Indonesia 
+PRAKATA
+Puji dan syukur penyusun ucapkan kehadirat Allah Swt. 
+karena berkat rida-Nya tim penyusun dapat menyelesaikan rangkaian 
+penyusunan kamus: inventarisasi kosakata, lokakarya, hingga finalisasi 
+penyusunan kamus. Inventarisasi kosakata dilakukan di empat 
+kabupaten, yaitu Pidie, Bireuen, Aceh Utara, dan Aceh Besar. Keempat 
+wilayah ini dipilih karena dapat mewakili variasi dialek bahasa Aceh 
+dalam bidang budaya. Selanjutnya, lokakarya diselenggarakan di 
+Aceh Besar bersama para informan yang berasal dari keempat wilayah 
+dan para akademisi serta praktisi kebahasaan sebagai upaya untuk 
+memvalidasi kosakata yang telah dianalisis. Kosakata yang telah 
+divalidasi tersebut, kembali diolah dan disunting sedemikian rupa 
+sehingga menghasilkan Kamus Budaya Aceh--Indonesia. 
+Kamus Budaya Aceh--Indonesia ini disusun pada tahun 2022. 
+Tujuan penyusunan kamus ini sejalan dengan misi Balai Bahasa 
+Provinsi Aceh, yaitu mengembangkan bahan atau sarana informasi 
+kebahasaan dan kesastraan. Dalam hal ini, Balai Bahasa Provinsi 
+Aceh melaksanakan pengembangan kosakata dan istilah bahasa Aceh 
+bidang budaya dalam bentuk dokumentasi kamus.
+Di dalam kamus ini dijelaskan mengenai informasi pemakaian 
+kamus yang meliputi tanda baca, singkatan kata, serta vokal dan 
+konsonan dalam bahasa Aceh. Selain itu, dijelaskan juga mengenai 
+bentuk fonetis lema dalam bahasa Aceh. Masing-masing lema 
+diterakan bentuk fonetisnya sehingga memudahkan dalam pelafalan. 
+Bentuk fonemis dan fonetis yang dicantumkan telah melalui tahap 
+diskusi oleh tim Balai Bahasa Provinsi Aceh.
+Penyusunan kamus ini tidak terlepas dari bantuan berbagai 
+pihak, untuk itu kami sampaikan terima kasih kepada:
+1.	 Karyono, S.Pd., M.Hum. selaku Kepala Balai Bahasa Provinsi 
+Aceh, yang telah menaungi seluruh kegiatan tim dari tahap 
+inventarisasi sampai terbitnya kamus ini
+2.	 Agus Priatna, S.E.Ak., Kepala Subbagian Umum Balai Bahasa 
+Provinsi Aceh yang telah membantu perihal administrasi kegiatan 
+KKLP Perkamusan dan Peristilahan
+3.	 Rahmat, S.Ag., M.Hum., Muhammad Toha, S.S., M.Si., dan 
+Safrizal, S.Pd., sebagai rekan yang telah membantu untuk 
+
+##### PAGE pdf7
+Kamus Budaya Aceh-Indonesia | v
+	
+	
+mengiventarisasi kosakata di empat kabupaten, yaitu Pidie, 
+Bireuen, Aceh Utara, dan Aceh Besar
+4.	 Asnawi Zainun, Medya Husen, Balian, Mawardi Syubki, 
+Syarifuddin Sabon, Jailani, Mulya Bijeh Mata,  Tgk. H. Athaillah, 
+Sufyan, Junaidi, Usman, Amiruddin, dan Tgk. Banta Chairullah 
+sebagai narasumber inventarisasi kosakata
+5.	 Zainun, S.Ag., M.Pd., M.Ag., Murhaban, S.Ag., M.A., Irawan 
+Syahdi, S.S., M.Si., Ibrahim Sembiring, S.S.  yang telah membantu 
+menyunting kamus ini.
+6.	 Seluruh pihak yang turut membantu yang namanya tidak bisa 
+disebutkan satu per satu.
+	 	 	
+Banda Aceh, 28 Oktober 2022
+	
+	 	 	
+Tim Penyusun	
+
+##### PAGE pdf8
+ vi | Kamus Budaya Aceh-Indonesia 
+TIM REDAKSI
+Penanggung Jawab:
+Karyono
+Kepala Balai Bahasa Provinsi Aceh
+Penyusun:
+Zulfahmirda Matondang, Istika Suri, Cut Ida Agustina
+Penyunting:
+Syarifah Zurriyati, Zainun, Baun Thoib Soaloon S.G.R.,
+Ibrahim Sembiring, Irawan Syahdi, Murhaban
+Pengumpul Data:
+Zulfahmirda Matondang, Istika Suri, Syarifah Zurriyati, Cut Ida 
+Agustina, Rahmat, Muhammad Toha, Safrizal, Baun Thoib Soaloon 
+S.G.R., 
+Narasumber:
+Asnawi Zainun, Medya Husen, Balian, Mawardi Syubki, 
+Syarifuddin Sabon, Jailani, Mulya Bijeh Mata,  Tgk. H. Athaillah, 
+Sufyan, Junaidi, Usman, Amiruddin, Tgk. Banta Chairullah
+Alamat Redaksi:
+Balai Bahasa Provinsi Aceh
+Jalan T. Panglima Nyak Makam No. 21 Lampineung, Banda Aceh
+Telepon: (0651) 7551056
+Pos-el: kamus.bbpa@kemdikbud.go.id
+Laman: www.kamusbbpa.go.id
+
+##### PAGE pdf9
+Kamus Budaya Aceh-Indonesia | vii
+DAFTAR ISI
+KATA PENGANTAR..............................................................................	 iii
+PRAKATA.............................................................................................	 iv
+TIM REDAKSI......................................................................................	 vi
+DAFTAR ISI..........................................................................................	 vii
+PETUNJUK PEMAKAIAN KAMUS...................................................	 vii
+A.............................................................................................................	 1
+B.............................................................................................................	 8
+C.............................................................................................................	 29
+D.............................................................................................................	 39
+E.............................................................................................................	 42
+G.............................................................................................................	 45
+H.............................................................................................................	 53
+I...............................................................................................................	 55
+J...............................................................................................................	 58
+K.............................................................................................................	 61
+L.............................................................................................................	 72
+M.............................................................................................................	 78
+N.............................................................................................................	 88
+O.............................................................................................................	 91
+P.............................................................................................................	
+92
+Q.............................................................................................................	 105
+R.............................................................................................................	 106
+S.............................................................................................................	 111
+T.............................................................................................................	 121
+U.............................................................................................................	 132
+W.............................................................................................................	 135
+Y.............................................................................................................	 136
+PUSTAKA ACUAN...............................................................................	 137
+
+##### PAGE pdf10
+ viii | Kamus Budaya Aceh-Indonesia 
+PETUNJUK PEMAKAIAN KAMUS
+  
+1.	 Tanda Baca
+Tanda baca adalah tanda atau simbol yang dipakai dalam sistem ejaan, 
+biasanya berupa tanda titik, koma, dan sebagainya. Ada beberapa tanda 
+baca yang digunakan dalam kamus ini, di antaranya sebagai berikut:
+Tanda Baca
+Keterangan
+/…/
+menunjukkan bentuk fonetis
+(…)
+menambahkan keterangan dan penulisan 
+bahasa latin
+,
+memisahkan frasa pada definisi
+’
+menunjukkan lema yg berbunyi nasal
+:
+memisahkan definisi dengan contoh
+;
+sinonim
+-
+tanda hubung
+—
+tanda pisah, menunjukkan lema pada contoh
+	
+	
+2.	 Label Kelas Kata
+Kelas kata adalah kelas atau golongan kata berdasarkan bentuk, fungsi, 
+atau maknanya. Berikut adalah kelas kata yang terdapat dalam bahasa 
+Indonesia:
+Label Kelas Kata
+Keterangan
+n
+nomina (kata benda)
+v
+verba
+a
+adjektiva (kata sifat)
+adv
+adverbial (kata keterangan)
+num
+numeralia (kata bilangan)
+pron
+pronomina (kata ganti, kata tunjuk, kata 
+tanya)
+p
+partikel (kata depan, kata sambung, kata 
+seru, kata sandang, ucapan salam)
+Adapun kelas kata yang terdapat di dalam kamus ini adalah nomina, 
+verba, adjektiva, adverbia, numeralia, dan pronomina.
+
+##### PAGE pdf11
+Kamus Budaya Aceh-Indonesia | ix
+3.	 Singkatan Kata
+Ada beberapa singkatan kata yang digunakan dalam pendefinisian lema 
+di dalam kamus ini, di antaranya sebagai berikut:
+Singkatan Kata
+Keterangan
+yg
+yang
+dng
+dengan
+tt
+tentang
+akr
+akronim
+msl
+misalnya
+dll
+dan lain-lain
+pb
+peribahasa
+dng
+dengan
+pd
+pada
+dp
+daripada
+dst
+dan seterusnya
+dsb
+dan sebagainya
+cak
+cakapan
+sbg
+sebagai
+dr
+  dari
+sing
+  singkatan
+spt
+seperti
+thd
+terhadap
+ki
+kiasan
+tsb
+tersebut
+kp
+kependekan
+kpd
+kepada
+yg
+yang
+krn
+karena
+tt
+tentang
+kl
+klasik
+
+##### PAGE pdf12
+ x | Kamus Budaya Aceh-Indonesia 
+No.
+Vokal
+Fonetis
+Awal
+Tengah
+Akhir
+1
+a
+/a/
+/agam/
+laki-laki
+/rah/
+cuci
+/gata/
+anda
+2
+i
+/i/
+/ija/
+kain
+/nit/
+sedikit
+/maji/
+miliaria
+3
+u
+/u/
+/ulɛ/
+kepala
+/bulut/
+basah
+/tunu/
+kesal
+4
+e
+/ə/
+/ə?/
+hai
+/bət/
+cabut
+/tahə/
+menung
+5
+è
+/ɛ/
+/ɛh/
+es
+/bɛ?/
+jangan
+/kirɛ/
+belut
+6
+é
+/e/
+/eh/
+tidur
+/jep/
+minum
+/suwe/
+baling-
+baling
+7
+eu
+/ɯ/
+/ɯ/
+lihat
+/panɯ?/
+pendek
+/tabɯ/
+hambar
+8
+o
+/ɔ/
+/ɔ?/
+bohong
+/pɔh/
+pukul
+/lakɔ/
+suami
+9
+ô
+/o/
+/on/
+daun
+/broh/
+sampah
+/tulo/
+pipit
+10
+ö
+/ʌ/
+-
+-
+/mantʌŋ/
+masih
+/tɯʌH/
+sebut
+4.	 Vokal dan Konsonan dalam Bahasa Aceh
+a.	
+Vokal
+Vokal adalah satuan fonologis yang diwujudkan dalam lafal tanpa 
+pergeseran. Vokal dalam bahasa Aceh ada sepuluh, yaitu [a], [i], [u], [e], 
+[è], [é], [eue], [o], [ô], [ö]. Sementara itu, diftong dalam bahasa Aceh ada 
+delapan, yaitu [ai], [ie], [ue], [ui], [ei], [èi], [eue], [oe],[oi], [ôi]. 
+Berikut distribusi vokal dan contoh diftong dalam bahasa Aceh:
+
+##### PAGE pdf13
+Kamus Budaya Aceh-Indonesia | xi
+No.
+Diftong
+Fonetis
+Lema
+Fonetis
+Arti
+1
+ai
+/ay/
+sapai
+/sa.pay/
+lengan
+2
+ie
+/iy/
+sie
+/siy/
+potong
+/iə/
+biek
+/biə?/
+klan
+3
+ue
+/uw/
+keunue
+/kɯ.nuw/
+tumit
+/uə/
+paruek
+/pa.ruə?/
+kantong
+4
+ui
+/uy/
+metui
+/mɯ.tuy/
+yatim
+5
+ei
+/əy/
+hei
+/həy/
+panggil
+6
+èi
+/ɛy/
+tirèi
+/ti.rɛy/
+tiru
+7
+eue
+/ɯə/
+leue
+/lhɯə/
+sangrai
+8
+oe
+/ɔw/
+jaroe
+/ja.rɔw/
+tangan
+9
+oi
+/ɔy/
+lagoina
+/la.gɔy.na/
+sangat
+10
+ôi
+/oy/
+langôi
+/laŋ.goy/
+sanggul
+b.	 Vokal Nasal
+Vokal nasal adalah vokal yang dihasilkan dengan mengeluarkan 
+udara melalui hidung. Vokal sengau dalam bahasa Aceh yang biasa 
+ditulis [‘a], [‘i], [‘u], [‘è], [‘o], [‘ö], dan [‘eu] disederhanakan tanpa 
+apostrof dengan transkripsi fonetis /ã/, /ĩ/, /ũ/, /ɛ̃/, /õ/, /ʌ̃/, dan /ῶ/. 
+Berikut contoh vokal nasal dalam bahasa Aceh:
+No.
+Nasal
+Fonetis
+Lema
+Fonetis
+Arti
+1
+a
+‘a
+/ã/
+teukeusyak
+/tɯ.kɯ.ʃã?/
+berlebihan
+2
+i
+‘i
+/ĩ/
+cawik
+/ca.wĩ?/
+mengait
+3
+u
+‘u
+/ũ/
+neukuet 
+/nɯ.kũwt/
+menir
+4
+e
+‘e
+/ɛ̃/
+chѐk
+/tʃɛ̃?/
+kecil
+
+##### PAGE pdf14
+ xii | Kamus Budaya Aceh-Indonesia 
+5
+o
+‘o
+/õ/
+chop
+/tʃõp/
+tusuk
+6
+ö
+‘ö
+/ʌ̃/
+mawö
+/ma.wʌ̃/
+mawar
+7
+eu
+‘ɯ
+/ῶ/
+ta’eun
+/ta.ῶn/
+wabah
+c.	 Konsonan 
+Konsonan adalah bunyi bahasa yang dihasilkan dengan menghambat 
+aliran udara pada salah satu tempat di saluran suara di atas glotis. 
+No
+Konsonan
+Awal
+Tengah
+Akhir
+1
+b
+bak
+pohon
+abah
+ayah
+-
+-
+2
+c
+curak
+motif
+gaca
+inai
+-
+-
+3
+d
+darut
+belalang
+peudeung
+pedang
+-
+-
+4
+f
+-
+-
+-
+-
+-
+-
+5
+g
+gata
+Anda
+igo
+gigi
+-
+-
+6
+h
+hah
+buka 
+mulut
+juhok
+tangguk
+babah
+mulut
+7
+j
+jeu
+jala
+bajoe
+pasak
+-
+-
+8
+k
+kamu
+rayap
+taku
+leher
+glok
+kobokan
+9
+l
+leuweu
+celana
+keumalön
+meramal
+-
+-
+10
+m
+mawah
+gadai
+tamѐh
+tiang
+lham
+tembilang
+11
+n
+nyѐh
+ketam
+paneuk
+pendek
+ôn
+daun
+12
+p
+panteu
+balai-
+balai
+ceupé
+piring 
+kecil
+ranup
+sirih
+13
+q
+qanun
+peraturan
+-
+-
+-
+-
+14
+r
+rampagoe
+kacip
+barah
+bisul
+-
+-
+15
+s
+saka
+gula 
+pasir
+busu
+ketapel
+-
+-
+16
+t
+tabak
+nampan
+situk
+upih
+bulut
+basah
+17
+v
+-
+-
+-
+-
+-
+-
+18
+w
+wareh
+kerabat
+awé
+rotan
+-
+-
+19
+x
+-
+-
+-
+-
+-
+-
+20
+y
+yum
+harga
+miyup
+rendah
+-
+-
+21
+z
+-
+-
+-
+-
+-
+-
+
+##### PAGE pdf15
+Kamus Budaya Aceh-Indonesia | xiii
+d.	 Gugus Konsonan
+Gugus rangkap adalah dua konsonan atau lebih yang berurutan 
+dalam satu suku kata dan dilafalkan dalam satu bunyi ujaran.
+No
+Gugus 
+Konsonan
+Fonetis
+Lema
+Fonetis
+Arti
+1
+ph
+[ph]/
+phon
+/phon/
+awal
+2
+th
+[Ṭ] 
+that
+/Ṭat/
+sangat
+3
+ch
+[tʃ]
+chѐk
+tʃɛ?
+kecil
+4
+kh
+/x/
+khanduri
+/xan.du.ri/
+kenduri
+5
+bh
+/bh/
+bhoi
+/bhoy/
+bolu khas 
+Aceh
+6
+dh
+/ḍ/
+dhoe
+/ḍɔw/
+kening
+7
+jh
+/jh/
+jhô
+/jho/
+dorong
+8
+gh
+/ɣ/
+leughok
+/lɯ.ɣõ?/
+jenis 
+timphan
+9
+lh
+/lh/
+lhѐ
+/lhɛ/
+tiga
+10
+rh
+/r̥/
+rho
+/r̥o/
+tumpah
+11
+pl
+/pl/
+plôk
+/plo?/
+wadah
+12
+kl
+/kl/
+meuklѐh
+/mɯ.klɛh/
+pisah
+13
+bl
+/bl/
+blang
+/blaŋ/
+sawah
+14
+gl
+/gl/
+glé
+/gle/
+bukit
+15
+pr
+/pr/
+pruh  
+/pruh/
+mengembus
+16
+br
+/br/
+brihik
+/bri.hi?/
+bangkrut
+17
+cr
+/cr/
+creu
+/crɯ/
+garu
+18
+dr
+dr/
+drop
+/drɔp/
+tangkap
+19
+gr
+/gr/
+grah
+/grah/
+haus
+20
+jr
+/jr/
+jroh
+/jrɔh/
+baik
+21
+kr
+/kr/
+seungkreut
+/sɯŋ.krɯt/
+sengkelit
+22
+tr
+/tr/
+trôh
+/troh/
+tiba
+23
+sy
+/ʃ/
+syèh
+/ʃeh/
+ulama
+24
+ng
+/ŋ/
+nging
+/ŋiŋ/
+melihat
+25
+ny
+/ɳ/
+nyѐh
+/ɳɛ̃h/
+ketam
+26
+mb
+/mb/
+mbong
+/mboŋ/
+angkuh
+
+##### PAGE pdf16
+ xiv | Kamus Budaya Aceh-Indonesia 
+5. Gambar
+Gambar dalam kamus ini disertakan untuk memperjelas makna yang 
+dimaksud, biasanya kata yang bersifat khas, seperti benda-benda budaya, 
+motif, flora, dll. Gambar merupakan hasil dokumentasi pribadi tim 
+penyusun kamus.
+
+##### PAGE 1
+Kamus Budaya Aceh-Indonesia | 1
+adat
+a
+a /a/	
+n 
+saudara 
+perempuan 
+kandung yg lebih tua: ureung inong 
+nyan – lon ‘perempuan itu – saya’
+ayah /a.jah/ n orang tua laki-laki; 
+abah; abi; abôn
+ayah cék /a.jah ce?/ n adik ipar 
+laki-laki ayah
+abu /a.bu/ n orang tua laki-laki, 
+sapaan ini berkembang di daerah 
+Pidie dan Aceh Timur; ayah 
+abè dapu /a.bɛ da.pu/ n abu hasil 
+pembakaran kayu untuk memasak, 
+biasanya digunakan sbg bahan pelapis 
+telur bebek asin: – jeut cit ta peumasen 
+boh itek ‘– boleh digunakan untuk 
+pembuatan telur asin’
+abéh /a.beh/ 1 v tidak ada yg tinggal 
+lagi 
+(karena 
+sudah 
+digunakan, 
+dibagikan, 
+dimakan, 
+dsb); 
+tidak 
+bersisa; habis:  bèk ka lakè lé, ka 
+– hareutakuh! ‘janganlah meminta 
+lagi, sudah – hartaku!’ 2 a terakhir: 
+Rabu – ‘Rabu terakhir’ hari Rabu 
+terakhir sebelum puasa Ramadan’; 3 
+v selesai: oh – but nyan, barô tapubut 
+but jéh ‘jika pekerjaan itu --, barulah 
+Anda kerjakan yg lain; 4 v cak biaya: 
+padum – lestrék rumoh dron sibuleun? 
+‘berapa –listrik rumah Anda sebulan?
+meuabéh-abéh 
+/mɯ.a.beh 
+a.beh/ a habis-habisan: Keuchik 
+Uma geumeu–kawuri peukawen 
+aneuk  ‘Kepala Desa Umar –
+memestakan perkawinan anaknya
+abô /a.bo/ n 1 keong yg hidup di air 
+tawar berbentuk bulat; 2 motif kasap 
+pelaminan khas Pidie 
+abôn /a.bon/	
+n sapaan kpd ulama, 
+pemimpin dayah; abati; abana; 
+abaya; abuya; tu; waléd 
+abu chik /a.bu tʃi?/ n	
+1 bapak dr 
+ayah atau bapak dr ibu; kakek; aki; 
+datuk; 2 kata sapaan kpd laki-laki yg 
+sudah tua (sebaya kakek); ayah chik: 
+– lon dua thon ka meuninggai ‘– saya 
+sudah dua tahun meninggal’
+acak   /a.ca?/	
+n bayangan, bentuk 
+yg tampak bagus dr jauh
+achém /a.tʃem/ n tiruan bunyi orang 
+bersin; acihem
+acuan	 /a.cu.an/ n cetakan kue (spt 
+bolu, boi, seupet, kipang atau kue 
+lainnya) memiliki aneka bentuk:	– 
+kueh seupet ka gadoh, suah blo nyan 
+baro ‘– kue seupet sudah hilang, harus 
+dibeli yg baru’
+acuk 	 /a.cu?/	 v 
+menguji 
+tempat 
+memancing dng menarik pancing 
+berkali-kali, 
+untuk 
+memastikan 
+terdapat ikan yg banyak
+adat /a.dat/ n 1 aturan yg lazim 
+dituruti sejak dahulu kala; 2 cara yg 
+sudah menjadi kebiasaan; 3 kl iuran 
+A
+
+##### PAGE pdf18
+ 2 | Kamus Budaya Aceh-Indonesia 
+agam
+adé ie leubeu
+yg diberikan sesuai dng peraturan yg 
+berlaku
+adat glé /a.dat gle/ n 1 aturan yg 
+mengatur tt kegiatan di kebun, 
+ladang, hutan; 2 kl setoran dr 
+peladang atau orang-orang yg 
+mendapatkan hasil dr hutan kpd 
+pawang hutan pd zaman dahulu
+adat haria /a.dat ha.ri.a/ n ark 
+iuran yg dibayar oleh pedagang atas 
+barangnya yg disimpan dalam los 
+di pasar atau pekan, biasanya dana 
+digunakan untuk pembangunan 
+kampung atau meunasah
+adat kamsén /a.dat kam.sen/ n ark 
+iuran yg dibayar oleh pedagang 
+sbg jaminan keamanan
+adat lhok	
+/a.dat lʰo?/ n ark 
+biaya yg dikenakan atas kapal yg 
+berlabuh
+adat peukan  /a.dat pɯ.kan/  n 
+ark biaya yg dikenakan kpd orang-
+orang 
+yg 
+mengunjungi 
+pasar 
+malam
+adat peutoe  /a.dat pɯ.to/	
+n ark 
+biaya yg dibayar untuk mengajukan 
+perkara 
+di 
+pengadilan; 
+hak 
+ganceng
+adat peutua /a.dat pɯ.tu.a/ n ark 
+iuran yg dibayar berdasarkan hasil 
+perkebunan lada
+adat tandi	 /a.dat tan.di/	
+n ark 
+biaya yg dibayar kpd petugas yg 
+menimbang barang di pasar
+adat tuha	
+/a.dat tu.ha/ n	
+a r k 
+biaya yg dibayar kpd kadi dan 
+lembaga adat desa dalam suatu 
+persidangan
+adat wasé kuala /a.dat wa.se 
+ku.a.la/ n ark iuran yg dipungut 
+oleh syahbandar atas barang yg 
+masuk dan keluar melalui kuala, 
+persediaan air bagi kapal, untuk 
+membantu kapal yg kandas
+adé ie leubeu	 /a.de i lɯ.bɯ/	 n 
+penganan yg terbuat dr tepung dan 
+telur, berwarna kuning, dibentuk 
+dng cara digulung kecil-kecil, 
+biasanya disajikan pada kenduri 
+atau bulan puasa; adé keumbang 
+tanjong
+ado	
+/a.dɔ/	
+n 1 saudara kandung 
+yg 
+lebih 
+muda 
+(laki-laki 
+atau 
+perempuan); 2 kerabat yg lebih muda 
+(dr pertalian kekeluargaan); 3 kata 
+sapaan kpd laki-laki atau perempuan 
+yg lebih muda; 4 organ berbentuk 
+cakram yg menghubungkan janin 
+dng dinding rahim yg menjadi jalan 
+perantara bagi pernapasan, pemberian 
+makanan, dan pertukaran zat buangan 
+antara janin dan darah ibu, keluar dari 
+rahim mengikuti janin yg baru lahir; 
+ari-ari; tembuni: beu got-got ngon 
+--teuh, bek gadoh ta meupakee ‘yang 
+rukun dgn adik, jangan selalu ribut’
+aduwat /a.du.wat/ a berkeinginan 
+keras untuk membalas (kejahatan, 
+dsb); dendam
+agak	
+/a.ga?/ v mengancam, berbuat 
+seolah-olah hendak memukul atau 
+melempar sesuatu; kacak
+agam	 /a.gam/	 n 1 manusia yg 
+berjenis kelamin laki-laki; 2 jantan 
+
+##### PAGE 3
+Kamus Budaya Aceh-Indonesia | 3
+ambong
+agôk
+(untuk hewan); gam; si gam
+agôk	
+/a.go?/	 n tabung kecil yg 
+terbuat dr logam, diisi jimat, dibalut, 
+dan dipasang pd kalung anak kecil
+ajam	
+/a.jam/	 v 
+1 
+meniru 
+atau 
+mengerti dng cepat; cakap; 2 suka 
+mencampuri urusan orang lain 
+ajeumat   /ajɯ.mat/ n benda atau 
+bacaan yg biasanya dipakai di badan 
+atau ditempelkan di dinding rumah, yg 
+berfungsi sbg penangkal, pelindung, 
+untuk 
+kesehatan, 
+keselamatan, 
+dsb; azimat; ajimat: ureung mume 
+geupakek – peujeu oh jen  ‘ibu hamil 
+memakai – untuk mengusir roh halus’
+ajeumat 
+meurakét 
+/a.jɯ.mat 
+mɯ.ra.ket/ n gelang yg terbuat dari 
+emas, perak atau suasa, dipakai di 
+lengan atas seorang wanita pada 
+busana tradisional di atas gleung 
+ikai
+akeumak /a.kɯ.ma?/	
+a 
+1 
+lupa, 
+sombong, menyesal, buruk, tanggung; 
+2 rasa segan atau sungkan
+akikah /a.ki.kah/ n penyembelihan 
+kambing 
+atau 
+domba 
+sebagai 
+pernyataan syukur orang tua atas 
+kelahiran anaknya, dua ekor untuk 
+anak laki-laki dan satu ekor untuk anak 
+perempuan, lazimnya dilaksanakan 
+pada hari ketujuh
+aklah	 /ak.lah/    n satin atau sutera 
+bermutu tinggi yg dihiasi bunga-bunga 
+kasap, digunakan sbg selendang
+alè /a.lɛ/ n alat yg terbuat dr kayu, 
+digunakan untuk menumbuk padi, 
+beras, dsb 
+alѐ seuneuba /a.lɛ sɯ.nɯ.ba/ n alu 
+atau mata jeungki yg berfungsi sbg 
+pengupas padi, kopi, dsb
+alѐ seuneurôh /a.lɛ sɯ.nɯ.roh/	
+n alu penghalus pd jeungki yg 
+berfungsi untuk membersihkan 
+padi dr sekam, ampas yg dihasilkan 
+berupa dedak kasar; alѐ rhôh
+alѐ tunjang /a.lɛ tun.jaŋ/	
+n 
+alat musik tradisional Aceh Utara 
+yg terdiri atas 4atau 5 lesung yg 
+mempunyai bentuk, bahan, dan 
+panjang alu yg berbeda untuk 
+menghasilkan 
+karakter 
+suara 
+yg berbeda pula, bentuk alunya 
+panjang spt galah, dan lesungnya 
+spt gelondong kayu yg diletakkan 
+berdiri lebih kurang setinggi paha
+aleu /a.lɯ/	
+n bagian bawah (alas, 
+dasar) suatu ruangan atau bangunan 
+(terbuat dr papan, semen, ubin, 
+dan sbgnya); lantai: tasampoh – tip 
+bengoh ngon seupôt ‘sapulah – setiap 
+pagi dan sore’
+alôn	
+/a.lon/	 1 n alunan: – su syekh 
+nyan lage bulôh perindu ‘alunan 
+suara syekh mirip buluh perindu’  2 
+a ki kesusahan, bahaya, melapetaka; 
+3 v berguncang; 4 v mengalir; 5 
+gelombang besar
+ambang	
+/am.baŋ/ 1 n bentuk 
+tubuh; 
+sikap 
+badan; 
+perawakan; 
+keadaan lahiriah; 2 a keadaan; 3 n 
+bingkai (pintu atau jendela)
+ambong	
+/am.bŋ/ 
+a 
+kondisi 
+badan atau barang yg ringan; enteng; 
+ampông ulee bara
+
+##### PAGE pdf20
+ 4 | Kamus Budaya Aceh-Indonesia 
+aneuk
+ambông
+ambông	
+/am.boŋ/ n keranjang 
+untuk membawa barang di punggung 
+dan diikat dng tali ke bahu (biasanya 
+terbuat dr rotan)	
+ampéh	/am.peh/ 	
+1  n 	
+pagar  dr susunan potongan bambu 
+yg digunakan sbg penghalang saat 
+menangkap ikan; 2 n penyekat 
+ampu /am.pu/   1 a    	
+l
+e
+b
+i
+h 
+tinggi; 2 v menyangga, mengangkat, 
+menopang
+amѐng 	/a.mɛŋ/		
+n hal-hal yg 
+belum jelas kebenarannya, desas-
+desus, rumor: hana lon deungoe, 
+mantong – ‘tidak ada saya dengar, 
+hanya --’
+ancak	 /an.ca?/	n 
+para-para 
+segi 
+empat, terbuat dr bambu, tempat 
+menjemur gading, ikan dsb
+andam mata /an.dam ma.ta/ n celak 
+untuk menghitamkan bulu mata; 
+seureuma
+andé-andé	
+/an.de-an.de/	
+n 
+engsel pd pintu atau jendela	
+aneuk	 /a.nɯ?/	 n	
+1 
+generasi 
+kedua atau keturunan pertama pada 
+manusia,  hewan, bahkan tumbuhan; 
+anak: tapeuruno – ilme agama	
+‘ajari – ilmu agama’; 2 num kata 
+hitung pembantu; neuk
+aneuk agam /a.nɯ? a.gam/ n 
+anak laki-laki: – lon hana dipajoh 
+bu lom ‘--ku belum makan’
+aneuk badan 	
+/ a . n ɯ ? 
+ba.dan/	
+ n  anak yg lahir dari 
+kandungan sendiri; anak sendiri 
+(bukan anak tiri atau anak angkat); 
+anak kandung
+aneuk bajeueng /a.nɯ? ba.jɯəŋ/ 	
+n anak yg lahir dr hasil hubungan 
+di luar ikatan pernikahan; anak 
+jadah; anak haram: jaga dro beu 
+get, bek lahee – dum lam bumo nyo 
+‘jaga diri baik-baik, jangan sampai 
+banyak lahir anak-anak haram di 
+bumi ini’
+aneuk chip	 /a.nɯ? tʃip/ n katup 
+yg lembut dari langit-langit mulut 
+sebelah belakang (tempat saraf 
+perasa); anak tekak: aneuk lidah; 
+aneuk ceukak:  su leupah rayeuk, 
+aleh ube na – jih ‘suaranya sangat 
+besar, entah sebesar apa --nya’
+aneuk gaki  /a.nɯ? ga.ki/ 	
+n jari 
+kaki; aneuk aki: tung ie seumayang 
+bek tuwoe ta peu gleh – ‘saat wudu 
+jangan lupa membersihkan --’
+aneuk inong /a.nɯ? i.noŋ/ n anak 
+perempuan
+aneuk jaro	 /
+a
+.
+n
+ɯ
+? 
+ja.rɔ/	
+n jari tangan: Aminah 
+sok incin bak mandum – wi 
+‘Aminah menggunakan cincin pd 
+semua – kirinya’
+aneuk meuntui /a.nɯ? mɯn.tuy/ 
+n anak yg tidak memiliki ibu; piatu
+aneuk miet /a.nɯ? mit/ n anak 
+kecil; aneuk manyak; aneuk cut-
+cut
+aneuk mirah /a.nɯ? mi.rah/ n 
+anak yg baru lahir 
+aneuk mo /a.nɯ? mo/ n anak 
+bawaan suami atau istri yg bukan 
+hasil perkawinan dng istri atau 
+suami yg sekarang: anak tiri 
+aneuk phon /a.nɯ? phon/ n anak 
+tertua, anak pertama; sulung; 
+aneuk ulѐ bara: – rata-rata 
+carong ‘– rata-rata pintar
+aneuk rinyeun /a.nɯ? ri.ɳɯn/ 
+n pijakan yg terdapat pd tangga; 
+
+##### PAGE 5
+Kamus Budaya Aceh-Indonesia | 5
+apam
+angkim 
+anak tangga: hanjeut duek bak --, 
+treb trok judo ‘tidak boleh duduk 
+di --, lama datang jodoh’
+aneuk syahi	/ a . n ɯ ? ʃ a . h i / 	
+n petugas yg melantunkan syair 
+dalam grup kesenian bersyair; 
+aneuk cahi
+aneuk tôk  /a.nɯ? to?/	
+n 
+ujung kerongkongan yg menonjol/
+tersembul pada leher laki-laki 
+dewasa; lekum; jakun: mandum 
+ureung agam na –‘semua laki-laki 
+memiliki --’
+aneuk tulôt /a.nɯ? tu.lot/ n anak 
+bungsu
+aneuk seubut /a.nɯ? sɯ.but/ anak 
+angkat
+aneuk ubat /a.nɯ? u.bat/ pasien yg 
+sudah sembuh dan tetap menjaga 
+silaturahmi dng tabib
+angkim /aŋ.kim/ n perhiasan yg 
+digunakan pd acara perkawinan, dr 
+benang emas, manik-manik, dan ada 
+juga yg terbuat dr benang wol
+angkѐ /aŋ.kɛ/ v menjamin, mengaku, 
+menanggung sesuatu
+anjông	/an.joŋ/ n bangunan di taman 
+atau lapangan, yg kadang-kadang 
+dibuat secara artistik, dipakai sbg 
+tempat rekreasi, bangunan yg dibuat 
+khusus untuk pameran dan sbgnya; 
+paviliun; anjungan
+apa	
+/a.pa/	
+n	
+1 adik laki-
+laki ayah atau ibu; paman; 2 sapaan 
+laki-laki yg belum dikenal atau yg 
+patut 
+dihormati 
+(seusia 
+paman); 
+ayah cut: – lon ka tuha goh lom 
+geumeukawen ‘– saya sudah tua tapi 
+belum menikah’
+apa ngoh /a.pa ŋoh/ n adik laki-
+laki ayah atau ibu yg berada di 
+urutan tengah
+apa rayek	 /a.pa 
+ra.yə?/ 
+n 
+abang laki-laki dari ayah atau 
+ibu; apayek: yahwa: lon hana 
+– lon, ayah lon aneuk saboh 
+‘saya tidak punya --, ayah saya 
+anak tunggal’
+apa löt /a.pa lʌt/ n	
+adik laki-
+laki ayah atau ibu yg bungsu: 
+uroe minggu nyoe – lon ‘ek haji 
+‘minggu ini – saya akan naik 
+haji’
+apam /a.pam/ n penganan yg 
+dibuat dr bahan dasar tepung beras 
+dan kelapa parut
+apam balon /a.pam ba.lon/ n apam 
+yg digulung
+apam 
+meuseuraya 
+/a.pam 
+mɯ.sɯ.ra.ya/ n apam yg dimakan 
+saat gotong royong 
+buleun apam /bu.lɯn a.pam/ n 
+nama bulan di Aceh, bertepatan 
+
+##### PAGE pdf22
+ 6 | Kamus Budaya Aceh-Indonesia 
+até 
+apôh-apah	
+dng 
+bulan 
+Rajab, 
+biasanya 
+diadakan khanduri apam
+khanduri apam /xan.du.ri a.pam/ 
+n perayaan pd bulan Rajab ditandai 
+dng membuat apam
+apôh-apah	
+/a.poh a.pah/	
+ 
+n 
+gerah karena cuaca panas, tidak ada 
+angin, dsb
+arat /a.rat/ a 1 penuh sesak; 
+berdesakan (tt tempat dsb): – bak 
+taduk lam moto ubeut ubé no ‘– 
+kita dalam mobil kecil seperti ini’; 
+2 singkat (tt waktu): karena – that 
+watè, dijih h’an jitém prèh le trôh 
+lôn ‘karena sangat – waktunya, ia 
+tidak mau lagi menunggu kedatangan 
+saya’; 3 susah (tt hidup): bit – udép 
+lam masa pandemi kovid lagè nyo 
+‘sungguh – hidup di masa pandemi spt 
+ini’; 4 sempit: bajè nyo ka – bak lôn 
+baje nyo – di badan lon ‘baju ini ketat 
+di badanku’; 5 terdesak; 6 sibuk
+aré	
+/are/	
+1 n alat yg terbuat 
+dari kayu, besi, dsb untuk standar 
+ukur; sukatan; 2 num satuan ukuran 
+luas 100 meter persegi; 3 num satuan 
+ukuran beras seberat 1,5 kg; bambu 
+aré padé	
+/are pa.de/	
+n 
+alat takar padi yg terbuat dr kayu, 
+setara 2 liter 
+arѐng	 /a.rɛŋ/	 n alat untuk menjerat 
+babi yg terbuat dr kawat baja	
+asam bôh limѐng /a.sam boh li.mɛŋ/ 
+n sambal yg terbuat dari belimbing 
+wuluh masak, dicampur dng udang 
+rebus
+asam sunti   /a.sam sun.ti/   n 
+belimbing wuluh yg dikeringkan 
+asam ue    /a.sam u/	
+n sambal yg 
+terbuat dr kelapa mengkal yg diparut 
+dan dicampur dng berbagai bumbu
+asam udeung	 / a . s a m u . d ɯ ŋ / 	
+n masakan udang yg dikukus serta 
+dicampur dng bumbu dan jeruk purut 
+kemudian diberi serai
+asan usén /a.san usen/ n 1 nama 
+bulan di Aceh, bertepatan pd bulan 
+Muharram; 2 pertemuan yg bersifat 
+keagamaan, diadakan pada tanggal 
+satu Muharram (tahun baru Islam), 
+biasanya 
+dilakukan 
+di 
+masjid/
+meunasah
+asisten wedana /a.sis.tən wə.da.na/ n 
+pembantu bupati
+aso /a.sɔ/ n 1 isi; 2 daging manusia 
+di antara kulit dan tulang; 3 bagian dr 
+buah yg lunak di bawah kulit yg dpt 
+dimakan; 4 isian warna dasar kain 
+(terutama kain sarung)
+aso  nanggro /a.sɔ naŋ.grɔ/ 
+n orang yg mendiami suatu 
+tempat 
+(kampung, 
+negeri, 
+pulau, dsb); penduduk: Teungku 
+Usman cit – bak gampong nyo, 
+kon ureung tameong ‘Tengku 
+Usman memang – di kampung 
+ini, bukan pendatang’
+aso rumoh /a.sɔ ru.mɔh/ n 1 
+perabotan: Apa Ali meujak blo – 
+seugolom geuwo u rumoh barô 
+‘Paman Ali akan membeli – 
+sebelum menghuni rumah baru’; 
+2 penghuni rumah: ubéna – nyo 
+ka abéh teungeut ‘semua – sudah 
+tidur’
+até 	
+/a.te/	
+n 1 organ tubuh 
+berwarna kemerah-merahan di bagian 
+kanan atas rongga perut berguna utk 
+menyimpan nutrisi, menghasilkan 
+protein dan empedu; hati; 2 ki tempat 
+perasaan bersemanyam: saket that – 
+lon menyeo ipeungeut meunan	
+‘saya sakit – kalau di bohongi begitu’; 
+
+##### PAGE 7
+Kamus Budaya Aceh-Indonesia | 7
+ayeum gumbak 
+até iyé 
+3 bagian yg di dalam sekali (tt buah, 
+batang, tumbuhan, dsb): – bak pisang 
+‘– pohon pisang’ 
+até iyé /a.te i.ye/ n tombak yg 
+panjangnya tidak lebih dr 1 meter 
+digunakan sbg senjata
+ateueng /a.tɯŋ/ n	
+t i m b u n a n 
+tanah di sawah, biasanya digunakan 
+sbg jalan; pematang
+atôt 
+/a.tot/ 
+ 
+n 
+1 
+bagian 
+yg 
+menghubungkan antartulang; sendi 
+tulang; pergelangan tulang: – jaro lôn 
+that sakét ‘– tanganku sakit sekali’; 
+2 ruas pohon: teubè nyan that rapat 
+– jih ‘tebu itu sangat dekat --ya’; – 
+lon dipeh  ngon buso ‘--ku dipukul 
+dengan besi’
+awé /a.we/ n tumbuhan menjalar yg 
+batangnya digunakan untuk berbagai 
+barang atau perabot (spt kursi, tali, 
+gelang) (Calamus caesius); rotan: 
+lagak that kursi – bak rumoh cupo jeh 
+buno lon kalon ‘cantik sekali kursi – 
+yang ada di rumah kakak itu tadi’
+awé cut	
+/ a . w e c u t / 	
+n	
+rotan kecil yg digunakan sbg 
+pengikat (harus dibelah terlebih 
+dahulu), mirip awé lilin, dan 
+mudah didapat	
+awé lilin	
+/ a . w e l i . l i n / 	
+n	
+rotan yg ukurannya sekitar 
+8 mm, dipakai untuk anyaman 
+atap, atau untuk mengikat daun 
+rumbia, dibelah dan diraut terlebih 
+dahulu, sifatnya kuat, lentur, dan 
+kecil	
+awé seumuléng /a.we sɯ.mu.
+leŋ/ n rotan yg berfungsi untuk 
+mengikat pagar, tumbuh di daerah 
+kuala, pucuk bonggolnya bisa 
+dimakan	
+awé tabu /a.we ta.bu/ n rotan yg 
+dimanfaatkan 
+untuk 
+membuat 
+kursi, ornamen di kursi rotan, 
+bentuknya 
+besar, 
+merambat, 
+lentur, bisa mengobati telinga dng 
+cara dibakar dan dimasukkan ke 
+telinga, pucuk bonggolnya bisa 
+dimakan	
+aweuk 
+/a.wɯ?/ 
+n 
+sendok 
+yg 
+digunakan untuk mengambil sayur, 
+nasi, dll dr suatu tempat, terbuat dr 
+tempurung kelapa diberi gagang dari 
+sebilah bambu; sutil; sudip: – nyo 
+treb that itheun, ka jameun ka, tapi 
+mantong got dih ‘– ini masih bagus, 
+padahal sudah lama, tapi masih utuh’
+ayan /a.jan/ n baskom yg terbuat dari 
+kuningan, plastik, dsb berfungsi sbg 
+wadah makanan: Ani teungoh rah – 
+‘Ani sedang mencuci --’
+ayeum bajè /a.jɯm ba.jɛ/ n alat 
+kelengkapan 
+pakaian 
+tradisional 
+laki-laki Aceh berupa bros berantai, 
+biasanya terdiri atas 3 untai rantai, 
+dua 
+untai 
+disangkutkan 
+pada 
+kantong dada kiri, biasanya bermotif 
+ikan dan kunci, satu untaian lagi 
+biasanya disangkutkan sebuah jam: 
+– ka teulheup, sou tu`oh pasang 
+siat? ‘– sudah terlepas, siapa yg bisa 
+memasangkannya?’
+ayeum gumbak /a.yɯm gum.ba?/ n 
+hiasan rambut untuk pengantin wanita 
+atau hiasan pd topi pengantin pria
+
+##### PAGE pdf24
+ 8 | Kamus Budaya Aceh-Indonesia 
+bajѐ 
+ba ranup
+ba ranup /ba ra.nup/ 1 v membawa 
+sirih pd acara tunangan; 2 n tradisi 
+tunangan dng membawa seserahan 
+berupa sirih, cincin emas, pakaian, 
+dan makanan, dr keluarga laki-laki 
+kpd pihak perempuan; ba tanda; mѐ 
+tanda
+babah  /ba.bah/  n 	
+1 
+bagian 
+tubuh yg terdapat di muka, tempat 
+gigi dan lidah, utk memasukkan 
+makanan (pd manusia atau binatang); 
+mulut; 2 ki bagian depan dr sesuatu 
+yg berbentuk rongga: – kuala ‘pintu 
+masuk muara’; 3 ki cakap; perkataan: 
+wate tamarit beuna tajaga – geutanyo 
+‘saat kita berbicara hendaklah kita 
+menjaga --’
+babah lung /ba.bah luŋ/ n hulu 
+sungai kecil
+babah rinyeun /ba.bah ri. ɳɯn/ 
+n bagian ujung tangga terdapat 
+di depan pintu’: – guha nyan ka 
+teutôp ‘– gua itu sudah tertutup’
+babah röt /ba.bah rʌt/ n pintu 
+masuk dan keluar; gerbang: Ali 
+jipreh mak bak – ‘Ali menunggu 
+ibu di –’
+bacut /ba.cut/  a 	
+1 
+tidak 
+banyak; sedikit: cit – untông uro nyo 
+‘hanya – untung hari ini’; 2 tidak 
+seberapa:  – sagai luka, hana peu-peu 
+‘– lukanya, tidak apa-apa’
+bada bôh keupila	
+/ba.da 
+boh 
+kɯ.pi.la/ n gorengan yg terbuat dr 
+ketela, dicampur dng tepung dan 
+kelapa parut; bada bôh keutila
+badan /ba.dan/ n 1 tubuh (jasad 
+manusia 
+keseluruhan): 
+– 
+nyang 
+sehat mangat ta ibadah ‘– yg sehat 
+mudah untuk ibadah’; 2 batang tubuh 
+manusia, tidak termasuk anggota dan 
+kepala; 3 bagian utama dr suatu benda 
+badѐk /ba.dɛ?/ n pisau yg runcing, 
+panjangnya 
+kira-kira 
+30 
+cm, 
+digunakan sbg alat bela diri; badik; 
+budèk
+bahô /ba.ho/ n bagian tubuh antara 
+leher dan pangkal lengan; bahu: bek 
+poh bak – ‘jangan pukul di --’
+baih /bayh/ n penerima subproyek, 
+seseorang yg mengatur mekanisme 
+pekerjaan tukang bangunan pd sebuah 
+proyek; mandor	
+bajѐ /ba.jɛ/	
+n pakaian penutup 
+badan bagian atas; baju
+bajѐ kurông	/ba.jɛ ku.roŋ/	
+n 
+baju yg digunakan perempuan, 
+panjangnya di bawah lutut, tidak 
+berkancing, biasanya dipadukan 
+dng kain; baju kurung
+bajѐ laka /ba.jɛ la.ka/	
+n 
+baju adat yg digunakan laki-laki, 
+berwarna dasar hitam, bentuknya 
+spt jas, berkancing emas, bermotif 
+pinto Aceh, digunakan saat acara 
+adat atau menerima tamu
+bajѐ meukasap /ba.jɛ mɯ.ka.
+sap/ n baju yg digunakan laki-
+laki atau perempuan, dijahit dng 
+benang emas, bermotif bungong 
+keupula atau pinto Aceh, biasanya 
+digunakan untuk acara adat	
+bajѐ panah /ba.jɛ pa.nah/ n kaus 
+oblong berwarna putih, tipis, 
+digunakan sbg pakaian sehari-hari; 
+B
+
+##### PAGE 9
+Kamus Budaya Aceh-Indonesia | 9
+bak
+bak
+bajѐ salang
+bajék panah /ba.je? pa.nah/ n 
+nangka muda seukuran bola tenis; 
+gori	
+bajoe /ba.jɔw/ n	
+k
+a
+y
+u 
+berukuran kecil yg berfungsi sbg 
+paku untuk menguatkan tiang 
+rumah pd rumah tradisional Aceh, 
+tiang meja, dsb; pasak: cangkoi 
+ka suah sak – nyan, gek-gok that 
+ka, takot lheuh ‘cangkul itu harus 
+dipasangkan 
+--, 
+sudah 
+sangat 
+goyang taut terlepas’
+bak /ba?/ 1 n tumbuhan, tanaman, 
+pohon; 2 p di, pada
+bak acai	
+ /ba? a.cay/ n sayuran 
+jenis bawang yg digunakan dalam 
+berbagai 
+masakan, 
+berdaun 
+panjang kecil-kecil, berwarna hijau 
+(Allium odorum); kucai 
+bak agu	
+/ba? a.gu/ n pohon 
+berukuran tinggi, daunnya kecil, 
+biasanya dibonsai atau dijadikan 
+tanaman pagar; pohon serut
+bak arôn /ba? a.ron/  n	
+pohon yg berbatang tinggi lurus, 
+kayunya 
+berwarna 
+kelabu 
+kemerahan, 
+padat 
+dan 
+keras, 
+daunnya seperti jarum atau lidi, 
+tumbuh di pinggir laut, dapat 
+dimanfaatkan sbg bahan bakar, 
+kulit kayunya digunakan untuk obat 
+disentri, daunnya dapat diekstrak 
+untuk pengobatan penyakit kejang 
+perut (Casuarina equisetifolia); 
+eru; ru; kasuarina 
+bak asan /ba? a.san/	n 
+pohon 
+besar, mahkota daun menyerupai 
+payung dan lebar, banyak ditanam 
+karena memberi naungan, kayunya 
+tidak 
+terlalu 
+awet, 
+daunnya 
+digunakan sebagai pakan ternak, 
+buahnya berupa polong yg tebal 
+dan 
+berdaging 
+(Enterolobium 
+saman); kayu ambon; munggur; 
+trembesi; tranbeusi
+bak atan /ba? a.tan/ n pohon besar 
+yg bisa digunakan untuk obat 
+malaria, diambil patinya diberi 
+garam sedikit, bunganya berwarna 
+kuning, bulat di tengahnya biji, 
+kelopaknya 
+mengelilingi 
+mirip 
+ufo 
+(Pterocarpus 
+indicus); 
+angsana	
+bak bada /ba? ba.da/	
+n 
+pohon yg tingginya hingga 20–25 
+m, digunakan sbg bahan bangunan, 
+dipercaya 
+masyarakat 
+bisa 
+menangkal 
+orang 
+kerasukan 
+(Zizyphus celtidifolia); bidara
+
+##### PAGE pdf26
+ 10 | Kamus Budaya Aceh-Indonesia 
+bak
+bak
+bak beum	 /ba? 
+bɯm/ 
+n 
+pohonnya berbentuk spt mahoni, 
+digunakan 
+masyarakat 
+untuk 
+membuat 
+hama 
+infertil, 
+obat 
+malaria, ketombe, kulit kepala 
+mengelupas, dan rasa buahnya 
+pahit (Azadirachta indica); mimba 
+bak beuraleun   /ba? bɯ.ra.lɯn/ 
+n pohon yg daunnya besar dan 
+kasar, biasanya digunakan untuk 
+membersihkan kulit ikan tongkol
+bak capa	
+/ b a ? c a . p a / 	
+n tanaman yg dimanfaatkan sbg 
+ramuan 
+jamu, 
+daunnya 
+dimanfaatkan 
+untuk 
+radang 
+tenggorokan 
+(digulung, 
+dimasukkan ke hidung); sembung
+bak dilip	
+/ba? di.lip/	
+n 
+pohon besar, buahnya berdiameter 
+kira-kira 3 cm, ditanam di sekitar 
+sawah 
+untuk 
+tempat 
+istirahat 
+(Castanopsis cuspidata)	
+bak drien	
+/ba? driyn/ n pohon yg 
+batangnya lurus, tingginya sekitar 
+20–40 m, dahannya jarang, kulit 
+batangnya kasar dan berwarna 
+kelabu, bunga tersusun dalam 
+malai, berwarna kuning (Durio 
+zibethinus): – göt tapula lam glé 
+‘— baik ditanami di dataran tinggi’
+bak eumpeuk  /ba? ɯm.pɯ?/ 
+n  tumbuhan berumbi, daunnya 
+lebar berbentuk hati, umbinya 
+di beberapa daerah merupakan 
+bahan makanan pokok (Colocasia 
+esculenta); seratah; talas bak 
+eumpeuk jeut tapeuget ke peunajoh, 
+segolom nyan tamasak dile ‘talas 
+bisa digunakan sbg bahan makanan 
+tetapi 
+harus 
+dimasak 
+terlebih 
+dahulu sebelum dikonsumsi’
+bak eumpeuk tikôh /ba? ɯm.pɯ? 
+ti.koh/ n	
+pohon 
+kecil 
+yg 
+digunakan untuk obat, hiasan 
+dalam pot; keladi mini (Typhonium 
+flagelliforme); keladi tikus: – get 
+that keu ubat kanker dan mandum 
+penyaket 
+nyang 
+meunyangkot 
+dengon saraf ‘keladi tikus bagus 
+sekali 
+menjadi 
+obat 
+masalah 
+kanker dan semua penyakit terkait 
+dng sistem saraf’ 
+bak gawè /ba? ga.wɛ/ n tanaman 
+menjalar spt timun, bisa dimakan
+
+##### PAGE 11
+Kamus Budaya Aceh-Indonesia | 11
+bak
+bak
+bak 
+keulayu 
+/ba? 
+kɯ.la.yu/ 
+n pohon kecil, kayunya kuat, 
+digunakan untuk membuat gagang 
+berbagai alat perkakas, daun yg 
+muda dibuat sayur, rasa buahnya 
+sepat (Erioglossum rubiginosum); 
+kelayu; mentayam; bak geulayu 
+	
+bak geulinggang /ba? gɯ.liŋ.gaŋ/ 
+n pohon yg tingginya sekitar 1,5--
+2 m, daunnya berkibar ke samping, 
+dimanfaatkan masyarakat Aceh 
+sbg obat kurap atau penyakit kulit 
+lainya (Senna siamea)	
+bak geureundông	
+/ba? gɯ.rɯn.
+doŋ/ n pohon kuda, biasanya 
+dijadikan pagar
+bak glumpang	
+/ba? 
+glum.
+paŋ/	 n pohon besar, buahnya 
+berwarna 
+merah 
+tidak 
+boleh 
+dimakan karena beracun, biasanya 
+dimakan oleh burung rengkong 
+(Sterculia quadrifida); faloak
+bak jeulatang	
+/
+b
+a
+? 
+jɯ.la.taŋ/ n 1  tumbuhan yg 
+daunnya 
+menyebabkan 
+rasa 
+gatal (Laportea); jelatang; 2 ki 
+penghasut; pengacau; perusuh;
+pengganggu 
+keamanan: 
+gadôh 
+kapeukaru gop, buet keuh lagè –  
+bak jruen /ba? jruwn/ n rumput 
+berbatang keras dan kuat, berbunga 
+kecil warnanya oranye, biasanya 
+dimanfaatkan 
+untuk 
+mengikat 
+kerbau, kalau bunganya mekar 
+menandakan kadar air di tanah 
+tersebut tinggi    
+
+##### PAGE pdf28
+ 12 | Kamus Budaya Aceh-Indonesia 
+bak
+bak
+             
+bak kasia	
+/ba? ka.sia/	
+  
+pohon besar spt mahoni, digunakan 
+untuk obat daun beraroma spt 
+eukaliptus, serbuk bunganya yg 
+berwarna kuning dapat menjadi 
+hama bagi tanaman lain (Acacia 
+auriculiformi); akasia
+bak keung keubeu /ba? kɯŋ 
+kɯ.bɯ/ n tumbuhan setinggi 
+rumput, 
+menjalar, 
+bercabang, 
+setiap mekar, satu ruas memiliki 
+satu 
+bunga 
+dan 
+satu 
+buah, 
+dimanfaatkan masyarakat sbg obat 
+katarak (Euphorbia hirta); patikan 
+kebo
+bak 
+keunyeut-nyeut 
+/ba? 
+kɯ.ɳɯt.ɳɯt/ n pohon yg biasanya 
+dimanfaatkan sbg rempah untuk 
+sauna
+bak keutapang /ba? kɯ.ta.paŋ/	
+n pohon besar, daunnya lebar, 
+buahnya 
+bertempurung 
+keras, 
+bijinya 
+dapat 
+dibuat 
+minyak 
+(Terminalia catappa); ketapang 
+bak kupula /ba? ku.pu.la/	
+n 
+pohon yg bunganya berwarna putih 
+kekuning-kuningan dan berbau 
+harum, biasa dipakai untuk hiasan 
+sanggul, buahnya bisa dimakan, 
+rasanya kelat, matang berwarna 
+hitam, berbunga, buahnya mirip 
+melinjo 
+(Mimossups 
+elengi); 
+bungong – jeut keu ubat jamok 
+‘bunga – bisa menjadi pengusir 
+nyamuk’
+bak lakôm	 / b a ? l a . k o m / 	
+n tanaman anggur liar, buahnya 
+berwarna merah tua, tak dapat 
+dimakan, asam sekali dan gatal
+bak lawah	 / b a ? l a . w a h / 	
+n tumbuhan perdu, tinggi 2 m, 
+batangnya mudah patah, daunnya 
+
+##### PAGE 13
+Kamus Budaya Aceh-Indonesia | 13
+bak
+bak
+besar 
+berwarna 
+hijau 
+kebiru-
+biruan, buahnya berbiji polong, 
+bijinya sebesar kacang tanah, 
+ketika tua berwarna hitam, dapat 
+digunakan sbg bahan minyak 
+pelumas, tanaman herbal untuk 
+obat luka, biasanya ditanam di 
+kuburan (di bagian kepala dan 
+kaki) (Ricinus communis); jarak: 
+bak nawah: pat na – kayab lon ka 
+di timoh lom ‘di mana ada pohon 
+lawah, sariawanku kambuh’
+geutah lawah /gɯ.tah la.wah/ n 
+getah pohon jarak, yg digunakan 
+untuk menggosok gusi sbg 
+obat untuk menguatkan gigi, 
+mengobati luka, serta mengatasi 
+sakit perut atau masuk angina
+bak lingöng	/
+b
+a
+? 
+li.ŋʌŋ/	
+n pohon yg daunnya 
+mirip daun jelatang, tapi tidak 
+gatal, 
+dimanfaatkan 
+untuk 
+membuat jamu
+bak luna	
+/ba? lu.na/	
+n 
+pohon yg tingginya mencapai 8 m, 
+kulit buahnya berduri-duri pendek 
+dan lunak, isinya berwarna putih 
+serta berbiji banyak berwarna 
+hitam, 
+rasanya 
+masam-masam 
+manis (Anona muricata); nangka 
+belanda; sirsak 	
+bak mahoni /ba? ma.ho.ni/ n pohon 
+tropis yg tingginya mencapai 30 
+m, biasanya ditanam sbg pohon 
+peneduh di tepi jalan, kayunya 
+digunakan sbg bahan bangunan, 
+perabot rumah tangga, papan 
+dinding, lantai, industri kayu lapis, 
+kerajinan tangan, dan sbgnya; 
+(Swietania mahoni) mahoni; bak 
+keunari 
+bak manè	
+/ba? ma.nɛ/ n pohon 
+yg daunnya dapat dimanfaatkan 
+untuk pakan ternak, batangnya 
+dimanfaatkan 
+untuk 
+membuat 
+rumah, buahnya pahit, hitam, 
+berair, dapat dimanfaatkan sbg 
+obat bisul dan jerawat:	
+– 
+ditimoh di Aceh ngon Asia Teggara 
+‘pohon mane tumbuh di Aceh dan 
+Asia Tenggara’
+bak 
+nѐk-nѐk 
+/ba? 
+nɛ?.
+nɛ?/	n 
+pohon 
+mint 
+(Mentha 
+piperita)	
+bak rambôt agam	 /ba? 
+ram.
+bot agam/ n rambutan yg tidak 
+berbuah, 
+bermanfaat 
+untuk 
+membantu penyerbukan di sawah
+bak rambôt inöng	 /ba? ram.bot 
+inʌŋ/ n rambutan yg berbuah	
+
+##### PAGE pdf30
+ 14 | Kamus Budaya Aceh-Indonesia 
+bak
+bak
+bak reuteuk ngom /ba? rɯ.tɯ? 
+ŋom/ n tumbuhan menjalar, mudah 
+tumbuh, 
+buahnya 
+berbentuk 
+persegi, daun dan buahnya dapat 
+dijadikan sayur	
+bak rinda	
+/ba? rin.da/  n  	 buah 
+yg berwarna hitam, berbentuk 
+bulat, seperti kurma tunisia	
+bak roda	
+/ba? rɔ.da/	
+n 
+pohon besar yg batangnya berduri, 
+buahnya berbentuk seperti roda 
+berukuran 
+sebonggol 
+bawang 
+putih, 
+buahnya 
+pecah 
+ketika 
+matang (Hura crepitans)
+bak saga	
+/ba? sa.ga/	
+n 
+perdu merambat, termasuk suku 
+Leguminosae, berdaun majemuk 
+menyirip 
+ganjil, 
+bunganya 
+berwarna 
+merah, 
+polongnya 
+berbentuk lonjong, berisi 3–6 biji, 
+berwarna merah mengilap dng 
+bercak hitam, bermanfaat untuk 
+obat batuk, gurah, bijinya dapat 
+dibuat menjadi hiasan (Abrus 
+precatorius); saga; saga biji; saga 
+rambat 	
+bak séri	
+/ b a ? s e . r i / 	
+n pohon yg bijinya pahit, dapat 
+dimanfaatkan untuk pencegahan 
+malaria dan obat diabetes, kayunya 
+dapat dijadikan bahan mebel 
+bak seulipéh /ba? sɯ.li.peh/ n 
+pohon perdu yg biasa digunakan 
+sbg pupuk hijau dan pelindung 
+berbagai 
+tanaman, 
+msl 
+kopi, 
+cokelat, vanili, buahnya untuk 
+obat 
+cacing, 
+daunnya 
+dapat 
+dimanfaatkan sbg pakan ternak 
+(Leucaena Sp.); petai cina 	
+bak seumira /ba? sɯ.mi.ra/ n 
+pohon tinggi yg batangnya dapat 
+digunakan 
+sbg 
+tiang 
+rumah, 
+
+##### PAGE 15
+Kamus Budaya Aceh-Indonesia | 15
+bak
+bak
+pucuknya dapat dimanfaatkan sbg 
+obat antibiotik	
+bak si asèh-asèh	
+/ba? si asɛ̃h-
+asɛ̃h/ n tanaman yg dimanfaatkan 
+untuk bayi yg sedang flu, seperti 
+kemangi tapi daunnya lebih keras, 
+bisa ditambahkan dng daun cabe 
+untuk obat sakit kepala
+bak si kleung-kleung	
+/ b a ? 
+si klɯŋ-klɯŋ/	
+n 
+pohon 
+yug bentuk daunnya menyirip, 
+dimanfaatkan sbg obat cacing, dng 
+cara daunnya dicampur kapur sirih, 
+dihaluskan, dan ditempel di sekitar 
+perut	
+bak simeh-meh /ba? simɛh-mɛh/ 
+n tanaman yg daun dan bunganya 
+berbau 
+busuk, 
+diletakkan 
+di 
+sekeliling 
+tempat 
+tidur 
+orang 
+sakit atau anak yg baru disunat 
+untuk 
+mengusir 
+serangga 
+yg 
+mengganggu, mirip bunga tahi 
+ayam
+bak siron /ba? si.ron/	
+n 
+pohon kecil, tumbuh di sepanjang 
+pantai, tetapi umum ditanam di 
+pekarangan, bunganya berwarna 
+kuning ketika pagi, sore hari 
+berubah 
+menjadi 
+kemerah-
+merahan, 
+kayunya 
+banyak 
+digunakan sbg bahan bakar, serat 
+kulit batangnya digunakan untuk 
+tali (Hibiscus tiliaceus); baru; 
+embaru; waru 	
+bak sup-sup	/ b a ? s u p - s u p / 	
+n pohon yg mirip bidara, tapi 
+batangnya menjalar, buahnya kecil, 
+hijau saat masih muda, kuning saat 
+matang, hitam saat masak, berduri, 
+biasanya 
+buahnya 
+dimakan 
+menggunakan gula, burung suka 
+memakan buahnya
+bak tampu	 / b a ? t a m . p u / 	
+n pohon yg dapat tumbuh tinggi, 
+biasanya digunakan sbg kayu 
+
+##### PAGE pdf32
+ 16 | Kamus Budaya Aceh-Indonesia 
+banmandum
+bakông sugo
+penopang gorden, kayunya anti 
+rayap
+bak tin-tin	 / b a ? t i n - t i n / 	
+n pohon yg dapat dimanfaatkan 
+untuk 
+pakan 
+ternak, 
+bijinya 
+berwarna merah	
+bak trung cawing	 /ba? 
+truŋ 
+ca.wiŋ/ 
+n 
+tanaman 
+sayuran, 
+bercabang banyak, tinggi mencapai 
+1,5 m, bunganya berwarna putih, 
+buahnya berupa buah buni, bulat 
+dan 
+berbiji 
+banyak 
+berwarna 
+hijau, jika tua berwarna hitam, 
+dimakan sbg sayuran atau sbg 
+lalap (Solanun nigrum); lenca:  – 
+mangat ta masak dengon on paku 
+‘lenca enak dimasak dengan sayur 
+paku’
+bakông sugo	
+/bakoɳ sugᴐ/	
+n 
+tembakau yg dikonsumsi perempuan 
+tua sbg bahan tambahan makan sirih
+balè /ba.lɛ/ n 1 suami atau istri yg 
+ditinggal pasangan (cerai hidup atau 
+mati); janda; duda; 2 balai
+pulang balè /pu.laŋ ba.lɛ/ n 
+menikah dng istri atau suami dr 
+saudara yg sudah meninggal; turun 
+ranjang; ganto tika
+balek tanoh	/ b a . l e ? t a . n ɔ h / 	
+v membajak tanah pd tahapan 
+kedua 
+dng 
+membalik-balikkan 
+permukaan tanah menggunakan 
+langai 
+balum bili /ba.lum bi.li/ n makhluk 
+halus yg berada di bawah air atau di 
+gulungan air, dipercaya masyarakat 
+berbentuk tikar dan dapat menghisap 
+darah manusia; balum beude; balum 
+blidi	
+banmandum 	 /ban.man.dum/	 num 
+1 segala; semua; sekalian: – ureung 
+lam gampông nyan ka keunöng virus 
+covid ‘semua orang dlm kampung itu 
+sudah terpapar virus covid’; 2 segenap, 
+seluruh: ho takalon – laôt raya nyang 
+
+##### PAGE 17
+Kamus Budaya Aceh-Indonesia | 17
+bayang 
+bansi	
+deuh ‘ke mana saja mata memandang, 
+seluruhnya laut luas yg terlihat’
+bansi	 /ban.si/	 n	
+alat kesenian 
+tiup yg terbuat dari bambu, cara 
+meniupnya dari atas ke depan; suling; 
+peluit; bangsi
+bara	
+/ba.ra/	 n	
+ikatan kayu 
+sbg penguat, bingkai atau rangka 
+rumah pada bagian atas	 	
+bara linteung	
+/ba.ra 
+lin.
+tɯŋ/	n ikatan kayu yg lebih pendek 
+dr bara, diletakkan melintang 
+di atas bara, berfungsi untuk 
+menguatkan, biasanya terdapat di 
+ruang tengah	
+barah /ba.rah/ n bengkak yang 
+mengandung nanah (karena infeksi); 
+bisul
+barah candén	
+/ba.rah can.
+den/ n penyakit yg disebabkan 
+oleh infeksi gigi, gusi, dan rahang, 
+biasanya 
+menyebabkan 
+bagian 
+leher di bawah telinga bengkak dan 
+membesar
+baté  ie /ba.te iy/ n alat yg terbuat dari 
+emas, suasa, perak, tembaga, nikel, 
+atau tempurung untuk mengambil air 
+dalam mundam, tempat mengisi air 
+cuci tangan; gayung	
+baté ranup	
+/ba.te ra.nup/	
+n 
+mangkuk yg terbuat dari kuningan dng 
+motif canek awan, digunakan untuk 
+menaruh pinang, kapur sirih, daun 
+sirih, dll. sudah ada sejak abad ke-18 
+M: nek ati pajok – tip uroe ‘nenek ati 
+makan kapur sirih tiap hari’
+bathom     /ba.thɔm/	
+a	
+1 
+berat; 2 bergerak lambat
+batѐ 	
+/ba.tɛ/	 	
+1 n batu; 2 
+num satuan ukuran jarak 1 km
+batѐ  dapu	 /ba.tɛ da.pu/	
+n 
+batu dan sbgnya yg dipasang untuk 
+perapian (dapur); tungku	
+batѐ neupéh	/
+b
+a
+.
+t
+ɛ 
+nɯ.peh/	
+n batu gilingan yg 
+dapat menghaluskan segala jenis 
+bumbu masak spt cabai, bawang 
+merah, bawang putih, ketumbar, 
+dsb; batu giling; batѐ pipéh; batѐ 
+seuneupéh; 
+batѐ 
+seumupeh: 
+meunyo 
+reuleuh 
+blender 
+jeut 
+tapakek – ‘jika blender rusak, kita 
+bisa menggunakan --’
+batѐ tabai	 /batɛ tabaʸ/	
+n 
+tempat penabalan atau pengambilan 
+sumpah
+bayang  /ba.jaŋ/	
+ n 	
+1 
+wujud hitam yg tampak di balik benda 
+
+##### PAGE pdf34
+ 18 | Kamus Budaya Aceh-Indonesia 
+beulangong	
+bayeu urup 
+yg terkena sinar; 2 gambar pd cermin, 
+air, dsb: dara nyan teukhém jikalon --jih 
+lam ie ‘gadis itu tersenyum melihat 
+baygannya di air’; 3 wujud samar-
+samar di kegelapan: lagè na – jilèwat 
+dikeu aneuk nyan buno ‘sepertinya 
+ada bayang-bayang yg lewat depan 
+anak itu tadi’; 4 ki gambar dl pikiran; 
+angan-angan; 
+ingatan: 
+aneukgeuh 
+nyan sabé lam ingatangeuh ‘anaknya 
+itu selalu terbayang di ingatannya’ 
+5 tanda-tanda akan terjadi sesuatu; 
+bubayang: bek yeu ngon bayang dro 
+hai rakan ‘jangan takut dng bayangan 
+sendiri wahai saudara’
+bayeu urup /ba.yɯ u.rup/ v  membantu 
+mengerjakan sawah sesama petani 
+secara 
+bergantian 
+dalam 
+tradisi 
+meuurup; bayeu uruh; bayeu urup 
+uroe
+bék éh di leun    /be? eh di.lɯn/	 
+n 
+larangan untuk tidak tidur di halaman 
+rumah
+beudé peuleupeuk pisang 	
+/
+bɯ.de pɯ.lɯ.pɯ? pi.saŋ/	
+n	
+senjata mainan yg terbuat dari batang 
+daun pisang, batang dibelah menjadi 
+tiga bagian, dapat dikibas-kibasi 
+sehingga mengeluarkan bunyi seperti 
+senjata: abeh bak pisang lon di te-tek 
+le aneu miet, ijak peugeot – ‘habis 
+pohon pisangku di acak- acak anak 
+kecil karena ingin membuat –’
+beudé thup	
+/bɯ.de ʈʰup/	
+n 
+senjata mainan yg terbuat dari bambu 
+kecil berongga, biji tanaman sbg 
+amunisi dan ditekan dng bambu kecil 
+sbg pelatuk	
+beudé tring	
+/bɯ.de triŋ/ n mainan 
+yg menyerupai meriam dan terbuat 
+dari bambu, dimainkan dng menyulut 
+api 
+di 
+pangkal 
+bambu 
+sampai 
+mengeluarkan bunyi ledakan yg keras: 
+jamen kamoe maen beudé tring ‘jaman 
+dulu kami main meriam bambu’
+beudeueng /bɯ.dɯəŋ/	 n debu yg 
+berasal dr padi pd proses keumeukrui, 
+menimbulkan rasa gatal
+beulacan /bɯ.la.can/	
+n 
+makanan 
+yg terbuat dari kelapa yg diparut, 
+diulek, dicampur dng daun jeruk dan 
+cabai, dan dibalut dng daun pisang 
+atau disajikan dng lauk:	– 
+mangat 
+that dicampu ngon eungkot masen	
+ ‘– enak sekali dicampur dengan ikan 
+asin’
+beulangong	
+/bɯ.la.ŋõŋ/	
+n wajan tempat memasak, biasa 
+digunakan  untuk masakan yg 
+berkuah; kuali: Mak Ros meutumeh 
+on bayam lam – ‘Ibu Ros menumis 
+sayur bayam dalam kuali’
+beulangong beuso	 /bɯ.la.ŋoŋ 
+bɯ.sɔ/	
+n	
+wajan 
+yg 
+terbuat dari besi:	
+lam 
+– 
+tatagun kuwah plik u ‘dalam 
+wajan bisa dimasak gulai plik u’
+b
+e
+u
+l
+a
+n
+g
+o
+n
+g 
+manium	
+/bɯ.la.ŋoŋ 
+ma.ni.
+um/	 n	
+wajan yg terbuat 
+dari aluminium:	
+– 
+bagah 
+tireh, karna lipeh dih	w a j a n 
+‘aluminium mudah bocor, karena 
+tipis’
+beulangong tanoh	 /bɯ.la.ŋoŋ 
+ta.nɔh/	
+n	
+w a j a n 
+yg terbuat dari tanah:	
+galak teuh ta pakek --, kuah-
+kuah sang mangat	
+‘suka kita 
+memakai wajan dari tanah, kuah 
+yg dimasak pun terasa enak’
+idông beulangông  /i.doŋ bɯla.
+ŋoŋ/ n  pegangan wajan/belanga
+
+##### PAGE 19
+Kamus Budaya Aceh-Indonesia | 19
+beurijuk
+beulantak
+beulantak	
+/bɯ.lan.ta?/	
+v 
+terdampar ke suatu daerah, hanyut 
+tak tentu arah; tersesat; beulasat
+beulebah 	
+/bɯ.lə.bah/	
+n kayu atau bambu kecil yg 
+diletakkan 
+dibawah 
+atap 
+sbg 
+tempat ikatan atap yg terbuat dari 
+daun rumbia; reng
+beulibeh	
+/be.li.béh/	
+n alat untuk mencungkil tanah 
+dr bambu yg dipotong dng lebar 
+sekitar 5 cm, panjangnya tergantung 
+kebutuhan, bagian ujung bambu 
+dipipihkan menyerupai sekop
+beulibèh	
+/bɯ.li.bɛh/	
+n alat 
+untuk membalik nasi ketan atau nasi 
+kuning, terbuat dari sebilah bambu
+beuliyông	
+/bɯ.li.joŋ/	
+n 
+alat (perkakas) berupa besi berbentuk 
+seperti kapak dng mata melintang 
+(tidak searah dng tangkainya), dipakai 
+sambil berdiri, biasanya digunakan 
+untuk membelah kayu; beliung	
+beuluntas	
+/ b ɯ . l u n . t a s / 	
+n perdu yg tumbuh tegak, tinggi 
+hingga 2 m, sering digunakan sbg 
+pagar hidup, daunnya kecil agak bulat 
+dan berbau langu, biasa dibuat obat 
+(Pluchea indica); luntas 	
+beunak até     /bɯ.na? a.tɛ/	
+n 
+sukar mengerti, tidak cepat menanggapi 
+sesuatu (tidak tajam pikiran), susah 
+diajarkan; bebal: doe ate
+beunô	 /bɯ.no/     n	
+m a k h l u k 
+halus yg dipercaya dapat mencekik 
+seseorang ketika tidur sehingga dapat 
+menyebabkan seseorang mengigau, 
+mengorok, atau merasa sesak	
+beurandang	
+/ b ɯ . r a n . d a ŋ / 	
+n 1 hulu sungai berupa tanggul 
+atau bendungan yg pematangnya 
+menggunakan 
+pasir 
+karung; 
+2 
+berandang; lumbung padi); krong 
+pade; 3 tempat penyimpanan jumpung 
+(pakan ternak)  
+beurapét	
+/bɯ.ra.pet/	
+n	
+bulan Zulkaidah; meurapét
+beureugoh	
+/bɯ.rɯ.gɔh/	
+1 
+n 
+hewan bertanduk dan berpunuk besar; 
+2  a  besar dan tegap serta kuat (tt 
+badan); gagah
+beureuguh	
+/ b ɯ . r ɯ . g u h / 	
+n alat musik tradisional yg terbuat 
+dr tanduk kerbau, digunakan dng 
+cara ditiup pada ujung instrumen yg 
+meruncing dan melengkung, rentang 
+nada yg dihasilkan terbatas dan sangat 
+bergantung pada teknik yg digunakan 
+peniup 
+dalam 
+memainkannya, 
+digunakan sbg alat komunikasi saat 
+di hutan atau di tempat seseorang 
+yg sedang berjauhan dng orang lain, 
+atau saat memulai atau menghentikan 
+perang pd zaman dahulu
+beureutéh	
+/bɯ.rɯ.teh/ 
+1 
+v 
+meletup 2 n beras ketan yg digongseng 
+(dibawa kpd perempuan yg baru 
+saja melakukan proses persalinan 
+pertama); 3 a sangat kencang sampai 
+tidak terlihat 	
+beureuyeung	 /bɯ.rɯ.yɯŋ/	
+n 
+pancing yg terbuat dari bambu atau 
+buluh yg dijalin dng rotan, berbentuk 
+bulat panjang dan mulutnya besar 
+ujungnya diikat dng tali, dipasang di 
+selokan yg deras airnya, ikan masuk 
+mengikuti arus air	
+beurijuk	
+/
+b
+ɯ
+.
+r
+i
+.
+ju?/	
+n burung trucuk (Pycnonotus 
+goiavier)	
+beurijuk balѐ	
+/ b ɯ . r i . j u ? 
+ba.lɛ/ n burung trucuk berwarna 
+
+##### PAGE pdf36
+ 20 | Kamus Budaya Aceh-Indonesia 
+bibi 
+beurigèn
+kuning yg  dapat menirukan suara:	
+hana sengap-sengap babah nyan, 
+peureuseh lage --‘tidak bisa diam 
+mulutnya, persis seperti burung 
+trucuk kuning’
+beurijuk breuh	
+/ b ɯ . r i . j u ? 
+brɯh/ n burung trucuk yg memiliki 
+bagian berwarna putih di dekat 
+mulut; burung trucuk beras	
+beurijuk nipah	
+/ b ɯ . r i . j u ? 
+ni.pah/ n burung trucuk yg hidup 
+di pohon nipah atau dekat laut; 
+burung trucuk nipah
+beurigèn 
+/bɯ.ri.gɛn/ 
+dongkol,  
+jengkel; tunu
+beuringèn	
+/bɯ.ri.ŋɛn/	
+n 
+pohon besar yg tingginya mencapai 
+20–35 m, berakar tunggang, dari 
+cabang-cabangnya 
+keluar 
+akar 
+gantung, daunnya kecil berbentuk 
+bulat telur yg meruncing ke ujung 
+dan rimbun dng tajuk berbentuk 
+payung, buahnya kecil, bulat, 
+dng permukaan halus (Ficus Sp.); 
+beringin beuleuhuen’ iyub bak 
+– biasajih na burong ‘hati-hati, 
+dibawah pohon beringin biasanya 
+ada hantu’
+beurugi	
+/bɯ.ru.gi/	
+n 
+alat yg terbuat dari tanduk kerbau yg 
+dibentuk sedemikian rupa digunakan 
+dng cara ditiup sbg isyarat untuk 
+memanggil orang (dalam perang) 
+supaya berkumpul pd tempat tertentu
+beutéh 	/bɯ.ʈeh/	
+n 
+ 
+bagian 
+kaki antara lutut dan pergelangan 
+kaki, di belakang tulang kering; 
+betis: rok teuplah bek deuh – , aurat 
+nyan ‘belahan rok jagan sampai 
+memperlihatkan --, itu termasuk aurat’
+beuténg	
+/bɯ.ʈeŋ/	
+n	
+1 padi yg baru mengeluarkan bijinya, 
+kira-kira dua bulan lagi siap dipanen, 
+padi yg mulai berisi (dara); buting; 
+aneuk geuneugom; aneuk jang; 2 a 
+kondisi perut yg penuh; begah	
+bho	
+/bhɔ/	
+n	
+a
+l
+a
+t 
+(perkakas) berupa batang besi bulat 
+spiral untuk menggerek kayu (besi 
+dan sbgnya) atau menggali lubang 
+dsb; bor; jara: hanjeut ta peuruhung 
+ngon sikin nyo, suah pakek –‘tidak 
+bisa kita bolongkan dengan pisau ini, 
+harus pakai bor’
+bhôi	
+/bhoy/	 n	
+kue berbahan 
+tepung terigu dan telur, berbentuk 
+ikan, bunga, dsb, digunakan sbg salah 
+satu pelengkap penganan tradisional 
+dan oleh-oleh khas Aceh: uroe raya 
+bek tuwoe dengan kue bhôi ‘hari raya 
+jangan lupa dengan kue bhôi’
+ bi	
+/bi/	
+n	
+ornamen yg 
+terdiri atas kain, benang emas, dll. yg 
+digantung di dinding pelaminan atau 
+tempat tidur pengantin	 	
+bibi 	
+/bi.bi/ 	 n 	
+1 
+tepi 
+(pinggir) mulut (sebelah bawah dan 
+atas); bibir; 2 tepi sesuatu; ibi: – 
+sungai kayab itimoh bak --, leupah 
+brat saket ‘sariawan tumbuh tepat di 
+--, sakit sekali’
+
+##### PAGE 21
+Kamus Budaya Aceh-Indonesia | 21
+bli
+bidan peungantѐn
+bidan peungantѐn	
+/ b i . d a n 
+pɯ.ŋan.tɛn/ n orang yg betugas 
+mengurusi pengantin; merias dan 
+menyiapkan perlengkapan pengantin; 
+peunganjô: kiban cara nyo, – hana 
+trok lom, jeum ijak laju ‘bagaimana 
+ini, perias pengantin belum datang, 
+waktu terus berjalan’
+bijo	
+/bi.jɔ/	 n	
+orang 
+yg 
+makannya terlalu sedikit dan pemilih:	
+menyo – that han meujan teumbon 
+droteuh ‘kalau – sulit untuk gemuk, 
+Anda’
+bilék	
+/bi.le?/	 n	
+r u a n g 
+bersekat yg menjadi bagian rumah 
+atau bangunan; bilik; kamar: lon han 
+ek saboh – ngon si Intan ‘saya tidak 
+satu – dengan Intan’
+bili	
+/bi.li/	
+n kulit bambu yg 
+dikupas kulit arinya
+biliek /bi.liy?/ a  perih di mata 
+karena terkena asap sehingga 
+berair; bilaih
+bingkang	
+/biŋ.kaŋ/	
+n 
+kue yg terbuat dari ubi atau tepung, 
+dimasak dng bara api atas bawah, 
+biasanya disajikan dng taburan 
+bawang goreng di atasnya 
+bingkéh	
+/biŋ.keh/	
+v membungkus, menyita, dan 
+menguasai suatu harta benda
+bingkéng	
+/biŋ.keŋ/	
+a dipengaruhi oleh temperamen, 
+mudah marah; temperamental	
+bintéh	 /bin.teh/	
+n	
+penutup sisi samping (penyekat) 
+ruang, rumah, bilik, dan sebagainya 
+(dibuat) dari papan, anyaman bambu, 
+tembok, dan sebagainya; dinding: 
+meujameun that rumoh cupo Minah, 
+manteng – trieng ‘klasik sekali rumah 
+kak Minah, --nya masih menggunakan 
+bambu’
+biréng	 /bi.reŋ/	 n	
+p e n y a k i t 
+berupa bisul yg tumbuh di ketiak:	
+nyo keunong – nah, sakit that ‘kalau 
+sedang diserang bireng, sakit sekali’
+biti	
+/bi.ti/	
+n	
+segi, 
+sudut, 
+penjuru, belah, arah	
+	
+bleue	 /blɯə/	 n	
+daerah 
+yg 
+berawa-rawa (yg kering di musim 
+kemarau)  
+blang	 /blaŋ/	 n	
+tanah 
+yg 
+digarap dan diairi untuk menanam 
+padi; sawah: hana treb lee ka musem – 
+lom ‘tidak lama lagi sawah sudah bisa 
+di garap kembali’
+blat  /blat/ 	
+n petakan kecil jang 
+yg biasanya berbentuk segi enam, 
+diletakkan di ujung bentangan jang 
+(bubu), digunakan sebagai tempat 
+berkumpulnya ikan dan udang yg 
+diseret oleh air surut
+bleut	
+/blɯt/	 n	
+anyaman yg 
+terbuat dari daun kelapa, digunakan 
+sbg tikar untuk menjemur (belimbing, 
+kelapa, dll.): boh limeng kalheuh ta 
+peot, – goh lom meupeugeot, pajan jeut 
+keu asam ‘belimbing sudah dipetik, 
+tapi anyaman untuk jemurnya belum 
+dibuat, kapan jadi asam suntinya’
+bleut padé	
+/blɯt pa.de/	
+n 
+tikar yg terbuat dari karung yg diberi 
+tali dan pengait di kedua ujungnya 
+untuk mengangkut nibai padi di 
+sawah: hayeu that cupo Mah, ek geu 
+beot – ‘hebat sekali kak Mah, sanggup 
+mengangkat tikar pengangkut padi’
+bli	
+/bli/	
+v	
+melihat 
+sesuatu 
+(seseorang) 
+dng 
+membelalakkan mata karena marah; 
+memelototi	
+bek karu hai,,,nteuk 
+
+##### PAGE pdf38
+ 22 | Kamus Budaya Aceh-Indonesia 
+boh
+blidi
+geu – teuh lee buk guru ‘hei, jangan 
+berisik, nanti dipelototi bu guru’
+blidi /bli.di/ n 	 wadah 
+berbentuk 
+baskom yg terbuat dari plastik: 	
+ka beukah – nyo, ka treb that sabab 
+‘sudah rusak baskom ini, karena sudah 
+lama sekali’
+blidi tembaga	
+/bli.di 
+tem.
+ba.ga/ n baskom yg terbuat dari 
+tembaga: – nyo meuseu rheot karu 
+lheuh ‘baskom tembaga ini kalau 
+jatuh berisik sekali suaranya’
+boh  /bɔh/	
+n 
+1 
+kata 
+penggolong 
+bermacam-macam 
+benda: Cek Adi geublo bajee dua 
+– ‘Paman Adi membeli baju dua 
+--’; 2 buang (dialek Aceh Besar); 3 
+buah: jai that ie – timon bruk nyo 
+‘banyak sekali airnya – semangka 
+ini’
+boh aguk	
+/bɔh a.gu?/	
+n 
+manik-manik berukuran besar 
+dari sepuhan emas, digunakan 
+sbg kalung pada pengantin 
+wanita	
+bôh ateung	 /boh a.tɯŋ/	
+v menimbun tanah di wilayah 
+pinggiran pematang sawah	
+boh bajè	
+/bɔh ba.jɛ/	
+n 
+kancing baju berukir yg dipakai 
+pada baju tradisional pria dan 
+wanita	
+	
+boh ciding	 /bɔh ci.diŋ/	
+n bulir padi yg muncul pada 
+batang padi setelah panen pd 
+cabang/batang 
+baru: 
+leupah 
+kuat seumeuteot, lagee – ‘suka 
+sekali ikut-ikut, seperti --’
+boh dokma	 /bɔh dɔk.ma/	
+n 
+perhiasan berupa peniti berantai 
+yg berfungsi sbg kancing kebaya 
+wanita 
+Aceh, 
+pemakaiannya 
+disusun dari bawah leher sampai 
+ke bagian bawah kebaya, dikenal 
+juga dng istilah baje meutudong
+boh 
+gatok 
+/bɔh 
+ga.ʈɔ?/	
+n buah pinang kering 
+yg kulitnya dihaluskan menyerupai 
+kelereng	
+boh geulima	
+/bɔh 
+gɯ.li.
+ma/	 n motif buah delima yg 
+dianggap sebagai buah surga, 
+airnya bening, khasiatnya sebagai 
+obat mata: -- that get keu badan, 
+maka karna nyan tatanom beuleu 	
+‘-- bagus untuk kesehatan, oleh 
+karna 
+itu 
+tanam 
+sebanyak-
+banyaknya’
+boh geundét	
+/bɔh 
+gɯn.
+det/	 n cawat penutup alat vital 
+bagi anak laki-laki di bawah 
+umur 5 tahun yg terbuat dari emas 
+untuk raja-raja, suasa untuk orang 
+kaya, perak untuk orang biasa dan 
+tempurung untuk orang yg kurang 
+mampu	
+boh grik-grik	
+/bɔh 
+gri?-
+gri?/	n penghias rapai yg terbuat 
+dari kuningan yg berfungsi untuk 
+memantulkan 
+bunyi 
+variasi; 
+kerincing	
+	
+boh idông 	 /bɔh i.doŋ/	
+n  
+bagian ujung hidung yg berdaging: 
+mancong that – si dara nyan,lage 
+awak India ‘mancung seali hidung 
+gadis itu, layaknya gadis India’
+boh iték jruek	
+/bɔh 
+i.te? 
+jrue?/ n   telur bebek yg diasinkan
+bôh jakeut	 /bᴧh jakɯt/	
+v 
+membayar zakat bagi orang Islam
+boh keuing 	/bch kɯ.iŋ/	
+n  
+sepasang organ tubuh yg berbentuk 
+
+##### PAGE 23
+Kamus Budaya Aceh-Indonesia | 23
+boh
+boh
+spt biji kacang merah, buah 
+pinggang; ginjal	
+boh keuleumbi	
+/
+b
+ɔ
+h 
+kɯ.lɯm.bi/ n bentuk menyerupai 
+pelampung pukat; ditempatkan 
+untuk menutupi sela-sela lingkar di 
+gerbang utama
+boh langgôi	/bɔh laŋ.goy/	
+n 
+gelung rambut perempuan di atas 
+atau di belakang kepala; kundai; 
+konde; sanggul raya lheuh --, ka 
+lage ibuk-ibu peujabat keudeh: 
+‘besar sekali sanggulnya, sudah 
+seprti ibu-ibu pejabat’
+boh leuping /bɔh lɯ.piŋ/ n kelapa 
+yg jatuh ketika masih kecil 
+boh limѐng sago	
+/
+b
+o
+h 
+li.mɛŋ sa.gɔ/ n tumbuhan yg 
+termasuk 
+suku 
+Oxalidaceae, 
+tinggi 
+pohon 
+mencapai 
+5–12 
+m, berdaun majemuk, biasanya 
+dimanfaatkan untuk obat diabetes; 
+belimbing	
+boh lôt	
+/bɔh lot/	
+n 
+alat ukur (pertukangan) berupa 
+besi runcing yg diikat dng 
+benang 
+untuk 
+mengukur 
+kelurusan tinggi dinding secara 
+vertikal; bandul lot	 	
+boh mè	
+/boh mɛ/ n	
+pohon 
+tinggi, 
+dimanfaatkan 
+masyarakat sbg obat cacar 
+(Tamarindus indica); asam jawa
+boh pong /bɔh pong/ n kelapa 
+yg jatuh karena sudah dilubangi 
+oleh tupai	
+boh romrom	
+/boh rom.
+rom/	n kue berbentuk bulat 
+kecil, berwarna hijau, dibalut 
+dng inti 
+kelapa, dan diisi dng gula merah; 
+boh meucret
+boh sidom	 /bɔh si.dɔm/	
+n 
+1 telur semut; 2 bahan yg terbuat 
+dari perca dan dibungkus dng 
+kain 
+beludru 
+digantung 
+di 
+pelaminan, 
+membentuk 
+rantai 
+bola-bola, menjuntai dari atas 
+ke bawah, bermakna sbg simbol 
+kehidupan	
+ 
+
+##### PAGE pdf40
+ 24 | Kamus Budaya Aceh-Indonesia 
+bruk karah
+bohlu saka
+boh sôh 	
+/bɔh soh/	
+n  
+kepalan tangan; tinju: kreuh that 
+ulee si gam nyan, yang paih nah, 
+– tabi sigeo ‘keras kepala sekali 
+anak laki-laki itu, perlu di beri tinju 
+nampaknya’
+boh sruba	 / b ɔ h s r u . b a / 	
+n tanaman perdu yg tingginya 
+mencapai 2–7 m, 
+buahnya berbentuk bundar, kulit 
+luarnya kasar bermata banyak dan 
+berwarna hijau keputih-putihan, 
+daging buahnya berwarna putih, 
+kasar, berbiji banyak, dan manis 
+rasanya 
+(Anona 
+squamosa); 
+srikaya; tuba rasa
+boh sruba bintang	 /
+b
+ɔ
+h 
+sru.ba bin.taŋ/ n	
+srikaya 
+yg 
+bentuknya kecil, kulitnya seperti 
+bintang	
+boh sruba tepung	 /bɔh 
+sru.
+ba tepuŋ/ n srikaya yg buah dan 
+pohonnya besar, 
+termasuk salah satu tanaman yg 
+sudah langka	
+	
+boh sungkét /bɔh suŋ.ket/ n 
+permainan yg dimainkan oleh 
+individu 
+maupun 
+kelompok, 
+menggunakan kayu panjang sbg 
+pemukul dan kayu pendek berfungsi 
+sbg ‘anak’, ada tiga babak: boh 
+sungkét, boh pѐh, dan boh jeungki, 
+pemenang adalah kelompok yg 
+bisa menyelesaikan ketiga babak; 
+patok lele; ceureukih; peh kaye; 
+meuen kandang	
+boh tip	
+/bɔh tip/	
+n 
+kancing baju yg diklipkan	
+bohlu saka	
+/bɔh.lu sa.ka/	
+n 
+bolu yg disiram dng gula	
+böt bijѐh	
+/bʌt bi.jɛh/	
+v 
+mencabut benih padi dari persemaian, 
+usia padi 12-20 hari:	
+lhee 
+uroe 
+teuk kajeut ta – ‘tiga hari lagi kita 
+sudah bisa mencabut benih padi dari 
+persemaian’	
+brat 	
+/brat/ 	 a 	
+1 
+berat 
+timbangannya: ‘phui bak takalon, 
+– bak tatijik’  ‘ringan dilihat, berat 
+dijingjing’; 2 parah (tt luka penyakit 
+dsb): gopnyan – lut watè reubah 
+ngön honda bak jalan ‘orang itu 
+parah lukanya saat jatuh dari sepeda 
+motor di jalan’; 3 sulit (susah, sukar) 
+melakukannya; 
+melebihi 
+ukuran 
+(kekuatan, kemampuan, kesanggupan, 
+dsb): musibah keu Nek Ti sép brat, abéh 
+tutông keudègeuh, kajicu moto lom 
+‘musibah Nek Ti cukup berat, setelah 
+terbakar tokonya, sudah dicuri mobil 
+lagi’; 4 memihak; cenderung:	
+j e u t 
+keu hakim, bèk – siblah  ‘jadi hakim, 
+janganlah berat sebelah (keputusan)’ ; 
+geuhon; ghon
+bri sie saboh panggang	/bri 
+si 
+sa.bᴐh pa.ɳgaɳ/	n	
+t r a d i s i 
+memberi daging dan uang kpd anak 
+-anak pada hari meugang, biasanya 
+dilakukan oleh keluarga suami
+brihik	 /bri.hi?/	n 
+berkurangnya 
+penghasilan atau harta seseorang yg 
+menyebabkannya menjadi miskin, 
+kerugian; bangkrut; bukruk
+brôk até 	
+/brok a.te/	
+ a  busuk hati, sifat (tabiat) batin 
+manusia: bek – tanyo jeut keu 
+ureung, dro teuh cit yang susah 
+‘jangan busuk hati kita sebagai 
+manusia, kita sendiri yang akan 
+susah’
+bruk karah	
+/bru? ka.rah/	
+n cetakan kue keukarah, terbuat 
+dari tempurung kelapa bulat diberi 
+
+##### PAGE 25
+Kamus Budaya Aceh-Indonesia | 25
+bubè
+bruk prot
+beberapa lubang kecil di bagian 
+bawah	
+bruk prot	
+/bru? prot/	
+n alat 
+cetakan kue berbentuk bulat; bruk 
+pret
+bruk putu	
+/bru? pu.tu/	
+n 
+cetakan kue putu, terbuat dari kayu 
+atau kuningan, sudah ada sejak abad 
+ke-19 M
+bruk ulè 	
+/bru? 
+u.lɛ/ 
+ 
+n 
+tempurung kepala; tengkorak:	
+– goh 
+lom kreuh ka sok hayeu ‘tempurung 
+kepala belum keras (masih kecil) 
+sudah sok hebat’
+bu 	
+/bu/	
+n beras yg sudah 
+dimasak; nasi
+bu gaténg	
+/bu ga.teŋ/	
+n 
+nasi yg dibungkus dng daun pisang 
+yg dipanaskan dng api, dng lauk 
+pauk ala kadarnya yg dibawa oleh 
+orang tua pihak laki-laki untuk 
+menantunya yg akan melahirkan:	
+ache buleun nyo kajeut taba – cek 
+lot	 ‘akhir bulan ini kita akan 
+bawa bu gateng tante (cek lot)’
+bu kulah	
+/bu ku.lah/	
+n 
+nasi yg dibungkus dng daun pisang 
+berbentuk piramid, biasa dibuat di 
+acara maulid atau tujuh bulanan: – 
+tapajoh wate khanduri mulud	
+‘nasi bungkus kita makan saat 
+kenduri maulid’
+bu leumak	 /bu lɯ.ma?/	
+n 
+nasi yg dimasak dng santan, daun 
+salam, dan rempah lainnya; bu 
+guri	
+bu payéh	
+/ b u p a . j e h / 	
+n ketan rebus yg berisi pisang di 
+dalamnya
+bue	
+/buw/	
+n	
+monyet	: 
+pue yang deuh ka mat, lage ta ba – 
+‘apapun yang terlihat kamu pegang, 
+berasa bawa --’
+bue angèn	 / b u w a . ŋ ɛ n / 	
+n kera kecil tidak berekor, suka 
+bergantung di cabang pohon, 
+suka menyembunyikan mukanya, 
+tidur di siang hari dan berkeliaran 
+di malam hari; kungkang –  nyan 
+mata jih teu bli  ‘kungkang itu 
+matanya melotot’
+bue krèh	
+/ b u w k r ɛ h / 	
+n monyet berwarna cokelat dan 
+berekor panjang (Simnopithecus 
+siamensis); kokah 	
+bue laôt	
+/buw la.ot/	
+n 
+monyet yg bisa berenang; monyet 
+laut; monyet pulau;  bue pulo
+bubè	
+/bu.bɛ/	 n	
+a
+l
+a
+t 
+menangkap ikan yg dibuat dari batang 
+bambu atau bili yg dirantai dng rotan 
+yg berbentuk bulat, dilengkapi dng 
+dua sekat (jab) di tengah dan di ujung 
+sebelah depan	
+
+##### PAGE pdf42
+ 26 | Kamus Budaya Aceh-Indonesia 
+bungöng ceukang
+bubé
+bubé 	 /bu.be/ 		
+1 a seukuran 
+tertentu sesuai dng; sebesar, sekecil, 
+sebanyak, sedikit; 2 num sebanyak 
+yg ada, sesuai dng yg ada, sesuai dng 
+yg sebenarnya: jipeugah --na  ‘Ia 
+menerangkan seluruhnya’;	
+– 
+nyang (atau – ban) Iôn kheun, meunan 
+bak tapubut ‘spt yg saya katakan, 
+begitulah kamu perbuat’; ubé
+bubé  no /bu.be nɔ; – ɳɔ/ a  
+sebesar ini; bubé nyo 	
+bubé nan /bu.be nan/	
+a  
+sebesar itu: bubé nyan; bubé 
+déh; bubé jéh
+bubông	/bu.boŋ/	
+n atap: – 
+yang tireh payah taganto	
+‘– yang bocor harus diganti’
+bubông on	 /bu.boŋ ôn/	
+n 
+atap rumbia	
+bubrang	
+/bu.braŋ/	
+n mamalia karnivor semiakuatik, 
+memiliki 
+hidung 
+berambut 
+dan bibir bagian atas berwarna 
+putih, makanannya ikan, ular air, 
+katak, kadal, dan udang (Lutra 
+sumatrana); berang-berang 	
+buhuk	 /bu.hu?/          	 n	
+ 
+kondisi terminum air saat berenang
+bulè 	
+/bu.lɛ/	 n 	
+1 
+rambut 
+pendek dan lembut selain di kepala 
+pd tubuh manusia atau binatang; 
+bulu;	
+bulè  èk 	
+/ b u . l ɛ ɛ k / 	
+n bulu-bulu halus yg tumbuh di 
+badan bayi yg baru lahir	
+buleukat  /bu.lɯ.kat/	
+n 
+penganan 
+dari ketan, biasanya dimakan dng 
+kelapa parut, dibagikan saat anak-
+anak belajar atau khatam Alquran: 
+aneuk mit geubi – tumpo ‘anak kecil 
+diberikan – tumpo’	
+buleukat kuneng	
+/ b u . l ɯ .
+kat ku.nɛɳ/ n buleukat berwarna 
+kuning, digunakan saat acara 
+tepung tawar
+buleukat thai	
+/ b u . l ɯ .
+kat ʈʰai/	
+ n buleukat yg diberi 
+selai srikaya; butai; putroe lam 
+bilek	
+buleun si uro	 /bu.lɯn si u.rô/ n 
+perhiasan berupa kalung tradisional 
+wanita Aceh, terdapat 3 untai rantai 
+yg disusun berderet dari atas ke 
+bawa	
+bulôh	 /bu.loh/	n 
+bambu; 
+aur; 
+buluh	
+bulut   /bu.lut/   a   basah; meuchuk-
+chuk
+bunbun	
+/bun.bun/	
+n 
+tempat persembunyian ikan, udang, 
+dll. terbuat dari rumput dan ranting 
+kayu yg diikat dng tali, merupakan 
+satu kumpulan yg dipasang dalam air; 
+rumpon	
+bungkai	
+/ b u ŋ . k a y / 	
+num ukuran 16 mayam emas, perak, 
+dsb: jeulamѐ lôn watѐ meukawén si– 
+meuh	
+‘mahar saya waktu menikah 
+sebungkai emas’; sibungkai
+bungkôh ranub	
+/ b u ŋ . k o h 
+ra.nub/ n tempat sirih yg dibawa 
+dalam prosesi pernikahan, biasanya 
+dibungkus 
+dng 
+kain 
+berwarna 
+kuning	
+bungong campli	
+/bu.ŋõŋ cam.
+pli/ n motif bunga cabai yg berwarna 
+putih, dikaitkan dalam pemberian 
+rasa pada makanan, kesucian hati, 
+dan keikhlasan dalam kehidupan 
+masyarakat	
+bungöng ceukang	
+/ b u . ŋ õ ŋ 
+cɯ.kaŋ/ n hiasan rambut pengantin 
+
+##### PAGE 27
+Kamus Budaya Aceh-Indonesia | 27
+burông punjôt
+bungöng drien
+wanita, juga dipakai sehari-hari
+bungöng drien  /bu.ŋõŋ drin/   n   1 
+bunga durian; 2 kue yg bentuknya 
+menyerupai 
+kelopak 
+bunga 
+atau 
+kembang, dan proses pembuatannya 
+dng cara digoyang; kembang loyang
+bungong gôt-gôt	
+/ b u . ŋ õ ŋ 
+got-got/ n perhiasan yg dipasang di 
+belakang bungong ok sebanyak 7 
+tangkai pada barisan pertama, lima 
+tangkai menghadap lurus ke depan 
+pada baris kedua, satu tangkai di 
+sebelah kiri dan kanan, menghadap 
+ke samping, melambangkan cita-cita 
+luhur agar tidak pernah melupakan 
+asal usul; sunting	
+bungong jeumpa	
+/bu.ŋõŋ jɯm.
+pa/ n 1  pohon hijau yg tingginya 
+bisa mencapai 50 m dan diameter 
+batangnya 180 cm, berbatang lurus, 
+memiliki kulit batang yg halus 
+dng warna cokelat keabu-abuan, 
+bunganya ada yg berwarna putih atau 
+kuning serta memiliki aroma wangi 
+yg khas, buahnya berwarna cokelat 
+berbentuk bulat-bulat kecil, tumbuh 
+di dataran rendah, biasanya dijadikan 
+riasan untuk menyambut tamu dan 
+pengharum ruangan, bunga yg sudah 
+kering direndam dalam minyak kelapa 
+untuk obat demam, minyak rambut, 
+menghitamkan 
+rambut; 
+cempaka 
+wangi (Michelia campacha); 2 motif 
+berbentuk bunga cempaka berwarna 
+putih dan kuning yg menjadi ikon 
+budaya masyarakat Aceh	
+bungöng kayѐ	 / b u . ŋ õ ŋ k a . y ɛ / 	
+n penganan terbuat dari tepung yg 
+digoreng dan diolesi gula, biasanya 
+dihidangkan pada saat intat dara baro:	
+– hidangan dara baro ‘bungong 
+kaye bawaan hidangan rombongan 
+mempelai wanita’
+bungong meujuntѐ /bu.ŋõŋ mɯ.jun.
+tɛ/ n perhiasan rambut yg terdiri atas 
+sepasang 
+juntaian 
+bunga 
+(bunga 
+melati, jeumpa, dll.) di samping kanan 
+dan kiri kepala	
+bungong meulu	
+/ b u . ŋ õ ŋ 
+mɯ.lu/ n motif bunga melati susun, 
+warnanya putih, bunganya bersusun, 
+dan harum, dimaknai sebagai kesucian 
+hati dan menyebar kebaikan di tengah 
+masyarakat:	
+– puteh meususon 
+meubee that harom di Aceh raya, 
+mandum jitanyeng hudep meukawom, 
+tulong meunulong geutanyo beuna	
+‘putih tersusun aromanya harum di 
+Aceh jaya, semua hidum berkaum, 
+maka dari itu hendaklah ada tolong-
+menolong’	
+bungong reudeup	
+/ b u . ŋ o ŋ 
+rɯ.dɯp/ 
+n 
+tumbuhan 
+yg 
+tidak 
+merambat, berduri halus kecil berwarna 
+hitam, durinya pendek rapat berjejer, 
+daunnya seperti daun waru, bunganya 
+berwarna merah, manfaatnya sbg 
+penyangga tanaman lada; pohon 
+dadap; 2 motif bunga dadap, dimaknai 
+sebagai penyangga bagi tanaman lain 
+(turus)	 jika 
+pohon 
+penyangganya 
+mati, lada ikut mati (jika tempat 
+bergantung kehidupan mati, matilah 
+kehidupan)	
+bungong suntèng	
+/ b u . ŋ õ ŋ 
+sun.tɛŋ/ n hiasan di atas telinga dara 
+baro	
+burôk	 /bu.ro?/	n	
+pulau kecil, 
+kosong tak berpenghuni		
+burông punjôt	/bu.roŋ 
+pun.jot/ 
+n 
+makhluk halus yg hidup di hutan atau 
+semak belukar, hidup bergulir-gulir 
+di anah, bentuknya spt buah kelapa, 
+biasanya 
+muncul 
+sehabis 
+hujan, 
+
+##### PAGE pdf44
+ 28 | Kamus Budaya Aceh-Indonesia 
+buya	
+burut
+gerimis, atau saat maghrib	
+burut	 /bu.rut/	 n	
+menonjolnya 
+suatu alat tubuh atau jaringan ke 
+permukaan tubuh atau ke rongga lain 
+melalui lubang atau saluran abnormal; 
+hernia
+busôk	 /bu.so?/	num	
+satuan ukur 
+untuk luas tanah sekitar 125 meter 
+persegi
+busu  /bu.su/	
+n	
+m a i n a n 
+anak-anak, gagangnya dibuat dari 
+dahan bercabang dua yg pada kedua 
+ujungnya diikatkan tali karet, dan 
+kedua ujung tali karet lain diikatkan 
+pada kulit selebar 3–4 cm, gunanya 
+untuk melontarkan batu kecil; katapel; 
+pusu; gandoe
+busu bleut	
+/bu.su blɯt/	
+n 
+katapel yg menggunakan peluru batu:	
+aneuk mit keuneu --	
+‘anak-anak 
+terkena --’
+buting	 /bu.tiŋ/	 n	
+m o n y e t 
+berwarna hitam, berbadan besar, 
+mirip dng siamang
+buya	
+/bu.ya/	 n	
+b i n a t a n g 
+melata (reptilia) berdarah dingin 
+bertubuh besar dan berkulit keras, 
+bernapas dng paru-paru, hidup di 
+air (sungai, laut), (ada bermacam-
+macam, seperti – pandan, – tembaga, 
+dan sbgnya) (Crocodilus porosus); 
+buaya 
+
+##### PAGE 29
+Kamus Budaya Aceh-Indonesia | 29
+canang
+cabak
+cabak /ca.ba?/	 a 
+ 
+selalu 
+ingin 
+bergerak; tidak dapat tenang (diam); 
+lasak; caboi
+cabok	 /ca.bɔ?/	n	
+1 
+belah 
+(pecah, cedera, lecet, dsb) pada 
+kulit karena kena barang yg tajam 
+dan sbgnya; luka; 2 penyakit kulit 
+menahun yg sangat parah dan sulit 
+sembuh:	
+aneuk manyak rame 
+that yang meu—dum ‘kebanyaan anak 
+kecil mengalami –‘
+caca	
+ /ca.ca/	 a	
+ cepat dan 
+mahir melakukan sesuatu; cekatan
+cacang	/ca.caŋ/	a	
+tegak 
+lurus 
+(tt berjalan), gagah, tampan	
+cadu	
+/ca.du/	 a 
+1 
+rusak, 
+serampangan, tidak karuan, tidak 
+baik; 2 tanda pada tulisan Arab ( ّ ) 
+untuk menyatakan huruf rangkap; 
+tasydid
+cah rauh	
+/ c a h r a . u h / 	
+v berkunjung untuk berkenalan yg 
+dilakukan keluarga calon mempelai 
+laki-laki ke keluarga calon mempelai 
+perempuan: seugolom geuba tanda 
+geujak – ile ‘sebelum lamaran, – 
+terlebih dahulu’; cah rot
+caheung 	
+/ca.hɯŋ/ 	
+a 	
+gigi depan yg maju; tonggos: igo kah 
+– aju ‘gigimu semakin – saja’
+cakeuek	
+/ca.kɯə?/	
+n	
+burung yg memangsa ikan, paruhnya 
+panjang dan berwarna hitam	
+calok	 /ca.lɔ?/	 n	
+1 tempat air 
+yg dimanfaatkan untuk cuci tangan 
+setelah makan; kobokan:	
+– ta 
+beot nyo na ureung pajoh bu ngeon 
+jaro ‘– kita angkat jika ada orang 
+makan pakai tangan’; glok; 2 kawasan 
+pemukiman daerah pantai dan tambak
+calom-malom	 /ca.lom ma.lom/ a 
+campur-baur, tidak sama, tidak teratur, 
+tidak tersusun, kacau, porak-poranda: 
+calam-malom	 	
+caluk	 /ca.lu?/	 
+v
+	
+mengambil makanan dng tangan: 
+gule meunyo ta – bagah basi	
+‘sayur kalau diambil dng tangan 
+langsung lebih cepat basi’
+cambông	
+/cam.boŋ/	
+n 
+mangkuk besar untuk meletakkan 
+gulai 
+untuk 
+pengantin, 
+juga 
+digunakan untuk mengisi gulai 
+sehari-hari	
+	
+campli buta	
+/cam.pli bu.ta/	  n	
+cabai merambat yg bentuknya 
+seperti stroberi; cabai Jawa	
+canang	/ca.naŋ/	n	
+gong kecil 
+yg terbuat dari kuningan berbentuk 
+bulat dan ada cumboi bulat kecil 
+C
+
+##### PAGE pdf46
+ 30 | Kamus Budaya Aceh-Indonesia 
+capa
+canca
+di bagian tengahnya, digunakan 
+untuk mengatur derap, langkah, 
+dan 
+membangkitkan 
+semangat 
+juang para serdadu menuju medan 
+perang, dapat juga dipakai untuk 
+menyampaikan pengumuman atau 
+pemberitahuan	
+canca	 /can.ca/	n	
+alat 
+yg 
+digunakan sbg pengganti tangan 
+dalam mengambil sesuatu (seperti 
+nasi), bentuknya bulat, cekung, dan 
+bertangkai (ada bermacam-macam, 
+msl centong, sudip); sendok:	
+cok – siat saboh bak rak	‘ t o l o n g 
+ambilkan – satu di rak’; camca; 
+tanca
+candén    /can.den/  a 	 
+cantik, 
+jelita	
+cangcibét	
+/caŋ.ci.bet/	
+n 
+permainan tradisional petak umpet; 
+cangkeuceubé
+cangguk	
+/caŋ.gu?/	
+n 
+binatang amfibi pemakan serangga 
+yg hidup di air tawar atau di 
+daratan, berkulit licin, berwarna 
+hijau 
+atau 
+merah 
+kecokelat-
+cokelatan, kaki belakang lebih 
+panjang dp kaki depan, pandai 
+melompat dan berenang; katak:	
+aneuk abiek-abie  nyan wate rayek 
+dih jeut keu – ‘kecebong itu kalau 
+sudah besar akan menjadi katak’
+cangguk ie	 / c a ŋ . g u ? i / 	
+n katak yg berukuran kecil dan 
+hidup di air (Pelophylax)	
+cangguk ijô	/ c a ŋ . g u ? 
+i.jo/	n katak yg berwarna hijau 
+(Fejervarya cancrivora)	
+cangguk lijeu  /caŋ.gu? li.jɯ/	
+n katak berukuran sekitar 4 cm 
+dng punggung berwarna hitam 
+dan perutnya berwarna putih 
+tapi 
+tidak 
+mengilat, 
+apabila 
+bersuara menandakan bahwa ada 
+belut	
+cangguk ôn	/caŋ.gu? on/	
+n 
+katak daun biasa berwarna cokelat 
+atau hitam, biasa hidup di sawah 
+(Pelophylax leucomystax)
+cangguk pong	
+/caŋ.gu? põŋ/	
+n katak yg ketika bersuara lehernya 
+menggelembung	
+	
+cangguk po	/caŋ.gu? põ/	
+n 
+katak berukuran besar, berwarna 
+hitam atau gelap, kulit bertekstur, 
+biasa hidup di hutan; cangguk 
+pop		
+cangguk purè 	
+/ c a ŋ . g u ? 
+pu.rɛ/	
+n katak berukuran 
+besar dan memiliki gondong yg 
+besar	
+	
+cangguk sira	
+/ c a ŋ . g u ? 
+si.ra/	n katak yg berukuran kecil 
+dan berkulit mulus, mengeluarkan 
+air seni ketika melompat
+cangkôi	
+/caŋ.koy/	
+n	
+alat yg terbuat dari besi, bergagang 
+kayu, berukuran 50 cm, digunakan 
+untuk menggali parit, dll.; cangkul; 
+catok: – ka teusut gö dih, suah 
+peugot nyo ‘gagang – sudah 
+terlepas, harus di perbaiki’	
+cap sikureueng   /cap si.ku.rɯəɳ/	
+n cap berupa tanda tangan sembilan 
+sultan untuk mengesahkan sebuah 
+surat, biasanya digunakan untuk 
+surat pengangkatan uleebalang, 
+dsb pada masyarakat Aceh, stempel 
+kerajaan Aceh
+capa	
+/ca.pa/	 n	
+t a n a m a n 
+yg 
+dimanfaatkan 
+sbg 
+ramuan 
+induk jamu, daunnya untuk radang 
+
+##### PAGE 31
+Kamus Budaya Aceh-Indonesia | 31
+ceuding 
+capah
+tenggorokan (digulung, dimasukkan 
+ke hidung); sembung	
+	
+capah	 /ca.pah/ n 1 wadah kayu 
+atau tanah liat, bulat, bagian atasnya 
+berbentuk cekung, digunakan untuk 
+menggiling 
+bumbu, 
+memeras 
+santan kelapa,  dsb; cobek; ceprok; 
+caproh; 
+pinè: 
+teurasi 
+leubeh 
+mangat ta peh lam – daripada 
+ngeon blender ‘terasi lebih enak 
+dihaluskan di – daripada diblender’
+capeng talo keuieng	
+/ c a . p e ŋ 
+ta.lɔ kɯ.iŋ/ n  bulatan yg dirangkai 
+membentuk tali pinggang wanita, 
+terbuat 
+dr 
+tembaga, 
+berwarna 
+emas, digunakan sebagai aksesoris 
+pakaian adat
+caphuek    /ca.phu?/	
+v 
+menepuk 
+air, 
+mencepuk-cepuk 
+air, 
+mengacaukan 
+keadaan 
+menggunakan tangan; japhuk
+caprah	/cap.rah/	
+a	
+1 
+tidak terkendali; liar; 2 tidak sakral; 
+3 sudah terjamah banyak orang; 
+pacah; caproh
+cat cut /cat cũt / a kusut (rambut, tali, 
+dsb)
+catô rimung	
+/ca.to ri.muŋ/	
+n 
+permainan tradisional Aceh mirip 
+catur yg dimainkan oleh dua orang 
+pd sebilah papan, pd titik pertemuan 
+garis 
+vertikal 
+dan 
+horizontal 
+diletakan masing-masing satu bidak 
+catur, jumlah bidak bervariasi mulai 
+28, 81, dan 100, bidak yg digunakan 
+berasal dari batu atau kulit lokan, 
+bidak yg besar disebut rimung 
+dan yg kecil disebut kameng, 
+pemegang rimung menang apabila 
+dapat 
+menghabiskan 
+kameng, 
+pemegang kameng menang apabila 
+dapat mengurung rimung sehingga 
+tidak dapat bergerak lagi; rimung 
+kameng	
+catô tanoh	
+/ c a . t o t a . n õ h / 	
+n permainan congkak yg lubangnya 
+dibuat di tanah, biji yg digunakan 
+adalah kerikil atau guli	
+cawan	 /ca.wan/	
+n	
+cangkir yg bergagang, terbuat dr 
+keramik, digunakan untuk minum teh 
+atau kopi:	
+– yg biasa lon jeb 
+ie ka patah goe di  ‘– yg biasa saya 
+minum gagangnya sudah patah’
+cawik 
+/ca.wĩ?/ 
+v 
+mengait 
+atau 
+menyangkut
+ceulawik /cɯ.la.wĩ?/ n besi (kawat, 
+dsb) yg ujungnya bengkok; kait: 
+ayun aneuk miet teusangkôt bak – 
+‘ayunan anak kecil disangkutkan 
+pd --’; ceunawik
+meucawik 
+/mɯ.ca.wi?/ 
+v 
+tersangkut, terkait
+meucawik-cawik 
+/mɯ.ca.wi? 
+ca.wi?/ a kusut
+cék	
+/ce?/	
+n   adik ayah atau ibu 
+(laki-laki dan perempuan); paman 
+atau bibi: – lon dua boeh, tapih man 
+dua geuh ka meuninggai ‘paman 
+saya ada dua, tapi dua-duanya sudah 
+meninggal’
+céklöt	
+/ce? lʌt/	n	
+adik 
+bungsu ayah atau ibu; cutlöt	
+cékngöh	
+/ce? ŋʌh/	
+n	
+adik tengah ayah atau ibu (sebelum 
+adik bungsu)
+ceumong	
+/ c ɯ . m ɔ ŋ / 	
+v 
+menangis, 
+meratap, 
+meraung; 
+meubaeu	
+	
+ceuding 	
+/cɯ.diŋ/ n	
+pembuahan kedua padi saat panen, 
+sisa padi yg sudah dipotong; 
+
+##### PAGE pdf48
+ 32 | Kamus Budaya Aceh-Indonesia 
+ceunulék
+ceugot 
+ciding	
+ceugot /cɯ.got/ mengambil sesuatu 
+yg posisinya lebih tinggi dng 
+menggunakan tangan; jeugot  
+ceukak /cɯ.ka?/ v	
+mencekik
+ceukak keuleumbu	 / c ɯ . k a ? 
+kɯ.lɯm.bu/	n	
+alat berupa 
+tali untuk mengikat kelambu 	
+ceukam	
+/ c ɯ . k a m / 	
+n penjepit rambut yg terbuat dari 
+emas, perak atau suasa	 	
+ceukam bungong u	 / c ɯ . k a m 
+bu.ŋõŋ u/ n	 penjepit 
+rambut 
+yg terbuat dari emas atau suasa, 
+menyerupai 
+bunga 
+kelapa 
+yg sudah mekar, terdiri atas 
+tujuh tangkai bunga kelapa 
+yg dirangkai menjadi satu, 
+digunakan pd sanggul sebelah 
+kiri dan kanan pengantin wanita, 
+dapat 
+juga 
+digunakan 
+oleh 
+wanita ketika menghadiri pesta
+ceukam cicém	
+/ c ɯ . k a m 
+cicem/ n alat penjepit rambut 
+yg terbuat dari emas dan perak 
+sepuh emas yg digunakan di 
+depan sanggul pengantin wanita 
+merupakan lambang jodoh yg 
+baik		
+ceukék	/cɯ.ke?/	
+n beliung 
+khas Aceh yg berukuran kecil, dapat 
+digunakan dalam posisi duduk
+ceukot	 /cɯ.kot/	
+v memutar, 
+membengkokkan, 
+mematahkan, 
+memutuskan, memetik kangkung 
+dng memutar batangnya		
+ceuku 	 /cɯ.ku/	num 	
+1 takaran 
+sebesar telapak tangan orang dewasa 
+secara terbuka tanpa mengenggam: 
+hana gayong ngoen – laju ta cok ie 
+‘tidak  ada gayung lansung gunakan 
+telapak tangan saja untuk ambil 
+air’; 2 mengambil air dng telapak 
+tangan
+ceuleupak	
+/ c ɯ . l ɯ . p a ? / 	
+makanan yg terbuat dari sisa tepung 
+ketan setelah ditumbuk; jeuleupak; 
+geuleupak	
+	
+ceumacah /cɯ.ma.cah/	 n 
+mengerjakan tanah sawah dng cara 
+menginjak agar tanahnya hancur, 
+masak, dan lembut setelah dibajak 
+menggunakan kerbau; ceumeucah: 
+saket aki teuh sabe wate musem blang 
+bak ta -- ‘kaki selalu sakit ketika 
+musim padi karena membajak sawah 
+dengan kaki’
+ceumeulhö	
+/cɯ.mɯ.lhʌ/	
+v 
+menggiling padi dng kaki atau dng 
+mesin perontok bulir padi: lawet nyo 
+ka jareung ta kalon ureng  – kana 
+moto keumeukoh ‘sekarang kita sudah 
+jarang melihat orang menggiling padi 
+dng kaki atau mesin perontok padi, 
+karena sudah ada mobil khusus panen 
+lansung’
+ceumeureuh /cɯ.mɯ.rɯh/	
+v 1 menyisir (meratakan) sawah yg 
+sudah dibajak dng garu; menggaru 2 
+mengumpulkan rumput atau sampah 
+dng jari tangan atau alat penggaruk di 
+tanah kering
+ceumeucroh /cɯ.mɯ.roh/	
+v 
+menggoreng; seumeucroh
+ceunulék  /cɯ.nu.le?/	 n 
+alat 
+yg 
+terbuat dari besi, bergagang kayu, 
+digunakan untuk untuk mencungkil, 
+mis. daging kelapa dr tempurung; 
+cungkil: jaroe lon luka keunong – 
+baro	
+‘tangan saya luka terkena – 
+kemarin’
+ceupé 	 /cɯ.pe/	 n	
+piring 
+kecil 
+
+##### PAGE 33
+Kamus Budaya Aceh-Indonesia | 33
+ceureumén
+ceupeub
+untuk wadah lauk atau kue; cupe; 
+cipe:  beuleuheun, bek beukah – baroe 
+lon ‘hati-hati, jangan sampai piring 
+kue baru saya pecah’
+ceupeub	
+/cɯ.pɯb/	
+v 
+menggapai, menyambar, memegang, 
+menangkap	
+ceuprok	
+/cɯp.ro?/	
+n 
+perabot dapur, terbuat dari batu atau 
+tanah liat yg dibentuk seperti piring, 
+untuk mengulek bumbu (merica, 
+cabai, dan sebagainya); cobek	
+ceuradi	/cɯ.ra.di/	
+n	
+1 
+kain penutup tudung saji khas Aceh, 
+biasanya berwarna merah, kuning, 
+hijau yg disulam dng benang emas, 
+dll,  juga dipakai pd dinding; 2 
+pohon, tinggi hingga 30 m, kayunya 
+kuat dan awet, buahnya kecil 
+berwarna hitam seperti beludru, 
+umumnya disukai anak-anak; asam 
+keranji (Dialium indum	 ); keranji
+ceuradi utama	
+/ c ɯ . r a .
+di u.ta.ma/ n kain penutup 
+berbentuk segitiga yg dipasang 
+di atas gerbang utama	
+ceurana	
+/cɯ.ra.na/	
+n wadah yg terbuat dari bahan 
+kuningan dng motif ukiran canek on 
+kaye, berbentuk bulat dan berkaki, 
+digunakan untuk meletakkan nasi 
+pengantin, buah, sirih, dsb	
+ceurapa	
+/cɯ .ra.pa/	
+n benda yg terbuat dari bahan 
+kuningan dng motif ornamen ukiran 
+canek on kaye dan talo ie di bagian 
+atas dan samping, digunakan sbg 
+tempat mengisi emas hantaran 
+dalam acara lamaran atau meminang 
+oleh mempelai laki-laki, sudah ada 
+sejak abad ke-18 M
+ceurape	
+/cɯ .ra.pe/	
+n mamalia karnivor yg memiliki 
+kepala kecil, moncong runcing, 
+telinga pendek bulat, sebagian 
+besar memiliki kelenjar anal yg 
+mengeluarkan bau busuk (Herpestes 
+spp.)
+ceureumén	
+/cɯ.rɯ.men/	
+n 1 lisplang pd rumah Aceh yg 
+terletak di ujung kasau; 2 cermin, 
+kaca	
+	
+
+##### PAGE pdf50
+ 34 | Kamus Budaya Aceh-Indonesia 
+cinu
+ceureupa
+ceureupa	
+/cɯ.rɯ.pa/	
+n tempat tembakau yg terbuat dr 
+kuningan, berbentuk kotak segi 
+delapan, terdiri atas dua bagian yaitu 
+badan dan tutup yg dihubungkan 
+dng engsel, sisi luar bagian badan 
+dihiasi dng ukiran motif suluran 
+daun bunga, bagian tutup terdiri 
+dari perak yg sebagian ditutup dng 
+lempengan suasa dan emas dng 
+ukiran motif bunga tanjung dan 
+suluran daun, digunakan sebagai 
+tempat tembakau; selepa	
+chiep	 /tʃĩp/	
+a	
+b e r l e k u k 
+karena tersodok dsb (tt kaleng, bodi 
+mobil, dsb); penyok: teuga that 
+meupoek buno, – kap moto ‘keras 
+sekali tabrakannya tadi, kap mobil 
+sampai --’
+chѐk 	 /tʃɛ̃?/	
+a 	
+1 
+kurang 
+besar (keadaannya dsb) dp yg biasa; 
+kecil: kurusi – nyan jipeugèt keu aneuk 
+miet SD ‘kursi – itu dirancang untuk 
+anak-anak SD’; 2 muda: si Ramlah – 
+mantöng ka jimeukawén ‘si Ramlah 
+masih muda sudah berkeluarga’ 3 
+sempit (tidak luas, tidak lebar, dsb): 
+nyo – tat kotak nyo, h’an löt tapaso 
+buku bandum ‘ini kecil sekali kotak 
+ini, tidak muat kita masukkan buku 
+semuanya’; 4 tidak pelik (masalah); 
+mudah:  meunyo nyan masalah jih, – 
+bak awak kamo  ‘kalau itu masalahnya, 
+– (mudah) bagi kami’ 
+cicah	
+/ci.cah/	1 n masakan yg 
+bahannya 
+dipotong 
+kecil-kecil, 
+kemudian dicampurkan dng kelapa 
+dan rempah-rempah utk lauk nasi; 
+2 v memotong kecil-kecil (tt buah-
+buahan)
+cicah ôn peugaga /ci.cah on p/	
+n masakan dr daun pegaga yg 
+dicampur dng rempah dan kelapa 
+gongseng yg dihaluskan; lambai; 
+sambai ôn peugaga
+cicém	 /ci.cem/	n burung – ata 
+lon plara ka iphoe	
+‘ b u r u n g 
+peliharaanku sudah terbang’
+cicém pala	 /ci.cem pa.la/	
+n 
+burung pemakan serangga, berbulu 
+hitam, berparuh lurus dan runcing 
+(Copsychus amoenus); kacer	
+cicém pala keubeu  /ci.cem 
+pa.la kɯ.bɯ/ n	
+k a c e r 
+kerbau	
+cicém pala rimung /ci.cem pa.la 
+ri.muŋ/ n	
+kacer harimau	
+cicém pala uteun	
+/ c i . c e m 
+pa.la u.tɯn/ n kacer hutan	
+ciceu	
+/ci.cɯ/ n penyakit kulit 
+yg menimbulkan rasa sangat gatal 
+(terutama di sela-sela jari kaki)
+cindöt	 /cin.dʌt/ n  jendul (di kulit, 
+dsb); sesuatu yg tampak berjendul; 
+bagian tubuh yg menonjol
+cingklöt /ciŋ.klʌt/ v	
+b e r d i r i 
+berjinjit dng kedua ujung kaki: 
+aneuk miet nyan ji— jicok buku 
+i ateuh meh ‘anak kecil itu – 
+mengambil buku di atas meja’ 
+cintra	 /cin.tra/	n kandang burung; 
+sangkar: jih jijak u pasai jijak bloe 
+– ‘dia ke pasar membeli –’ 
+cinu	
+/ci.nu/	 n	
+a
+l
+a
+t 
+yg terbuat dari tempurung yg 
+diberi gagang kayu atau bambu 
+yg 
+panjang, 
+digunakan 
+untuk 
+mengambil air dalam guci, biasanya 
+terletak di depan rumah	

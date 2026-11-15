@@ -119,6 +119,10 @@ def doctor(port=7860, model=None):
         "not on this computer yet (normal before the first start): the app asks for the Hugging Face token and downloads it once"))
     from .dictionary import Dictionary
     d = Dictionary(); add(d.loaded, "dictionary", f"{len(d.entries)} entries from {d.path.name}" if d.loaded else "word list not found")
+    corpus = ROOT / "data/raw/acehx"; n_c = len(list(corpus.glob("*.txt"))) if corpus.exists() else 0
+    add(n_c > 0, "AcehX corpus", f"{n_c} file(s) in data/raw/acehx" if n_c else "missing: data/raw/acehx/*.txt (needed for make-packs); git pull again")
+    books = ROOT / "data/raw/kamus/books/entries.json"
+    add(books.exists(), "Balai Bahasa dictionaries", "found" if books.exists() else "missing: data/raw/kamus/books/entries.json (word lookup then has only the 1985 list)")
     free = shutil.disk_usage(ROOT).free / 1e9
     add(free > 6, "free disk space", f"{free:.1f} GB (model 1.2 GB; voice model +4 GB; packages ~3 GB)")
     try:

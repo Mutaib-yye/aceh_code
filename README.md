@@ -15,8 +15,8 @@
 
 ## Prof's brief: AcehX sentences, manual validation, both directions
 
-1. **Each person translates 20–30 AcehX sentences.** Put the cleaned corpus in `data/raw/acehx/`, run `python -m acehid audit`, then
-   `python -m acehid make-packs --people "Name1,Name2,Name3,Name4" --per-person 25`. Everyone gets their own sheet in `data/human/packs/` (no sentence in two
+1. **Each person translates 20–30 AcehX sentences.** The cleaned corpus is committed in `data/raw/acehx/` (its index is built automatically). Run
+   `acehid.bat make-packs` (Windows) or `./acehid.sh make-packs` (Mac/Linux), which is `python -m acehid make-packs`, as --people "Name1,Name2,Name3,Name4" --per-person 25`. Everyone gets their own sheet in `data/human/packs/` (no sentence in two
    packs) and `PACKS.md` says who checks whose pack: nobody checks their own. The translator fills `indonesian`; the checker fills `checker` and `verdict`
    (`ok` = agree as it is, `fixed` = changed, say what in `notes`). Never machine translation.
 2. **Import:** `python -m acehid import-sheets --sentences data/human/packs/0*.csv`. Rows with a translator and a *different* checker become the
@@ -26,7 +26,7 @@
    each direction is scored on its own test sets (`training_log.json`: `tests` and `tests_rev`). The app has a swap button; a direction that has no evaluation
    yet is labelled as such. Use `DIRECTION = 'ace-ind'` in the notebook for the old one-way training.
 4. **New dictionaries:** `python -m acehid dict-build --maritim <Kemaritiman.pdf> --budaya <1-50.pdf> <50-100.pdf> <100-150.pdf> --bergambar <Bergambar.pdf>`
-   extracts them into `data/raw/kamus/books/` (git-ignored: copyrighted); the app's word lookup then covers all four dictionaries, each entry labelled with its book and page.
+   extracts them into `data/raw/kamus/books/` (already committed, so a fresh clone has them; run this only to rebuild); the app's word lookup covers all four dictionaries, each entry labelled with its book and page.
    `examples.csv` there lists example sentences with a translation (status `clean`, `filled` or `needs_human`): candidates to put through step 1's validation, never trained on directly.
 
 ## Getting human-translated pairs (translation sheets)

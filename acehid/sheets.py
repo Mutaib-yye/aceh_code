@@ -47,6 +47,9 @@ def _existing_sides():
 
 
 def _acehx_lines():
+    if not (ROOT / "data/extracted/acehx.jsonl").exists():          # a fresh clone has the corpus but not its index: build it
+        from . import audit
+        audit.run()
     for r in read_jsonl(ROOT / "data/extracted/acehx.jsonl"):
         yield r["src_file"], r["line"], " ".join(r["ace_raw"].split())
 

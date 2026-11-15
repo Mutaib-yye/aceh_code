@@ -92,3 +92,15 @@ def test_import_builds_parallel_and_golden_corpus_from_several_packs(tmp_path, m
     assert st["sentences_in"] == 4 and st["sentences_accepted"] == 3 and st["golden"] == 2
     par = json.load(open(tmp_path / "human/pairs.json", encoding="utf-8")); gold = json.load(open(tmp_path / "human/golden.json", encoding="utf-8"))
     assert [r["id"] for r in par] == ["P01-001", "P01-002", "P02-001"] and [r["id"] for r in gold] == ["P01-001", "P02-001"]
+
+
+def test_packs_build_the_corpus_index_by_themselves_on_a_fresh_clone(tmp_path, monkeypatch):
+    from acehid import audit
+    monkeypatch.setattr(sheets, "ROOT", tmp_path); monkeypatch.setattr(audit, "ROOT", tmp_path)
+    (tmp_path / "data/raw/acehx").mkdir(parents=True); (tmp_path / "data/final/combined").mkdir(parents=True)
+    json.dump([], open(tmp_path / "data/final/combined/train.json", "w"))
+    (tmp_path / "data/raw/acehx/c.txt").write_text("\n".join(f"gobnyan geujak u pasi rumoh {chr(97 + i % 26)}{i} ureueng nyan" for i in range(50)), encoding="utf-8")
+    assert not (tmp_path / "data/extracted/acehx.jsonl").exists()
+    monkeypatch.setattr(sheets.langid, "classify", lambda t: ("ace", 1.0))
+    r = sheets.make_packs(["Ana", "Budi"], per_person=20, out=tmp_path / "packs")
+    assert r["sentences"] == 40 and (tmp_path / "data/extracted/acehx.jsonl").exists()

@@ -1,8 +1,11 @@
 __pycache__/
 *.pyc
 .pytest_cache/
-# raw + intermediate data stays local (licences, size). Only data/final and samples are committed.
-data/raw/
+# raw + intermediate data stays local (licences, size). Only data/final and samples are committed,
+# plus the AcehX corpus and the dictionaries (we are licensed to publish them).
+data/raw/*
+!data/raw/acehx/
+!data/raw/kamus/
 data/extracted/
 data/cleaned/
 data/normalized/

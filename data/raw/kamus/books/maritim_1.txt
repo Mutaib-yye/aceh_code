@@ -1,0 +1,6271 @@
+##### PAGE pdf1
+
+##### PAGE pdf2
+Kamus Kemaritiman
+Aceh—Indonesia
+Balai Bahasa Provinsi Aceh
+Badan Pengembangan dan Pembinaan Bahasa
+Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi
+2021
+
+##### PAGE pdf3
+Kamus Kemaritiman Aceh—Indonesia
+Penulis:
+Zulfahmirda Matondang
+Istika Suri
+Syarifah Zurriyati
+Penyunting:
+Rahmat
+Baun Thoib SGR
+Zainun
+Cut Ida Agustina
+ISBN: 
+978-623-94052-1-2
+Desain Sampul dan Tata Letak:
+Istika Suri
+Penerbit:
+Balai Bahasa Provinsi Aceh 
+Jalan T. Panglima Nyak Makam No. 21 Lampineung,
+Kec. Kuta Alam, Kota Banda Aceh, Aceh 23125
+Anggota IKAPI NO.: 013/DIA/2013
+Telepon: (0651) 7551056
+Faksimile: (0651) 7551687
+Pos-el: balaibahasaaceh@kemdikbud.go.id
+Cetakan pertama, Desember 2021
+Hak Cipta Dilindungi Undang-Undang
+Isi buku ini, baik sebagian maupun seluruhnya, dilarang diperbanyak dalam bentuk apapun tanpa 
+seizin tertulis dari penerbit, kecuali dalam hal pengutipan untuk keperluan penulisan artikel atau 
+karangan ilmiah.
+Katalog dalam Terbitan
+C499.224 203	
+Zulfahmirda Matondang: Istika Suri; Syarifah Zurriyati
+ ZUL	
+Kamus Kemaritiman Aceh-Indonesia/Penyusun, Zulfahmirda
+ k	
+     Matondang; Istika Suri; Syarifah Zurriyati.
+   —-Banda Aceh: Balai Bahasa Provinsi Aceh, 2021.
+   X, 73 hlm.; 14,5 x 21 cm
+   ISBN: 978-623-94052-1-2
+   1. Bahasa Aceh—Kamus Maritim; 2. Bahasa Aceh-Indonesia-Kamus I. Judul
+	
+	
+	
+	
+	
+	
+499.244.203
+
+##### PAGE pdf4
+Kamus Kemaritiman Aceh-Indonesia | iii
+﻿
+﻿
+KATA PENGANTAR
+KEPALA BALAI BAHASA PROVINSI ACEH
+	
+Masyarakat bahasa dalam interaksi kesehariannya mengalami pergulatan dan 
+persaingan beberapa bahasa sebagai dampak dari kebutuhan global sehingga 
+masyarakat cenderung rentan terpapar diglosia atau xenomania bahasa. Makin 
+intens suatu komunitas bahasa bersinggungan dengan bahasa lainnya, makin 
+terbuka peluang bahasa tersebut dipengaruhi oleh bahasa yang lebih dominan 
+penggunaannya. Dampaknya, bahasa daerah yang kerap dianggap tidak 
+berprestise rawan tergusur dan punah.
+	
+Salah satu upaya memelihara kemurnian bahasa daerah ialah 
+melalui penyusunan kamus. Adapun manfaat penyusunan kamus bahasa 
+daerah:1) mendokumentasikan bahasa daerah agar terhindar dari kepunahan, 
+2) memelihara nilai-nilai kemanusiaan dan kultur suatu masyarakat, 3) 
+meningkatkan minat generasi muda dalam menggunakan bahasa daerah, 4) 
+menjadi rujukan bagi pengguna untuk menemukan makna, ejaan, dan pelafalan 
+yang tepat dan benar, dan 5) meningkatkan daya ungkap bahasa daerah. 
+	
+Penghargaan dan terima kasih diberikan kepada tim penyusun dan 
+penyunting serta semua pihak yang terlibat dalam kegiatan inventarisasi 
+kosakata, lokakarya, sidang komisi bahasa daerah, sampai pencetakan dan 
+penerbitan kamus. Semoga kehadiran kamus ini dapat menjadi kebanggaan 
+masyarakat Aceh, memotivasi akademisi atau pencinta bahasa Aceh untuk 
+memajukan bahasa daerah, memperkaya khazanah kepustakaan perkamusan 
+Indonesia, dan turut serta dalam mencerdaskan anak bangsa. 
+	 		
+	
+Banda Aceh, 16 November 2021
+	 	
+	
+Kepala,
+	 	
+	
+Karyono, S.Pd., M.Hum.	
+
+##### PAGE pdf5
+iv | Kamus Kemaritiman Aceh-Indonesia  
+﻿
+﻿
+PRAKATA
+Puji syukur ke hadirat Allah Swt. berkat rida-Nya tim penyusun dapat 
+menyelesaikan 
+penyusunan 
+Kamus 
+Kemaritiman 
+Aceh—Indonesia. 
+Penyusunan kamus ini telah melewati tiga tahapan penting: inventarisasi 
+kosakata, lokakarya, dan sidang komisi bahasa daerah. 
+Inventarisasi kosakata dilakukan di tiga kabupaten/kota, yaitu Aceh Timur, 
+Aceh Barat, dan Lhokseumawe. Ketiga wilayah ini dipilih karena diyakini dapat 
+mewakili khazanah kosakata dan istilah kemaritiman bahasa Aceh. Validasi 
+kosakata yang telah dianalisis oleh tim dibahas dalam lokakarya dengan 
+mengundang para narasumber yang berasal dari ketiga wilayah dan melibatkan 
+akademisi serta praktisi di bidang kemaritiman dan kebahasaan. Pada tahap 
+akhir, sidang komisi bahasa daerah dilakukan untuk menentukan kosakata 
+bahasa Aceh bidang kemaritiman yang dapat diusulkan guna memperkaya 
+lema Kamus Besar Bahasa Indonesia.
+	
+Penyusunan kamus ini dilakukan oleh tim perkamusan dan 
+peristilahan Balai Bahasa Provinsi Aceh tahun 2021. Tujuannya untuk 
+mengembangkan 
+bahan 
+atau 
+sarana 
+informasi 
+kebahasaan 
+melalui 
+pendokumentasian kosakata dan istilah bahasa Aceh dalam bentuk kamus.
+	
+Secara historis, penyusunan kamus bahasa Aceh telah dilakukan 
+sejak abad ke-19. Pada 1880, P. Arriens memelopori penyusunan kamus 
+yang berjudul Maleisch-Hollandsch-Atjehsche Woordenlijst (Kamus Melayu-
+Belanda-Aceh). Sembilan tahun kemudian, K.F.H. van Langen mengeluarkan 
+Atjehsche Taal (Kamus Aceh–Belanda). Pada 1931, J. Kreemer mengikuti 
+jejak K.F.H. van Langen dengan kamus Atjèhsch Handwoordenbok (Atjèhsch-
+Nederlandsch). Husein Djajadiningrat bersama Gerardus Willebrordus Joannes 
+Drewes menyusun kamus Atjehsch-Nederlandsch Woordenbok pada 1934. 
+	
+Aboe Bakar dkk. menginisiasi Kamus Aceh Indonesia jilid 1 dan 2 yang 
+dikeluarkan oleh Pusat Pembinaan dan Pengembangan Bahasa Departemen 
+Pendidikan dan Kebudayaan Jakarta tahun 1985. Koleksi kamus Aceh semakin 
+lengkap dengan terbitnya Kamus Umum Indonesia-Aceh karya Hasan Basry 
+tahun 1994. Lalu, Kamus Aceh-Indonesia-Inggris pertama kali diterbitkan tahun 
+1999 oleh Pacific Linguistics di Canberra berjudul Kamus Basa Aceh Kamus 
+Bahasa Aceh Acehnese—Indonesian—English Thesaurus, hasil kolaborasi 
+Bukhari Daud dan Mark Durie. Termutakhir, Balai Bahasa Banda Aceh bersama 
+
+##### PAGE pdf6
+Kamus Kemaritiman Aceh-Indonesia | v
+﻿
+﻿
+Yayasan PeNa menerbitkan Kamus Dwibahasa Indonesia-Aceh tahun 2011.
+Kedelapan kamus di atas termasuk ke dalam jenis kamus umum 
+bahasa 
+Aceh, 
+sedangkan 
+Kamus 
+Kemaritiman 
+Aceh--Indonesia 
+ini 
+merupakan 
+kamus 
+bidang 
+tertentu. 
+Kamus 
+ini 
+memberikan 
+warna 
+baru 
+dalam 
+penyusunan 
+kamus 
+berbahasa 
+Aceh. 
+Untuk memudahkan pembaca, kamus ini dilengkapi petunjuk penggunaan kamus 
+yang meliputi tanda baca, singkatan kata, deret vokal dan konsonan, pemenggalan 
+suku kata, serta transkripsi fonetis bahasa Aceh. Kamus ini juga dapat diakses di 
+laman Kamus Bahasa Daerah Aceh (KBDA) melalui tautan www.kamusbbpa.go.id. 
+Transkripsi fonemis dan fonetis yang dicantumkan di dalam kamus ini 
+telah melalui proses verifikasi secara berulang serta diskusi mendalam 
+oleh tim penyunting. Beberapa transkripsi lema telah disederhanakan 
+dengan 
+tujuan 
+untuk 
+memudahkan 
+penulisan 
+dan 
+pelafalan. 
+Kami berharap kamus ini dapat mengungkap khazanah peradaban 
+kemaritiman 
+Aceh 
+sekaligus 
+memperkenalkan 
+kekayaan 
+kosakata 
+bahasa 
+Aceh 
+kepada 
+masyarakat 
+luar. 
+Kamus 
+ini 
+akan 
+terus 
+dikembangkan. Saran dan masukan mohon dikirimkan ke alamat redaksi.
+	
+Penyusunan kamus ini tidak terlepas dari dukungan berbagai pihak. Untuk 
+itu, kami menyampaikan terima kasih kepada Kepala Balai Bahasa Provinsi Aceh, 
+Kasubbag Tata Usaha Balai Bahasa Provinsi Aceh, pengumpul data, narasumber, 
+peserta lokakarya dan sidang komisi bahasa daerah, tim penyunting, dan seluruh 
+pihak yang turut membantu yang namanya tidak bisa disebutkan satu per satu.
+	 	
+	
+Banda Aceh, 15 November 2021
+	 	
+	
+Tim Penyusun
+
+##### PAGE pdf7
+vi | Kamus Kemaritiman Aceh-Indonesia  
+﻿
+﻿
+TIM REDAKSI
+Penanggung Jawab:
+Karyono
+Kepala Balai Bahasa Provinsi Aceh
+Penyusun:
+Zulfahmirda Matondang, Istika Suri, Syarifah Zurriyati
+Penyunting:
+Rahmat, Baun Thoib Soaloon SGR, Zainun, 
+Cut Ida Agustina
+Pengumpul Data:
+Zulfahmirda Matondang, Istika Suri, Syarifah Zurriyati, Zainun, Muhammad Toha, 
+Iskandar Syahputera, 
+Adnan Anggita Nasution, Safrizal 
+Narasumber:
+Muchlis, Syahrizal, Bahtiar, M. Sidiq, Adian Saputra, Mukhlis, Bahrumsyah, Ramudhan, 
+Sumardi, Sulaiman, Khaidir Z., Kaharuddin, Ibrahim, Ridwan Daud, 
+Rizal Azmi
+Alamat Redaksi:
+Balai Bahasa Provinsi Aceh
+Jalan T. Panglima Nyak Makam No. 21 Lampineung, Banda Aceh
+Telepon: (0651) 7551056
+Pos-el: kamus.bbpa@kemdikbud.go.id
+Laman: www.kamusbbpa.go.id
+
+##### PAGE pdf8
+Kamus Kemaritiman Aceh-Indonesia | vii
+﻿
+﻿
+DAFTAR ISI
+KATA PENGANTAR.................................................................... iii
+PRAKATA................................................................................. iv
+TIM REDAKSI........................................................................... vi
+DAFTAR ISI............................................................................. vii
+PETUNJUK PENGGUNAAN KAMUS.......................................... viii
+A..............................................................................................1
+B..............................................................................................6
+C............................................................................................14
+D............................................................................................16
+E............................................................................................17
+G............................................................................................19
+H............................................................................................22
+I.............................................................................................23
+J.............................................................................................24
+K............................................................................................27
+L............................................................................................33
+M...........................................................................................34
+N............................................................................................41
+O............................................................................................43
+P............................................................................................44
+R............................................................................................49
+S............................................................................................53
+T............................................................................................59
+U............................................................................................65
+W...........................................................................................69
+Y............................................................................................70
+PUSTAKA ACUAN....................................................................73
+
+##### PAGE pdf9
+viii | Kamus Kemaritiman Aceh-Indonesia  
+﻿
+﻿
+PETUNJUK PENGGUNAAN KAMUS
+1.	 Tanda baca
+Tanda baca adalah tanda atau simbol yang dipakai dalam sistem ejaan, 
+biasanya berupa tanda titik, koma, dan sebagainya. Ada beberapa tanda 
+baca yang digunakan dalam kamus ini, di antaranya sebagai berikut:
+/…/   	
+menunjukkan bentuk fonetis
+(…)	
+menerangkan bahasa latin dan mengapit tambahan keterangan 
+atau penjelasan
+,	
+memisahkan frasa pada definisi
+:	
+memisahkan definisi dengan contoh
+;	
+sinonim dan homonim
+-	
+tanda hubung
+—	
+tanda pisah dan menunjukkan lema pada contoh
+2.	
+Label Kelas Kata
+Kelas kata adalah kelas atau golongan kata berdasarkan bentuk, fungsi, 
+atau maknanya. Berikut adalah kelas kata yang terdapat dalam bahasa 
+Indonesia:
+n	 	
+nomina (kata benda)
+v	 	
+verba (kata kerja)
+a	 	
+adjektiva (kata sifat)
+adv	
+adverbia (kata keterangan)
+num	
+numeralia (kata bilangan)
+pron	
+pronomina (kata ganti, kata tunjuk, kata tanya)
+p	
+partikel (kata depan, kata sambung, kata seru, kata sandang, 
+ucapan salam)
+Adapun kelas kata yang terdapat di dalam kamus ini adalah nomina, verba, 
+dan adjektiva.
+
+##### PAGE pdf10
+Kamus Kemaritiman Aceh-Indonesia | ix
+﻿
+﻿
+3.	 Singkatan Kata
+	
+	
+	
+  
+akr 
+akronim 
+krn 
+karena 
+dll 
+dan lain-lain
+msl 
+misalnya
+dng
+dengan
+pb 
+peribahasa 
+dp 
+daripada 
+pd 
+pada 
+dr 
+dari 
+sbg 
+sebagai 
+dsb 
+dan sebagainya
+sing 
+singkatan 
+dst 
+dan seterusnya 
+spt 
+seperti 
+ki 
+kiasan
+thd 
+terhadap 
+kl
+klasik
+tsb 
+tersebut 
+kp 
+kependekan
+tt
+tentang 
+kpd
+kepada
+yg 
+yang
+4.	 Vokal dan Konsonan dalam Bahasa Aceh
+a.	 Vokal
+Vokal adalah satuan fonologis yang diwujudkan dalam lafal tanpa pergeseran. 
+Vokal dalam bahasa Aceh ada sepuluh, yaitu [a], [i], [u], [e], [è], [é], [o], [ô], 
+[ö], dan [eu]. Dalam kamus ini, deret vokal bahasa Aceh yang biasa dipakai, 
+yaitu [ie], [oe], [ue], [èe], dan [eue] disederhanakan tanpa memengaruhi 
+makna kata demi kepraktisan penulisan dan pengucapan (Asyik, 2004). 
+Namun, beberapa diakritik masih dipertahankan. Penjabarannya sebagai 
+berikut:
+[ie] menjadi [i]
+bieng -> bing /biŋ/ ‘kepiting’
+[oe] menjadi [o]
+anoe ->  ano /a.no/ ‘pasir’
+[ue] menjadi [u]
+bruek -> bruk /bru?/ ‘tempurung’
+[èe] menjadi [è]
+abèe ->  abè /a.bɛ/ ‘abu’
+[eue] menjadi [eu]
+jeue ->  jeu /jɯ/ ‘jala’
+
+##### PAGE pdf11
+x | Kamus Kemaritiman Aceh-Indonesia  
+﻿
+﻿
+Vokal
+Fonetis
+Awal
+Tengah
+Akhir
+a
+/a/
+/agam/
+laki-laki
+/rah/
+cuci
+/gata/
+anda
+i
+/i/
+/ija/
+kain
+/nit/
+sedikit
+/maji/
+miliaria
+u
+/u/
+/ulɛ/
+kepala
+/bulut/
+basah
+/tunu/
+kesal
+e
+/ə/
+/ə?/
+hai
+/bət/
+cabut
+/tahə/
+menung
+è
+/ɛ/
+/ɛh/
+es
+/bɛ?/
+jangan
+/kirɛ/
+belut
+é
+/e/
+/eh/
+tidur
+/jep/
+minum
+/suwe/
+baling-
+baling
+o
+/ɔ/
+/ɔ?/
+bohong
+/pɔh/
+pukul
+/lakɔ/
+suami
+ô
+/o/
+/on/
+daun
+/broh/
+sampah
+/tulo/
+pipit
+ö
+/ʌ/
+-
+-
+/mantʌŋ/
+masih
+/tɯʌH/
+sebut
+eu
+/ɯ/
+/ɯ/
+lihat
+/panɯ?/
+pendek
+/tabɯ/
+hambar
+Deret vokal yang merupakan diftong [ai], [ui], [ôi], [oi], [öi], dan [ei] 
+ditranskripsikan menjadi /ay/, /uy/, /oy/, /ɔy/, /ʌy/, dan /əy/. Berikut distribusi 
+vokal dan contoh diftong dalam bahasa Aceh:
+1.	
+ai /ay/   : abaih /a.bayh/ ‘mengarahkan’
+2.	
+ui /uy/ 	  : sui /suy/ ‘menampal’
+3.	
+ôi /oy/   : arôih /a.royh/ ‘arus’
+4.	
+oi /ɔy/   : boinah /bɔy.nah/ ‘harta’
+5.	
+öi /ʌy/	
+  : lagöina /la.gʌy.na/ ‘sangat bagus’
+6.	
+hei /əy/ : hei /həy/ ‘panggil’
+• 
+Vokal Nasal
+Vokal nasal adalah vokal yang dihasilkan dengan mengeluarkan udara 
+melalui hidung. Vokal sengau dalam bahasa Aceh yang biasa ditulis [‘a], [‘i], 
+[‘u], [‘è], [‘o], [‘ö], dan [‘eu] disederhanakan tanpa apostrof dengan transkripsi 
+fonetis /ã/, /ĩ/, /ũ/, /ɛ̃/, /ɔ̃/, /ʌ̃/, dan /ɯ̃/. Berikut contoh vokal nasal dalam 
+bahasa Aceh:
+1.	 /ã/	 : crah /crãh/ ‘tumis’ 
+2.	 /ĩ/	
+: suwik /suwĩ?/ ‘nama ikan’ 
+3.	 /ũ/	 : meulangu /mɯlaŋũ/ ‘berenang’
+4.	 /ɛ̃/	
+: asèt /asɛ̃t/ ‘nama pancing’
+5.	 /ɔ̃/	 : ngom /ŋɔ̃m/ ‘jenis tumbuhan’
+6.	 /ʌ̃/	 : panyöt /paɳʌ̃t/ ‘lampu’
+7.	 /ɯ̃/	 : eu /ɯ̃/ ‘merayap’
+
+##### PAGE pdf12
+Kamus Kemaritiman Aceh-Indonesia | xi
+﻿
+﻿
+b.	
+Konsonan 
+Konsonan adalah bunyi bahasa yang dihasilkan dengan menghambat aliran 
+udara pada salah satu tempat di saluran suara di atas glotis. 
+Konsonan
+Awal
+Tengah
+Akhir
+b
+bôt
+perahu
+abô
+siput
+-
+-
+c
+crôh
+goreng
+bucum
+lencam
+-
+-
+d
+deut
+beloso
+udeung
+udang
+aleuhad
+minggu
+f
+-
+-
+-
+-
+-
+-
+g
+grapè
+kerapu
+lagang
+payau
+-
+-
+h
+harok
+bergelora
+juhok
+tangguk
+mulôh
+bandeng
+j
+jeu
+jala
+unjam
+rumpon
+-
+-
+k
+keumamah
+ikan kayu
+bakoh
+bangau
+kulèk
+perahu 
+kecil
+l
+langse
+melangsir
+jalô
+perahu
+-
+-
+m
+mugè
+pedagang
+sumbo
+kembung
+nom
+menyelam
+n
+noh
+sotong
+banèng
+kura-kura
+mon
+sumur
+p
+payéh
+pepes
+teupin
+dermaga
+leuhop
+lumpur
+q
+-
+-
+-
+-
+-
+-
+r
+raga
+keranjang
+sira
+garam
+-
+-
+s
+surè
+tongkol
+pasi
+pantai
+-
+-
+t
+tairo
+tenggiri
+gati
+cadik
+eungkôt
+ikan
+v
+-
+-
+-
+-
+-
+-
+w
+wi
+kiri
+sawök
+tangguk
+-
+-
+x
+-
+-
+-
+-
+-
+-
+y
+yè
+hiu
+paya
+rawa
+-
+-
+z
+-
+-
+-
+-
+-
+-
+ 
+• 
+Gugus Konsonan
+Gugus konsonan adalah dua konsonan atau lebih yang berurutan dalam satu 
+suku kata dan dilafalkan dalam satu bunyi ujaran.  
+1.	
+ng /ŋ/	
+: eunggeuk-eunggeuk /ɯŋgɯ?- ɯŋgɯ?/ ‘nama ikan’
+2.	
+ny /ɳ/	
+: nyap /ɳãp/ ‘nama jaring’
+3.	
+sy /ʃ/	
+: insya /inʃa/ ‘isya’
+4.	
+th /ʈʰ/	
+: thôk /ʈʰo?/ ‘marlin’
+
+##### PAGE pdf13
+xii | Kamus Kemaritiman Aceh-Indonesia  
+﻿
+﻿
+5.	
+Gambar
+Gambar dalam kamus ini disertakan untuk memperjelas makna yang dimaksud, 
+biasanya kata yang bersifat khas, seperti flora dan fauna di wilayah maritim. 
+Gambar merupakan hasil dokumentasi pribadi tim penyusun kamus.
+
+##### PAGE 1
+Kamus Kemaritiman Aceh-Indonesia | 1
+abaih
+alu 
+A
+abaih 
+/a.bayh/ 
+v 
+mengarahkan 
+(umpama perahu): kamo meu— jalô u 
+kuala ‘kami mengarahkan perahu ke 
+kuala’
+abè  /a.bɛ/ n  partikel padat yg 
+berukuran sangat kecil yg dibawa 
+oleh udara, tanah yg berdebu; serbuk 
+halus (dari tanah dan sebagainya)
+abè gasui /a.bɛ ga.suy/ n lihat 
+abè kasui (istilah ini biasa 
+digunakan di daerah Aceh 
+Besar)
+abè kasô  /a.bɛ ka.so/n lihat 
+abè kasui (istilah ini biasa 
+digunakan di daerah Aceh 
+Besar)
+abè kasui  /a.bɛ ka.suy/n debu 
+kering di pantai yg tidak dapat 
+mengotori saat diduduki
+abeuk /a.bɯ?/ n kolam mati yg 
+tidak menalir air di dalamnya, kolam 
+berlumpur dng ikan air tawar, banyak 
+binatang liar hidup di dalamnya; lahan 
+berair yg tidak dapat dimanfaatkan, 
+tanah lekuk yg berisi air dan lumpur 
+(tempat kerbau berkubang); rawa
+abô /a.bo/ n siput yg biasanya hidup 
+di paya-paya, selalu naik turun pd 
+tanaman kumpai 
+acak  /a.ca?/ n  gelombang kecil yg 
+beriringan di tengah laut: musém 
+barat laôt meu— that ‘musim angin 
+barat laut sangat bergelombang’
+adè  /a.dɛ/  v mengeringkan di terik 
+matahari; jemur
+adè 
+biléh 
+/a.dɛ 
+bi.leh/ 
+v 
+menjemur teri basah untuk 
+dijadikan teri kering
+adè eungkôt  /a.dɛ ɯŋ.kot/ 
+v 
+menjemur 
+ikan 
+(proses 
+pembuatan ikan asin, ikan 
+kering): nyak Rabumah geu 
+– bak ancak ‘Bu Rabumah 
+menjemur ikan di ancak’
+adén /a.den/ n endapan, air berlumpur
+ali /a.li/ n alat pancing kepiting, dibuat 
+dari tali , diujung tali diberi umpan 
+berupa ikan
+ali bing /a.li biŋ/ 1 v memancing 
+kepiting; 2 n alat pancing 
+kepiting
+meuali  /mɯ.a.li/  v memancing 
+kepiting di air asin: polem geu 
+— beuklam ‘abang memancing 
+kepiting tadi malam’
+alok  /a.lɔ?/  n tanah yg rendah 
+(umumnya di daerah pantai) dan 
+digenangi 
+air, 
+biasanya 
+banyak 
+terdapat tumbuhan air; rawa (istilah 
+ini 
+biasa 
+digunakan 
+di 
+daerah 
+Lhokseumawe)
+alu /a.lu/ n 1 saluran keluar masuk air; 
+2 anak cabang sungai atau rawa yg 
+buntu, biasanya airnya berlumpur
+
+##### PAGE 2
+2 | Kamus Kemaritiman Aceh-Indonesia  
+alu-alu 
+aneuk lheu
+alu-alu /a.lu-a.lu/ n ikan laut berbentuk 
+bulat dan panjang, giginya tajam dan 
+runcing, berwarna keperakan 
+alôn 
+/a.lon/ 
+n 
+gelombang 
+yg 
+memanjang dan bergulung-gulung, 
+lebih kecil daripada ombak, lebih 
+besar daripada riak
+amak /a.ma?/ n alat untuk membuang 
+air dari dalam perahu, biasanya 
+terbuat dari jeriken bekas
+ambai-ambai 
+/am.bay-am.bay/ 
+n 
+ikan laut yg bercorak putih kebiruan, 
+panjangnya mencapai 30 cm
+ambu-ambu  /am.bu-am.bu/ n  ikan 
+laut yg bercorak putih kebiruan, 
+panjangnya 
+sekitar 
+30—40 
+cm, 
+ukurannya 
+lebih 
+besar 
+daripada 
+ambai-ambai
+ambè 
+/am.bɛ/ 
+n 
+alat 
+tangkap 
+berbentuk kantong besar, memiliki 
+mata jaring yg rapat, berukuran 1 inci 
+yg dipasang di sungai saat air pasang 
+surut, diikat pada; 2 buah tiang kayu 
+agar tidak hanyut dan menghadap air 
+surut (istilah ini biasa digunakan di 
+wilayah pesisir timur Aceh), disebut 
+juga ambè-ambè
+amè-amè /a.mɛ-a.mɛ/ n ikan tongkol 
+besar, beratnya mencapai 34,5 kg 
+(Katsuwonus pelamis); ikan cakalang
+ampéh  /am.peh/  n rangkaian kayu 
+atau batang pohon kelapa yg diletakan 
+di pinggir pematang tambak atau di 
+samping pintu air untuk mencegah 
+erosi atau terkikisnya pematang oleh 
+aliran air dan pukulan riak air ke 
+pematang
+ancak 
+/an.ca?/ 
+n 
+tempat 
+untuk 
+menjemur ikan terbuat dari kayu 
+persegi empat yg dipasangi jaring
+aneuk bôt  /a.nɯ? bot/  n orang yg 
+bekerja di kapal atau mereka yg 
+dipimpin oleh pawang bot 
+aneuk iték  /a.nɯ? ite?/  n orang 
+yg 
+bertangggung 
+jawab 
+untuk 
+membersihkan, membereskan, dan 
+mempersiapkan kapal (alat-alat atau 
+perlengkapan) dalam kapal pencari 
+ikan, kadang turut membantu bongkar 
+muat, serta menjaga keamanan kapal 
+di pelabuhan
+aneuk lheu /a.nɯ? lhɯ/ n anak ikan 
+kembung yg sebesar jari
+
+##### PAGE 3
+Kamus Kemaritiman Aceh-Indonesia | 3
+angèn 
+angèn 
+lado aneuk lheu  /la.dɔ a.nɯ? 
+lhɯ/  n ikan aneuk lheu goreng 
+yg disambal: lôn blo — bak 
+keudè Mak Ani ‘saya membeli 
+sambalado kembung di warung 
+Mak Ani’
+payéh aneuk lheu  /pa.yeh 
+a.nɯ? 
+lhɯ/ 
+n 
+ikan 
+aneuk 
+lheu 
+yg 
+dipepes, 
+dimasak 
+menggunakan bumbu asam 
+sunti: Wak Mah geutagun – 
+‘Wak Mah memasak pepes 
+gembung kecil’ 
+angèn  /a.ŋɛn/  n udara yg bergerak; 
+angin
+angèn badè  /a.ŋɛn ba.dɛ/ n 
+angin kencang disertai cuaca 
+buruk (datang dng tiba-tiba) 
+disertai dng ombak besar; badai 
+angèn barat  /a.ŋɛn ba.rat/n 
+angin yg bertiup dari arah barat
+disertai dng riak dan ombak 
+besar, biasanya nelayan tidak 
+melaut
+angèn barôh  /a.ŋɛn ba.roh/  n 
+angin yg bertiup dari arah utara, 
+biasanya diiringi hujan
+angèn boh asè  /a.ŋɛn bch 
+a.sɛ/  n angin yg berputar, 
+mengeluarkan 
+suara 
+ribut, 
+dan bertekanan tinggi; puting 
+beliung
+angèn 
+budeung 
+/a.ŋɛn 
+bu.dɯŋ/ n angin bertekanan 
+sedang (tidak terlalu kencang), 
+biasanya dimanfaatkan sebagai 
+pemisah 
+antara 
+padi 
+dan 
+ampasnya, juga cocok untuk 
+bermain layangan
+angèn laôt /a.ŋɛn la.ot/ n angin 
+bertiup dari laut ke darat yg 
+terjadi pada siang hari
+angèn meuphèh-phèh /a.ŋɛn 
+mɯ.phɛ̃h- phɛ̃h/ n angin sepoi-
+sepoi
+angèn paksa /a.ŋɛn pa?.sa/ n 
+angin yg baik untuk berlayar
+angèn pungo /a.ŋɛn pu.ŋo/  n 
+angin tidak terarah, muncul 
+dari berbagai arah yg saling 
+berlawanan; angin gila 
+angèn timu  /a.ŋɛn ti.mu/  n 
+angin yg bertiup dari arah timur, 
+hawanya 
+panas, 
+biasanya 
+dianggap waktu yg baik untuk 
+melaut
+angèn tunong /a.ŋɛn tu.nõŋ/ n 
+angin yg bertiup dari arah 
+selatan
+meuangèn /mɯ.a.ŋɛn/ 1 v 
+berangin (cuaca): laôt kayém – 
+lam padum uro nyo ‘laut sering 
+berangin dalam beberapa hari 
+ini’; 2 a kondisi tubuh meriang 
+(masuk angin): prutjih – sabab 
+hana jipajôh bu ‘perutnya masuk 
+angin karena tidak makan nasi’; 
+3 v sikap tidak menentu (uring-
+uringan): gopnyan that brat 
+– lawét nyo, leuh geupeugah 
+meuno 
+geupeugöt 
+meudéh 
+‘dia cukup uring-uringan akhir-
+akhir ini, bicaranya begini, 
+perbuatannya begitu’
+
+##### PAGE 4
+4 | Kamus Kemaritiman Aceh-Indonesia  
+anggôk pangké
+asam keueung
+anggôk pangké  /aŋ.go? paŋ.kɛ/  n 
+alat tangkap ikan yg terbuat dari 
+jaring, memiliki dua sisi, pada bagian 
+tengah dibentuk menyerupai kantung 
+yg 
+berfungsi 
+untuk 
+menampung 
+ikan, biasanya ditarik oleh 2—4 
+orang dng membawa ke laut dng 
+cara 
+berenangsejauh 
+kedalaman 
+air mencapai 2 m, setelah dipasang 
+ditarik ke tepi pantai
+angkôi /aŋ.koy/ n lihat ali
+angkôi bing /aŋ.koy biŋ/ n alat 
+untuk 
+menangkap 
+kepiting, 
+terbuat dari rotan, bentuknya 
+bulat, menggunakan umpan 
+perut ayam
+angkôla bing /aŋ.ko.la biŋ/ n alat untuk 
+menangkap kepiting, menggunakan 
+umpan perut ayam, bentuknya bulat 
+terbuat dari rotan, bambu belah, nilon
+angkoli /aŋ.ko.li/ n ikan laut berwarna 
+merah, bersisik, seperti ikan karang, 
+dikenal 
+juga 
+dng 
+nama 
+anggoli 
+(Pristipomoides multidens)
+ano /a.nɔ/ n butir-butir batu yg halus; 
+pasir
+ano 
+gasa 
+/a.nɔ 
+ga.sa/ 
+n 
+pasir kasar; kersik
+ano pasi  /a.nɔ pa.si/  n pasir 
+pantai
+ano thô /a.nɔ tho/ n pasir kering 
+di tepi pantai, tidak menempel 
+saat diduduk
+apông /a.poŋ/ n laut lepas; samudera
+ara  /a.ra/  n tumbuhan jenis fikus yg 
+banyak getahnya, tumbuh di daerah 
+dekat kuala, sungai, dsb, dikenal dng 
+buah loa (Ficus racemosa): boh – 
+hanyöt lam lung ‘buah ara hanyut di 
+sungai’
+arôh /a.roh/ n arus laut, disebut juga 
+arôih
+arôn /a.ron/ n tanaman yg berbatang 
+tinggi 
+lurus, 
+kayunya 
+berwarna 
+kelabu kemerahan, padat dan keras, 
+mempunyai peran utk mencegah 
+abrasi, 
+menahan 
+tiupan 
+angin 
+kencang, atau hempasan ombak 
+yg besar; cemara laut (Casuarina 
+equisetifolia) 
+arôngan  /a.ro.ŋan/  n laut terbuka 
+antara dua  tempat atau pulau; selat
+asam keueung  /a.sam kɯ.ɯŋ/  n 
+masakan berkuah khas masyarakat 
+pesisir, rasanya asam dan pedas, 
+menggunakan
+ bumbu utama cabai rawit, kunyit, dan 
+asam sunti
+asam keueung aneuk lheu 
+/a.sam kɯ.ɯŋ a.nɯ? lhɯ/  n 
+asam keuung ikan dencis
+asam keueung biléh  /a.sam 
+kɯ.ɯŋ bi.leh/  n asam keuung 
+ikan teri
+
+##### PAGE 5
+Kamus Kemaritiman Aceh-Indonesia | 5
+asèt
+awô
+asam keueung mulôh /a.sam 
+kɯ.ɯŋ mu.loh/ n asam keuung 
+ikan bandeng
+asam keueung ulè eungkôt /a.
+sam kɯ.ɯŋ u.lɛ ɯŋ.kot/ n asam 
+keuung kepala ikan
+asam keueung udeung /a.sam 
+kɯ.ɯŋ u.dɯŋ/ n asam keueung 
+udang
+asèt /a.sɛ̃t/ 1 n pancing dng benang 
+sepanjang 20—40 m (tergantung 
+kedalaman air), memiliki 10 mata kail 
+yg diikatkan dng benang sepanjang 
+20 cm pada benang utama, jarak 
+antar tiap cabang lebih kurang 1,5 
+m, memakai pemberat sekitar 1—3 
+ons sehingga kail tegak lurus, serta 
+tidak menggunakan umpan ikan tetapi 
+menggunakan bulu kasab emas/perak 
+(warna-warni); 2 v memancing dng 
+menggunakan pancing asèt (menarik 
+ulur kail pancing setinggi ½ m)
+ateung  /a.tɯŋ/  n pembatas tambak, 
+jalan setapak di tambak, penahan 
+tambak agar air tidak dapat keluar
+aneuk ateung  /a.nɯ? a.tɯŋ/ 
+n  bagian tepi bleu (bagian 
+tengah tambak) yg lebih tinggi, 
+berfungsi agar air di tengah 
+tambak tidak kering
+awak grèk /a.wa? grɛ?/ n petugas yg 
+membawa ikan
+ dari kapal ke tempat pelelangan 
+ikan (TPI) dng menggunakan kereta 
+sorong
+awô /a.wo/  n 1 pusaran air di 
+belakang kapal; 2 bambu kecil yg 
+biasa digunakan utk gagang pancing 
+atau sangkar burung
+awô eungkôt   /a.wo ɯŋ. kot/ n 
+gelembung udara yg dihasilkan 
+oleh kumpulan ikan
+
+##### PAGE 6
+6 | Kamus Kemaritiman Aceh-Indonesia  
+babah arôh 
+bancot 
+B
+babah arôh  /ba.bah a.roh/  n selat 
+sempit yg berarus deras, disebut juga 
+babah lôh
+bada  /ba.da/  n ikan laut atau ikan 
+rawa yg digolongkan ke dl jenis ikan 
+teri besar
+badè  /ba.dɛ/  1 n ketam (betina) 
+besar berkulit keras (menyerupai 
+kulit penyu) pipih dan bundar, tepinya 
+berduri (bergerigi), berekor panjang 
+bergerigi seperti sangkur yg dapat 
+digerak-gerakkan (biasanya didapati 
+berpasang-pasangan); 
+belangkas 
+(Limulus moluccanuselangkas); 2 ikan 
+laut, dagingnya agak keras, warnanya 
+abu-abu, panjangnya sampai 1,5 m 
+(istilah ini biasa digunakan di daerah 
+Aceh Timur);  3 angin kencang yg 
+menyertai cuaca buruk (datang secara 
+tiba-tiba) berkecepatan sekitar 64–72 
+knot; badai
+bagok  /ba.gɔ?/  n ikan sungai yg 
+panjangnya mencapai 80 m, warnanya 
+abu-abu dng ekor dan sirip berwarna 
+merah dan berduri (Mytus menoda)
+bajè lampông /ba.jɛ lam.poŋ/ n baju 
+pelampung
+bajo  /ba.jɔ/  n pasak pada kapal 
+berfungsi sebagai pengikat kayu: 
+lagè – ho nyang arat keunan jisak dro 
+‘seperti pasak, ke mana yg sempit, ke 
+situ ia masuk’ 
+bak  /ba?/  n ruang pada permukaan 
+dek kapal, berbentuk segi empat,
+digunakan untuk menyimpan barang-
+barang, seperti kotak penyimpan ikan, 
+bahan bakar, atau pukat; palka: — ka 
+boco ‘palka sudah bocor’ 
+bakat  /ba.kat/  n ombak besar di 
+tengah laut yg belum pecah
+bakat timu  /ba.kat ti.mu/  n 
+ombak yg terjadi saat angin 
+timur
+bakoh  /ba.kɔh/  n bangau berbulu 
+putih, pemangsa ikan, katak, dan 
+sebagainya, hidup di tempat yg 
+berair, seperti tepi pantai atau paya, 
+bermacam-macam jenisnya (Ciconia 
+ciconia); bangau
+bakôy /ba.koj/ n keranjang yg terbuat 
+dari anyaman rotan atau bambu, 
+berbentuk persegi empat, digunakan 
+sebagai tempat ikan, buah, dsb; bakul
+balum beudé /ba.lum bɯ.de/ n tempat 
+atau lokasi berbahaya di perairan 
+sungai, muara, dan pantai, berupa 
+palung yg menimbulkan pusaran 
+air, sering menelan korban jiwa, 
+dipercaya sebagai tempat berdiam 
+makhluk halus, dikenal juga balum 
+bili atau balum blidi: ureung gampông 
+peugah, aneuk mit nyan ka jicok lé — 
+‘kata orang kampung, anak itu diambil 
+oleh balum beudé’
+bancot 
+/ban.cɔt/ 
+n 
+pancing 
+yg 
+menggunakan 
+benang 
+utama 
+berukuran 100, disambung dng 5—7 
+utas benang cabang berukuran 50 yg 
+dipasangi mata pancing berukuran 
+7 dan diikat potongan jala seberat 1 
+ons, panjang benang cabang sekitar 
+2 m dng jarak ikatan sekitar 5 m 
+untuk menghindari kusutnya benang, 
+digantung pada sebatang bambu 
+setinggi 5 m yg ujungnya dipasangi 
+cincin kili-kili dan ditarik menggunakan 
+perahu sehingga pancingnya muncul 
+tenggelam
+
+##### PAGE 7
+Kamus Kemaritiman Aceh-Indonesia | 7
+banèng
+bèncalang 
+banèng /ba.nɛŋ/ n kura-kura berwarna 
+kehitam-hitaman, cangkangnya bulat 
+cembung, hidupnya di darat dan 
+rawa-rawa
+bangka  /baŋ.ka/  n tumbuhan yg 
+tingginya mencapai 10 m, diameter 
+mencapai 30 cm, kulitnya berwarna 
+kelabu atau coklat tua, akar menganjur 
+ke luar, tumbuh di hutan payau 
+sepanjang pantai yg landai; bakau: 
+tunjang bak -– nyan panyangjih 
+duwa mete ’akar pohon bakau itu 
+panjangnya dua meter’ 
+tunjang bangka  /tun.jaŋ baŋ.
+ka/ n akar tunjang pada pohon 
+bakau besar yg  muncul keluar 
+seperti kaki-kaki di sekeliling 
+batang
+barèng /ba.reŋ/ n udang laut yg kecil, 
+lebih kecil daripada sabè, tubuhnya 
+transparan, dikenal juga bu barèng
+batè /ba.tɛ/ n batu
+aneuk batè  /a.nɯ? ba.tɛ/  n 
+butiran batu yg lebih besar 
+daripada pasir dan lebih kecil 
+daripada 
+kerikil 
+(kira-kira 
+sebesar biji kacang tanah atau 
+biji nangka)
+awak batè /a.wa? ba.tɛ/ n anak 
+buah kapal yg menjaga batu 
+timah ketika pukat diturunkan 
+ke laut, disebut juga awak bak 
+batè
+batè 
+kareung 
+/ba.tɛ 
+ka.rɯŋ/  n batu kapur di laut 
+yg 
+terbentuk 
+dari 
+zat 
+yg 
+dikeluarkan oleh binatang kecil 
+jenis anthozoa (tidak bertulang 
+punggung), 
+batuan 
+organik 
+sebagai tempat tinggal binatang 
+karang
+batè sira  /ba.tɛ si.ra/  n batu 
+ringan yg kaya gelembung, 
+mengapung di air, terbentuk 
+ketika 
+magma 
+mengalami 
+penurunan suhu dng cepat
+batè unjam  /ba.tɛ un.jam/  n 
+batu untuk penahan rumpon 
+agar tidak hanyut.
+bawai  /ba.way/  n ikan laut atau ikan 
+air tawar, berukuran sekitar 30 cm, 
+badannya pipih, kulitnya agak kasar, 
+bersisik halus, ada beberapa jenis; 
+bawal
+bawai itam  /ba.way i.tam/  n 
+ikan bawal hitam
+bawai putéh /ba.way pu.teh/  n 
+ikan bawal putih
+bawai tumèh /ba.way tu.mɛh/ n 
+ikan bawal yg diberi kuah 
+santan
+bayeu lamkôn  /ba.yɯ lam.kon/  n 
+biaya operasional melaut dipangkas 
+dari hasil penjualan hasil tangkapan 
+ikan
+bayeun /ba.yɯn/ n ikan laut, sj. ikan 
+bawal, bersisik halus, bentuknya 
+bulat, panjang 12—15 cm, warna 
+coklat kehitaman, dan berbintik di sirip
+bèhtra /bɛh.tra/ n kapal besar; bahtera
+bèncalang /bɛn.ca.laŋ/ n kl perahu yg 
+dapat berlayar cepat, biasa digunakan
+untuk memata-matai musuh
+
+##### PAGE 8
+8 | Kamus Kemaritiman Aceh-Indonesia  
+beudông
+bidôk 
+beudông  /bɯ.doŋ/  n ikan yg hidup 
+di air laut atau payau, ukurannya 
+mencapai panjang 45 cm, berat 1,05 
+kg, badan bulat agak panjang; ikan 
+tembang (Clupea harengus harengus)
+beugéng /bɯ.geŋ/ n tanaman nibung 
+yg tumbuh di tepi pantai dan rawa-
+rawa yg menyerupai pohon pinang, 
+daunnya berduri, batangnya kuat dan 
+dipergunakan untuk lantai rumah
+beulacang  /bɯ.la.caŋ/  n jaring dng 
+panjang 200 m, pangkal jaring diikat 
+pada sebuah patok di tepi pantai, 
+kemudian jaring ditebar ke laut (istilah 
+di pesisir timur), disebut juga jareng 
+tambang (istilah di pesisir barat)
+beulalông 
+/bɯ.la.loŋ/ 
+n 
+kapal 
+perahu layar, memiliki sayap sbg 
+penyeimbang (gati) di bagian kiri atau 
+kanan; bahtera 
+beulat  /bɯ.lat/  n tiang-tiang bambu 
+penggantung jaring setinggi 3 m, diberi 
+jarak sekitar 20—30 cm, ditancapkan 
+di pinggir pantai ke tengah laut 
+sepanjang 45 m menyerupai segitiga 
+seperti haluan kapal, lalu ikan digiring 
+masuk; belat
+beuleubeuk /bɯ.lɯ.bɯ?/ n ikan laut, 
+sj ikan sebelah
+beuleumbông  /bɯ.lɯm.boŋ/  n ikan 
+di dasar laut dgn kedalaman 25 m, 
+panjangnya sekitar 10 cm, kepalanya 
+keras, bersisik, srg diolah menjadi 
+ikan asin
+beulideung  /bɯ.li.dɯŋ/  n ikan laut 
+berwarna biru dng perut berwarna 
+putih, bentuknya tipis dan panjang, 
+siripnya kecil dan memiliki banyak 
+tulang, panjangnya sampai 1 m
+beuluka /bɯ.lu.ka/ n ikan pari ekornya 
+pendek, berwarna kecoklatan, disebut 
+juga peuluka
+beuneung samsi /bɯ.nɯŋ sam.si/ n 
+benang paralon yg digunakan sebagai 
+benang pancing, rajutan jala atau 
+jaring, dan benang layangan
+beurandéh  /bɯ.ran.deh/  n seberang 
+laut 
+atau 
+sungai, 
+disebut 
+juga 
+meurandéh beurawang    /bɯ.ra.
+waŋ/ n hempasan arus besar pada
+saat cuaca buruk yg mengakibatkan 
+pusaran air kira-kira sampai 300 m 
+dari bibir pantai
+beureulang  /bɯ.rɯ.laŋ/  n ikan laut 
+besar berwarna kuning, sejenis ikan 
+langguran
+beureuyeung /bɯ.rɯ.jɯŋ/  n alat 
+menangkap ikan yg terbuat dari 
+bambu atau buluh, dijalin dng rotan, 
+berbentuk bulat panjang mengerucut 
+dan mulutnya besar, dipasang di aliran 
+air deras, disebut juga beuriyeung
+bi  /bi/  v mengulur benang (pancing, 
+layang-layang) 
+bidôk /bi.do?/ n perahu kecil terbuat 
+dari kayu, tidak berlayar, dipakai untuk 
+menangkap ikan atau mengangkat 
+barang-barang di sungai; biduk
+
+##### PAGE 9
+Kamus Kemaritiman Aceh-Indonesia | 9
+biléh
+bing
+biléh /bi.leh/ n bilis
+biléh bu /bi.leh bu/  n bilis 
+kecil yg berukuran seruas jari, 
+berwarna putih
+biléh bungöng /bi.leh bu.ŋoŋ/ 
+n bilis yg panjangnya sekitar 
+3-6 cm, berwarna putih, ada 
+garis hitam di tengah badan 
+(istilah ini biasa digunakan di 
+daerah Aceh Barat)
+biléh itam /bi.leh i.tam/  n 
+lihat biléh labang (istilah ini 
+biasa digunakan di daerah 
+Lhokseumawe)
+biléh kuréng /bi.leh ku.reŋ/n 
+bilis 
+berwarna 
+kehitaman, 
+panjangnya sekitar 5 cm (istilah 
+ini biasa digunakan di
+ daerah Aceh Besar)
+biléh labang /bi.leh la.baŋ/n 
+lihat biléh kuréng  
+lado biléh  /la.dɔ bi.léh/  n bilis 
+goreng yg disambal: miwa 
+galak that pajôh – ‘bibi sangat 
+suka makan sambalado bilis’
+payéh biléh  /pa.jeh bi.leh/  n 
+bilis atau teri basah yg dipepes 
+menggunakan bumbu utama 
+asam sunti
+binèh  laôt /bi.nɛh la.ot/  n pinggir 
+pantai
+bing  /biŋ/  n binatang yg hidup di 
+pantai, rawa, atau sawah, berkaki 
+sepuluh, dua di antaranya berupa 
+capit yg tajam, punggungnya keras 
+berwarna 
+hijau 
+kehitam-hitaman 
+(Scylla serrata); kepiting 
+bing bangka  /biŋ baŋ.ka/  n 
+kepiting air yg hidup di akar 
+pohon 
+bakau, 
+berukuran 
+besar, cangkangnya berwarna 
+hijau kehitaman dan capitnya 
+berwarna merah, disebut juga 
+bing u
+bing batè /biŋ ba.tɛ/ n kepiting 
+yg 
+tidak 
+memiliki 
+banyak 
+daging, tidak boleh dimakan 
+karena menyebabkan pusing
+bing bintang /biŋ bin.taŋ/  n 
+kepiting berwarna coklat dng 
+lebar cangkang sekitar 10 cm, 
+memiliki tiga bintik hitam
+bing cakah /biŋ ca.kah/  n 
+kepiting yg mirip bing bangka 
+berukuran lebih kecil
+bing kông /biŋ koŋ/ n kepiting 
+darat 
+yg 
+cangkangnya 
+berwarna merah dan ungu dan 
+capitnya berwarna kekuningan, 
+membuat sarang atau lubang di 
+tanah
+
+##### PAGE 10
+10 | Kamus Kemaritiman Aceh-Indonesia  
+bintang hu 
+blutan 
+bing pô /biŋ pho/ n kepiting kecil 
+berwarna 
+warni, 
+berukuran 
+sebesar jempol, salah satu 
+capitnya besar, matanya seperti 
+antena
+bing putéh  /biŋ pu.teh/  n 
+kepiting yg dimasak dng kuah 
+santan kental dan bumbu halus 
+tanpa kunyit dan cabai; kepiting 
+masak putih
+bing rama /biŋ ra.ma/ n kepiting 
+kecil berwarna putih yg banyak 
+di pinggir laut, dikenal juga 
+rama atau bing sirama: binèh 
+pasi le that – ‘di tepi pantai 
+banyak bing rama’
+bing ranjungan /biŋ ran.ju.ŋan/ 
+n kepiting laut berkaki panjang, 
+cangkang berbintik merah dan 
+putih, hanya hidup di air, dan 
+dapat
+dimakan (Portunus pelagicus); 
+rajungan
+bing sira  /biŋ si.ra/ n kepiting 
+berukuran kecil yg hidup di 
+pematang 
+tambak; 
+kepiting 
+garam
+bing tumèh  /biŋ tu.mɛh/  n 
+kepiting yg dimasak dng cara 
+ditumis
+sôp bing /sop biŋ/ n masakan 
+berkuah 
+yg 
+direbus 
+dng 
+tambahan bumbu halus, bahan 
+utamanya kepiting; sup kepiting
+bintang hu  /bin.taŋ hu/  n pohon yg 
+kayunya digunakan untuk membuat 
+perahu
+bintang laôt /bin.taŋ la.ot/ n binatang 
+berbentuk bintang, hidup di dasar laut
+birè /bi.rɛ/ n ikan dalam sungai
+blaneut /bla.nɯt/ n. ikan yg hidup di 
+ekosistem perairan laut, payau, dan 
+tawar, panjang mencapai 7—47 cm, 
+sisiknya lebih kasar daripada ikan 
+bandeng, sirip punggung pendek, 
+tersebar di perairan pantai seluruh 
+dunia (Mugil cephalus); belanak
+blat  /blat/ n petakan kecil jang yg 
+biasanya 
+berbentuk 
+segi 
+enam, 
+diletakkan di ujung bentangan jang 
+(bubu), digunakan sebagai tempat 
+berkumpulnya ikan dan udang yg 
+diseret oleh air surut
+bleu  /blɯ/  n bagian tengah tambak/
+kolam ikan dan udang yg berupa 
+hamparan datar yg lebar biasanya 
+akan terlihat apabila air dalam tambak 
+telah dikosongkan atau mengering 
+(turun ke sisi yg lebih dalam)
+bleumbông /blɯm.boŋ/ n ikan laut di 
+kedalaman 25 m, panjangnya sekitar 
+10 cm, kepalanya keras, bersisik, 
+sering diolah menjadi ikan asin
+bleut /blɯt/ n anyaman daun kelapa 
+berbentuk lembaran seperti tikar yg 
+berukuran sekitar 50 cm x 150 cm 
+yg biasanya digunakan untuk alas 
+menjemur ikan di terik matahari untuk 
+dijadikan ikan asin atau ikan kering
+blida  /bli.da/  n ikan sungai yg 
+ukurannya dapat melebihi 100 cm, 
+tubuhnya 
+pipih 
+memanjang 
+dan 
+berbentuk menyerupai pisau
+blideung /bli.dɯŋ/ n lihat beulideung
+blôh /bloh/ n masuk ke dalam air
+blutan  /blu.tan/  n ikan laut yg mirip 
+ikan bagok, ttp mulutnya lebih kecil, 
+warnanya kecoklatan
+
+##### PAGE 11
+Kamus Kemaritiman Aceh-Indonesia | 11
+bôbô 
+bôt
+bôbô /bo.bo/ n binatang yg badannya 
+mirip 
+pinggan 
+agar-agar 
+dan 
+berjumbai-jumbai, 
+biasa 
+terapung-
+apung di permukaan laut, dapat 
+menimbulkan rasa gatal bagi makhluk 
+lain yg menyentuhnya (Scyphozoa); 
+ubur-ubur
+bodi /bo.di/ n dinding kapal, biasanya 
+terbuat dari papan kayu meranti atau 
+kayu resi
+bodrèt /bo.drɛt/ n ikan tongkol kecil
+boh eungkôt /bɔh ɯŋ.kot/ n telur ikan
+tumèh boh eungkôt /tu.mɛh 
+bɔh ɯŋ.kot/  n telur ikan yg 
+dimasak dng cara ditumis
+boh murông /bɔh mu.roŋ/ n ikan laut, 
+panjangnya sekitar 5 cm, hidungnya 
+lebih 
+pendek 
+daripada 
+todak, 
+berwarna kebiruan
+bôi  /boy/ n memperbaiki jaring/pukat 
+yg bocor, rusak, atau sobek dng cara 
+menyulam atau merajut
+ benang nilon pada bagian yg rusak
+bôt  /bot/ n 1 perahu; kapal; 2 
+perahu/kapal dng kapasitas 3 GT 
+menggunakan 
+tenaga 
+mesin 
+yg 
+dipasang di bangku kayu
+awak bôt /a.wa? bot/ n seluruh 
+anggota atau awak yg ada 
+dalam perahu/kapal
+bôt cèwèk /bot cɛ.wɛ?/ n perahu 
+kecil bermesin yg ditambatkan 
+atau mengiringi kapal pencari 
+ikan besar, digunakan untuk 
+memeriksa, menggiring pukat, 
+dan menghalau ikan
+bôt jèngèk /bot jɛ.ŋɛ?/ n perahu 
+yg digunakan nelayan untuk 
+meminta hasil tangkapan ikan 
+perahu lain secara paksa
+bôt kawé /bot ka.we/ 	
+n 
+perahu mesin berukuran kecil 
+atau sedang  yg digunakan 
+khusus untuk memancing ikan 
+di laut, durasi waktu memancing 
+tergantung pada ukuran dan 
+kapasitas perahu, serta jenis 
+ikan yg ditargetkan
+bôt 
+labi-labi 
+/bot 
+la.bi-la.
+bi/ n perahu mesin  yg bentuk 
+depannya lancip dan agak tinggi 
+(untuk 
+menahan/memecah 
+hantaman ombak dari depan), 
+bentuk belakangnya persegi 
+empat, 
+digunakan 
+untuk 
+mencari ikan di laut yg tidak 
+jauh dari pesisir pantai 
+bôt panglông  /bot paŋ.loŋ/  n 
+kapal yg menggunakan angin 
+dan 
+layar 
+sebagai 
+tenaga 
+penggerak 
+atau 
+pendorong, 
+biasanya sebagai transportasi 
+antarpulau pada zaman dahulu, 
+sekarang 
+digunakan 
+untuk 
+perlombaan
+bôt pukat /bot pu.kat/ n perahu 
+pukat 
+langgar, 
+panjangnya 
+17—20 m, lebarnya 5 m, dan 
+kedalaman pukatnya 1,60 m, 
+memiliki  kapasitas 30 GT, 
+biasanya menggunakan mesin 
+truk
+
+##### PAGE 12
+12 | Kamus Kemaritiman Aceh-Indonesia  
+breumbong
+budai 
+bôt rawôn /bot ra.won/ n perahu 
+kecil bermesin yg berkeliling 
+mencari 
+ikan, 
+terkadang 
+bertugas 
+memantau 
+atau 
+mengawasi pukat terpasang 
+atau tersebar dng baik 
+bôt surè /bot su.rɛ/ n kapal kayu 
+yg berfungsi untuk mencari ikan 
+tuna atau tongkol, panjangnya 
+10—25 m dan lebarnya 2—5 m, 
+berbentuk lancip di depan dan 
+persegi di belakang, memiliki 
+lambung besar yg digunakan 
+untuk mesin kapal dan tempat 
+penyimpanan ikan 
+bôt tèt-tèt /bot tɛt.tɛt/ n perahu 
+kecil, bagian depannya lurus 
+dng kemiringan sudut sekitar 
+60 derajat, bagian belakangnya 
+berbentuk 
+persegi, 
+menggunakan mesin dompeng 
+yg diletakkan di dasar perahu, 
+panjangnya 5—7 m dan lebar 
+120 cm; bôt labi-labi
+breumbong  /brɯm.boŋ /  n dudukan 
+tiang 
+yg terbuat dari kayu berbentuk bulat, 
+berfungsi sebagai penyangga tiang; 
+sarung tiang
+bringan  /bri.ŋan/  n andang-andang 
+perahu, kayu di tiang perahu/kapal 
+untuk menggantungkan layar
+bringan ateuh /bri.ŋan a.tɯh/ n 
+andang-andang atas
+bringan barôh /bri.ŋan ba.roh/ 
+n andang-andang bawah
+bringan talo /bri.ŋan ta.lɔ/ n tali 
+andang-andang untuk menarik 
+layar
+bruk /bru?/ n batok kelapa, digunakan 
+nelayan 
+sebagai 
+gayung 
+dan 
+sebagainya; tempurung 
+bruk kreung /bru? krɯŋ/    n 
+cangkang kerang
+bruk lungkap /bru? luŋ.kap/ n 
+cangkang kerang kima
+brukcung  /bru?.cuŋ/ n ikan karang, 
+sering disebut ikan lencam babi 
+(Lethrinus miniatus)
+bubara  /bu.ba.ra/  n ikan laut yg 
+bersisik 
+tebal 
+dan 
+besar, 
+serta 
+berwarna merah; ikan kakap merah
+bubè /bu.bɛ/ n alat tangkap ikan atau 
+udang, dibuat dari saga atau bambu 
+yg dianyam, dipasang dalam air (ikan 
+dapat masuk, tetapi tidak dapat keluar 
+lagi), 
+jenisnya 
+bermacam-macam; 
+bubu
+bubôn /bu.bon/ n alat yg terbuat dari 
+rumput dan ranting kayu, diikat dng 
+tali yg merupakan suatu kumpulan, 
+dipasang dalam air sebagai tempat 
+persembunyian ikan, udang, dan lain-
+lain
+bucum  /bu.cum/  n ikan lencam 
+(Lethrinidae)
+budai  /bu.dai/  n lihat badè (istilah 
+ini biasa digunakan di daerah Aceh 
+Barat)
+
+##### PAGE 13
+Kamus Kemaritiman Aceh-Indonesia | 13
+budung
+buya
+budung  /bu.duŋ /  n ikan laut yg 
+bentuknya 
+mirip 
+meunèng, 
+ttp 
+ukurannya lebih lebar
+bugéng /bu.geŋ/ n lihat beugéng
+buhuk  /bu.hu?/  v kondisi tubuh 
+yg hampir tenggelam dan sudah 
+terminum air karena batas ketinggian 
+air sudah sampai leher
+bui laôt /buy la.ot/ n ikan lumba-lumba
+bukum /bu.kum/ n ikan laut yg kulitnya 
+berduri,
+tidak dapat dimakan karena beracun, 
+yg menggelembungkan diri ketika 
+disentuh, (Diodon liturosus); ikan 
+buntal
+bula /bu.la/ n ikan laut yg panjangnya 
+1 m  
+buleun /bu.lɯn/ n 1 satelit alami yg 
+mengitari bumi, tampak bersinar pada 
+malam hari karena pantulan sinar 
+matahari2 masa atau jangka waktu 
+perputaran bulan mengitari bumi dari 
+mulai tampaknya bulan sampai hilang 
+kembali (29 atau 30 hari)
+buleun 
+peungeuh 
+/bu.lɯn 
+pɯ.ŋɯh /  n fase bulan terang 
+dimulai 
+dari 
+10–20 
+hari, 
+biasanya hasil tangkapan tidak 
+banyak
+buleun 
+peunoh 
+/bu.lɯn 
+pɯ.noh/ n 1 bulan berbentuk 
+sempurna; purnama; 2 n saat 
+purnama, air pasang besar, 
+biasanya daging kepiting berisi 
+penuh (padat)
+buleun raja timoh /bu.lɯn ra.ja 
+ti.moh/  n lengkung spektrum 
+warna di langit, tampak karena 
+pembiasan sinar matahari oleh 
+titik-titik hujan atau embun; 
+pelangi 
+bung /buŋ/ n lihat alok
+bungkuh  /buŋ.kuh/  n ikan kecil, 
+datang dr laut ke sungai pada waktu 
+tertentu, apabila ia telah besar disebut 
+lulôh; muntah naga
+bunot  /bu.nõt/  n pohon yg hidup 
+di pesisir yg berpasir dan berbatu 
+karang, kayunya keras, dipergunakan 
+sebagai bahan pembuat perahu dan 
+tiang kapal (Calophyllum Inophyllum); 
+nyamplung
+burôk  /bu.ro?/  n sebuah pulau dng 
+formasi 
+batu 
+karang, 
+ditumbuhi 
+rerumputan yg menelusup di antara 
+karang, tampak di permukaan air laut
+buya 
+/bu.ja/ 
+n 
+binatang 
+melata 
+(reptilia) berdarah dingin bertubuh 
+besar dan berkulit keras, bernapas 
+dng paru-paru, hidup di air (sungai, 
+laut); buaya
+
+##### PAGE 14
+14 | Kamus Kemaritiman Aceh-Indonesia  
+cabé 
+ciceut
+C 
+cabé /ca.be/ n ikan karang, berwarna 
+coklat, 
+perutnya 
+berwarna 
+putih, 
+pundaknya 
+memiliki 
+bintik-bintik, 
+habitatnya di laut dangkal, sirip 
+dorsalnya berbisa, dan bagian dari 
+genus Siganus
+cama /ca.ma/ n burung laut berwarna 
+putih keabu-abuan, berparuh panjang 
+dan 
+runcing, 
+bersayap 
+panjang 
+yg ujungnya meruncing, ekornya 
+bercanggah seperti garpu, badannya 
+langsing, berkaki pendek kemerah-
+merahan dan berselaput renang; dara 
+laut (Thalasseus bengalensis)
+cangah /ca.ŋah/ n ikan laut berbadan 
+bulat yg siripnya berwarna kemerah-
+merahan, dikenal juga kakap ekor 
+bercabang (Aphareus furca)
+cap bakôy  /cap ba.koj/  n ikan yg 
+ukurannya mencapai 9 cm, tubuhnya 
+agak membulat, warnanya kecoklatan 
+dng bercak putih pada tutup insang 
+dan 
+sirip-siripnya, 
+dan 
+matanya 
+menonjol, disebut juga cicak bakôy 
+(Periophthalmus malaccensis)
+capai /ca.pay/ n lihat cabe
+caruk iku /ca.ru? i.ku/ n ruang antara 
+dinding haluan dan buritan perahu di 
+bagian belakang
+caruk ulè /ca.ru? ulɛ/ n ruang antara 
+dinding haluan dan buritan perahu di 
+bagian depan
+cawik /ca.wĩ?/ 1 n alat pengait kepiting 
+berupa  galah dari besi, panjangnya 
+sekitar 1—2 m, 
+ujungnya melengkung dan gagangnya 
+terbuat dari bambu, digunakan untuk 
+mengambil kepiting dari sarangnya; 2 
+v mengaitkan
+céng  /ceŋ/ n alat untuk mengukur 
+berat ikan; timbangan
+awak céng  /a.wa? ceŋ/  n 
+petugas pengelola cèng
+ceudék /cɯ.de?/ n bambu atau kayu 
+ringan yg dipasang  di kiri kanan 
+perahu, berbentuk seperti sayap, 
+sebagai alat pengatur keseimbangan 
+agar perahu tidak mudah terbalik; 
+cadik
+ceumeucôt /cɯ.mɯ.cot/  n rumput 
+yg batangnya seukuran jarum suntik, 
+bunganya menempel di pakaian bila 
+bersentuhan, tumbuh di daerah yg 
+lembap, 
+dimanfaatkan 
+anak-anak 
+sebagai adu kuat 
+dng cara melilitkan batangnya satu 
+sama lain
+ceungai  /cɯ.ŋai/  n pohon rimba yg 
+besar dan tinggi, kayunya berat, 
+digunakan untuk berbagai tujuan, 
+seperti bahan pembuatan rumah, 
+perahu, jembatan, bantalan rel dan 
+mebel (Balanocarpu); cengal
+ceuraceuk /cɯ.ra.cɯ?/ n gelombang 
+laut yg kecil akibat hempasan angin
+ceureubok /cɯ.rɯ.bɔ?/ n ikan tongkol 
+berukuran kecil, biasanya dibakar
+ciceut   /ci.cɯt/ n ikan teri dng ukuran 
+yg lebih besar
+ciceut    /ci.cɯt/  n lihat bada (istilah 
+ini biasa digunakan di Lhokseumawe 
+dan Aceh Timur)
+
+##### PAGE 15
+Kamus Kemaritiman Aceh-Indonesia | 15
+ciko 
+cut 
+ciko   /ci.kɔ/ n kondisi air yg bercampur 
+lumpur, 
+air 
+sungai/laut 
+berwarna 
+coklat, air yg tidak bening
+cirik /ci.ri?/  n ikan laut yg berbadan 
+pipih, bersisik kecil-kecil berkilat, 
+berahang yg dapat menjulur untuk 
+mengisap 
+makanan 
+(Leiognathus 
+nuchalis); petek 
+cirik buju  /ci.ri? bu.ju/  n ikan 
+laut yg bertulang belakang, 
+panjangnya mencapai 10 cm, 
+berwarna 
+coklat 
+keperakan, 
+serta 
+bentuk 
+tubuh 
+lebar 
+dan pipih tanpa sirip atas 
+(Leiognathus sp)
+cirik keutapang /ci.ri? kɯ.ta.
+paŋ/  n ikan laut bertulang 
+belakang, 
+panjangnya 
+mencapai 10 cm, berwarna 
+coklat keperakan, serta bentuk 
+tubuh lebar dan pipih dng 
+sirip atas yg tajam; ikan petek 
+(Leiognathus equulus)
+côh    /coh/ n pintu keluar masuk air 
+di tambak,
+ terbuat dari papan dan batang pohon 
+kelapa, digunakan untuk membuang/
+menambah air dari atau ke tambak
+cop   /cɔp/ v memperbaiki jaring atau 
+jala yg rusak sembari menunggu 
+jadwal melaut
+crö /crʌ/ n jaring penahan ikan/udang, 
+ditempatkan di dalam daka
+crit  /crit/  a amat, sangat (tt  panas 
+matahari); terik
+cu /cu/ n siput kecil berwarna hitam, 
+hidup di perairan air tawar (menempel 
+di bebatuan, akar tanaman, dsb), 
+dapat dimakan, dan dikenal juga 
+susuh kura (Sulcospira testudinaria)
+cu ayè /cu a.yɛ/ n ikat pinggang 
+untuk menarik pukat darat, 
+terbuat 
+dari 
+tali 
+berbentuk 
+lingkaran seukuran pinggang 
+penggunanya, 
+dilapisi 
+dng 
+selang air atau kain, ujung tali 
+disisakan sekitar 30 cm untuk 
+mengikat tali pukat darat
+cualè /cu.wa.lɛ/ n ikan laut, bentuknya 
+panjang, tubuhnya pipih, ekornya 
+halus, dan giginya tajam (Trichiurus 
+lepturus); layur
+cukè jalô /cu.kɛ ja.lo/ n pungutan yg 
+dikenakan pada perahu, disebut juga 
+wasé (di daerah Aceh Barat)
+cut /cũt/ n ikan laut berbentuk bulat, 
+berwarna putih dan coklat, biasanya 
+dikonsumsi 
+untuk 
+mempercepat 
+pemulihan pascaoperasi
+
+##### PAGE 16
+16 | Kamus Kemaritiman Aceh-Indonesia  
+dageuh
+doking
+D
+dageuh  /da.gɯh/  n alat penangkap 
+udang 
+atau 
+ikan 
+dari 
+bambu, 
+berbentuk segi empat, menggunakan 
+kain kelambu atau jaring halus, 
+digunakan dng cara disorong
+dagu  /da.gu/  n bagian atas lunas 
+perahu, ruang segitiga pada bagian 
+depan linggi perahu; dagu ulè jalô 
+daka  /da.ka/  n pengempang air yg 
+dapat dinaikturunkan (dibuat dari besi 
+atau papan) pada tambak atau irigasi
+dama /da.ma/ 1. n. kayu atau pohon 
+damar; 2 n getah damar berwarna 
+kuning 
+untuk 
+menutup 
+celah 
+sambungan 
+pada 
+dinding 
+kapal/
+perahu
+dawé /da.we/ n perambut terbuat dari 
+timah dan bulu ayam menyerupai 
+udang, berfungsi sebagai pemberat 
+dan umpan buatan, penggunaannya 
+sama dng memakai naca
+dawè  /da.wɛ/  n kawat yg terbuat 
+dr baja yg diikatkan pada benang 
+utama pancing, pada benang cabang 
+dipasangi kili-kili
+dayông /da.yoŋ/ 1 v mendayung; 2 n 
+alat untuk mendayung, disebut juga 
+penganyoh 
+dèk /dɛʔ/ n lantai dari kayu keras pada 
+kapal; geladak
+déndén  /den.den/  n ikan laut yg 
+sangat besar dl dongeng; paus
+deu /dɯ/ a dangkal
+deupa  /dɯ.pa/ n ukuran kedalaman 
+laut, 1--1,20 m
+deut  /dɯt/  a ikan laut yg bentuknya 
+memanjang, tubuh bagian depan bulat 
+torak, dan bagian belakang dekat ekor 
+memipih tegak (Glossogobius giuris); 
+beloso laut
+dho  /dhɔ/  n kayu penyokong yg 
+dipasang pada tiang perahu
+dirui  /di.ruy/  a perlahan-lahan dan 
+silir-semilir (tt angin); sepoi-sepoi
+dok /dɔ?/ n tempat perbaikan kapal
+doking /dɔ.kiŋ/ 1 n tempat pembuatan 
+atau perbaikan kapal; 2 v kegiatan 
+pembuatan atau perbaikan kapal
+
+##### PAGE 17
+Kamus Kemaritiman Aceh-Indonesia | 17
+èh balok
+eungkôt
+E
+èh balok    /ɛh ba.lɔ?/  n es balok 
+diproduksi 
+dari 
+air 
+asin, 
+untuk 
+menyegarkan ikan
+eumpeuk leubu /ɯm.pɯ? lɯ.bu/  n 
+tanaman liar yg tumbuh di lahan berair 
+(parit atau rawa); talas hijau; keladi
+eunggeuk-eunggeuk 
+/ɯŋ.gɯ?- 
+ɯŋ.gɯ?/  n ikan laut yg badannya 
+panjang, moncongnya runcing, mirip 
+ikan layur (Gempylus serpens)
+eungkôt /ɯŋ.kot/  n ikan: jaro uneun 
+ap bu, jaro wi kawé – ‘tangan kanan 
+makan nasi, tangan kiri memancing 
+ikan’
+eungkôt 
+mirah 
+/ɯŋ.kot 
+mi.rah/ n ikan kakap merah
+eungkôt plata  /ɯŋ.kot pla.
+ta/  n ikan kembung berukuran 
+kecil, ujung ekor dan ujung sirip 
+berwarna kuning 
+eungkôt 
+salam 
+/ 
+ɯŋ.kot 
+sa.lam/ 	 n ikan laut berukuran 
+panjang hingga 70 cm, berwarna 
+abu-abu, bagian sampingnya 
+berwarna 
+kekuningan 
+(Scomber japonicus), disebut 
+juga eungkôt cumok  
+eungkôt sampit /ɯŋ.kot sam.pit 
+n ikan bermulut kecil, berwarna 
+hitam, 
+bisa 
+menyemprotkan 
+air untuk menangkap mangsa 
+(misalnya serangga)
+eungkôt siblah /ɯŋ.kot si.blah/ 
+n ikan laut berbentuk pipih, 
+sebelah sisi tubuhnya polos, 
+sebelah 
+lainnya 
+berwarna 
+gelap, bersisik, dan dagingnya 
+tebal; ikan sebelah
+eungkôt teubai bibi  /ɯŋ.kot 
+ʈɯ.bay bi.bi/  n ikan karang yg 
+tebal bibirnya, dan berwarna 
+merah
+
+##### PAGE 18
+18 | Kamus Kemaritiman Aceh-Indonesia  
+eungkôt
+euntông
+eungkôt 
+teutet 
+/ɯŋ.kot 
+ʈɯ.ʈəʈ/ n ikan bakar
+kuah 
+leumak 
+eungkôt 
+panggang 
+/ku.wah 
+lɯ.ma? 
+ɯŋ.kot paŋ.gaŋ/  n masakan 
+ikan bakar yg disuwir, dimasak 
+dng santan dan campuran 
+bumbu halus lainnya
+payéh boh eungkôt /pa.jeh bɔh 
+ɯŋ.kot/ n telur ikan yg dipepes: 
+bak warông Pak Usman tip uro 
+na — ‘di warung Pak Usman, 
+setiap hari tersedia pepes telur 
+ikan’
+euntông /ɯn.toŋ/ n kantong yg terbuat 
+dari benang nilon yg dirajut berbentuk 
+kerucut sebagai tempat ikan hasil 
+tangkapan
+
+##### PAGE 19
+Kamus Kemaritiman Aceh-Indonesia | 19
+gabu
+gatheuk 
+G
+gabu /ga.bu/ n ikan yg hidup di batuan 
+karang laut sampai kedalaman 188 
+m, panjang mencapai 170 cm, berat 
+mencapai 8 kg, ekor bersisik keras
+gabu itam /ga.bu i.tam/ n ikan 
+gabu berwarna gelap
+gabu putéh /ga.bu pu.teh/  n 
+ikan gabu berwarna terang
+tumèh gabu /tu.mɛh ga.bu/  n 
+masakan berkuah yg ditumis 
+dng campuran berbagai bumbu, 
+bahan utamanya ikan kuwe
+gada-gada /ga.da-ga.da/  n bendera 
+penanda jaring; umbai; umbul-umbul
+gadéng  /ga.deŋ/  n 1 bagian kepala 
+perahu 
+yg 
+paling 
+depan 
+untuk 
+menyimpan tiang bendera kapal dan 
+galah 
+galah /ga.lah/ n pendorong kapal/ 
+perahu ketika berdekatan dng jaring 
+atau daratan: cok — ! tatulak bôt 
+mangat bèk jitajô lam jaréng ‘ambil 
+galah! kita dorong perahu agar tidak 
+menabrak jaring’ 
+ganthup  /gan.ʈhup/  n ikan berukuran 
+kecil sebesar telunjuk org dewasa, 
+berwarna kuning dan merah di badan 
+bagian 
+atasnya, 
+pada 
+umumnya 
+ekornya bergaris kuning; ikan biji 
+nangka
+gantup /gan.ʈup/ n lihat ganthup
+gapah iték /ga.pah i.te?/  n tanaman 
+yg biasa tumbuh di dataran rendah, 
+daunnya berbulu halus dan dapat 
+digunakan 
+sebagai 
+obat 
+luka 
+(Chromolaena odorata)
+gatheuk /ga.ʈhɯʔ/  n udang besar 
+yg hidup di air payau, membuat 
+sarang dari tanah sampai setinggi 1 
+m, rasanya tidak enak, disebut juga 
+katheuk
+
+##### PAGE 20
+20 | Kamus Kemaritiman Aceh-Indonesia  
+gati 
+grugôk
+gati /ga. ʈi/ n lihat ceudék
+geu  /gɯ/  v meraba: – eungkôt 
+‘menangkap ikan dng cara meraba’
+geuladak 
+/gɯ.la.da?/ 
+n 
+tempat 
+penyimpanan ikan selama di laut
+geulama /gɯ.la.ma/  n ikan laut 
+berwarna putih, bentuknya bulat, 
+panjangnya sekitar 15 cm, mulutnya 
+agak runcing, ada dua jenis, jenis 
+lainnya berbentuk pipih; ikan gelama
+geulanteu  /gɯ.lan.ʈɯ/  n kilat yg 
+disertai dng suara keras biasanya 
+disertai hujan lebat; halilintar
+geulumbang /gɯ.lum.baŋ/ n ombak 
+besar yg bergulung-gulung (di laut)
+geunadéng /gɯ.na.deŋ/	
+n 
+1 
+lihat gadéng; 2 kerangka utama kapal 
+terbuat dari kayu keras
+geuneugom 
+/gɯ.nɯ.gɔm/ 
+n 
+penangkap ikan tradisional, terbuat 
+dari bilah bambu yg diraut dan 
+diruncingkan, 
+lalu 
+dirangkai 
+dng 
+menggunakan tali rotan yg berjerjak 
+dan berongga seperti bubu
+geuneugom tring /gɯ.nɯ.gɔm 
+triyŋ/ n bambu yg dijalin dng 
+rotan
+geurana buleun /gɯ.ra.na bu.lɯn/ n 
+cahaya bulan tidak sampai ke bumi 
+karena titik pusat geometri bulan, 
+bumi, dan matahari terletak pada satu 
+garis dan bumi berada di tengahnya;
+fenomena alam; gerhana bulan
+geurana mata uro /gɯ.ra.na ma.ta 
+u.rɔ/ n saat bulan terletak di tengah-
+tengah jarak antara bumi dan matahari 
+sehingga bayangan bulan jatuh ke 
+permukaan bumi; gerhana matahari
+geureudhum /gɯ.rɯ.dhum/ n suara 
+keras aat hujan; guruh
+geureugak /gɯ.rɯ.ga?/ n ikan dencis
+geureuguh 
+/gɯ.rɯ.guh/ 
+n 
+jenis 
+kepiting kecil yg hidup di pantai, tidak 
+dapat dimakan, umumnya muncul di 
+malam hari
+geureupôh /gɯ.rɯ.poh/  n 1 ikan yg 
+hidup di karang laut, berwarna terang, 
+panjangnya bisa mencapai lebih dari 
+1 m; 2 kandang ayam/bebek
+geuruguy /gɯ.ru.guj/ n kepiting kecil 
+berwarna putih, larinya kencang, 
+hidup di pantai, sering disebut kepiting 
+hantu
+euteum  /gɯ.tɯm/  n kepiting bakau 
+berkaki enam dan bersepit dua, 
+hidup di tepi pantai, sungai, dan parit, 
+cangkangnya mencapai 20 cm, dng 
+berat mencapai 2 kg; ketam
+gleum  /glɯm/  n pohon yg kulitnya 
+digunakan untuk menutup celah-celah 
+dinding dan lantai perahu; gelam
+glodok /glɔ.dɔ?/ n lihat cap bakôy
+glumeut /glu.mɯt/ n geladak perahu
+go kawé /gɔ ka.we/ n batang pancing 
+terbuat dari buluh, kayu, fiber, atau 
+grafit sebesar ibu jari, panjangnya 
+kira-kira 2 sampai 3 m; joran
+golkar /gol.kar/ n lihat cabe
+grapè /gra.pɛ/ n ikan kerapu
+grôh buso /groh bu.sɔ/  n alat untuk 
+membersihkan sisik ikan yg terbuat 
+dari paku dan kayu
+grugôk /gru.go?/  n ark tambak 
+yg ukurannya lebih kecil daripada 
+neuheun 
+
+##### PAGE 21
+Kamus Kemaritiman Aceh-Indonesia | 21
+gudang
+guminya
+gudang  /gu.daŋ/  n petakan tambak/
+kolam 
+kecil 
+untuk 
+menyemai/
+membesarkan 
+benur 
+dan 
+nener 
+sebelum dilepaskan ke kolam besar
+gulam /gu.lam/ n ikan laut berwarna 
+merah keemasan, telurnya biasa 
+diasinkan dan dimakan sebagai lauk; 
+ikan kerisi
+guminya /gu.mi.ɳa/  n dinding kecil 
+tegak di belakang buritan perahu 
+pukat, disebut juga gö keutapè (istilah 
+di pesisir barat)
+
+##### PAGE 22
+22 | Kamus Kemaritiman Aceh-Indonesia  
+hanyöt
+hôi
+H
+hanyöt /ha.nyʌt/ n terbawa oleh arus 
+(banjir, ombak, dan sebagainya); 
+hanyut
+harôk  /ha.ro?/  a kondisi laut yg 
+bergelora, keadaan kacau akibat 
+terpaan angin, hujan, dan badai
+hôi	
+ /hoy/ v memanggil, disebut 
+juga hei
+hôi panyang /hoy pa.ɳaŋ/  n 
+sorakan 
+panjang 
+tanda 
+kesenangan ketika pertama kali 
+melihat kawanan ikan tongkol
+
+##### PAGE 23
+Kamus Kemaritiman Aceh-Indonesia | 23
+i 
+ituah 
+I
+i  /i/  n zat cair, pada kondisi standar 
+tidak memiliki rasa, bau maupun 
+warna dan terdiri atas hidrogen dan 
+oksigen; air
+i beuna /i bɯ.na/ n  air bah yg 
+menyebabkan banjir besar
+i krung  /i kruŋ/ 	 n 
+ 
+air 
+yg 
+berasal 
+dr 
+aliran 
+sungai: 
+barang kadum raya –- nyang 
+geubileung i kuala ‘sebesar apa 
+pun air sungai, yg berarti tetap 
+air kuala’
+i lagang / i la.gaŋ/ n air payau 
+yg terdapat di rawa
+i masén / i ma.sen/ n air asin
+i paseung / i pa.sɯŋ/ n kondisi 
+permukaan air laut yg naik
+secara 
+berkala 
+disebabkan 
+oleh gaya gravitasi dari benda-
+benda langit; air pasang
+i raya  /i ra.ja/  n air yg 
+meluap, mengalir deras, dan 
+menggenangi perkampungan, 
+kota, dan sebagainya; banjir: 
+meunyo mantöng reudôk di glé 
+mantöng sabé — teuka ‘kalau 
+masih mendung di gunung, 
+masih selalu datang banjir’
+i surôt /i su.rot/ 	 n 
+kondisi 
+permukaan  air laut  yg surut 
+secara 
+berkala 
+disebabkan 
+oleh gaya gravitasi dari benda-
+benda langit; air surut
+i tabeu /i ta.bɯ/ 	 n air yg tidak 
+memiliki rasa; air tawar
+i thô /i ʈho/ n kondisi sungai atau 
+pantai yg kering akibat air surut
+mata i  /ma.ta i/  n sumber air; 
+mata air: bak gunong nyan na 
+— ‘di gunung itu ada mata air’
+iku /i.ku/ n bagian belakang; ekor
+iku jalô  /i.ku ja.lo/n bagian 
+belakang perahu
+iku kapai /i.ku ka.pay/n bagian 
+belakang kapal
+ilé /i.le/ v bergerak ke permukaan yg 
+lebih rendah (tt  air, barang cair, dan 
+sebagainya); mengalir
+insya  /in.ʃa/  n waktu gelap sesudah 
+matahari 
+terbenam; 
+isya: 
+kamo 
+meulaôt leuh — ‘kami melaut setelah 
+isya’
+intè i /in.tɛ i/ n hantu laut
+ituah    /i.tu.wah/  n terumbu karang 
+buatan yg dibuat dari ban bekas yg 
+dicor
+
+##### PAGE 24
+24 | Kamus Kemaritiman Aceh-Indonesia  
+jalèman
+jang 
+J
+jalèman /ja.lɛ.man/ n ikan yg siripnya 
+panjang, 
+bentuknya 
+seperti 
+ikan 
+bawal, berwarna abu kehitaman, 
+bersisik halus, panjangnya dapat 
+mencapai 30 cm
+jalén /ja.len/ 1 v menjalin, merangkai, 
+menganyam 
+(lidi, 
+bambu, 
+atau 
+rotan); 2 n lantai bambu atau kayu yg 
+dirangkai rapat-rapat dalam perahu 
+utk meletakkan sesuatu, misalnya 
+ikan
+jalô  /ja.lo/  n 1. sampan yg terbuat 
+dari sebatang pohon kayu utuh, 
+digerakkan dng dayung atau mesin, 
+muat 2—4 orang, digunakan untuk 
+menyeberang atau menangkap ikan 
+di sungai/danau
+awak jalô /a.wa? ja.lo/ n anak 
+buah kapal yg menghalau atau 
+mengarahkan ikan ke jaring dng 
+memukul-mukul permukaan air 
+memakai sebatang kayu atau 
+bambu, disebut juga awak bak 
+jalô
+jalô kulèk  /ja.lo ku.lɛ?/ n 
+sampan dng geladak berbentuk 
+lancip, 
+digunakan 
+untuk 
+menyeberangi atau menangkap 
+ikan di sungai; kolek
+jalô meunèng  /ja.lo mɯ.nɛŋ/ 
+n 
+sampan 
+dng 
+geladak 
+berbentuk landai, digunakan 
+untuk membawa jaring atau 
+mengangkut hasil tangkapan 
+ikan-ikan kecil, seperti meunèng 
+(ikan lemuru)
+jalô peumeu  /ja.lo pɯ.mɯ/ 
+n sampan penyeberangan di 
+sungai/danau
+jalô 
+robin 
+/ja.lo 
+rɔ.bin/ 
+n 
+sampan bermesin robin
+jalô seureumpéh /jalo sɯ.rɯm.
+peh/ n sampan dng linggi muka 
+dan belakang yg berbentuk 
+lunas
+jalu /ja.lu/ n ikan laut berbentuk kecil, 
+mulutnya besar, dan berwarna kuning
+jambô /jam.bo/  n gubuk yg terbuat 
+dari kayu, digunakan sebagai tempat 
+berteduh, bermalam bagi orang yg 
+menjaga atau mengelola tambak
+jambô biléh /jam.bo n  bi.leh/ n 
+tempat untuk merebus ikan bilis
+jampè /jam.pɛ/ n tanaman yg memiliki 
+batang keras,
+ tinggi mencapai 2 m, memiliki banyak 
+cabang 
+yg 
+tidak 
+lurus 
+ruasnya, 
+bentuknya spt bakau, terdapat di 
+pinggir sungai atau laut
+jamprut 
+/jam.prut/ 
+n 
+tanaman 
+berambut (sj rumput laut) yg tumbuh 
+dl air payau
+jang /jaŋ/ n 1 lihat beulacang (istilah 
+ini biasa digunakan di daerah Aceh 
+Besar dan Lhokseumawe); 2 alat 
+menangkap ikan/udang, digunakan 
+di tambak atau alu; rangkaian lidi yg 
+diikat dng tali dan berbentuk seperti 
+gulungan tikar yg digunakan untuk 
+memerangkap ikan atau udang
+
+##### PAGE 25
+Kamus Kemaritiman Aceh-Indonesia | 25
+jap
+jaréng
+jap   /jap/ n mulut bubu tersangkut di 
+akar pohon bakau’
+jaréng /ja.reŋ/ n alat penangkap ikan 
+dan sebagainya yg berupa siratan 
+(rajutan) 
+tali 
+(benang, 
+umumnya 
+dari nilon) yg membentuk mata jala, 
+beraneka ukuran, digunakan dng 
+cara ditebar secara melintang atau 
+melingkar; jaring: gopnyan geublo — 
+barô barosa ‘beliau membeli jaring 
+baru barosa (dua hari yg lalu)’
+jaréng 
+apolo 
+/ja.reŋ 
+a.po.
+lo/  n jaring tanpa pemberat, 
+panjang 45 m memiliki 3 
+mata jaring dng jenis jaring 
+udang, 
+ikan, 
+dan 
+kepiting 
+(istilah ini digunakan di pesisir 
+timur): si Agam jijaréng udeung 
+ngön — ‘si Agam menjaring 
+udang dng jaring apolo’
+jaréng 
+eungkôt 
+/ja.reŋ 
+ɯŋ.kot/  n jaring yg terbuat 
+dari benang nilon, dng lubang 
+berukuran sekitar 0,5—5 cm; 
+jaring ikan: peu tajak tiek 
+–- malam nyo? ‘apakah kita 
+menebar jaring ikan malam ini?’
+jaréng jeunara /ja.reŋ jɯ.na.
+ra/ n jaring yg digunakan untuk 
+menangkap 
+ikan 
+jeunara, 
+memiliki lebar lubang 2 cm: 
+abu lôn geucop –- ‘ayah saya 
+menjahit jaring jeunara’
+jaréng kadra /ja.reŋ ka.dra/  n 
+jaring 
+yg 
+digunakan 
+untuk 
+menangkap 
+ikan 
+kadra, 
+panjangnya sekitar 30 m, lebar 
+lubangnya sekitar 2,5 cm: –- ka 
+geuba u kuala lé pawang ‘jaring 
+kadra sudah dibawa ke kuala 
+oleh pawang’
+jaréng 
+meunèng 
+/ja.reŋ 
+mɯ.nɛŋ/ n jaring yg digunakan 
+untuk menangkap ikan lemuru; 
+jaring lemuru: awak bôt jalô 
+jipakèk -– ‘nelayan sampan 
+menggunakan jaring lemuru’
+jaréng nilon /ja.reŋ ni.lon/  n 
+jaring yg terbuat dari nilon; 
+jaring nilon
+jaréng 
+udeung 
+ 
+/ja.reŋ 
+u.dɯŋ/  n jaring yg digunakan 
+untuk menangkap udang,
+lebar mata jaringnya 0,5—1 cm; 
+jaring udang: — meusangkôt 
+bak ukheu bak bangka ‘jaring 
+udang 
+meujaréng 
+/mɯ.ja.reŋ/ 
+v 
+menangkap ikan menggunakan 
+jaréng
+
+##### PAGE 26
+26 | Kamus Kemaritiman Aceh-Indonesia  
+jèngèk
+juruju 
+jèngèk 
+/jɛ.ŋɛ?/ 
+1 
+v 
+mengambil 
+hasil tangkapan laut punya orang 
+lain; 
+2 
+n 
+orang 
+yg 
+membantu 
+dalam 
+membongkar 
+muat 
+untuk 
+mendapatkan imbalan
+jeu  /jɯ/  n alat untuk menangkap 
+ikan yg berupa jaring bulat, terbuat 
+dari nilon, ujung bawahnya dipasang 
+rantai 
+timah 
+sebagai 
+pemberat, 
+digunakan dng cara menebarkan atau 
+mencampakkan ke air; jala
+jeunaha /jɯ.na.ha/  n ikan laut jenis 
+kakap, berukuran besar di atas 30 
+cm, memiliki bintik hitam di badannya 
+(Lutjanus fulviflamma) 
+jeunara /jɯ.na.ra/  n ikan laut yg 
+berbintik-bintik hitam kecil, bentuknya 
+seperti ikan kembung (Rastrelliger 
+kanagurta)
+jeuneurop  /jɯ.nɯ.rɔp/  n tiang-tiang 
+yg dihunjam ke dalam tanah utk 
+memperkuat tanggul (sungai, tambak, 
+kolam, dan sebagainya): 
+nibak pageu kong -- nibak syèdara 
+kong ngön gop ‘daripada pagar, lebih 
+kuat jeuneurop, daripada saudara, 
+lebih erat dengan orang lain’ (hal 
+persaudaraan) 
+jeungoh bui  /jɯ.ŋɔh buy/  n lubang 
+utk memasukkan sumbu kipas pada 
+perahu.
+jeurambai  /jɯ.ram.bay/  n geladak 
+kecil di antara sayap-sayap perahu 
+cadik
+jeureunèh 
+/jɯ.rɯ.nɛh/ 
+a. 
+terlihat 
+terang (tt  air), bening, bersih, dan 
+tidak keruh; jernih
+jeurigèn /jɯ.ri.gɛn/ n tempat (bensin, 
+air, minyak tanah, dan sebagainya) 
+biasanya berisi 20 liter, dibuat dari 
+logam atau plastik, berbentuk empat 
+persegi panjang, pipih, dan berkepala 
+sempit; jeriken
+jeuruju /jɯ.ru.ju/ n perdu yg tumbuh 
+lurus, tinggi hingga 2 m, daunnya 
+berduri, 
+tebal 
+dan 
+sangat 
+kaku 
+(Acanthus ilicifolius); jeruju
+jhô  /jho/  v mendorong atau menolak 
+perahu: neu— jalô nyan u darat ‘dorong 
+perahu itu ke darat’ jeureubok /jɯ.rɯ.
+bɔk/ n lihat ceureubok
+jijip  /ji.jip/  n ikan laut yg bentuknya 
+lebih 
+pendek 
+daripada 
+tangkulo, 
+panjangnya kurang dari 50 cm, bentuk 
+mulutnya memanjang dan lancip, 
+serta warnanya gelap
+juhang /ju.haŋ/ n ikan laut yg bersama-
+sama menampakkan kepalanya jika 
+timbul di permukaan air, seperti ikan 
+pari, bertanduk
+juhok  /ju.hɔ?/  n alat yg terbuat dari 
+benang, dirajut, diberi gagang dari 
+bambu/kayu; tangguk
+juruju /ju.ru.ju/ n benalu yg hidup di 
+teri nasi, bentuknya seperti udang, 
+tidak berdaging, dan berduri  
+
+##### PAGE 27
+Kamus Kemaritiman Aceh-Indonesia | 27
+kabé 
+karéng
+K
+kabé /ka.be/ v membelokkan (perahu) 
+ke kanan. lihat abaih (istilah ini biasa 
+digunakan di daerah Lhokseumawe)
+kadra  /ka.dra/  n ikan laut, payau 
+sampai air tawar, panjang mencapai 
+100 cm, berat 12 kg, sisiknya mirip ikan 
+bandeng, berwarna keperakan dan 
+tubuh atasnya berwarna kehijauan, 
+sirip dada kuning pucat dng bercak 
+keunguan 
+(Crenimugil 
+crenilabis) 
+(istilah ini biasa digunakan di daerah 
+Aceh Timur dan Lhokseumawe)
+kaja /ka.ja/ n 1 tali pada pinggir tenda 
+atau pukat (sebagai penguat), tali 
+sambungan antara jerat-jerat 2 satuan 
+hitung untuk jerat
+kajeung /ka.jɯŋ/  n tikar yg dianyam 
+dari daun nipah atau rumbia sebagai 
+atap perahu, penutup padi, dsb
+kakap  /ka.kap/  n lubang pada dasar 
+perahu yg disumbat dng penyumbat 
+kayu untuk mencegah masuknya air
+kambam /kam.bam/  v salah satu 
+teknik memancing dng membiarkan 
+kail 
+sampai 
+semalaman 
+dan 
+di 
+pertengahan kail diikat pelampung 
+kecil sebagai penanda umpannya 
+dimakan ikan predator
+kapai 
+/ka.pay/ 
+n 
+kendaraan 
+pengangkut penumpang dan barang 
+di laut, sungai, dan udara, terbuat dari 
+kayu atau besi
+kapai haji /ka.pay ha.ji/  n 
+kapal penumpang yg khusus 
+digunakan untuk mengangkut 
+jemaah haji (pada masa lalu 
+di Aceh melalui pelabuhan 
+Labuhan Haji, Aceh Selatan).
+kapai i /ka.pay i/  n kendaraan 
+pengangkut penumpang dan 
+barang di laut (sungai dan 
+sebagainya) terbuat dari kayu 
+atau besi, bertiang satu atau 
+lebih, bergeladak, digerakkan 
+oleh mesin atau layar; kapal air 
+atau feri
+kapai laôt /ka.pay la.ot/  n 
+kendaraan 
+pengangkut 
+penumpang dan barang di laut; 
+kapal laut
+kapai layeu /ka.pay la.jɯ/  n 
+kapal layar
+kapai 
+minyeuk 
+/ka.pay 
+mi.ɳɯ?/  n kapal  yg berisi 
+tangki-tangki besar digunakan 
+untuk mengangkut bahan bakar 
+minyak; tanker
+kapai prang /ka.pay praŋ/  n 
+kapal yg dipersenjatai untuk 
+berperang, bermesin, terbuat 
+dari besi
+kapai prang panyang /ka.pay 
+praŋ pa. ɳaŋ/  n kapal perang 
+berukuran panjang
+kapai seulam /ka.pay sɯ.lam/ n 
+salah satu jenis armada perang 
+di laut yg digunakan untuk 
+menyelam, memantau musuh 
+dan menyerang musuh dari 
+dalam laut
+karéng  /ka.reŋ/  n ikan bilis kering, 
+disebut juga karéng awô; teri: bak — 
+pane na gapah ‘pada ikan bilis, tidak 
+mungkin ada lemak’ (artinya, sesuatu 
+yg mustahil) 
+
+##### PAGE 28
+28 | Kamus Kemaritiman Aceh-Indonesia  
+kasè 
+kawé
+asam karéng  /a.sam ka.reŋ 
+/ n karéng yg diolah dng asam 
+sunti, cabai rawit, dan bawang 
+merah
+lado karéng  /la.do ka.reŋ/  n 
+bilis kering goreng yg disambal: 
+— Apa Dolah ka jikirém u lua 
+nanggro ‘sambalado bilis kering 
+Paman Dolah sudah dikirim ke 
+luar negeri’
+karéng leuböt /ka.reŋ lɯ.bʌt/ n 
+karéng besar setengah kering
+phèp karéng /phɛp ka.reŋ/  n 
+bilis kering yg ditumis dng 
+bumbu pepes
+kareu /ka.rɯ/ v menarik benang 
+(pancing, layang-layang)  
+kareung /ka.rɯŋ/ n batu kapur 
+di laut, batuan organik sebagai 
+tempat tinggal binatang karang; 
+koral
+kareung 
+halia 
+/ka.rɯŋ 
+ha.liya/  n karang yg ujung-
+ujungnya runcing dan tajam
+kareung laôt  /ka.rɯŋ la.ot/  n 
+sekumpulan karang yg terdapat 
+di dalam laut; terumbu karang
+kasè  /ka.sɛ/  n lihat budung (istilah 
+kasè biasa digunakan di Aceh Barat 
+dan Timur)
+kasè keulam /ka.sɛ kɯ.lam/ n 
+ikan laut dng mata yg besar, 
+berwarna abu-abu, dan memiliki 
+banyak 
+sisik, 
+panjangnya 
+sekitar 10 cm dng bentuk tubuh 
+bulat, berwarna abu-abu, dan 
+panjang sekitar 10 cm
+kasè 
+keulam 
+lipéh 
+/ka.sɛ 
+kɯ.lam li.peh/  n ikan laut dng 
+mata yg besar, bentuknya pipih, 
+berwarna abu-abu, dan memiliki 
+banyak 
+sisik, 
+panjangnya 
+sekitar 10 cm
+kasè 
+minyeuk 
+/ka.sɛ 
+mi. 
+ɳɯ?/ n ikan laut berwarna agak 
+kekuningan, panjangnya sekitar 
+10 cm, kalau dijemur keluar 
+minyak dari tubuhnya
+katheuk /ka.thɯ?/n lihat gatheuk.
+kawé /ka.we/ n alat untuk menangkap 
+ikan, terbuat dari sepotong kawat yg 
+ujungnya melengkung dan berkait, 
+diberi tali dan gagang dari kayu, 
+bambu, dan sebagainya; pancing: 
+tateupuk i tareugam angèn, han peu 
+peumeun — tan mata ‘menepuk air 
+menggenggam angin, tak ada artinya 
+memainkan pancing tak bermata’
+kawé hu /ka.we hu/ n pancing 
+yg ditarik perahu menggunakan 
+benang nomor 300 dan mata 
+pancing nomor 7, mata pancing 
+diikat dng kail yg disambung 
+dng kawat dan nilon berukuran 
+4 mm, bulu ayam, atau sejenis 
+plastik yg dimodifikasi untuk 
+menangkap ikan di permukaan, 
+misalnya ikan parang-parang
+kawé tambang /ka.we tam.
+baŋ/ n lihat kambam
+kawé timu  /ka.we ti.mu/  n 
+pancing 
+untuk 
+menangkap 
+ikan yg berada di permukaan, 
+misalnya ikan parang, cara 
+menggunakannya 
+dilempar, 
+kemudian diangkat
+
+##### PAGE 29
+Kamus Kemaritiman Aceh-Indonesia | 29
+kawét 
+keunaleung
+mata kawé /ma.ta ka.we/  n 
+jarum yg tajam pada ujung kail, 
+berbentuk seperti kait, sebagai 
+tempat 
+menaruh 
+umpan, 
+biasanya memiliki ukuran yg 
+berbeda; mata kail
+kawét /ka.wet/ n ikan laut yg ukurannya 
+bisa mencapai 170 cm dan berat 80 
+kg, memiliki dahi yg tampak besar dan 
+berwarna keperakan dng semburat 
+kuning (Caranx sexfasciatus)
+kayôh  /ka.yoh/  1 n tongkat besar 
+yg pipih dan lebar pada ujungnya, 
+dipakai untuk mengayuh perahu; 2 
+v mengayuh perahu menggunakan 
+tongkat besar yg pipih dan lebar 
+pada ujungnya: mita reuseki ta— 
+— bèk tuwo pajôh sihat anggöta 
+‘mencari rezeki bersusah payah, 
+jangan lupa makan agar tubuh sehat 
+(menikmatinya)’
+keudidi  /kɯ.di.di/  n burung rawa yg 
+jalannya melompat-lompat, ekornya 
+selalu 
+menjungkit-jungkit 
+(Calidris 
+tenuirostis); terinil
+keudo /kɯ.dɔ/ n sesuatu yg bercampur 
+dng barang cair yg telah turun ke 
+bawah dan bertimbun di dasar; residu.
+keumamah 
+/kɯ.ma.mah/ 
+n 
+ikan 
+tongkol yg direbus, dibuang durinya, 
+lalu dikeringkan; ikan kayu
+asam 
+keumamah 
+/a.sam 
+kɯ.ma.mah./  n ikan kayu yg 
+diiris 
+tipis-tipis, 
+diulek 
+dng 
+bumbu
+keumamah teucrah /kɯ.ma.
+mah tɯ.crãh/  n ikan kayu yg 
+disuwir dan ditumis
+keumamah teuphèp /kɯ.ma.
+mah tɯ.phɛp/  n ikan kayu yg 
+ditumis dng bumbu pepes
+peugöt keumamah /pɯ.gɛt 
+kɯ. ma.mah/  v membuat ikan 
+kayu: ureung inöng di gampông 
+Lampulo le geu—‘ibu-ibu di 
+Lampulo, banyak yg membuat 
+ikan kayu’ 
+keumawé /kɯ.ma.we/ v memancing 
+ikan
+keumeukup  /kɯ.mɯ.kup/ v mencari 
+ikan dng cara meraba-raba buta dalam 
+air sambil duduk atau berjongkok
+keunaleung /kɯ.na.lɯŋ/ n pengalas, 
+pengganjal, penopang  balok yg 
+diletakkan di bawah sesuatu untuk 
+memudahkan proses pemindahan: 
+bôh 
+keunaleung 
+watè 
+tapinah 
+bôt 
+‘letakkan 
+penopang 
+saat 
+memindahkan perahu’ 
+
+##### PAGE 30
+30 | Kamus Kemaritiman Aceh-Indonesia  
+keuramba
+khanduri
+keuramba  /kɯ.ram.ba/  n keranjang 
+atau kotak dari bilah bambu atau 
+jaring untuk membudidayakan ikan di 
+sungai, laut, dan danau; keramba
+keuramba mulôh  /kɯ.ram.ba 
+mu.loh/ n keramba bandeng
+keuramba udeung /kɯ.ram.ba 
+u.dɯŋ/ n keramba udang
+keureungkông 
+/kɯ.rɯŋ.koŋ/ 
+n 
+kepiting yg hidup di air asin, tidak 
+dapat dimakan, ukurannya lebih besar 
+daripada kepiting lainnya, sarangnya 
+berbentuk bentuk bulat besar di atas 
+tanah: meunyo tanyo ureung carong 
+bak-bak — jeut tacok laba ‘kalau kita 
+pintar, dari keureungkông pun kita 
+bisa mendapat untung’ 
+keureusék  /kɯ.rɯ.sek/  n lihat ano 
+gasa?
+keurikéh /kɯ.ri.keh/  n lihat aneuk 
+baté
+keurimèn /kɯ.ri.mɛn/  n ikan laut 
+berukuran kecil, durinya banyak, 
+berwarna kekuningan, disebut juga 
+krimèn
+keurot  /kɯ.rɔt/  n ikan laut yg 
+berbentuk seperti mujair tetapi lebih 
+pendek ukurannya
+keutapang 
+/kɯ.ta.paŋ/ 
+n 
+pohon 
+dng permukaan batang berwarna 
+abu-abu 
+hingga 
+coklat, 
+daunnya 
+berbentuk bulat telur terbalik, ujung 
+meruncing, pangkal membulat, tepi 
+rata, bunga berwarna putih kehijauan, 
+buah berbentuk panjang bulat agak 
+gepeng, biasanya hidup di tepi pantai; 
+ketapang (Terminalia catappa)
+keuthup  /kɯ.thup/  n semak dng 
+batang berwarna hijau, ranting batang 
+berduri tempel, daunnya berbentuk 
+bulat telur, daun penumpu menyirip 
+rangkap, letak berhadapan, anak 
+daun per sirip seluruhnya berhadapan, 
+buah berambut sikat rapat,
+biji 
+1-2 
+berwarna 
+abu-abu 
+atau 
+hijau seperti buah zaitun; kebiul 
+(Caesalpinia bonduc)
+keutuka /kɯ.tu.ka/ n ikan berbisa yg 
+sering muncul di pantai 
+khanduri  /xan.du.ri/  n perjamuan 
+makan dan doa bersama untuk 
+memperingati peristiwa atau syukuran; 
+kanuri, kanduri, kauri, kawuri, khawuri
+khanduri 
+krung 
+/xan.du.ri 
+kruŋ/  n kegiatan menyembelih 
+sapi atau kerbau di pinggir 
+sungai dan dimasak kari untuk 
+disantap bersama dan dibagi-
+bagikan kepada warga, anak 
+yatim, dan fakir miskin sebagai 
+ucapan syukur
+khanduri laôt /xan.du.ri la.ot/ n 
+kegiatan 
+menyembelih 
+sapi 
+atau kerbau di tepi pantai dan 
+dimasak kari untuk disantap 
+bersama dan dibagi-bagikan 
+kepada warga, anak yatim, dan 
+fakir miskin sebagai ucapan 
+syukur atas hasil laut
+
+##### PAGE 31
+Kamus Kemaritiman Aceh-Indonesia | 31
+khung 
+kreung
+khung  /xuŋ/  n musim kemarau atau 
+musim kering adalah musim di daerah 
+tropis yg dipengaruhi oleh monsun: 
+musem — mangat tajak u laot ‘lebih 
+mudah melaut pada musim kemarau’
+kili-kili 
+/ki.li-ki.li/ 
+n 
+penyambung 
+cabang tali pancing, berupa dua cincin 
+besi yg dapat berputar, panjangnya 
+sekitar 16—45 mm, berfungsi agar 
+benang tidak kusut: bèk tuwo neubôh 
+— bak peurambôt ‘jangan lupa 
+memasang kili-kili di perambut’ 
+kiong /ki.yɔŋ/ n penghisap/ pembuang 
+air dari mesin kapal: meunyo hana 
+— beureutoh mesén ‘kalau tidak ada 
+kiong meledaklah mesin’
+kitôk /ki.to?/  n ikan laut berbentuk 
+bulat, warna badannya didominasi 
+putih 
+keperakan, 
+memiliki 
+dua 
+sirip, sirip dada dan sirip punggung 
+(Carangoides caeruleopinnatus)
+kiyô-kiyô  /ki.jô-ki.jô/  n ikan laut 
+sejenis hiu, kepalanya seperti bintang, 
+warnanya abu-abu, panjangnya bisa 
+sampai 2 m: yum --  meuhai ‘harga 
+kiyo-kiyo mahal’
+klap  /klap/  n lampu warna-warni di 
+kapal yg digunakan untuk menarik 
+perhatian ikan
+klibeut  /kli.bɯt/  n perahu kecil yg 
+terbuat dari satu batang kayu yg utuh 
+yg ujung depan dan belakangnya 
+tidak begitu lancip
+yg hanya bisa memuat 1—2 orang, 
+biasanya digunakan untuk memancing 
+dan menjala ikan di sungai dan danau 
+yg tidak berarus deras
+kompah /kɔm.pah/ n kompas
+kong /kɔŋ/ n ruangan di bagian depan 
+kapal, difungsikan sebagai tempat 
+istirahat pelaut
+kosrik /kɔ.sri?/ n tempat penyimpanan 
+ikan berpendingin 
+krah  /krah/  n klaim terhadap area 
+penangkapan kawanan ikan oleh 
+nelayan, biasanya ditandai dengan 
+mengangkat topi 
+krapè /kra.pɛ/ n lihat grapè
+kreung  /krɯŋ/  n hewan air (laut, 
+sungai), dagingnya lunak, berinsang 
+pipih, 
+cangkangnya 
+terdiri 
+atas 
+sepasang katup yg dihubungkan dng 
+engsel hingga dapat dibuka atau 
+ditutup; kerang
+kreung awé  /krɯŋ a.we/  n 
+kerang 
+yg 
+permukaan 
+cangkangnya licin dan bergaris-
+garis
+kreung bangka  /krɯŋ baŋ.
+ka/ n kerang yg hidup di hutan 
+bakau
+kreung lokan /krɯŋ lo.kan/  n 
+kerang 
+besar 
+yg 
+dapat 
+dimakan, hidup di lumpur di tepi 
+laut atau rawa, kulitnya dapat 
+dimanfaatkan menjadi kapur 
+sirih (Polymesoda)
+kreung reubôh /krɯŋ rɯ.boh/ n 
+kerang yg direbus dan dimakan 
+dng sambal yg diberi campuran 
+nenas
+kreung teupeuleumak /krɯŋ 
+tɯ.pɯ.lɯ.ma?/  n kerang yg 
+direbus dan dimakan dng kuah 
+santan
+
+##### PAGE 32
+32 | Kamus Kemaritiman Aceh-Indonesia  
+kring
+kuyan 
+kuah leumak kreung /ku.wah 
+lɯ.ma? krɯŋ/  n kerang yg 
+dimasak dng kuah santan dan 
+berbagai bumbu yg dihaluskan
+kring  /kriəŋ/  n bambu tua kering 
+sebagai alat penangkap ikan. 
+krung  /kruŋ/  n aliran air yg besar 
+(biasanya buatan alam); sungai 
+kruwèh 
+/kru.wɛh/ 
+n 
+perahu 
+yg 
+terbuat 
+dari 
+beberapa 
+rangkaian 
+kayu, panjangnya kira-kira 4—5 m, 
+lebarnya 90—110 m, bentuk depan 
+dan belakangnya lancip, biasanya 
+tidak memakai mesin, pada bagian 
+tengah sisi kiri dan kanannya terdapat 
+pengayuh besar yg berfungsi untuk 
+menstabilkan 
+arah 
+laju 
+perahu 
+saat mengayuh pada arus deras, 
+perahu ini biasanya digunakan untuk 
+mencari ikan atau sebagai sarana 
+penyeberangan 
+pada 
+sungai 
+yg 
+sedikit berarus deras
+kruwih /kru.wih/ n lihat kruwèh
+kuala /ku.wa.la/ n tempat pertemuan 
+antara air laut dan air sungai; muara: 
+jak keumawé eungkôt bak -- ‘mari 
+memancing ikan di kuala’
+babah kuala /ba.bah ku.wa.la/ n pintu 
+keluar masuk kapal dari atau ke laut 
+di muara
+binèh kuala  /bi.nɛh ku.wa.la/  n 
+pinggiran muara di bagian sungai atau 
+laut 
+ming kuala /miŋ ku.wa.la/ n pinggiran 
+sungai di muara
+kuanca /kwan.ca/ n tukang perbaikan 
+mesin kapal; mekanik; montir 
+kuboh 
+/ku.bɔh/ 
+n 
+gelembung-
+gelembung kecil pada permukaan 
+barang cair (seperti pada air dan 
+sabun)
+kulam  / ku.lam/  n ceruk di tanah yg 
+agak luas dan dalam berisi air (untuk 
+memiara ikan dan sebagainya); kolam
+plah kulam /plah ku.lam/ v memanen 
+ikan atau udang dng cara menyisihkan/
+mengurangi air tambak dng menyekat 
+bagian per bagian tambak 
+kulèk /ku.lɛ?/ n lihat jalô kulek
+kuro /ku.rɔ/ n ikan laut yg panjangnya 
+kira-kira satu hasta dan bersungut; 
+kurau (Polynemis)
+kuwé /ku.we/ n lihat gabu 
+kuyan /ku.jan/ n satuan ukuran berat 
+untuk barang-barang dalam jumlah 
+besar terutama muatan kapal atau 
+perahu; koyan
+
+##### PAGE 33
+Kamus Kemaritiman Aceh-Indonesia | 33
+labi-labi
+langgal
+L 
+labi-labi /la.bi-la.bi/  n kura-kura yg 
+berukuran besar, cangkangnya bulat 
+pipih, 
+berwarna 
+kehitam-hitaman, 
+hidupnya di darat dan laut
+labôh /la.boh/  v menebarkan jaring, 
+menurunkan sauh, berlabuh (tt  kapal, 
+perahu): watè seupôt jeut takalon 
+awak — pukat ‘pada sore hari, kita 
+dapat melihat orang menebarkan 
+jaring pukat’
+lagang /la.gaŋ/ a keadaan yg berupa 
+campuran antara air tawar dan air 
+laut, kadar garam yg dikandung dalam 
+satu liter air adalah antara 0,5 sampai 
+30 gram: — that i nyan ‘payau sekali 
+air itu’
+lajum  /la.jum/ n kerang sungai air asin 
+yg bentuknya lancip dan berwarna 
+hijau tua dan biasanya berada di 
+dalam tanah bercampur pasir: — 
+meukumat bak tiang ‘lajum menempel 
+di tiang’
+lakseumana 
+/la?.sɯ.ma.na/ 
+ 
+n 
+panglima laut
+lamat /la.mat/  n tali penarik yg 
+berfungsi menarik pukat ke pantai, 
+terletak di sayap kiri perahu
+lameuhan /la.mɯ.han/ n ikan yg hidup 
+di laut, bentuk badannya agak tipis, 
+warnanya putih kebiruan, panjangnya 
+sekitar 50-60 cm, sering diolah 
+menjadi bakso dan kerupuk ikan
+lampôh u  /lam.poh u/  n lahan di 
+wilayah pesisir yg ditanami pohon 
+kelapa; kebun kelapa
+lampông /lam.poŋ/ n benda ringan yg 
+digunakan sebagai pengangkat atau 
+pelampung pukat di permukaan air, 
+misalnya gabus, jeriken atau galon 
+kosong
+awak lampông    /a.wa? lam.
+poŋ/  n anak buah kapal yg 
+menjaga 
+pelampung 
+pukat, 
+disebut juga awak bak lampông
+lancang 
+/lan.caŋ/ 
+n 
+tempat 
+pengolahan garam, ladang garam 
+tradisional
+lang  /laŋ/  n ikan laut yg hidup 
+bergerombol dng panjang mencapai 
+30 cm dan berwarna keperakan; selar 
+bentong (Caranx crumenophthalmus): 
+eungkôt – hana mangat  ‘ikan selar 
+rasanya tidak enak’
+langgal  /laŋ.gal/ n jaring berbentuk 
+tangguk yg berukuran besar dng mata 
+jaring 1 mata 1,5 cm (istilah pesisir 
+timur Aceh)
+
+##### PAGE 34
+34 | Kamus Kemaritiman Aceh-Indonesia  
+langgisan
+leupôh 
+langgisan /laŋ.gi.san/ n kayu persegi 
+empat di buritan perahu atau kapal 
+untuk 
+menopang 
+dayung 
+yg 
+di 
+atasnya diikat dng gelang-gelang atau 
+lilitan rotan
+langgông 
+/laŋ.goŋ/ 
+v 
+teknik 
+memancing dng menggerak-gerakkan 
+kail untuk menarik perhatian ikan, 
+panjang kail mencapai dasar laut, 
+ujung kail diikat timah seberat 1—3 
+ons, kail utama diikat 3—4 mata 
+pancing, jarak antarmata pancing 30 
+cm, dan di ujung pancing utama diikat 
+timah sebagai pemberat
+langsé  /laŋ.se/  v mengoper atau 
+mengirimkan 
+hasil 
+tangkapan; 
+melangsir
+lanté  /lan.te/  n 1 tempat menjemur 
+ikan; 2 sandaran kapal setelah pulang 
+melaut
+lantuy  /lan.tuj/  n 1 kura-kura yg 
+berukuran 
+setelapak 
+tangan 
+org 
+dewasa: — leubeh rayek daripada 
+peunyi 
+ 
+‘kura-kura 
+lebih 
+besar 
+daripada penyu’; 2 alat pemukul, 
+biasa 
+digunakan 
+untuk 
+memukul 
+pasak besar, diameter sekitar 20 cm 
+atau lebih,
+dng gagang sekitar 70 cm; godam
+lanun  /la.nun/  n perompak laut pd 
+zaman dahulu
+laôt /la.ot/ n kumpulan air asin yg luas; 
+laut: di – ka sapeupakat, trôh u darat 
+laen keunira ‘saat di laut bersepakat, 
+sampai di darat lain cerita’  
+lapék  /la.pe?/  n alas atau pelapis 
+pada perahu terbuat dari tembaga 
+atau seng
+layaran  /la.ya.ran/  n ikan laut besar, 
+berbentuk bulat panjang, bermoncong 
+panjang membentuk tombak bulat, 
+bersirip 
+punggung 
+panjang 
+dan 
+besar, apabila sirip ditegakkan saat 
+berenang tampak seperti perahu layar 
+(Istiophorus platypterusapisan); ikan 
+layar
+layeu 
+/la.jɯ/ 
+n 
+kain 
+tebal 
+yg 
+dibentangkan untuk menadah angin 
+agar perahu atau kapal dapat berlayar 
+(laju); layar kapal: kajeut ganto — 
+‘layar sudah bisa diganti’
+leula  /lɯ.la/  n alas yg diletakkan di 
+bawah kapal untuk memudahkan 
+pemindahan atau melarungkan kapal 
+ke air (laut atau sungai)
+leulayan  /lɯ.la.yan/  n orang yg 
+mata pencaharian utamanya adalah 
+menangkap ikan (di laut)
+leuliman /lɯ.li.man/ n lihat bayeun
+leulumba /lɯ.lum.ba/ n mamalia laut, 
+jenis paus bergigi, memiliki gigi kecil 
+dng moncong yg panjang, panjangnya 
+mencapai 175–400 cm, dan berat 
+150–200 kg (Tursiops truncatus); 
+lumba-lumba
+leupôh /lɯ.poh/ n ikan laut berduri yg 
+berbisa, tidak dapat dimakan (Pterois 
+volitans), disebut juga bulè manok (di 
+daerah Aceh Besar)
+
+##### PAGE 35
+Kamus Kemaritiman Aceh-Indonesia | 35
+leun
+lhom
+leun 
+/lɯn/ 
+n 
+lokasi 
+tempat 
+penangkapan ikan yg sudah didatangi 
+oleh perahu tertentu, jika didatangi 
+oleh perahu lainnya lalu mendapatkan 
+izin 
+dari 
+perahu 
+pertama 
+untuk 
+menjaring ikan maka hasilnya dibagi 
+dua dng catatan perahu pertama juga 
+ikut menjaringnya
+leun 
+pukat 
+/lɯn 
+pu.kat/ 
+n kawasan tepi pantai yg 
+digunakan 
+untuk 
+kegiatan 
+menarik pukat darat, letaknya 
+membujur 
+dari 
+tepi 
+pantai 
+hingga laut yg ukurannya sesuai 
+dng kebutuhan mendaratkan 
+ikan dari pukat 
+lèwang  /lɛ.waŋ/  n alat penarik batu 
+jaring di tengah laut, disebut juga kaja 
+batè (di daerah Aceh Barat)
+lham  /lham/  1 v masuk terbenam ke 
+dalam air, kapal karam karena diterpa 
+angin; tenggelam; 2 n alat penggali 
+lubang, 
+mata 
+terbuat 
+dari 
+besi, 
+bergagang kayu atau besi; tembilang
+lhat ureung lhat  /lhat u.rɯng lhat/  n 
+perompak, 
+dianggap 
+berasal 
+dr 
+sebuah lautan yg tdk dikenal
+lheulhöh /lhɯ.lhʌh/ n ikan yg hidup di 
+muara, sejenis belanak, bentuknya 
+lebih besar, beratnya hingga 1 kg
+lhöh eungkôt /lhʌh ɯŋ.kot/ n tempat 
+orang berjual beli ikan; pasar ikan
+lhong  /lhɔŋ/  n kayu yg ditancap di 
+dalam air yg disusun atau ditata agak 
+semrawut agar ikan mau bersarang 
+atau menetap sehingga mudah untuk 
+ditangkap, disebut juga glong
+lhôk  /lho?/  1 a jauh ke bawah dari 
+permukaan air (sungai, laut, danau); 
+dalam; 2 n bagian laut yg menjorok ke 
+darat; teluk: laen – laen kulam, laen 
+nanggro laen reusam ‘lain teluk, lain 
+kolam, lain negeri, lain hukumnya’
+lhôk  peulindông /lho? pɯ.lin.
+doŋ/  n zona ini berjarak 100 
+m dari lhôk talindông, dilarang 
+mengebom, 
+membius, 
+dan 
+menjaring ikan, penggunaan 
+kompresor dan lampu merkuri 
+karena dapat merusak terumbu 
+karang 
+lhôk  talindông /lho? ta.lin.
+doŋ/ n zona terlarang melakukan 
+pengeboman dan pembiusan 
+menggunakan 
+jaring 
+pukat 
+dan membuang jangkar serta 
+melakukan budidaya, menjadi 
+zona inti, jaraknya dari bibir 
+pantai sampai 100 m
+lhôk teumanpaat /lho? tɯ.man.
+pa.at/ n zona untuk pukat darat 
+dan pancing tradisional, daerah 
+ekosistem bakau dan budidaya 
+air tawar, seperti tambak
+lhom  /lhɔm/  n 1 alat yg terbuat dari 
+bambu yg dijalin dng rotan, berbentuk 
+silinder, ujungnya kuncup, ukurannya 
+sebesar 
+batang 
+pohon 
+kelapa, 
+dipasang di sungai sebagai alat 
+penangkap ikan 2 rumpon ikan terbuat 
+dari pelepah pohon nipah, pelepah 
+pohon pinang, dan pelapah pohon 
+kelapa yg diikat dng tali, masing-
+masing berjarak 60 cm tiap pelepah, 
+di bawahnya diberi pemberat dari batu 
+untuk ikan berkumpul; 3 lihat bubôn 
+(istilah ini biasa digunakan di daerah 
+Aceh Barat)
+
+##### PAGE 36
+36 | Kamus Kemaritiman Aceh-Indonesia  
+lhop
+lung 
+lhop  /lhɔp/  v melintangkan sesuatu 
+utk 
+menahan, 
+menebat, 
+atau 
+membendung; mengempang
+lhop ateung /lhɔp a.tɯŋ/  v 
+memperbaiki 
+pematang 
+tambak, misalnya meninggikan 
+dng timbunan, memperlebar 
+ukurannya, 
+atau 
+menampal 
+kebocoran dari rembesan air 
+dng cara mengisi tanah pada 
+bocoran tersebut lalu dipijak-
+pijak agar padat
+lhuk bing /lhu? biŋ/ n mencari kepiting 
+dari sarangnya langsung dng merogoh 
+memakai alat bantu besi pengait 
+(cawik)
+lhuk 
+eungkôt 
+/lhu? 
+ɯŋ.kot/ 
+v 
+mengambil ikan dalam lubang atau di 
+bawah bebatuan dng cara meraba
+linggi /liŋ.gi/ n lihat langgisan
+kayè linggi /ka.yɛ liŋ.gi/ n kayu 
+persegi empat di buritan perahu 
+untuk menopang dayung yg 
+bagian 
+atasnya 
+diikat 
+dng 
+gelang-gelang rotan
+lipah  /li.pah/  n palem yg tumbuh 
+merumpun 
+di 
+rawa-rawa 
+daerah 
+tropis, tinggi mencapai 8 m,
+ daunnya digunakan untuk bahan atap, 
+tikar, keranjang, topi, dan payung, 
+nira dari sadapan perbungaannya 
+digunakan untuk pembuatan gula dan 
+alkohol (Nipa fruticans)
+lipat kajeung  /li.pat ka.jɯŋ/  n lipat 
+dua, melipat seperti kajang pada 
+perahu; lipat kajang
+liwai /li.way/ n tali yg berfungsi untuk 
+memanjat 
+ke 
+atas 
+kapal/perahu, 
+biasanya menggunakan tali tambang
+lubim /lu.bim/ n ikan laut berkulit tebal, 
+bermulut sangat kecil (dibandingkan 
+dgn badannya), panjangnya sekitar 
+30—40 cm, giginya sgt tajam, hidupnya 
+di terumbu karang (Canthidermis 
+maculata)
+lubim beuso  /lu.bim bɯ.sɔ/  n 
+ikan lubim  berkulit keras, 
+berwarna kemerahan
+lubim itam /lu.bim i.tam/ n ikan 
+lubim berwarna hitam
+lubim putéh  /lu.bim pu.teh/  n 
+lubim berwarna putih
+lubim u /lu.bim u/ n  ikan lubim 
+bercorak burik
+luluy  /lu.luj/  n siput yg dapat hidup 
+di air tawar, laut, dan darat, memiliki 
+capit 
+dan 
+bintik 
+merah, 
+disebut 
+sebagai pencuri cangkang binatang 
+lain (Paguroidea); kelomang; umang-
+umang
+lumi-lumi /lu.mi-lu.mi/ n ikan berwarna 
+putih dan teksturnya sgt lembek, 
+berukuran sekitar 20 cm (Harpodon 
+nehereus); luli
+lunah    /lu.nah/  n balok yg terletak 
+di dasar perahu, kerangka bawah 
+perahu; lunas
+lung    /luŋ/  n 1 saluran air; parit; 
+2 selokan yg digali di sekeliling 
+bagian 
+dalam 
+tambak/kolam, 
+fungsinya sebagai tampungan air dan 
+berkumpulnya ikan
+
+##### PAGE 37
+Kamus Kemaritiman Aceh-Indonesia | 37
+lungkap
+luthuk
+lungkap  /luŋ.kap/ 1 n batu karang 
+di laut yg hanya terlihat pd waktu air 
+surut dan saat ombak pecah: kapai 
+nyan lham saweup keunong — ‘kapal 
+itu tenggelam karena terkena batu 
+karang’; 2 n kerang kima (Chama 
+gigas); 3 a terlihat terang atau tidak 
+keruh (tentang air); bening
+lungkèng /luŋ.kɛŋ/ n lihat lumi-lumi
+lulôh /lu.loh/ n ikan belanak sungai yg 
+turun ke laut pd waktu-waktu tertentu 
+utk bertelur
+lutip   /lu.tip/ n siput yg hidup di pohon 
+nipah
+luthuk /lu.ʈʰu?/ n lihat ceuk
+
+##### PAGE 38
+38 | Kamus Kemaritiman Aceh-Indonesia  
+mabôk laôt
+meulaôt 
+M
+mabôk laôt/ma.bo? la.ot/  n pening 
+dan berasa mual atau muntah-muntah 
+karena naik kapal laut (perahu); 
+mabuk laut
+made /ma.de/ n tempat bermain ikan 
+di laut
+madon /ma.dcn/ n tumbuhan berduri 
+yg tumbuh di tepi pantai atau hutan yg 
+dimanfaatkan sebagai tanaman pagar
+mandrông /man.droŋ/ n lihat bubè
+manè /ma.nɛ/  n pohon kayu yg 
+batangnya dapat dijadikan papan, 
+digunakan sebagai bahan pembuat 
+perahu
+manyung /ma.ɳuŋ/ n ikan laut, payau, 
+atau air tawar, panjang mencapai 80 
+cm, hidup di dasar perairan tropis 
+dng kedalaman 50–100 m (Arius 
+maculatus); mayung
+maseunèh 
+/ma.sɯ.nɛh/ 
+n 
+lihat 
+kuanca
+mata kucing  /ma.ta ku.ciŋ/  n lampu 
+dng ukuran besar yg digunakan di 
+kapal; lampu sotong
+mayông /ma.yoŋ/ n lihat manyung
+mbôh /mboh/ n lubang pada pematang 
+tambak yg bocor saat air pasang 
+akibat kerokan kepiting yg bersarang 
+atau tingginya tekanan air dari luar
+tôp 
+mbôh 
+/top 
+mboh/ 
+v 
+menampal 
+kebocoran 
+pematang 
+tambak 
+dari 
+rembesan air dng cara mengisi 
+lubang bocoran tersebut dng 
+tanah, kemudian dipijak-pijak 
+hingga padat agar air tidak 
+keluar
+meudabah /mɯ.da.bah/ n ikan laut
+meudom  /mɯ.dɔm/  n menginap di 
+laut untuk mencari ikan: kamo ka — 
+limöng blah malam i laôt jak mita yè 
+‘kami sudah menginap lima belas 
+malam di laut mencari hiu’
+meuhu /mɯ.hu/ 	
+v memancing 
+dng menggunakan kawé hu
+meujang /mɯ.jaŋ/ v menangkap ikan 
+menggunakan jang
+meulampu /mɯ.lam.pu/ v menangkap 
+ikan dng menghidupkan lampu yg 
+banyak di malam hari sehingga 
+terang, dng tujuan agar ikan-ikan 
+mendekat ketika kapal bersandar di 
+suatu tempat
+meulangu /mɯ.la.ŋũ/ v berenang
+meulaôt /mɯ.la.ot/  v pergi ke laut 
+untuk mencari ikan; melaut: lam — 
+bèk deungki khianat, bèk iri até watè 
+gop na nikmat ‘dalam melaut, jangan 
+dengki khianat, jangan iri hati ketika 
+orang mendapat nikmat’
+
+##### PAGE 39
+Kamus Kemaritiman Aceh-Indonesia | 39
+meunèng 
+mulôh
+meunèng /mɯ.nɛŋ/ n ikan laut, bersisik 
+dan berduri banyak, badannya tipis 
+(Sardinella longieps); lemuru: eungkôt 
+— mangat tapeuasam keuung ‘ikan 
+lemuru enak dimasak asam keuung’
+meunèng awô-awô  /mɯ.nɛŋ awo-
+awo/  n ikan lemuru berukuran kecil, 
+seukuran kelingking, berbentuk pipih, 
+berwarna putih, biasa dikeringkan
+meunèng kléng /mɯ.nɛŋ kleŋ/n ikan 
+lemuru berwarna gelap, dagingnya 
+banyak mengandung duri, bentuk 
+ekornya seperti kipas
+meunték  /mɯn.te?/  n ikan laut yg 
+kecil, siripnya berduri, tidak bersisik, 
+ukurannya sekitar 15 cm
+meurandéh  /mɯ.ran.deh/  n lihat 
+beurandéh.
+meurerui 
+/mɯ.rə.ruy/ 
+a 
+kondisi 
+kehilangan arah atau tersesat di laut
+meuruwa /mɯ.ru.wa/  n binatang 
+melata serupa dng bengkarung besar, 
+panjang seluruh tubuhnya kira-kira 
+2,5 m (dapat lebih), hidup di rawa-
+rawa (Varanus); biawak
+meuripè-ripè /mɯ.ri.pɛ-ri.pɛ/ v kongsi 
+dalam mengumpulkan dana
+meusén 
+/mɯ.sen/ 
+n 
+perkakas 
+untuk menggerakkan atau membuat 
+sesuatu yg dijalankan dng roda, 
+digerakkan oleh tenaga manusia 
+atau motor penggerak, menggunakan 
+bahan bakar minyak atau tenaga 
+alam; mesin
+meusén 
+kapai 
+/mɯ.sen 
+ka.pay/ n mesin kapal
+mira  /mi.ra/  n sumur berbentuk 
+persegi empat, berfungsi sebagai 
+penyimpan air asin yg siap dimasak 
+utk menjadi garam, berada di dalam 
+jambô sira
+mita batuntung  /mi.ta ba.tun.tuŋ/  n 
+kegiatan mencari telur penyu saat 
+bulan terang
+mita boh peunyi   /mi.ta bɔh pɯ.ɳi/ v 
+kegiatan mencari telur penyu.
+momo /mɔ.mɔ/ n lihat badè (1) (istilah 
+ini biasa digunakan di Lhokseumawe).
+mugè /mu.gɛ/ n pedagang perantara 
+yg membeli barang utk dijual kembali.
+mugè dalam /mu.gɛ da.lam/ n 
+1 
+pedagang 
+perantara 
+yg 
+membeli ikan langsung dari 
+pawang pukat; 2 pedagang 
+setempat
+mugè 
+eungkôt 
+/mu.gɛ 
+ɯŋ.kot/ 
+n 
+pedagang 
+ikan 
+keliling.
+mugè lua  /mu.gɛ lu.wa/  n 
+pedagang yg membeli ikan 
+pada 
+mugè 
+dalam 
+dan 
+menjualnya kembali
+mulôh /mu.loh/  n ikan bandeng 
+(Chanoschanos)
+
+##### PAGE 40
+40 | Kamus Kemaritiman Aceh-Indonesia  
+mungkuh
+musém 
+mulôh 
+panggang 
+/mu.loh 
+paŋ.gaŋ/  n ikan bandeng yg 
+dipanggang
+mulôh 
+teucrôh 
+/mu.loh 
+tɯ.croh/  n ikan bandeng yg 
+digoreng
+tumèh mulôh /tu.mɛh mu.loh/ n 
+ikan bandeng yg ditumis
+mungkuh   /muŋ.kuh/ n lihat bungkuh
+murông /mu.roŋ/  n ikan laut dng 
+rahang atas dan moncong memanjang 
+seperti pedang pipih, panjangnya 
+sekitar 2—4 m, bagian atas tubuhnya 
+berwarna kebiruan dan keperakan di 
+bagian bawah (Xiphiasgladius)
+muruwa /mu.ru.wa/ n lihat meuruwa
+musém /mu.sem/  n waktu tertentu yg 
+bertalian dng keadaan iklim; musim
+musém 
+barat 
+/mu.sem 
+ba.rat/n musim barat lazimnya 
+berombak besar
+musém biléh  /mu.sem bi.leh/ 
+n musim ikan bilis
+musém sabè /mu.sem sa.bɛ/ n 
+musim rebon
+musém sumbo /mu.sem sum.
+bɔ/ n musim ikan kembung
+musém surè /mu.sem su.rɛ/ n 
+musim ikan tongkol
+musém timu  /mu.sem ti.mu/ n 
+musim timur laut teduh
+
+##### PAGE 41
+Kamus Kemaritiman Aceh-Indonesia | 41
+naca 
+noh
+N
+naca 	 /na.ca/ 
+n 
+umpan 
+buatan 
+tembaga, 
+berbentuk 
+baling-baling, 
+ujung 
+dan 
+pangkalnya 
+dipasang 
+pancing, 
+cara 
+menggunakannya 
+ditarik dng tali pancing dalam air 
+sehingga berputar, dan tampak seperti 
+ikan kecil
+naga-naga /na.ga-na.ga/ n kayu-kayu 
+yg dipasang pd bagian atas bingkai 
+geunadéng (rusuk-rusuk) sepanjang 
+perahu
+naleung /na.lɯŋ/  n tumbuhan yg 
+berbatang kecil, daunnya sempit 
+panjang, jenisnya sangat banyak, 
+dapat dijadikan pakan ternak; rumput
+naleung laôt /na.lɯŋ la.ot/ n tanaman 
+yg tumbuh di dasar laut, di dekat 
+karang, berwarna hijau, kuning, atau 
+putih (Eucheuma cottonii); rumput laut 
+naleung sambô  /na.lɯŋ sam.bo/  n 
+rumput yg digunakan dalam tradisi 
+peusijuk, tinggi mencapai 30 cm, 
+tumbuh di iklim panas (Cynodon 
+dactylon): le – i leun rumôh ’banyak 
+naleung sambô di depan rumah’
+naleung sira /na.lɯŋ si.ra/ n rumput 
+dng daun besar, dapat hidup di tanah 
+dng kadar asin (Zoysia sp.); rumput 
+jepang
+neuheun /nɯ.hɯn/ n kolam di tepi laut 
+yg diberi pematang untuk memelihara 
+ikan (terutama ikan bandeng; udang); 
+tambak; tebat
+neupoh ruja /nɯ.pɔh ru.ja/ n ikan yg 
+tampak lemah spt kain tua 
+ngabô  /ŋa.bo/  n halimun pada pagi 
+hari, terutama di laut; kabut pagi: 
+kamo meujak u laôt watè — beungoh 
+‘kami pergi ke laut saat kabut pagi’
+ngop /ŋõp/ v terbenam ke dalam air 
+tetapi tidak sampai ke dasar: jalô tuha 
+nyan — bak kuala ‘sampan tua itu 
+tenggelam di kuala’
+ngom  /ŋõm/  n tanaman yg hidup di 
+dalam rawa, batangnya keras, gundul, 
+dan berlilin, daun berbentuk pita, 
+ujungnya runcing, tepi kasar, 
+bunga seperti kapas, beterbangan jika 
+disentuh, bahan dasar pembuatan 
+tikar tradisional (Typha capensis): tika 
+di rumah ureung Aceh le dipeugöt 
+dari ôn bak ngom ‘tikar di rumah 
+orang Aceh banyak dibuat dari daun 
+tumbuhan ngom’.
+nipah /ni.pah/ n lihat lipah
+noh  /nõh/  n cumi-cumi dng panjang 
+sekitar 
+15—25 
+cm, 
+berwarna 
+kemerahan, 
+termasuk 
+golongan 
+binatang moluska, kelas Cephalopoda, 
+menggunakan kepala sebagai alat 
+untuk bergerak, mempunyai sepuluh 
+tentakel di sekeliling mulut, memiliki 
+tinta 
+sebagai 
+senjata, 
+dagingnya 
+kenyal berwarna putih (Sepia sp); 
+sotong: bak warông bu nyan sabé na 
+— teucrôh ‘di warung nasi itu selalu 
+tersedia sotong goreng’
+
+##### PAGE 42
+42 | Kamus Kemaritiman Aceh-Indonesia  
+nom 
+nyap
+lado noh /la.do nõh/ n sotong 
+goreng yg disambal: kamo 
+beuno peugöt — ‘kami tadi 
+membuat sambalado sotong’
+noh peuleumak /nõh pɯ.lɯ.
+ma?/ n sotong yg dimasak dng 
+kuah santan: lôn hana galak 
+— ’saya tidak gemar makan 
+sotong kuah santan’
+noh teuphèp /nõh tɯ.phɛp/  n 
+sotong yg dimasak dng cara 
+ditumis
+noh toco   /noh to.co/ n sotong 
+yg dimasak dng bumbu taoco: 
+jiran lôn kayém that geupeugöt 
+— ‘tetangga saya sering sekali 
+membuat taoco sotong’
+tumèh noh	
+/ t u . m ɛ h 
+nõh/  n sotong yg ditumis dan 
+berkuah santan
+nom    /nõm/  v masuk ke dalam air; 
+menyelam: le ureung Tibang geujak 
+— mita kreung ‘banyak orang Tibang 
+menyelam untuk mencari kerang’
+nong  /nõŋ/n alat untuk mendeteksi 
+saat 
+melempar 
+pukat, 
+biasanya 
+berupa jeriken yg diberi lampu pada 
+malam hari
+nuga  /nu.ga/  n alat pemukul terbuat 
+dari kayu yg keras berbentuk balok dng 
+ukuran sekitar 10—20 cm, gagangnya 
+kecil 
+agar 
+mudah 
+digenggam, 
+digunakan untuk memukul pahat atau 
+pasak; palu: meunyo jirhom ngön bajo 
+bèk tabalah ngön –-, meunyo jirhom 
+ngön tumpo tabalah ngön aso kaya 
+‘kalau dilempar dng pasak, jangan 
+dibalas dng palu, kalau dilempar dng 
+tempoyak, balaslah dng serikaya’  
+nyap  /ɳãp/  n jaring penangkap ikan 
+di palông berbentuk bujur sangkar, 
+berukuran 20 x 20 m, terbuat dari 
+benang 
+nilon 
+yg 
+dirajut/disimpul, 
+kedalamannya 10 m ke dalam air, 
+dan di keempat sisi atasnya diikat 
+tali yg berfungsi untuk menarik ke 
+permukaan
+
+##### PAGE 43
+Kamus Kemaritiman Aceh-Indonesia | 43
+ôn 
+ôn 
+O 
+ôn /on/ n  bagian tanaman yg tumbuh 
+berhelai-helai pada ranting (biasanya 
+hijau); daun
+ôn sijuk /on si.ju?/ n tanaman 
+yg digunakan dalam tradisi 
+peusijuk, 
+memiliki 
+batang 
+dan daun yg lebih tebal untuk 
+menyimpan air, dapat hidup 
+dalam kondisi kering, umumnya 
+disebut 
+dng 
+cocor 
+bebek 
+(Bryophyllum pinnatum): — jeut 
+keu ubat seuum aso ‘daun sijuk 
+dapat dijadikan obat demam’
+ôn tapak kuda  /on ta.pa? 
+ku.da/ n terna menjalar, tumbuh 
+dekat pantai, batangnya liat 
+dan panjang, daunnya lebat, 
+digunakan sebagai obat untuk 
+mematangkan bisul, akarnya 
+direbus, air rebusan dibuat obat 
+sebagai pencuci kaki penderita 
+beri-beri (Ipomoa pescaprae); 
+katang-katang
+ôn unjam  /on un.jam/ n 
+tempat ikan berteduh di lautan
+
+##### PAGE 44
+44 | Kamus Kemaritiman Aceh-Indonesia  
+pacôk 
+paro 
+P 
+pacôk /pa.co?/ n alat bantu pembuang/
+pemasok air ke/dari tambak, terbuat 
+dari bambu
+padôk /pa.do?/ n alat yg terbuat dari 
+kayu atau rotan,  berbentuk lingkaran, 
+digunakan 
+untuk 
+menggulung 
+senar atau benang kail ikan: abua 
+geupeugöt — kawé ‘paman membuat 
+padôk pancing’ 
+pakuk  /pa.ku?/  a keadaan terlilit 
+utang, biasanya nelayan meminjam 
+modal sebelum melaut
+palông /pa.loŋ/  n perahu gandeng 
+berukuran sekitar 3x10 m, tidak 
+bermesin, 
+digunakan 
+untuk 
+menangkap ikan di perairan teluk, 
+menggunakan jaring yg ditebar di 
+bawahnya, di atasnya terdapat rumah 
+kecil sebagai tempat menginap anak 
+buah kapal sekaligus sebagai tempat 
+memantau tangkapan, dan ditarik dng 
+perahu bermesin tempel 40 PK
+panglima laôt  /paŋ.li.ma la.ot/  n 
+orang yg mengatur pelayaran di laut 
+dan perdagangan ikan: — geupeugöt 
+qanun laôt ‘panglima laut membuat 
+hukum laut’
+panglima lhôk /paŋ.li.ma lho?/ n orang 
+yg 
+diangkat 
+sebagai 
+pemimpin 
+para nelayan dalam satu wilayah 
+tertentu, tugasnya memediasi setiap 
+permasalahan yg terjadi di wilayahnya
+pantang laôt /pan.taŋ la.ot/ n hari 
+pantangan melaut, 
+yaitu 3 hari setelah pelaksanaan 
+kenduri laut, hari Jumat, 3 hari Idulfitri 
+dan 
+Iduladha, 
+17 Agustus 
+(hari 
+kemerdekaan Indonesia), dan 26 
+Desember (hari peringatan tsunami)
+panteu /pan.tɯ/  n tempat menjemur 
+ikan
+panté  /pan.te/  n perbatasan darat 
+dan laut, tanah yg muncul di tengah-
+tengah air dan saat air surut; pantai: 
+aneuk sikula dijak meuramin bak 
+binèh — ‘pelajar berwisata di pinggir 
+pantai’
+panyöt /pa.ɳʌ̃t/ n penerang, berbahan 
+minyak tanah dan sumbu kain; teplok: 
+watè supôt kamo meutöt — mangat 
+peungeuh ‘pada sore hari, kami 
+menyalakan teplok agar terang’
+paro  /pa.rɔ/  n ikan pari; Aetobatus 
+narinari
+paro bintang  /pa.rɔ bin.taŋ/  n 
+ikan pari besar yg memiliki 
+titik-titik menyerupai bintang, 
+panjangnya 
+sampai 
+2 
+m, 
+warnanya abu-abu dng perut 
+berwarna putih, ekornya 
+
+##### PAGE 45
+Kamus Kemaritiman Aceh-Indonesia | 45
+paruk 
+peuda
+panjang dan berduri, matanya 
+berada di sisi kanan dan kiri 
+tubuh, memiliki bisa yg bisa 
+menyebabkan 
+kematian: 
+— 
+geudrop lè ureung melaôt ‘ikan 
+pari bintang ditangkap oleh 
+orang yg melaut’
+paro juhang /pa.rɔ ju.haŋ/  n 
+ikan pari, berbentuk layang-
+layang, 
+berwarna 
+kebiruan, 
+panjangnya 2 m, mulutnya 
+seperti tanduk, matanya terletak 
+pada 
+moncongnya 
+(Mobula 
+alvredi); manta
+paro kleung /pa.rɔ klɯŋ/ n ikan 
+pari yg bentuk sayapnya seperti 
+burung 
+elang 
+(Aetomylaeus 
+vespertilio); pari elang
+paro lalat  /pa.rɔ la.lat/  n ikan 
+pari, 
+warnanya 
+kehitaman, 
+pada bagian perut berwarna 
+putih, serta memiliki bintik hitam 
+seperti tahi lalat, panjangnya 
+sampai 2 m
+paro ôn /pa.rɔ on/ n ikan pari, 
+berwarna 
+coklat, 
+bentuknya 
+bulat tipis, ekornya panjang 
+berduri, 
+dan 
+moncongnya 
+lancip
+paro peluka  /pa.rɔ pə.lu.ka/  n 
+ikan pari, berwarna abu-abu 
+kehitaman, 
+ekornya 
+pendek 
+dan tidak berduri. 
+paruk  /pa.ru?/  n alat yg digunakan 
+untuk menampung ikan yg terbuat 
+dari upih atau rotan yg diikat pada 
+pinggang, 
+berbentuk 
+bulat 
+atau 
+kerucut: — abu ka reuloh ‘paruk ayah 
+sudah rusak’
+pasi  /pa.si/  n 1 perbatasan daratan 
+dng laut; pantai; pesisir: aneuk miet 
+meuèn galah bak — ‘anak kecil main 
+galah di pantai’; 2 laut: Pawang Ali 
+ka leupah u – ‘Pawang Ali sudah 
+berangkat ke laut’
+paténg  /pa.teŋ/  n pasak kayu pada 
+kapal
+pawang /pa.waŋ/ n orang yg bertugas 
+memimpin anak buah kapal dan 
+menentukan di mana pukat dipasang 
+di laut; kapten kapal: beu jeut aneuk 
+kahareukat, laôt darat — keu dro 
+‘hendaklah 
+ananda 
+pandai-pandai 
+berusaha, di laut dan darat menjadi 
+pemimpin’
+pawang bôt /pa.waŋ bot/  n 
+pimpinan 
+kapal 
+ikan 
+yg 
+memberikan 
+komando 
+atau 
+perintah selama proses dan 
+aktivitas 
+pencarian 
+ikan 
+di 
+laut, juga bertindak sebagai 
+nakhoda kapal: — geumè bôt 
+i laôt ‘pawang bot menakhodai 
+bot di laut’
+paya   /pa.ja/ n lihat abeuk
+payang /pa.jang/ n jaring yg bentuknya 
+spt pukat, dipasang di laut lepas yg 
+ditarik ke pantai:bôt KM Cama Putéh 
+teungöh i labôh — ‘bot KM Camar 
+Putih sedang menarik jaring’
+hu 
+payang 
+/hu 
+pa.jaŋ/ 
+v 
+menebar payang 
+meupayang 
+/mɯ.pa.jaŋ/ 
+v 
+menangkap ikan dng payang
+peuda  /pɯ.da/  n ikan kembung 
+yg diasinkan atau diawetkan dng 
+penggaraman 
+tanpa 
+pengeringan; 
+peda: eungkot masen – hana geuadè 
+’ikan asin peda tidak dijemur 
+
+##### PAGE 46
+46 | Kamus Kemaritiman Aceh-Indonesia  
+pèh èh
+peusijuk bôt 
+pèh èh  /pɛh ɛh/  v menghancurkan 
+es 
+ 
+batu 
+sekecil-kecilnya 
+dng 
+menggunakan 
+beroti:’ 
+aneuk 
+bôt 
+teungöh ji— batè ‘anak buah kapal 
+sedang menghancurkan es batu’
+peuèh eungkôt /pɯ.ɛh ɯŋ.kot/ 
+v membekukan ikan dng cara 
+memasukkan pecahan es batu 
+ke dalam tong penyimpanan 
+agar ikan tidak cepat busuk
+peugléh kapai /pɯ.gleh ka.pay/  v 
+membersihkan 
+dan 
+merapikan 
+kapal sepulang dari melaut: aneuk 
+itek teungoh ji— ‘petugas sedang 
+membersihkan kapal’
+peugöt bôt /pɯ.gʌt bot/ v memperbaiki 
+kapal atau perahu yg rusak: kuanca 
+teungoh 
+geu— 
+‘tukang 
+sedang 
+memperbaiki bot’
+peulabôhan 
+/pɯ.la.bo.han/ 
+n 
+tempat 
+bersandar, 
+menaikkan, 
+dan menurunkan kapal dan bot; 
+pelabuhan: -- Kuala Bubon luah 
+lagoina ‘Pelabuhan Kuala Bubon luas 
+sekali’
+peulampông /pɯ.lam.poŋ/  n barang 
+yg ringan terapung (yg dapat menahan 
+supaya tidak tenggelam), seperti baju 
+pelampung, pelampung pada benang 
+pancing, dan pukat
+peulheuh alén  /pɯ.lhɯh a.len/  v 
+melarungkan sajen ke laut, sering 
+dilakukan pada zaman dahulu sebagai 
+upacara tolak bala, sekarang tidak 
+dilakukan lagi karena bertentangan 
+dng ajaran Islam
+peumasén 
+eungkôt 
+/pɯ.ma.sen 
+ɯŋ.kot/ v  membuat ikan asin
+peumat 
+jarô 
+/pɯ.mat 
+ja.ro/ 
+v 
+menyelesaian konflik antarnelayan 
+atau mendamaikan 
+peuniréng 	
+/pɯ.ni.reŋ/ 
+a 
+kondisi sungai dng sedikit sekali air, 
+bertepatan antara musim kemarau 
+dan pasang surut: Nit that eungkot 
+lam krung watè musém — ‘sedikit 
+sekali ikan dalam sungai saat musim 
+peuniréng’
+peupök 
+bôt 
+/pɯ.pʌ? 
+bot/ 
+v 
+menabrakkan bot
+peurahô  /pɯ.ra.ho/  n kendaraan air, 
+tidak bergeladak, pada umumnya 
+berbentuk lancip pada kedua ujungnya 
+dan lebar di tengahnya; perahu: le 
+– geuikat bak bineh krung ‘banyak 
+perahu  yg ditambat di pinggir sungai’
+peusing  /pɯ.siŋ/  v membersihkan 
+ikan (membuang sisik, isi perut/
+jeroannya); menyiangi: ci — keurimén 
+nyo beubagah bacut ‘bersihkan ikan 
+krimen ini cepat sedikit’ 
+peusijuk 
+bôt 
+/pɯ.si.ju? 
+bot/ 
+v 
+menepungtawari kapal sbg ritual 
+meminta berkat, (menggunakan air, 
+tepung, beras, padi, dan beberapa 
+jenis daun dan rumput) disertai doa
+
+##### PAGE 47
+Kamus Kemaritiman Aceh-Indonesia | 47
+peuteungöh eungkôt
+prèk-prèk
+peuteungöh eungkôt /pɯ.tɯ.ŋʌh 
+ɯŋ.kot/  v mengangkat ikan hasil 
+tangkapan dari kapal ke darat: awak 
+bot ji—  ‘anak buah kapal mengangkat 
+ikan
+peunyi /pɯ.ɳi/  n kura-kura yg 
+hidup di laut, bertelur di darat, dan 
+kulitnya keras, disebut juga pinyi 
+(Chelonioidea); penyu: tip musem 
+timu le — jijak tôh boh binèh pasi 
+‘tiap musim angin timur banyak penyu 
+bertelur di tepi pantai’
+peunyi abeuk /pɯ.ɳi a.bɯ?/ n 
+penyu cangkang hijau, agak 
+tipis dan lebar, panjangnya bisa 
+sampai 1,5 m (Chelonia mydas)
+peunyi 
+beudari 
+/pɯ.ɳi 
+bɯ.da.ri/  n  penyu berukuran 
+mencapai 2 m
+peunyi blimbéng /pɯ.ɳi blim.
+beŋ/ n penyu raksasa berukuran 
+mencapai 3 m, beratnya sekitar 
+700 kg (Dermochelys coriacea)
+pi  /pi/  n tanaman paku besar yg 
+tumbuh di rawa-rawa, batangnya 
+dipergunakan utk dinding sumur di 
+kampung-kampung 
+(Acrostichum 
+aureum); paku laut: bak — kayem 
+dipeugöt keu unjam ‘tumbuhan pi 
+sering dibuat untuk rumpon’
+piber /pi.bər/  n tempat menampung 
+hasil tangkapan ikan
+pihmi  /pih.mi/  n tumbuhan tergolong 
+semak, batang bercabang banyak 
+dan berduri, daun menyirip ganda, 
+menguncup jika tersentuh, tepi bentuk 
+sisir bunga merah muda atau ungu 
+kebiruan (Mimosa pudica L.); putri 
+malu: ôn — jeut keu ubat cumut ‘daun 
+putri malu dapat digunakan untuk obat 
+bisul’
+pilok  /pi.lɔ?/  n ikan yg bentuk 
+dan warnanya seperti cirik, tetapi 
+ukurannya lebih lebar dan dagingnya 
+lebih tebal
+pisang-pisang /pi.saŋ-pi.saŋ/ n kayu 
+keras dari batang meranti, berbentuk 
+panjang sebagai penahan tulang 
+rusuk, terletak di bagian dalam kapal 
+pising /pi.siŋ/ v lihat peusing 
+plah 
+eungkôt 
+/plah 
+ɯŋ.kot/ 
+v 
+membersihkan dan membelah ikan 
+untuk dijemur, dan dijadikan ikan 
+kering (salah satu teknik pengawetan 
+ikan): kamo meu— taleung ramè-
+ramè ‘kami membelah ikan talang 
+beramai-ramai’
+poh lhong /poh lhɔŋ/  v menangkap 
+ikan yg berada di sarangnya (lhong): 
+uro Aleuhad ukeu kamo meujak – ‘hari 
+Minggu depan, kami mau poh lhong’
+prèk-prèk  /prɛ?-prɛ?/  n curah hujan 
+yg sangat sedikit intensitasnya, hujan 
+rintik-rintik, dikenal juga pröt-pröt atau 
+prèt-prèt; gerimis: bèk kajak lam ujeun 
+— enteuk sakét ulè ’jangan berjalan di 
+hujan gerimis, nanti kamu pilek
+
+##### PAGE 48
+48 | Kamus Kemaritiman Aceh-Indonesia  
+priuk
+pusông
+priuk /pri.yu?/ n ikan laut, jenis kakap, 
+sisiknya kecil dan keras, panjang 
+mencapai 50 cm, dan berwarna hitam
+pukat /pu.kat/  n jaring (jala) besar 
+dan panjang untuk menangkap ikan 
+(bermacam-macam 
+bentuk 
+dan 
+namanya)
+aneuk pukat /anɯ? pu.kat/  n 
+anak buah kapal pukat
+jôk 
+pukat 
+/jo? 
+pu.kat/ 
+n 
+sepasang jaring yg terletak 
+di sisi kiri dan kanan pukat, 
+berfungsi sebagai dinding untuk 
+menggiring ikan agar masuk ke 
+kantong pukat
+pukat langga /pu.kat laŋ.ga/ n 
+alat tangkap ikan berupa  pukat 
+/jaring besar, terbuat dari nilon, 
+biasanya berwarna hijau atau 
+hitam, diangkut dng kapal kayu 
+besar untuk ditebar di tengah 
+laut
+tarék pukat  /ta.re? pu.kat/  v 
+menarik jaring pukat (yg sudah 
+berlabuh 
+dari 
+laut) 
+secara 
+bersama-sama di darat untuk 
+menangkap ikan
+pukeu  /pu.kɯ/  n ikan laut dng sirip 
+belakang agak kekuning-kuningan, 
+sejenis tongkol besar 
+pumpa i /pum.pa i/ n alat pembuangan 
+air, 
+biasanya 
+digunakan 
+untuk 
+memasukkan air tawar di tambak; 
+pompa air: — bak neuheun ka reuloh 
+duwa uro ‘pompa air di tambak sudah 
+rusak dua hari’ 
+pupeuték /pu.pɯ.te?/  n ikan laut yg 
+besar juga dinamakan mumando, 
+disebut juga bupeuték 
+pusông  /pu.soŋ/  n bukit pasir di 
+muara sungai atau laut, biasanya 
+berada di bawah permukaan air, 
+sangat berbahaya
+
+##### PAGE 49
+Kamus Kemaritiman Aceh-Indonesia | 49
+racôn apui  
+rambeu
+R 
+racôn apui  /ra.con a.puy/  n  tabung 
+pemadam kebakaran: kapai meulaôt 
+sabè na jiba — ‘kapal laut selalu 
+membawa 
+tabung 
+pemadam 
+kebakaran’ 
+raga /ra.ga/ n keranjang ikan, terbuat 
+dari 
+anyaman 
+rotan, 
+berbentuk 
+melingkar, 
+kedalamannya 
+sekitar 
+30 cm dng diameter 50—60 cm, 
+permukaan atas dililit dng rotan besar 
+berdiameter 5 cm, dan biasanya 
+dijadikan satuan ukuran jumlah hasil 
+tangkapan ikan: lawét nyo eungkôt 
+hana lé dikira ngön — tapi ka jitimang 
+ngön céng ‘selama ini ikan tidak 
+dihitung lagi dng keranjang tetapi 
+sudah dihitung dng timbangan’
+raga awé /ra.ga a.we/  n lihat 
+raga
+raga biléh /ra.ga bi. léh/ n 
+keranjang ikan bilis
+raga bucum /ra.ga bu.cum/n 
+keranjang 
+berdiameter 
+sekitar 
+25 
+cm, 
+kepala 
+keranjangnya berdiameter 15 
+cm, 
+tutupnya 
+menggunakan 
+tempurung kelapa, dan ada 
+yg 
+menggunakannya 
+untuk 
+menyimpan umpan udang
+raga eungkôt /ra.ga ɯŋ.kot/ n 
+keranjang ikan: — nyan peunoh 
+meuaso ‘keranjang ikan itu 
+terisi penuh’
+rakét  /ra.ket/  n alat transportasi 
+air terbuat dari beberapa batang 
+bambu, kayu,  batang pisang yg 
+diikat berjajar, atau gandengan 2—3 
+perahu  dan ditambahkan alas kayu 
+datar di atasnya, dan dipakai untuk 
+mengangkut barang atau orang di 
+air; rakit: tip uro kamo meujak sikula 
+meuék — ‘setiap hari kami berangkat 
+sekolah menggunakan rakit’ 
+rambeu  /ram.bɯ/  n ikan laut dng 
+panjang mencapai 20 cm, sisik 
+tebal di pangkal ekor, berwarna 
+kuning dng garis hitam (Caraongides 
+caeruleopinnatus); ikan kuwe
+rambeu haji /ram.bɯ ha.ji/  n 
+ikan kuwe yg berjanggut
+
+##### PAGE 50
+50 | Kamus Kemaritiman Aceh-Indonesia  
+rambông cicém
+rawé 
+rambeu layeu /ram.bɯ la.yɯ/ n 
+ikan kuwe yg berbadan tipis 
+dan lebar seperti layar, siripnya 
+tipis dan panjang, panjang 
+tubuhnya sampai 70 cm: payah 
+that tamita —- bak lhöh eungkôt 
+‘susah sekali mencari rambeu 
+layeu di pasar ikan’
+rambeu 
+manok 
+/ram.bɯ 
+ma.no?/ 
+n 
+ikan 
+kuwe 
+yg 
+berbadan tebal
+rambông cicém  /ram.boŋ ci.cem/  n 
+pohon mirip beringin, biasa di wilayah 
+pesisir; buahnya untuk makanan 
+burung (Phempis acidula); pohon stigi: 
+ateuh bak — le that jidöng cicém pala 
+‘di pohon stigi, banyak kacer hinggap’
+rambôt bu /ram.bot bu/ n tumbuhan 
+dng 
+batang 
+merambat, 
+daun 
+berbentuk 
+seperti 
+jantung, 
+ujung 
+meruncing, bunga berwarna agak 
+putih, buah bulat seperti kelereng 
+dibungkus oleh serabut yg berambut 
+banyak (mirip markisah) (Passiflora 
+fotida); gambutan: bak lampôh lôn le 
+jitimôh bak — ‘di kebun saya banyak 
+terdapat gambutan’
+ramèt /ra.mɛt/ n alat pancing sotong 
+atau cumi-cumi, terdiri atas 3 mata 
+pancing 
+ukuran 
+8, 
+ketiga 
+mata 
+pancing 
+digabung 
+menjadi 
+satu 
+ikatan, berbentuk jangkar kecil, mata 
+pancing diikat pada umpan, saat ini 
+bentuknya mengalami inovasi, ada yg 
+dibuat berbentuk udang
+rangkang /raŋ.kaŋ/ n gubuk di daerah 
+tambak atau sawah yg memiliki 
+dinding, digunakan sebagai tempat 
+istirahat, berteduh, atau menginap; 
+saung
+ranjalè /ran.ja.lɛ/ n ikan laut yg besar 
+matanya, mirip ikan kakap merah, 
+disebut juga ranjalu: eungkôt – 
+jareung rôh lam jaréng ‘ikan ranjalé 
+jarang masuk ke jaring tangkap’
+rawang /ra.waŋ/  n paya-paya di 
+pantai, danau-danau kecil di pantai, 
+dikenal juga brawang: le aneuk mit 
+meun bak -– ‘banyak anak-anak 
+bermain di rawang’
+rawé  /ra.we/  n alat penangkap ikan 
+berupa benang yg dipasangi mata 
+pancing sejumlah 200—300 buah, 
+menggunakan 
+umpan, 
+ditebar 
+memanjang, 
+kemudian 
+ditunggu 
+sekitar satu jam: bôt Meulabôh le 
+jipakék – ‘perahu di daerah Meulaboh 
+banyak menggunakan rawé’
+rawé sènggol /ra.wɛ seŋ.gol/ n 
+alat pancing yg memiliki mata 
+pancing diikat sepanjang 45 cm, 
+dipasang di laut dng wilayah 
+tangkap maksimal 12 mil dari 
+pinggir pantai, digunakan untuk 
+menangkap ikan pari (istilah di 
+pesisir timur)
+
+##### PAGE 51
+Kamus Kemaritiman Aceh-Indonesia | 51
+reugak
+reumong
+rawé tuna  /ra.we tu.na/  n alat 
+untuk menangkap ikan tuna, 
+dng umpan ikan bandeng kecil, 
+mata pancing korea nomor 1 
+(besar) dan berukuran sekitar 
+1,5—2 inci
+rawé ulo  /ra.we u.lɔ/  n alat 
+menangkap 
+ikan 
+yg 
+diulur 
+(tidak menggunakan gagang), 
+terbuat dari benang, pemberat, 
+dan mata pancing dng umpan 
+berupa ikan yg dipotong-potong: 
+bôt nyan jimeurawe pakèk — 
+‘perahu itu memakai rawé ulo’ 
+rawèn  /ra.wɛn/ n alat pancing 
+dng mata kail sebanyak 500—
+700 buah, panjang benang kail 
+sekitar  700 m, mata kail diikat 
+pada kail dasar dng panjang 
+40—50 cm, jarak antarmata 
+kail 1,2 m, ujung kail dasar 
+diikat pemberat dan pelampung 
+yg dipasangi lampu emergensi 
+sebagai penanda, semua mata 
+kail dipasang umpan ikan kecil, 
+sejenis dencis yg dipotong 
+kecil-kecil, 
+mata 
+kail 
+diikat 
+dan dibiarkan sejam sebelum 
+diangkat satu per satu
+reugak 
+/rɯ.ga?/ 
+n 
+ikan 
+laut, 
+ukurannya lebih kecil daripada dencis, 
+panjangnya sekitar 5 cm; anak dencis: 
+nyo ka musem eungkot – ‘sekarang 
+sudah musim anak dencis’
+reuleu  /rɯ.lɯ/  n alat tangkap ikan 
+berupa jaring nilon yg dibuat bulat 
+melingkardng bagian atas terbuka, 
+digunakan untuk menangkap udang 
+dan ikan ukuran kecil dan sedang yg 
+berada di dasar tanah atau dalam 
+lumpur, digunakan dng cara disapukan 
+ke dasar tambak untuk menjaring ikan 
+dan udang
+reuleut /rɯ.lɯt/ n anak ikan gabus
+reulik  /rɯ.li?/  v keranjang kecil yg 
+terbuat dari anyaman rotan, berbentuk 
+kendi, biasanya diikat di pinggang, 
+ukuran 
+kecil 
+digunakan 
+untuk 
+menyimpan umpan sedangkan ukuran 
+besar digunakan untuk menampung 
+hasil pancingan
+reumong /rɯ.moŋ/ n ikan yg hidup di 
+sekitar pantai berpasir atau karang, 
+berwarna coklat abu-abu, dng pinggir 
+kemerahan 
+dan 
+terdapat 
+noktah 
+hitam di belakang sirip atas dan 
+perut putih keperakan, pinggir sirip 
+merah kekuningan, sirip ekor merah 
+kecoklatan, beratnya dapat mencapai 
+1,5 kg, bagian dari genus Lutjanus; 
+kakap tanda: 
+
+##### PAGE 52
+52 | Kamus Kemaritiman Aceh-Indonesia  
+rhat
+rundôk
+eungkôt — le bak laôt meukareung 
+‘ikan kakap tanda banyak di laut yg 
+berkarang’
+rhat  /rhat/  v merajut benang/nilon 
+untuk membuat jala, jaring, dan bubu: 
+bak ta duk-duk get ta—jeu ‘daripada 
+duduk bersantai lebih baik merajut 
+jala’
+rimèh /ri.mɛh/ n kerang kecil yg hidup 
+di laut (Corbicula)
+riyeuk /ri.yɯ?/ n gerakan mengombak 
+di permukaan air; ombak kecil; riak
+robot /ro.bot/ n mesin untuk menarik/ 
+memindahkan ikan dari satu tempat 
+ke tempat lain: robot nyan teungöh 
+dibeut eungkôt ‘robot itu sedang 
+mengangkat ikan’
+rôh 
+keunöng 
+/roh 
+kɯ.nʌ̃ŋ/ 
+v 
+mendapat hasil tangkapan ikan yg 
+banyak rubék  /ru.be?/  n tumbuhan 
+tergolong semak, batang bulat, tebal, 
+daun bentuk bulat telur melebar, 
+ujung membundar, tepi rata, urat daun 
+melengkung, bunga daun mahkota 
+berwarna 
+putih 
+agak 
+keunguan, 
+buah berbentuk bulat seperti kapsul, 
+hidup di wilayah pesisir (Calotropis 
+gigantea); widuri: ôn – jeut keu ubat 
+darah mamèh ‘daun widuri dapat 
+dijadikan obat diabetes’
+rundôk /run.do?/ n tali untuk menarik 
+pukat ke pantai, terletak di sisi 
+kanan sayap perahu: pawang ibeut 
+jaro rot uneun tanda jih talo -– blah 
+uneun jitarék ‘pawang mengarahkan 
+tangannya ke kanan pertanda tali 
+sebelah kanan yg ditarik’
+
+##### PAGE 53
+Kamus Kemaritiman Aceh-Indonesia | 53
+sabè
+seukupang 
+S 
+sabè  /sa.bɛ/  n udang laut yg sangat 
+kecil, dan dapat dijadikan terasi; 
+rebon: meunyô hawa — payah tapreh 
+watè na musem ‘kalau ingin makan 
+rebon, harus menunggu musimnya’
+sabè crôh ngön teupông  /
+sa.bɛ croh ŋʌn tɯ.poŋ/ n peyek 
+udang rebon
+sabè peuleumak /sa.bɛ pɯ.lɯ.
+ma?/ n udang rebon yg dimasak 
+dng kuah santan
+sagôp /sa.gop/ n uap air sebagai hasil 
+kondensasi yg masih dekat dng tanah, 
+terjadi karena peristiwa pemanasan 
+atau pendinginan udara, biasanya 
+menyebabkan 
+jarak 
+pandang 
+di 
+permukaan bumi berkurang; kabut: 
+i Seulawah brat that -- ‘di Seulawah 
+kabut tebal sekali’
+sangkilu  /saŋ.ki.lu/  n anak ikan 
+gabus: lam blang yahwa lôn le that — 
+‘di sawah paman saya banyak sekali 
+anak ikan gabus’
+saôh 
+/sa.oh/ 
+n 
+pemberat 
+pada 
+kapal atau perahu, terbuat dari besi, 
+diturunkan ke dalam air pada waktu 
+berhenti agar kapal (perahu) tidak 
+oleng; sauh 
+sapai  /sa.pay/  n kayu yg diikat pada 
+keempat 
+sudut 
+palông 
+(perahu 
+gandeng), panjangnya sekitar 12 m, 
+jenis kayu 10x10cm, berfungsi untuk 
+memperlebar jangkauan tangkapan 
+ikan yg menggunakan nyap (jaring 
+khusus pada palông)
+sara /sa.ra/ n muatan perahu
+sawök /sa.wʌ?/ 1 n alat menyauk ikan 
+atau udang (yg ada di dalam blat), 
+dibuat dari jaring nilon berbentuk 
+seperti kantong dan gagang yg terbuat 
+dari rotan, digunakan untuk tempat 
+tampungan 
+sementara 
+sebelum 
+diangkat ke darat saat proses panen, 
+biasanya ditambak; penyauk; tangguk; 
+2 v menyauk: kamo meu—aneuk 
+mulôh bak neuheun ‘kami menyauk 
+bandeng di tambak’
+sawök sabè  /sa.wʌ? sa.bè/  n 
+penyauk rebon, berbahan kain 
+kelambu, berbentuk segitiga 
+sama kaki di mulutnya: — lôn ka 
+tinggai bak binèh pasi ‘penyauk 
+rebon saya tertinggal di pinggir 
+pantai’
+seubon /sɯ.bon/ n ikan belanak. lam 
+krung Ulee Lheu lhee tahat seubon di 
+sugai Ulee Lheu banyak ikan seubon
+seukè  /sɯ.kɛ/  n pandan yg tepi dan 
+punggung daunnya berduri, biasanya 
+dianyam untuk membuat tikar, topi, 
+dan sebagainya (Pandanus odorifer); 
+pandan duri
+seukoci /sɯ.kɔ.ci/  n perahu kecil yg 
+digunakan 
+untuk 
+menyelamatkan 
+penumpang saat terjadi keadaan 
+darurat 
+dalam 
+kapal, 
+seperti 
+tenggelam dan kebakaran; sekoci: — 
+kamo boco ‘sekoci kami bocor’ 
+seukupang  /sɯ.ku.paŋ/ n cak kerang 
+yg cangkangnya berwarna kehijau-
+hijauan, panjang tubuh antara 6,5—
+8,5 cm, diameter sekitar 1,5 cm, dapat 
+dikonsumsi (Perna viridis); kerang 
+hijau 
+
+##### PAGE 54
+54 | Kamus Kemaritiman Aceh-Indonesia  
+seulangat
+seureutèp 
+lado seukupang /la.dɔ sɯ.ku.
+paŋ/  n seukupang goreng yg 
+disambal: lôn hantom lônpajôh 
+–- ‘saya tidak pernah makan 
+sambalado kerang hijau’
+seulangat /sɯ.la.ŋat/ n ikan air 
+tawar, ukurannya sekitar 18—30 cm, 
+beratnya 500 gr—1 kg, bersisik dan 
+berduri banyak, mirip ikan arwana, 
+dan 
+berwarna 
+perak 
+(Dorosoma 
+chavesi)
+seuludat /sɯ.lu.dat/  n serdadu laut; 
+marinir
+seuléng  /sɯ.leŋ/ n alat penarik nyap, 
+terbuat dari kayu bulat berdiameter 
+20—25 cm,
+panjangnya sekitar 4 m, di bagian 
+tengahnya 
+dimasukkan 
+tongkat 
+kayu berukuran 2 m sejumlah 3 
+buah, digunakan untuk memutar dan 
+menarik tali jaring
+seumpit /sɯm.pit/  n ikan payau 
+berukuran 5 cm, berwarna hitam, dan 
+bergaris vertikal kuning; ikan sumpit 
+seumilang 
+/sɯ.mi.laŋ/ 
+n 
+ikan 
+sembilang
+tumèh 
+seumilang 
+/tu.mɛh 
+sɯ.mi.laŋ/ n masakan berkuah 
+yg 
+ditumis 
+dng 
+campuran 
+berbagai 
+bumbu, 
+bahan 
+utamanya ikan sembilang
+seuneulhop /sɯ.nɯ.lhɔp/ n konstruksi 
+dari 
+tanah 
+yg 
+dibangun 
+untuk 
+menahan laju air menjadi waduk, 
+danau, atau tempat rekreasi dan 
+saluran; bendungan: neupeugöt — 
+beu pah, mangat bèk bagah beukah! 
+‘buatlah bendungan yg bagus agar 
+tidak mudah jebol!’
+seungko /sɯŋ.kɔ/ n ikan limbat; ikan 
+lele: bak warông bu kayém na eungkôt 
+— ‘di warung nasi sering ada ikan lele’
+seunong /sɯ.nɔŋ/  n bagian sungai, 
+rawa, dan saluran yg lebih dalam dari 
+bagian lainnya, tempat berkumpul 
+ikan di dalam sungai; palung: apacut 
+geujeu eungkôt bak – krung ‘paman 
+mencari ikan di palung sungai’
+seunumpai /sɯ.num.pai/ n penyumbat 
+untuk mencegah masuknya air ke 
+dalam lubang, misalnya perahu yg 
+berlubang
+seupôt /sɯ.pot/ a tidak ada cahaya, 
+tidak terang, disebut juga klam; gelap: 
+peu duk lom? ka –- uro ‘untuk apa 
+duduk lagi? hari sudah gelap
+seurampong  /sɯ.ram.pɔŋ/  n anak 
+ikan belanak (ikan laut yg masuk ke 
+sungai), bukan indukannya, disebut 
+juga 
+seurampung: 
+kamo 
+meujak 
+jaréng –- watè jiék i paseung ‘kami 
+menjaring anak ikan belanak saat air 
+pasang’
+seureutèp /sɯ.rɯ.tɛp/ n kerang kecil 
+yg tumbuh menempel pada kayu dan 
+batu di tambak atau sungai air asin: 
+Nyakpo Saudah teungoh geupèh 
+-– bak pha peulabuhan ‘Bibi Saudah 
+sedang mencongkel kerang kecil yg 
+menempel di tiang pelabuhan’
+
+##### PAGE 55
+Kamus Kemaritiman Aceh-Indonesia | 55
+seuridéng 
+sirèn
+seuridéng /sɯ.ri.deŋ/ n ikan kecil yg 
+hidup di air tawar, air asin, dan payau, 
+berwarna putih bening, dikenal juga 
+seurudéng; seriding 
+seuriding  	
+/sɯ.ri.diŋ/ n ikan laut 
+yg berbentuk tubuh pipih, bersisik 
+atau sebagian tertutup oleh kelopak-
+kelopak tebal, nokturnal, dimanfaatkan 
+sebagai bahan pembuatan terasi, 
+dijadikan ikan asin, atau dijadikan ikan 
+hias (Ambassis sp): lam krung le that 
+— ‘di dalam sungai itu banyak sekali 
+ikan seuriding’
+seusiah /sɯ.si.yah/  n ikan kecil di 
+rawa-rawa mirip bilis, disebut juga 
+biléh paya 
+seut    /sɯt/  v membuang air dari 
+tambak untuk mengambil ikan saat 
+panen atau membuang air dari 
+perahu: Apa Leman geu—i neuheun 
+seugolom geucok eungkôt ‘Paman 
+Leman 
+membuang 
+air 
+tambak 
+sebelum mengambil ikan’
+seuum   /sɯ.um/ a kondisi cuaca atau 
+benda yg terasa panas atau bersuhu 
+relatif tinggi: uro – that bak bineh pasi 
+‘cuaca sangat panas di pinggir pantai’ 
+si u laôt /si u la.ot/ n mata angin yg 
+arahnya berlawanan dng selatan, 
+mata angin yg arahnya sebelah kiri 
+jika kita menghadap ke timur (matahari 
+terbit); utara
+siakap /si.ya.kap/  n ikan laut, payau 
+bahkan tawar, berwarna abu-abu, dan 
+berbentuk torpedo, dikenal di daerah 
+Lhokseumawe 
+dan 
+Aceh 
+Barat, 
+dikenal juga sakap (wilayah Aceh 
+Timur); kakap
+siakap panggang  /si.ya.kap 
+paŋ.gaŋ/  n ikan kakap yg 
+dipanggang
+tumèh 
+siakap 
+/tu.mɛh 
+si. 
+ya.kap/ n ikan kakap yg ditumis
+sira /si.ra/ n senyawa kristalin NaCl yg 
+merupakan klorida dan sodium, dapat 
+larut dalam air; garam: bèk meukat – 
+bak binèh jalan jitôh ujeun cayé dum 
+na ‘jangan menjual garam di pinggir 
+jalan, turun hujan cair semua’  
+jambô sira  /jam.bo/  n gubuk 
+yg terbuat dari kayu, digunakan 
+sebagai 
+tempat 
+berteduh, 
+bermalam 
+bagi 
+orang 
+yg 
+menjaga 
+atau 
+mengelola 
+tambak
+mon sira /mõn si.ra/  n sumur 
+berbentuk 
+persegi 
+empat, 
+berfungsi sebagai penyimpan 
+air asin yg siap dimasak utk 
+menjadi 
+garam, 
+berada 
+di 
+dalam jambô sira, dikenal juga 
+lancang sira
+sirèn    /si.rɛn/n tanaman dr suku 
+kapas-kapasan, batang tegak dan 
+berwarna putih suram, daun berbentuk 
+jantung dan urat daun menyirip, bunga 
+berwarna kuning putih berbentuk 
+kuncup, serta banyak ditemukan di 
+pinggir laut atau pantai, disebut juga 
+siron (Hibiscus tiliaceus L. ); waru laut 
+
+##### PAGE 56
+56 | Kamus Kemaritiman Aceh-Indonesia  
+sirép 
+sudok
+sirép /si.rep/n tajuk-tajuk di punggung, 
+dada, dan ekor ikan; sirip: — yè meuhai 
+yumjih ‘sirip hiu mahal harganya’
+siri    /si.ri/  n ikan mirip kakap yg 
+berukuran lebih kecil dan sisiknya 
+lebih lembut, dan berwarna putih 
+perak
+sisék    /si.se?/ n 1 sisik ikan, sisik 
+binatang melata, dan sisik pada 
+kaki unggas; 2 ikan tuna (Thunnus 
+alalunga)
+sisék itam  /si.se? i.tam/  n 
+ikan tuna berwarna gelap
+sisék 
+kunèng 
+ 
+/si.se? 
+ku.neŋ/  n ikan tuna yg ujung 
+ekornya berwarna kuning
+siseuk /si.sɯ?/ n tumbuhan yg mudah 
+hidup di tempat basah dan lembab, 
+biasanya berwarna hijau, berbentuk 
+lembaran 
+dan 
+berukuran 
+sekitar 
+1—2 cm, biasanya terdapat di kolam, 
+tanah, rawa, atau tempat yg lembab; 
+lumut: bak neuheun le that siseuk ‘di 
+tambak terdapat banyak lumut’
+sogok /sɔ.gɔ?/ n lihat galah
+sok    /sɔ?/ 1 a kandas, tersekat, 
+tersangkut, 
+terdampar 
+(perahu, 
+kapal): bôt nyan ka sok ‘perahu itu 
+sudah kandas’; 2 v bersembunyi 
+dalam sesuatu (ump ikan dalam 
+lumpur): eungkôt ka ji—lam leuhop 
+‘ikan bersembunyi di dalam lumpur’
+srék 
+/sre?/ 
+n 
+saringan 
+berupa 
+rangkaian bambu pipih atau jaring, 
+dibentuk persegi empat (ukurannya 
+disesuaikan), diletakkan di depan 
+pintu air untuk menahan keluarnya 
+ikan dan udang: — nyan ka reuloh 
+‘srek itu sudah rusak’
+stèmpè /stɛm.pɛ/ n sampan dgn 
+kapasitas dua org, dan menggunakan 
+mesin yg dapat dilepas pasang, 
+dikenal juga dng bôt tèmpè; perahu 
+tempel
+suak    /su.wa?/  1 n luapan air yg 
+ketika surut menjadi genangan: — ka 
+thô ‘genangan air sudah kering’; 2 a 
+lemah, tidak kuat lagi (tt  kaki atau 
+baterai); soak: batré sèntè bak bôt 
+ka –- ‘baterai senter di perahu sudah 
+soak’
+plah suak /plah su.wa? /v 
+membelah tambak/suak untuk 
+mengaliri air ke laut
+sudèp 
+/su.dɛp/ 
+n 
+bambu 
+pipih 
+berukuran 1—2 cm x 30—40 cm, 
+berbentuk runcing, digunakan untuk 
+menyambung gulungan jang satu dng 
+lainnya, dng cara diselipkan di antara 
+rangkaian lidi jang yg akan disambung
+sudok  /su.dɔ?/ n lihat sawök
+
+##### PAGE 57
+Kamus Kemaritiman Aceh-Indonesia | 57
+sugôt
+surè 
+sugôt /su.got/  n ikan karang laut 
+panjangnya 
+mencapai 
+50 
+cm, 
+warnanya 
+bervariasi, 
+bergaris 
+horizontal putih dan hitam, bibir 
+dan siripnya berwarna kekuningan 
+(Plectorhinchus lineatus)
+sui /suy/ v memperbaiki jang yg rusak 
+dng cara memasukkan kembali lidi-
+lidi baru pada bekas lidi-lidi yg patah: 
+ta— beu göt jang nyan ‘kita perbaiki 
+yg bagus jang itu’
+suli 
+ 
+ 
+/su.li/ 
+n 
+buluh 
+bambu 
+berukuran kecil yg digunakan untuk 
+menghidupkan perapian dng cara 
+dihembus
+sulôp   /su.lop/ n ark selup di laut (dl 
+hik)
+sumbo /sum.bɔ/ n ikan laut yg tidak 
+bersisik (Rastrelliger); ikan kembung 
+sumpét /sum.pet/ n ikan laut yg 
+berwarna putih atau perak dng 4—5 
+garis hitam di bagian atas tubuh, 
+memiliki bentuk mulut yg rahangnya 
+menonjol, serta dapat menangkap 
+serangga dng cara menyemprotkan 
+air agar jatuh
+surè /su.rɛ/n ikan tongkol 
+lado surè /la.dɔ su.rɛ/  n ikan 
+tongkol goreng yg disambal, 
+disebut 
+juga 
+surè 
+teulado: 
+— mak peugöt masen bacut 
+‘sambalado tongkol buatan ibu 
+sedikit asin’
+surè panggang  /su.rɛ paŋ.
+gaŋ/ 
+n 
+ikan 
+tongkol 
+yg 
+dipanggang
+surè teucrôh /su.rɛ tɯ.croh/ n 
+ikan tongkol yg digoreng
+surè bulat /su.rɛ bu.lat/ n ikan 
+tongkol yg panjangnya sekitar 
+10—20 cm, berwarna abu-abu, 
+dapat diolah menjadi kerupuk, 
+dikenal juga dng surè keumong
+surè timphik  /su.rɛ tim.phi?/  n 
+ikan tongkol yg kepalanya besar 
+dan bagian perutnya ramping, 
+panjangnya sekitar 10—40 cm, 
+dikenal juga dng timphik
+
+##### PAGE 58
+58 | Kamus Kemaritiman Aceh-Indonesia  
+suro
+suwik 
+suro  /su.rɔ/  n bubu terbuat dari 
+bilah bambu yg dibelah kecil untuk 
+menangkap ikan gabus, berukuran 
+lebih kecil dari bubè 
+susôk /su.so?/n haluan kapal/bagian 
+paling ujung depan pada kapal yg 
+terbuat dari kayu keras
+suwé    /su.we/  baling-baling mesin 
+yg mempunyai dua poros turbin; 
+propeler: — bôt ka patah keunong 
+kareung ‘baling-baling perahu sudah 
+patah terkena karang’
+suwik    /su.wĩ?/  n ikan seperti lele, 
+hidup di air tawar atau payau, perut 
+berwarna 
+putih, 
+dan 
+punggung 
+berwarna kebiruan
+
+##### PAGE 59
+Kamus Kemaritiman Aceh-Indonesia | 59
+tairo
+talo
+T 
+tairo /tay.rɔ/ n ikan laut yg bentuknya 
+panjang dan langsing, berwarna putih 
+kebiruan, 
+punggungnya 
+kehitam-
+hitaman 
+dan 
+perutnya 
+bersinar 
+keperak-perakan, dagingnya berwarna 
+putih, mengandung banyak zat lemak, 
+ukurannya mencapai 240 cm, berat 
+mencapai 70 kg (Scomberomorus 
+commerson), disebut juga tangiro; 
+tenggiri
+tairo 
+bateung 
+/tay.rɔ 
+ba.tɯŋ/ 
+n 
+tenggiri 
+batang 
+(Scomberomorus commersoni)
+tairo kawit /tay.rɔ ka.wit/ n ikan 
+tenggiri yg hidup di kedalaman 
+50—30 m laut, berwarna biru 
+kehitaman, panjangnya 2—3 
+m, bentuk tubuhnya tipis
+tairo meuntro /tay.rɔ mɯn.trɔ/ 
+n tenggiri musang, badannya 
+bergaris-garis (Scomberomorus 
+lineolatus)
+tairo 
+peuaweuh 
+ 
+/tay.rɔ 
+pɯ.a.wɯh/ 
+n 
+tenggiri 
+yg 
+dimasak 
+menggunakan 
+ketumbar
+taleung /ta.lɯŋ/  n ikan laut yg 
+panjangnya 
+mencapai 
+1,2 
+m, 
+warnanya kuning, lebar badannya 
+sampai 25 cm, sering dijadikan ikan 
+asin (Chorinemus lysan); talang
+talo  /ta.lɔ/n  benda yg berutas-utas 
+panjang, 
+dibuat 
+dari 
+bermacam-
+macam bahan (sabut kelapa, ijuk, 
+plastik, dan sebagainya), ada yg 
+dipintal ada yg tidak, gunanya untuk 
+mengikat, mengebat, menghela, atau 
+menarik; tali
+talo arôh /ta.lɔ a.roh/ n gerak 
+air yg mengalir; arus
+talo i /ta.lɔ i/n saluran air 	 
+talo kawé /ta.lɔ ka.we/  n 
+tali pancing, gunanya untuk 
+menarik/menangkap ikan
+talo kapai /ta.lɔ ka.pay/n tali 
+untuk mengikat/menarik kapal
+talo tapéh   /ta.lɔ ta.peh/ n tali 
+yg terbuat dari sabut kelapa dan 
+digunakan untuk pukat langgar; 
+tali tambang 
+talo unjam /ta.lɔ un.jam/ n tali 
+utk mengikat rumpon
+
+##### PAGE 60
+60 | Kamus Kemaritiman Aceh-Indonesia  
+tambak
+teudöng-döng
+tambak 
+/tam.ba?/ 
+v 
+menimbun-
+nimbun 
+tanah 
+supaya 
+tinggi, 
+membumbun tanah (pada tanaman 
+dan 
+sebagainya), 
+menampali 
+pematang atau tambak dng tanah 
+(untuk memperbaiki pematang itu), 
+dan membuat tambak, disebut juga 
+teumambak; menambak
+teunambak /tɯ.nam.ba?/  n 
+timbunan atau pematang
+tamban /tam.ban/  n ikan laut dan 
+payau, berbadan bulat memanjang, 
+panjang mencapai 45 cm, berat 
+mencapai 1,05 kg, dagingnya terlepas 
+dari tulang-tulangnya, disebut juga 
+rambôt leukang (Clupea harengus 
+harengus)
+tampuléng  	
+/tam.pu.leŋ/ n tombak 
+besi yg ujung gagangnya diikat tali 
+dng cara dilempar; tempuling; seruit: 
+geutop eungkôt ngön -– ‘orang 
+menombak ikan dng tempuling’
+tanda   /tan.da/ n lihat reumong
+tandôk /tan.do?/  n ikan karang, 
+termasuk kelompok Lutjanidae; kakap 
+merah: daripada – göt neublo rambeu 
+‘daripada ikan kakap merah lebih baik 
+kamu beli ikan kuwe’
+tanggok  /taŋ.gɔ?/ n lihat sawök
+tangkulo /taŋ.ku.lɔ/  n ikan laut yg 
+menyerupai 
+alu-alu, 
+tetapi 
+lebih 
+pendek (Sphyraena sp.)
+tanjông  /tan.joŋ/ n tanah (ujung) atau 
+pegunungan yg menganjur ke laut; 
+tanjung
+tanoh jeut  /ta.nɔh jɯt/  n tanah yg 
+timbul atau bertambah di tepian 
+sungai atau pantai sebagai akibat dari 
+proses alam
+tapak kuda  /ta.pa? ku.da/  n terna 
+menjalar,
+tumbuh dekat pantai, batangnya liat 
+dan panjang, daunnya lebat, digunakan 
+sebagai obat untuk mematangkan 
+bisul, air rebusannya dibuat sebagai 
+obat pencuci kaki penderita beri-beri 
+(Ipomoa pescaprae); katang-katang
+tapak lèman  /ta.pa? lɛ.man/  n ikan 
+laut, mirip ikan bawal, bersisik halus, 
+bentuknya bulat, panjangnya 12—15 
+cm, warna kecoklatan-coklatan hitam, 
+dan berbintik-bintik di sirip 
+tèkong  /tɛ.koŋ/ n nakhoda kapal atau 
+seseorang yg mengoperasikan kapal: 
+— ka mabôk laôt ‘nakhoda merasa 
+pusing (mabuk laut)’
+teudöng /tɯ.dʌŋ/ 1 a keadaan air 
+tenang, tidak ada pergerakan; statis: 
+eungkôt krup galak jimeun bak i 
+-– ‘ikan krup senang bermain di air 
+tenang’; 2 hanya berdiri, terhenti, 
+atau mematung: kapai reulöh nyan 
+ka — bak teungoh laôt ‘kapal rusak itu 
+terhenti di tengah laut’
+teudöng-döng 
+ 
+/tɯ.dʌŋ-dʌŋ/ 
+v 
+1 
+ki 
+tidak 
+memiliki 
+pekerjaan; 
+menganggur: buya krung —, buya 
+tamöng meuraseuki ‘buaya sungai 
+menganggur, 
+buaya 
+pendatang 
+mendapat rezeki’ (artinya, masyarakat 
+setempat tidak mendapat apa-apa 
+sedangkan 
+pendatang 
+mendapat 
+keuntungan); 2 berkerumun; ureung 
+jak meulaôt ka – bak binèh pasi sabab 
+laôt bagah that ‘nelayan berkerumun di 
+pinggir pantai karena laut bergejolak’
+
+##### PAGE 61
+Kamus Kemaritiman Aceh-Indonesia | 61
+teumalang 
+teurubok
+teumalang  /tɯ.ma.laŋ/  n wadah 
+yg terbuat dari upih pinang atau 
+nibung, berbentuk memanjang atau 
+mengotak, kedua ujungnya diikat, 
+digunakan untuk berbagai keperluan: 
+lam — geukeubah boh sunti ‘dalam 
+teumalang disimpan asam sunti’
+teumambak  /tɯ.mam.ba?/  n ikan 
+laut, panjangnya mencapai 60 cm, 
+beratnya mencapai 2,53 kg, hidup 
+di wilayah terumbu karang (Lutjanus 
+synagris) 
+teumeuran  /tɯ.mɯ.ran/ n pohon yg 
+batangnya warna kecoklatan, daun 
+berbentuk oval, bunga putih kuning, 
+buah berwarna hijau, biasa hidup di 
+pesisir dan rawa (Gutarda speciosa); 
+jati pasir 
+teumiréh  /tɯ.mi.reh/  n ikan laut 
+yg besar, biasanya dibelah dan 
+dikeringkan
+teunga  /tɯ.ŋa/ n 1 pohon yg memiliki 
+daun dan batang spt bakau, tetapi 
+akar tidak timbul di permukaan, 
+akarnya tunggal, biasanya terdapat 
+di rawa dan sungai; 2 ikan laut yg 
+berwarna kemerahan, keluarga kakap 
+merah (Lutjanidae argentimaculatus); 
+kakap merah bakau
+teungoh  /tɯ.ŋõh/  n keluar dari air 
+atau berlabuh
+teupah /tɯ.pah/ v  teknik memancing 
+menggunakan 
+media 
+ikan 
+hidup 
+sebagai umpan, di pertengahan kail 
+diikat pelampung kecil sbg penanda 
+umpannya dimakan ikan predator 
+kawé teupah  /ka.we tɯ.pah/  n 
+alat pancing yg menggunakan 
+teknik teupah: awak bôt palông 
+na cit jipakèk — jijak kawé 
+rambeu 
+‘anak 
+buah 
+kapal 
+palông memakai kawé teupah 
+untuk memancing ikan bawal’
+teupin  /tɯ.pin/  n perangkat terkecil 
+dari struktur panglima laut yg wilayah 
+kekuasaannya sebatas per kampung: 
+Pawang 
+Rahman 
+ka 
+meuangkat 
+keu – bak lhok Krung Raya ‘Pawang 
+Rahman sudah kami angkat sebagai 
+teupin di teluk Krung Raya’
+teuritèp /tɯ.ri.tɛp/ n lihat seureutèp 
+teurubok /tɯ.ru.bɔk/ n ikan laut juga 
+dinamakan krisi yg telurnya diasinkan 
+dan dimakan sebagai lauk 
+
+##### PAGE 62
+62 | Kamus Kemaritiman Aceh-Indonesia  
+teurusan
+toké  
+teurusan /tɯ.ru.san/  n ikan laut, 
+badannya berbentuk seperti pesawat, 
+warnanya 
+putih 
+kekuningan 
+dan 
+bersisik kecil-kecil, panjangnya sekitar 
+1,2—2 m, menghasilkan gelembung 
+yg dapat digunakan untuk membuat 
+benang operasi; ikan tirusan
+tèn /ʈɛn/n kondisi benang pancing yg 
+sdh tidak lurus (berliku-liku): kawé 
+murah that bagah meu— ‘benang 
+pancing yg murah cepat sekali berliku’ 
+thôk  /ʈʰok/  n ikan laut yg lebih kecil 
+daripada layaran; marlin
+tiang gawang /ti.yaŋ ga.waŋ/ n derek 
+yg dipakai untuk mengangkat ikan dari 
+kapal ke daratan: — ka patah, kiban 
+lom tagrak eungkôt? ‘tiang derek 
+sudah patah, bagaimana caranya kita 
+mengangkat ikan?’
+tiang sap /ti.yaŋ sap/ n tiang penahan 
+as baling-baling pada rangka kapal
+tima upéh /ti.ma u.peh/ n timba untuk 
+menguras air dalam sampan
+timon   /ti.mɔn/ n ikan kecil yg hidup 
+di kedalaman laut dangkal, bentuknya 
+tipis dan lebar dng panjang sekitar 
+10 cm, ada corak berwarna coklat di 
+kepalanya
+timpi /tim.pi/ n bagian samping perahu 
+yg paling atas.
+tirom  /ti.rɔm/  n   lokan yg kulitnya 
+agak datar, hidupnya menempel pada 
+tiang-tiang 
+pelabuhan, 
+bebatuan, 
+dan kapal yg sudah rusak, termasuk 
+marga Ostreidae; tiram:  tirom ka 
+geubudidaya lam krung ‘tiram sudah 
+dibudidaya di sungai’
+phèp tirom /phɛp ti.rom/ n tiram 
+yg ditumis dng bumbu pepes 
+tirom duro panjo /ti.rɔm du.rɔ 
+pan.jɔ/ n tiram kecil yg berduri, 
+berwarna putih dng cangkang 
+hitam 
+tirom seumilok  /ti.rɔm sɯ.mi.
+lɔ?/  n tiram yg mirip cacing, 
+panjangnya sampai 20 cm, 
+lembut ketika dimakan 
+tirom teucrah /ti.rɔm ʈɯ.crãh/ n 
+tiram yg ditumis dng bumbu 
+tirom teupeuleumak  /ti.rɔm 
+tɯ.pɯ.lɯ.ma?/ 
+n 
+tiram 
+yg 
+dimasak dng kuah santan dan 
+bumbu halus lainnya
+toké    /to.ke/ n pedagang
+toké 
+bangku 
+/to.ke 
+baŋ.
+ku/  n orang yg mempunyai 
+profesi sebagai pembeli atau 
+penampung produk perikanan
+toké bôt   /to.ke bot/ n pemilik 
+perahu/kapal
+toké gudang  /to.ke gu.daŋ/ 
+n pemilik gudang 
+
+##### PAGE 63
+Kamus Kemaritiman Aceh-Indonesia | 63
+tông
+tuwi lhôk /
+tông  /toŋ/  n 1 palka/ruang pada 
+permukaan dek kapal berbentuk segi 
+empat berukuran 80 cm x 120 cm yg 
+digunakan untuk menyimpan barang 
+seperti kotak penyimpan ikan, bahan 
+bakar, atau pukat: — bôt ka boco 
+‘palka perahu sudah bocor’2 wadah 
+penyimpanan 
+berbentuk 
+persegi 
+empat terbuat dari kayu atau fiber
+tông-tông  /toŋ toŋ/  n kura-kura yg 
+berukuran besar daripada labi-labi, 
+berwarna keabu-abuan, hidupnya di 
+laut
+tri /tri/ n ikan kerisi atau teri 
+tring /triŋ/n lihat kring
+trimèn  /tri.mɛn/ n lihat keurimèn
+tuamang 
+/tu.wa.maŋ/ 
+n 
+ 
+jaring 
+bermata rapat, panjangnya kira-kira 
+60 m (istilah ini biasa digunakan oleh 
+nelayan di pesisir timur) 
+tukik  /tu.ki?/ n nakhoda kapal atau 
+seseorang yg mengoperasikan kapal
+tulak bala /tu.la? ba.la/ v ritual 
+memanjatkan doa agar terhindar  dari 
+malapetaka, bencana, penyakit, dsb. 
+yg dianggap merugikan
+tulu madang  /tu.lu ma.daŋ/  n ikan 
+laut, 
+warnanya 
+campuran 
+hijau, 
+kuning, dan putih, panjangnya 1—1,5 
+m, berkepala besar (Coryphaena 
+hippurus mahi); ikan lemadang 
+tumbak /tum.ba?/ n alat menangkap 
+ikan yg terbuat dari kayu yg ujungnya 
+dipasangi besi runcing, dililitkan tali 
+untuk memegang kayunya; tombak 
+tuna /tu.na/ n ikan sejenis tongkol yg 
+hidup di laut, badannya gemuk, ujung 
+ekornya berwarna kuning, panjangnya 
+bisa sampai 1 m, warnanya mirip dng 
+sisek itam; tuna ekor kuning.
+tuna igo asè   /tu.na i.gɔ asɛ/ n 
+ikan tongkol yg giginya mirip 
+gigi anjing; tuna gigi anjing
+tungkat ali  /tuŋ.kat a.li/  n pohon yg 
+memiliki batang bergelombang, kasar, 
+berbenjol-benjol, daunnya kecil-kecil, 
+meruncing, dan bertepi rata; pasak 
+bumi 
+tumba  /tum.ba/  n tumbuhan tergolong 
+rotan, batangnya berduri, melilit, dan 
+menjalar ke pohon sekitarnya, daun 
+bentuk 
+lanset 
+(runcing), 
+pelepah 
+berwarna hijau kusam,
+ kecoklatan, dan hitam, ditumbuhi 
+duri berbentuk segitiga; rotan batang 
+(Calamus zollingeri)
+turak    /tu.ra?/  n ikan yg hidup di 
+air tawar atau payau, berbentuk 
+bulat, berenang di dasar air, sejenis 
+beloso, disebut juga curak atau turok 
+(Oxyeleotris marmorata)
+tuwah   /tu.wah/ n rumpon laut
+tuwasan  /tu.wa.san/  n lihat bubôn 
+(istilah ini biasa digunakan di daerah 
+Aceh Timur)
+tuwi lhôk /tu.wi lho?/ n lubuk di sungai 
+yg dalam
+
+##### PAGE 64
+64 | Kamus Kemaritiman Aceh-Indonesia  
+tuwih
+tuwih
+tuwih  /tu.wih/  n ikan laut kecil 
+berwarna 
+kemerahan, 
+hidup 
+di 
+perairan laut dangkal (Pristipomoides 
+filamentosus); kerisi
+lado tuwih  /la.dɔ tu.wih/  n 
+kerisi yg digoreng dng sambal: 
+— nyang jipeugöt keueung that 
+‘lado tuwih yg dibuatnya pedas 
+sekali
+tuwih teucrôh /tu.wih tɯ.croh/ n 
+ikan kerisi yg digoreng: eungkôt 
+tuwih teucrôh mangat that ‘ikan 
+kerisi goreng enak sekali’
+
+##### PAGE 65
+Kamus Kemaritiman Aceh-Indonesia | 65
+u 
+udeung
+U 
+u  /u/  n pohon sejenis palem yg 
+mempunyai batang tinggi menjulang, 
+bentuk daun panjang sejajar, buahnya 
+bulat 
+dan 
+memiliki 
+struktur 
+yg 
+berlapis,biasanya tumbuh di pesisir 
+pantai, dijumpai pula di pemukiman 
+warga; kelapa (Cocos nucifera)
+u gadéng /u ga.deŋ/ n kelapa 
+genjah yg terdiri dari tiga warna, 
+yaitu 
+kelapa 
+gading 
+putih, 
+gading kuning, dan gading 
+hijau, biasa tumbuh di daerah 
+subtropis; kelapa gading
+u hibrida  /u hi.bri.da/  kelapa 
+hasil dari persilangan kelapa 
+varietas dalam dng kelapa 
+genjah; kelapa hibrida
+u thôn    /u thon/  n kelapa yg 
+tingginya 
+mencapai 
+20 
+m, 
+usianya 
+mencapai 
+belasan 
+tahun; kelapa varietas dalam
+ubè /u.bɛ/ n hiu yg panjangnya sekitar 
+3—5 m; hiu tikus (Alopias pelagicus)
+ubô-ubô /u.bo-u.bo/ n lihat bôbô
+uboh    /ubɔh/  n ikan yg terdapat di 
+alur-alur air asin; ikan bulu ayam
+udeung  /u.dɯŋ/  n udang: meumisè 
+bèk tasangka tupè, meujanggôt bèk 
+tasangka —, meuseureuban bèk 
+tasangka lubè, hana dro neutè ka 
+pancuri ureung ‘berkumis jangan 
+disangka tupai, berjanggut jangan 
+disangka udang, beserban jangan 
+disangka 
+malim, 
+tidak 
+disangka 
+rupanya pencuri’
+asam udeung /a.sam u.dɯŋ/ n 
+udang yg dimasak dng asam 
+sunti, cabai rawit, dan bawang 
+merah
+payéh 
+udeung 
+/pa.jeh 
+u.dɯŋ/ n udang yg dipepes: — 
+nyo kureung sira ‘pepes udang 
+ini kurang garam’
+phèp udeung   / phɛp u.dɯŋ/ n 
+udang yg ditumis dng bumbu 
+pepes 
+
+##### PAGE 66
+66 | Kamus Kemaritiman Aceh-Indonesia  
+udeung
+udeung
+udeung apui  /u.dɯŋ a.puy/  n 
+udang yg berwarna merah 
+dng 
+belang-belang 
+putih, 
+panjangnya sekitar 10 cm
+udeung batè  / u.dɯŋ batɛ/  n 
+udang 
+yg 
+berwarna 
+abu-
+abu, kulitnya agak keras dan 
+panjangnya 
+sekitar 
+12 
+cm 
+(Metapenaeus ensis); udang 
+batu 
+udeung galah / u.dɯŋ ga.lah/ n 
+udang besar dan panjang, hidup 
+di sungai dan rawa, terutama di 
+daerah yg masih dipengaruhi 
+pasang surut (Macrobium rosen 
+berghii); udang galah
+udeung ik /u.dɯŋ ĩ?/ n udang 
+yg berukuran mencapai 30 cm 
+(Odontodactylus 
+latirostris); 
+udang mantis
+udeung jambô /u.dɯŋ jam.
+bo/  n udang kecil yg memiliki 
+badan bulat, isinya montok 
+dan kulitnya tipis, disebut juga 
+udeung jambè
+udeung kèlong /u.dɯŋ kɛ.lɔŋ/ n 
+udang putih, panjangnya sekitar 
+20 cm, warnanya abu-abu, kaki 
+dan ekornya merah (Penaeus 
+Indicus)
+udeung keureutah itam  /u.
+dɯŋ kɯ.rɯ.ʈah i.tam/  n udang 
+yg berwarna biru kehitaman 
+dan kakinya kecil
+udeung 
+keureutah 
+putéh 
+/u.dɯŋ kɯ.rɯ.ʈah pu.ʈeh/  n 
+udang yg berwarna putih dng 
+ekor merah
+udeung putéh /u.dɯŋ pu.teh/ n 
+udang yg dimasak dng kuah 
+santan kental dan bumbu halus 
+tanpa kunyit dan cabai; udang 
+masak putih
+udeung 
+reubôh 
+/u.dɯŋ 
+rɯ.boh/ n udang yg direbus
+udeung reukih /u.dɯŋ rɯ.kih/ n 
+udang yg keras kulitnya dan 
+warnanya coklat muda berbintik
+udeung 
+teucrah 
+/u.dɯŋ 
+tɯ.crãh/  n udang  yg ditumis 
+dng bumbu
+udeung 
+teucrôh 
+/u.dɯŋ 
+tɯ.croh/ n udang yg digoreng
+udeung tiger  /u.dɯŋ ti.gər/ n 
+udang windu
+udeung timah   /u.dɯŋ ti.mah/ 
+n lobster
+udeung tôcô  /u.dɯŋ to.co/  n 
+udang 
+yg 
+dimasak 
+dng 
+cabai hijau, bawang, tomat 
+yg 
+dipotong-potong, 
+diberi 
+tambahan tauco
+udeung tumèh /u.dɯŋ.tu.mɛh/ 
+n udang yg dimasak dng 
+campuran 
+berbagai 
+bumbu 
+seperi kunyit, ketumbar, cabai 
+merah, bawang, dan diberi 
+sedikit santan
+
+##### PAGE 67
+Kamus Kemaritiman Aceh-Indonesia | 67
+ujông glé
+umpeun 
+udeung wat  /u.dɯŋ wat/  n 
+udang besar dan panjang, 
+hidup di sungai dan rawa, 
+terutama di daerah yg masih 
+dipengaruhi 
+pasang 
+surut 
+(Penaeus Monodon); udang 
+windu
+ujông glé   /u.joŋ gle/ n lihat tanjông
+ulat bulè laôt  /u.lat bu.lɛ la.ot/ n  ulat 
+bulu bewarna hitam di laut
+ulaya   /u.la.ja/ n bagian badan jaring 
+yg berbentuk bulat panjang dan 
+terletak di tengah, yakni antara jôk 
+pukat dan eunt    ông, terbuat dari 
+benang katun dan berfungsi untuk 
+mengurung ikan yg sudah masuk ke 
+dalam kantong; badan pukat
+uleu i   /u.lɯ i/ n ular air yg panjangnya 
+sekitar 50 cm, tubuh bagian atas 
+berwarna kelabu dengan kombinasi 
+warna 
+coklat 
+gelap, 
+dan 
+tubuh 
+bagian bawah berwarna jingga atau 
+kekuningan (Hypsiscopus plumbea)
+uleu ija   /u.lɯ i.ja/ n ular air bergaris-
+garis (spt kain) dan tidak berbisa 
+(Acrochordus granulatus)
+uleu laôt   /u.lɯ la.ot/ n ular berbisa yg 
+hidup di laut
+ulè jalô   /ulɛ ja.lo/ n ujung linggi muka 
+perahu
+umbai /um.bay/  n penanda titik/
+rambu-rambu yg terbuat dari kayu, 
+diberi 
+bendera, 
+pelampung, 
+dan 
+pemberat (pelampung yg digunakan 
+sebagai penanda ujung jaring dan 
+diletakkan lampu pd malam hari)
+umbak  /um.ba?/  n gerakan air laut 
+yg turun-naik atau bergulung-gulung; 
+ombak: manyang that — uro nyo 
+‘tinggi sekali ombak hari ini’
+umpang /um.paŋ/  n tempat atau 
+wadah berbentuk tas jinjing yg terbuat 
+dari anyaman daun pandan berduri 
+atau goni dan digunakan untuk 
+menyimpan ikan atau udang dsb
+umpang seukè	 / u m . p a ŋ 
+sɯ.kɛ/ tas yg terbuat dr daun 
+pandan berduri
+umpèp  /um.pɛp/  n jaring yg dibuat 
+dng penyangga besi, bentuknya bulat 
+kerucut ke bawah, digunakan untuk 
+mengambil ikan/kepiting di dalam air
+umpèt /um.pɛt/ n wadah menyimpan 
+ikan dan udang saat berada dalam air 
+(saat menjala atau menjaring), terbuat 
+dari jaring benang nilon, dibentuk 
+seperti kantong (dikuncupkan) dng 
+bingkai mulut yg terbuat dari bambu, 
+biasanya diikat di pinggang
+umpeun   /um.pɯn/ n makanan atau 
+sesuatu (cacing, udang, ikan, dan 
+sebagainya) yg digunakan u  ntuk 
+memikat atau menangkap binatang; 
+umpan
+
+##### PAGE 68
+68 | Kamus Kemaritiman Aceh-Indonesia  
+unja
+utôh 
+unja   /un.ja/ n kayu berbentuk tombak 
+berukuran 2—3 m yg terbuat dari 
+pohon bakau yg ditancapkan ke dalam 
+tanah di sungai atau tambak sebagai 
+penopang jang (agar tidak rebah) dari 
+arus air dan hembusan angin
+unjam /un.jam/ n lihat bubôn (istilah 
+ini biasa digunakan di daerah Aceh 
+Barat)
+ureung jak meulaôt /u.rɯŋ ja? mɯ.la.
+ot/ n orang yg pekerjaannya mencari 
+ikan di laut; nelayan
+urot    /u.rɔt/  n tanaman menjalar, 
+biasanya 
+merambat 
+pada 
+pohon 
+lain, batangnya sering digunakan 
+untuk 
+menghalau 
+ikan 
+supaya 
+masuk ke jaring dng cara menepuk-
+nepukkannya di permukaan air
+utôh   /u.toh/ n orang yg mempunyai 
+kepandaian dalam suatu pekerjaan 
+tangan atau mesin (membuat kapal, 
+rumah, dsb.); tukang
+utôh bôt   /u.toh bot/ n orang 
+yg membuat perahu/kapal
+
+##### PAGE 69
+Kamus Kemaritiman Aceh-Indonesia | 69
+wak-wak
+wèt-wöt
+W 
+wak-wak /wa?-wa?/ n burung pesisir, 
+punggung berwarna hitam, dada 
+berwarna putih, biasanya berbunyi 
+wak-wak ketika musim ikan 
+wèn    /wɛn/  n baling-baling pada 
+kapal terbuat dari besi kuningan yg 
+berfungsi untuk mendorong kapal: 
+— bôt ka patah ‘baling-baling perahu 
+sudah patah’
+wèt-wöt /wɛ̃t-wʌ̃t/ v bergerak ke sana 
+ke mari, menggelepar (ump. ikan): 
+umpeun ka di — le i paseung ‘umpan 
+sudah bergerak ke sana-ke mari 
+karena air pasang’
+
+##### PAGE 70
+70 | Kamus Kemaritiman Aceh-Indonesia  
+yè  
+yè  
+Y 
+yè    /jɛ/ n ikan laut besar, berbentuk 
+torpedo, bertulang rawan, kulit tidak 
+bersisik, tetapi berduri kecil-kecil yg 
+mengarah ke belakang, mulut terletak 
+di kepala bagian bawah, bergigi 
+banyak, biasanya diburu manusia 
+untuk diambil minyak dan siripnya; hiu
+kuah yè /ku.wah jɛ/ n ikan hiu 
+yg dimasak dng kuah santan
+yè ano    /jɛ a.nɔ/  n  hiu yg 
+kulitnya kasar seperti pasir, 
+panjangnya mencapai 1 m, 
+berwarna 
+putih 
+kehitaman, 
+moncongnya berbentuk agak 
+bulat; hiu pasir
+yè apông  /jɛ a.poŋ/n hiu yg 
+panjangnya 1 – 3 m, beratnya 
+mencapai 50 kg, berwarna biru 
+gelap di bagian atas dan putih 
+di bagian bawah (Prionace 
+glauca); hiu biru
+yè beuton  /jɛ bɯ.tɔn/  n  hiu 
+yg memiliki panjang tubuh 
+sekitar 60—400 cm, tubuhnya 
+terlihat gemuk dan gempal, 
+moncongnya 
+berbentuk 
+bulat melebar (Carcharhinus 
+Leucas); hiu banteng 
+yè brôh    /jɛ broh/ n hiu yg 
+memiliki punggung dan sirip 
+dada sangat lebar, di bagian 
+ujung 
+siripnya 
+berbentuk 
+bundar, hiu yg masih kecil 
+ujung 
+siripnya 
+berwarna 
+hitam sedangkan hiu dewasa 
+ujung siripnya berwarna biru 
+(Carcharhinus longimanus); hiu 
+koboi 
+yè bungong /jɛ bu.ŋɔ̃ŋ/ 	 n 
+hiu yg panjangnya sekitar 70 
+cm, punggung sampai ekornya 
+berbintik-bintik 
+hitam 
+dan 
+berwarna 
+kecoklatan, 
+serta 
+perutnya 
+berwarna 
+putih 
+(Cephaloscyllium 
+cf 
+variagatum); hiu bunga 
+yè gapeuh  /jɛ ga.pɯh/  n hiu 
+yg panjangnya sekitar 85—
+170 cm, beratnya mencapai 
+20 
+kg, 
+warnanya 
+abu-abu 
+kebiruan dan perutnya putih 
+(Carcharhinus brepvina); hiu 
+lanjaman 
+yè itam    /jɛ i.tam/  n hiu 
+yg 
+hidup 
+di 
+kedalaman 
+80—200 
+m, 
+menghasilkan 
+minyak 
+dari 
+tubuhnya 
+dan 
+banyak 
+dimanfaatkan 
+untuk 
+meningkatkan kekebalan tubuh, 
+harga siripnya mahal; hiu beton
+yè kacang /jɛ ka.caŋ/  n hiu 
+yg panjangnya 60—120 cm, 
+beratnya 
+mencapai 
+4 
+kg, 
+moncongnya 
+seperti 
+baji 
+dan 
+siripnya 
+melengkung 
+(Hemigaleus microtoma); hiu 
+kacang 
+yè kantup/jɛ kan.tup/ n hiu yg 
+panjangnya sekitar 40—100 
+cm, beratnya 4 kg, berwarna 
+coklat dan perutnya berwarna 
+putih (Chiloscyum punctatum); 
+hiu batu 
+yè mako/jɛ ma.kɔ/  n hiu yg 
+panjangnya 
+mencapai 
+270 
+cm, beratnya mencapai 50 kg 
+(Isurus paucus); hiu mako 
+
+##### PAGE 71
+Kamus Kemaritiman Aceh-Indonesia | 71
+yè  
+yè  
+yè meurak bulu /jɛ mɯ.rak 
+bulu/  n hiu yg panjangnya 
+sekitar 250—280 cm, beratnya 
+mencapai 60 kg (Carcharhinus 
+obscurus); cucut lanjaman 
+yè minyeuk    /jɛ mi.ɳɯ?/  n 1 
+hiu yg panjangnya 62-65 cm 
+(Centrophorus 
+moluccensis); 
+hiu botol danten; 2 hiu yg 
+panjangnya 36-65 cm (Squalus 
+edmundsi); hiu botol
+yè monas /jɛ mɔ.nas/ n hiu yg 
+panjangnya sekitar 226—290 
+cm, beratnya mencapai 50 kg, 
+siripnya 
+lancip 
+melengkung, 
+ketika 
+mulut 
+tertutup, 
+gigi 
+mencuat 
+keluar, 
+moncong 
+terlihat bulat tumpul (Hemipristis 
+elongata); hiu monas
+yè munjông  /jɛ mun.joŋ/  n 
+hiu yg panjangnya 70 -–200 
+cm, beratnya mencapai 20 kg 
+(Carcharinus falciformis);  hiu 
+lanjaman 
+yè napolèon /jɛ na.pɔ.lɛ.jɔn/ n 
+hiu 
+yg 
+panjangnya 
+sekitar 
+180—230 cm, beratnya 40 kg 
+(Carcharhinus plumbeus); hiu 
+teteri 
+yè nawan /jɛ na.wan/  n hiu 
+berbadan gemuk, panjangnya 
+mencapai 2 m, perutnya putih, 
+punggungnya berwarna abu-
+abu kebiruan, jenis hiu yg paling 
+enak diolah sebagai santapan 
+(Carcharinus 
+melanopterus); 
+hiu karang 
+yè parang    /jɛ pa.raŋ/  n hiu 
+berwarna hitam dan putih, 
+panjangnya mencapai 1—2 m, 
+mulutnya panjang dan lancip 
+sebagai senjata; hiu parang
+yè paè  /jɛ pa.ɛ̃/  n hiu yg 
+panjangnya 
+70-120 
+cm, 
+beratnya 
+mencapai 
+5 
+kg 
+(Orectolobus leptolineatus); hiu 
+tokek
+yè plèngkong   /jɛ plɛŋ.kɔŋ/ n 
+hiu yg perutnya besar dan 
+berwarna 
+putih, 
+panjangnya 
+sekitar 20 cm—2 m, kepalanya 
+bertanduk mencapai 20 cm 
+ke samping, disebut juga yè 
+prèngkong (Sphyrna zigaena); 
+hiu martil 
+yè reudeup /jɛ rɯ.dɯp/  n hiu 
+berwarna 
+agak 
+kecoklatan, 
+kepalanya berduri, panjangnya 
+mencapai 1 m
+yè rimbah /jɛ rim.bah/  n hiu 
+yg panjangnya 160-300 cm, 
+beratnya 
+mencapai 
+70 
+kg 
+(Sphyrna lewini); hiu martil 
+yè rimung    /jɛ ri.muŋ/  n  hiu 
+yg corak kulitnya spt harimau, 
+perutnya putih, bagian atas 
+badannya berwarna abu-abu 
+kebiruan, panjangnya sekitar 
+1—2 m, memiliki kepala besar 
+dan badan yg lebih kecil, disebut 
+juga yè diamin (Galeocerdo 
+cuvier); hiu macan
+yè tangiro /jɛ ta.ŋi.rɔ/  n hiu 
+yg panjangnya 150-300 cm, 
+beratnya 
+mencapai 
+50 
+kg 
+(Isurus oxyrinchus); hiu mako 
+
+##### PAGE 72
+72 | Kamus Kemaritiman Aceh-Indonesia  
+yè  
+yè  
+yè tikôh    /jɛ ti.koh/  n 1 hiu 
+yg 
+panjangnya 
+150-310 
+cm, 
+beratnya 
+mencapai 
+45 kg; hiu tikus; hiu paitan 
+(Alopias superliosis); 2 hiu yg 
+panjangnya 150-310 cm, 
+beratnya 
+mencapai 
+40 
+kg 
+(Alopias pelagicus); hiu tikus; 
+hiu monyet
+yè tilam    /jɛ ti.lam/  n hiu yg 
+panjangnya sekitar 214 cm, 
+beratnya 30 kg, bagian atas 
+tubuhnya berwarna hitam dng 
+bintik-bintik putih (Rhincodon 
+typus); hiu paus
+yè urot    /jɛ u.rɔt/  n hiu yg 
+bentuknya bulat sampai ke 
+ekor, panjangnya mencapai 1 
+m, kepalanya runcing dan kecil 
+(Loxodon 
+macrorhinus); 
+hiu 
+lonjor
+
+##### PAGE 73
+Kamus Kemaritiman Aceh-Indonesia |   73
+	
+PUSTAKA ACUAN
+Asyik, Abdul Gani. 1992. “Ejaan untuk Transliterasi Bahasa Aceh ke dalam Tulisan Latin”. 
+Makalah. Dipresentasikan dalam Lokakarya Pusat Penelitian dan Pengkajian 
+Kebudayaan Islam. Banda Aceh. 
+Badan Pengembangan dan Pembinaan Bahasa (n.d). Kamus Besar Bahasa Indonesia 
+(KBBI) Daring. Diakses Oktober—November 2021, melalui kbbi.kemdikbud.
+go.id.
+Bakar, Aboe, dkk. 1985. Kamus Aceh Indonesia 1. Jakarta:	
+Pusat Pembinaan dan 
+Pengembangan Bahasa.
+_______. 1985. Kamus Aceh Indonesia 2. Jakarta: Pusat Pembinaan dan Pengembangan 
+Bahasa.
+Basry, Hasan M. 1994. Kamus Umum Indonesia – Aceh.	
+Jakarta: 
+Yayasan 
+Cakra Daru.
+Daud, Bukhari dan Durie, M. 1999. Kamus Basa Aceh	Kamus Bahasa Aceh Acehnese 
+Indonesian English Thesaurus. Canberra: Pacific Linguistics. 
+Menteri Kelautan dan Perikanan RI. 2021. Keputusan Menteri Kelautan dan Perikanan 
+Republik Indonesia Nomor 37 Tahun 2021 tentang Struktur Basis Data Ikan dan 
+Data Induk Ikan. Jakarta.
