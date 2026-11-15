@@ -59,3 +59,24 @@ def test_real_nusax_files_have_no_leak():
     tr = train.load_pairs(ROOT / "data/final/nusax/train.json")
     ev = train.load_pairs(ROOT / "data/final/nusax/validation.json") + train.load_pairs(ROOT / "data/final/nusax/test.json")
     train.assert_no_leak(tr, ev)
+
+
+def test_training_in_both_directions(tmp_path, data_root):
+    root, texts = data_root
+    run = train.train(base=tiny_model(tmp_path, texts), out="out_both", epochs=2, lr=1e-3, batch_size=8, max_len=48, eval_beams=1, patience=5,
+                      direction="both", log=lambda *_: None)
+    assert run["direction"] == "both" and set(run["tests"]) == set(run["tests_rev"]) == {"nusax", "flores"}
+    assert {"ace-ind", "ind-ace"} <= set(run["history"][0]["dev"]) and "chrF++" in run["history"][0]["dev"]      # mean + each direction
+    t = run["tests_rev"]["nusax"]; assert set(t["base"]) == set(t["finetuned"]) == {"chrF++", "chrF", "BLEU"} and "ind" in t["samples"][0] and "ace" not in t["samples"][0]
+    md = (root / "out_both/RESULTS.md").read_text(encoding="utf-8"); assert "Indonesian -> Acehnese" in md and "both directions" in md
+    from acehid.train import oriented, directions_of
+    assert oriented([("a", "i")], "ind-ace") == [("i", "a")] and directions_of("both") == ["ace-ind", "ind-ace"]
+
+
+def test_one_direction_only_and_bad_direction(tmp_path, data_root):
+    import pytest
+    root, texts = data_root
+    run = train.train(base=tiny_model(tmp_path, texts), out="out_rev", epochs=1, lr=1e-3, batch_size=8, max_len=48, eval_beams=1, patience=5,
+                      direction="ind-ace", log=lambda *_: None)
+    assert run["tests"] == {} and set(run["tests_rev"]) == {"nusax", "flores"}
+    with pytest.raises(ValueError): train.directions_of("xx")

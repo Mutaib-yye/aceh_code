@@ -12,13 +12,13 @@ CSV = ('input,target,error_category,error_type,severity,source,wer,translate_ind
 
 class FakeEngine:
     model_id, info, beams = "fake/model", None, 4
-    def translate(self, text, normalize_input=True):
-        lines = text.splitlines()
-        det = [[l, l.lower() if normalize_input else l, "ID:" + l] for l in lines]
+    def translate(self, text, normalize_input=True, direction="ace-ind"):
+        tag = "ID:" if direction == "ace-ind" else "ACE:"
+        det = [[l, l.lower() if normalize_input else l, tag + l] for l in text.splitlines()]
         return "\n".join(d[2] for d in det), det, []
-    def alternatives(self, s, n=2): return ["alt1 " + s, "alt2 " + s][:n]
-    def translate_lines(self, lines, normalize_input=True): return ["ID:" + l if l else "" for l in lines]
-    def explain(self, s, ind=None): return ["▁" + s], ["▁" + (ind or "")]
+    def alternatives(self, s, n=2, direction="ace-ind"): return [f"alt1[{direction}] " + s, "alt2 " + s][:n]
+    def translate_lines(self, lines, normalize_input=True, direction="ace-ind"): return [("ID:" if direction == "ace-ind" else "ACE:") + l if l else "" for l in lines]
+    def explain(self, s, ind=None, direction="ace-ind"): return ["▁" + s], ["▁" + (ind or "")]
 
 @pytest.fixture
 def app(tmp_path):
@@ -49,7 +49,7 @@ def test_page_and_assets_served(app):
 def test_translate_and_errors(app):
     call, _ = app
     code, d = J(call("/api/translate", {"text": "Lon ka jak"})); assert code == 200 and d["translation"] == "ID:Lon ka jak" and d["alternatives"] == []
-    code, d = J(call("/api/translate", {"text": "Lon", "alternatives": True})); assert d["alternatives"] == ["alt1 lon", "alt2 lon"]
+    code, d = J(call("/api/translate", {"text": "Lon", "alternatives": True})); assert d["alternatives"] == ["alt1[ace-ind] lon", "alt2 lon"]
     code, d = J(call("/api/translate", {"text": "a\nb", "alternatives": True})); assert d["alternatives"] == [] and d["notes"]
     code, d = J(call("/api/translate", {"text": "Lon", "normalize": False})); assert d["normalized"] == "Lon" and d["normalize"] is False
     assert J(call("/api/translate", {"text": "   "}))[0] == 400
@@ -89,7 +89,7 @@ def test_feedback_needs_consent_for_text(app):
     assert "source" not in recs[0] and "SECRET" not in state.feedback_path.read_text(encoding="utf-8")
     assert recs[1]["correction"] == "C" and recs[1]["review"] == "pending" and recs[1]["error_type"] == "dialect"
     assert J(call("/api/feedback", {"rating": "meh"}))[0] == 400
-    csv_text = call("/api/feedback.csv")[1].decode(); assert csv_text.startswith("time,model,rating") and "dialect" in csv_text
+    csv_text = call("/api/feedback.csv")[1].decode(); assert csv_text.startswith("time,model,direction,rating") and "dialect" in csv_text
 
 def test_evaluation_only_shows_real_scores(app):
     call, state = app
@@ -185,3 +185,45 @@ def test_whole_app_with_a_real_engine(tiny_engine, tmp_path):
     d = state.translate({"text": "Gobnyan geujak u pasi", "alternatives": True}); assert isinstance(d["translation"], str) and len(d["alternatives"]) <= 2
     b = state.batch({"text": "lon ka jak\n\ngobnyan geujak"}); assert [r["src"] for r in b["rows"]] == ["lon ka jak", "", "gobnyan geujak"] and b["rows"][1]["tgt"] == ""
     x = state.explain({"text": "lon ka jak", "translation": d["translation"]}); assert x["src_tokens"] and x["words"][0]["word"] == "lon"
+
+
+# ---- two directions -----------------------------------------------------------------------------------------------------
+def test_direction_is_passed_through_and_validated(app):
+    call, state = app
+    d = J(call("/api/translate", {"text": "Saya pergi", "direction": "ind-ace"}))[1]
+    assert d["translation"] == "ACE:Saya pergi" and d["direction"] == "ind-ace"
+    assert J(call("/api/translate", {"text": "Lon ka jak"}))[1]["direction"] == "ace-ind"                      # default stays Acehnese -> Indonesian
+    d = J(call("/api/translate", {"text": "Saya", "direction": "ind-ace", "alternatives": True}))[1]; assert d["alternatives"][0] == "alt1[ind-ace] saya"
+    assert J(call("/api/translate", {"text": "x", "direction": "ace-eng"}))[0] == 400
+    assert [r["tgt"] for r in J(call("/api/batch", {"text": "satu\n\ndua", "direction": "ind-ace"}))[1]["rows"]] == ["ACE:satu", "", "ACE:dua"]
+    assert J(call("/api/batch", {"text": "x", "direction": "zzz"}))[0] == 400
+
+def test_status_and_evaluation_tell_the_truth_about_each_direction(app):
+    call, state = app
+    d = J(call("/api/status"))[1]["directions"]; assert d == {"ace-ind": {"evaluated": False}, "ind-ace": {"evaluated": False}}
+    t = {"n": 5, "base": {"chrF++": 30.0}, "finetuned": {"chrF++": 40.0}}
+    state.engine.info = {"train_pairs": 9, "tests": {"nusax": t}}
+    assert J(call("/api/status"))[1]["directions"] == {"ace-ind": {"evaluated": True}, "ind-ace": {"evaluated": False}}
+    e = J(call("/api/evaluation"))[1]; assert e["rows"][0]["model"] == 40.0 and e["rows_rev"] == []
+    state.engine.info = {"train_pairs": 9, "tests": {"nusax": t, "golden": t}, "tests_rev": {"nusax": {**t, "finetuned": {"chrF++": 22.5}}}}
+    e = J(call("/api/evaluation"))[1]; assert e["rows_rev"][0]["model"] == 22.5 and e["rows"][1]["set"].startswith("Golden corpus")
+
+def test_feedback_records_the_direction(app):
+    call, state = app
+    J(call("/api/feedback", {"rating": "up", "direction": "ind-ace"}))
+    assert json.loads(state.feedback_path.read_text(encoding="utf-8").splitlines()[0])["direction"] == "ind-ace"
+    assert J(call("/api/feedback", {"rating": "up", "direction": "bad"}))[0] == 400
+
+def test_real_engine_translates_both_directions_with_the_right_language_tokens(tiny_engine):
+    e = tiny_engine
+    ace_ids = e.tok(["lon ka jak u blang"], return_tensors="pt").input_ids if e._lang("ace-ind") is not None else None
+    ind_ids = e.tok(["lon ka jak u blang"], return_tensors="pt").input_ids if e._lang("ind-ace") is not None else None
+    assert ace_ids[0][0].item() != ind_ids[0][0].item()                                  # the source-language tag differs
+    assert e._lang("ace-ind") == e.tok.convert_tokens_to_ids("ind_Latn") and e._lang("ind-ace") == e.tok.convert_tokens_to_ids("ace_Latn")
+    a = e.translate("Gobnyan geujak u pasi", direction="ace-ind"); b = e.translate("Saya sudah pergi", direction="ind-ace")
+    assert isinstance(a[0], str) and isinstance(b[0], str) and b[1][0][1] == "Saya sudah pergi"      # Indonesian input is not spelling-normalized
+    assert e.translate("Njang djipeugot", direction="ace-ind")[1][0][1] == "Nyang jipeugot"
+    assert len(e.translate_lines(["saya", "", "kamu"], direction="ind-ace")) == 3
+    assert e.explain("saya", "lon", direction="ind-ace")[0]
+    import pytest
+    with pytest.raises(ValueError): e._lang("xx-yy")

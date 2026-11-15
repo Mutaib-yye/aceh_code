@@ -9,7 +9,7 @@ from .common import *
 from . import langid
 from .normalize import normalize
 
-SENT_COLS = ["id", "acehnese", "indonesian", "translator", "checker", "notes"]
+SENT_COLS = ["id", "acehnese", "indonesian", "translator", "checker", "verdict", "notes"]
 WORD_COLS = ["id", "acehnese_word", "example_acehnese", "indonesian_meaning", "translator", "checker", "notes"]
 MIN_WORDS, MAX_WORDS = 4, 25
 OUT = ROOT / "data/human/sheets"
@@ -22,6 +22,8 @@ GUIDE = """TRANSLATOR GUIDE (Acehnese -> Indonesian)
 5. Every row needs TWO people: the translator fills "translator" and "indonesian"; a DIFFERENT person fills "checker" after reading it.
    The checker can change the Indonesian, and must say so in "notes".
 6. Do not change the Acehnese text, even if the spelling looks wrong. Save as CSV (UTF-8).
+   Checker: fill "verdict" with ok (you agree with the translation as it is) or fixed (you changed it, and say what in "notes").
+   Rows marked ok go to the GOLDEN corpus (two people agree); every accepted row goes to the PARALLEL corpus.
 7. Word sheet: give the Indonesian meaning for the Acehnese word, as used in the example sentence.
 """
 
@@ -49,7 +51,8 @@ def _acehx_lines():
         yield r["src_file"], r["line"], " ".join(r["ace_raw"].split())
 
 
-def make_sentence_sheet(out=OUT, n=200, seed=0):
+def _candidates(seed=0):
+    """Unique Acehnese AcehX lines (4-25 words, language check = Acehnese) that we do not already use, in a seeded random order."""
     seen = _existing_sides()
     cands = []
     for src, line, t in _acehx_lines():
@@ -61,14 +64,53 @@ def make_sentence_sheet(out=OUT, n=200, seed=0):
         seen.add(k)
         cands.append((src, line, t))
     random.Random(seed).shuffle(cands)
-    chosen = [c for c in cands if langid.classify(c[2])[0] == "ace"][:n]
+    return cands, [c for c in cands if langid.classify(c[2])[0] == "ace"]
+
+
+def make_sentence_sheet(out=OUT, n=200, seed=0):
+    cands, ace = _candidates(seed)
+    chosen = ace[:n]
     out = Path(out); out.mkdir(parents=True, exist_ok=True)
     with open(out / "sentences.csv", "w", encoding="utf-8-sig", newline="") as f:
         w = csv.DictWriter(f, SENT_COLS); w.writeheader()
         for i, (src, line, t) in enumerate(chosen, 1):
-            w.writerow({"id": f"S{i:04d}", "acehnese": t, "indonesian": "", "translator": "", "checker": "", "notes": f"{src}:{line}"})
+            w.writerow({"id": f"S{i:04d}", "acehnese": t, "indonesian": "", "translator": "", "checker": "", "verdict": "", "notes": f"{src}:{line}"})
     log("sentence-sheet", rows=len(chosen), candidates=len(cands))
     return len(chosen)
+
+
+def _slug(name):
+    return re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-") or "person"
+
+
+def make_packs(people, per_person=25, seed=0, out=OUT.parent / "packs"):
+    """One sheet of `per_person` (20-30) different AcehX sentences for each person, plus PACKS.md saying who checks whose pack.
+    Nobody checks their own pack: person i's pack is checked by person i+1 (the last by the first)."""
+    people = [p.strip() for p in people if p.strip()]
+    if len(people) < 2:
+        raise ValueError("need at least two people: every pack is checked by someone else")
+    if not 20 <= per_person <= 30:
+        raise ValueError("the prof's brief is 20-30 sentences per person")
+    _, ace = _candidates(seed)
+    need = per_person * len(people)
+    if len(ace) < need:
+        raise ValueError(f"only {len(ace)} usable sentences, {need} needed")
+    out = Path(out); out.mkdir(parents=True, exist_ok=True)
+    lines = ["# Translation packs", "", f"{per_person} sentences each. Translate your own pack, then check the pack named in the last column.", "",
+             "| person | pack file | checks the pack of |", "|---|---|---|"]
+    for i, who in enumerate(people):
+        mine = ace[i * per_person:(i + 1) * per_person]
+        fname = f"{i + 1:02d}_{_slug(who)}.csv"
+        with open(out / fname, "w", encoding="utf-8-sig", newline="") as f:
+            w = csv.DictWriter(f, SENT_COLS); w.writeheader()
+            for j, (src, line, t) in enumerate(mine, 1):
+                w.writerow({"id": f"P{i + 1:02d}-{j:03d}", "acehnese": t, "indonesian": "", "translator": who, "checker": "", "verdict": "",
+                            "notes": f"{src}:{line}"})
+        lines.append(f"| {who} | {fname} | {people[(i - 1) % len(people)]} |")
+    (out / "PACKS.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    (out / "TRANSLATOR_GUIDE.txt").write_text(GUIDE, encoding="utf-8")
+    log("packs", people=len(people), per_person=per_person)
+    return {"people": len(people), "sentences": need, "dir": str(out)}
 
 
 def make_word_sheet(out=OUT, n=300):
@@ -106,18 +148,25 @@ def _accepted(r, field):
 
 
 def import_sheets(sentences=None, words=None, outdir=ROOT / "data/human"):
-    """Accepted rows only: translator and checker are different people. Returns counts; writes pairs.json and glossary.csv."""
+    """Accepted rows only: translator and checker are different people. `sentences` is one sheet or a list of sheets (the packs).
+    Writes pairs.json = the PARALLEL corpus (every accepted row), golden.json = the GOLDEN corpus (accepted rows whose checker
+    verdict is "ok": two people agree without edits; evaluation only, never trained on) and glossary.csv. Returns counts."""
     outdir = Path(outdir); outdir.mkdir(parents=True, exist_ok=True)
-    stats = {"sentences_in": 0, "sentences_accepted": 0, "words_in": 0, "words_accepted": 0}
-    pairs = []
+    stats = {"sentences_in": 0, "sentences_accepted": 0, "golden": 0, "words_in": 0, "words_accepted": 0}
+    pairs, golden = [], []
     if sentences:
-        for r in csv.DictReader(open(sentences, encoding="utf-8-sig")):
-            stats["sentences_in"] += 1
-            if _accepted(r, "indonesian") and "?" not in r["indonesian"]:
-                pairs.append({"id": r["id"], "ace": normalize(r["acehnese"])[0], "ind": r["indonesian"].strip(),
-                              "source": "human (translator + independent checker)"})
-        stats["sentences_accepted"] = len(pairs)
+        for path in ([sentences] if isinstance(sentences, (str, Path)) else sentences):
+            for r in csv.DictReader(open(path, encoding="utf-8-sig")):
+                stats["sentences_in"] += 1
+                if _accepted(r, "indonesian") and "?" not in r["indonesian"]:
+                    row = {"id": r["id"], "ace": normalize(r["acehnese"])[0], "ind": r["indonesian"].strip(),
+                           "source": "human (translator + independent checker)", "translator": r["translator"].strip(), "checker": r["checker"].strip()}
+                    pairs.append(row)
+                    if (r.get("verdict") or "").strip().lower() == "ok":
+                        golden.append(row)
+        stats["sentences_accepted"], stats["golden"] = len(pairs), len(golden)
         json.dump(pairs, open(outdir / "pairs.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+        json.dump(golden, open(outdir / "golden.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     gloss = []
     if words:
         for r in csv.DictReader(open(words, encoding="utf-8-sig")):

@@ -19,6 +19,7 @@ from webui import asr
 STATIC = Path(__file__).parent / "static"
 FEEDBACK = ROOT / "data/feedback/feedback.jsonl"
 MAX_CHARS, MAX_BATCH_LINES, MAX_BODY, MAX_AUDIO = 5000, 200, 1 << 20, 4 << 20
+DIRECTIONS = ("ace-ind", "ind-ace")
 ERROR_TYPES = {"vocabulary", "word_order", "missing_meaning", "dialect", "other"}
 TYPES = {".html": "text/html", ".css": "text/css", ".js": "text/javascript", ".svg": "image/svg+xml"}   # not from the Windows registry
 _lock = threading.Lock()                      # one translation at a time: the model is not thread-safe
@@ -30,12 +31,23 @@ class State:
 
     def status(self):
         e = self.engine
-        return {"model_id": e.model_id, "finetuned": bool((e.info or {}).get("tests")), "max_chars": MAX_CHARS,
-                "max_batch_lines": MAX_BATCH_LINES, "dictionary": {"loaded": self.dictionary.loaded, "entries": len(self.dictionary.entries)},
+        info = e.info or {}
+        directions = {"ace-ind": {"evaluated": bool(info.get("tests"))},
+                      "ind-ace": {"evaluated": bool(info.get("tests_rev"))}}
+        return {"model_id": e.model_id, "finetuned": bool(info.get("tests")), "directions": directions, "max_chars": MAX_CHARS,
+                "max_batch_lines": MAX_BATCH_LINES, "dictionary": {"loaded": self.dictionary.loaded, "entries": len(self.dictionary.entries), "sources": self.dictionary.sources},
                 "voice": {"model": self.recognizer.model_id, "language": self.recognizer.lang, "loaded": self.recognizer.loaded,
                           "max_seconds": asr.MAX_SECONDS}}
 
+    @staticmethod
+    def direction(d):
+        v = d.get("direction") or "ace-ind"
+        if v not in DIRECTIONS:
+            raise ValueError(f"direction must be one of {', '.join(DIRECTIONS)}")
+        return v
+
     def translate(self, d):
+        direction = self.direction(d)
         text = (d.get("text") or "").strip()
         if not text:
             raise ValueError("Teks kosong · the input is empty")
@@ -43,16 +55,17 @@ class State:
             raise ValueError(f"Teks terlalu panjang ({len(text)} > {MAX_CHARS} karakter) · the input is too long")
         norm = d.get("normalize", True) is not False
         with _lock:
-            out, details, notes = self.engine.translate(text, normalize_input=norm)
+            out, details, notes = self.engine.translate(text, normalize_input=norm, direction=direction)
             alts = []
             if d.get("alternatives") and len(details) == 1:
-                alts = self.engine.alternatives(details[0][1], 2)
+                alts = self.engine.alternatives(details[0][1], 2, direction=direction)
             elif d.get("alternatives"):
                 notes.append("Alternatif hanya tersedia untuk satu kalimat · alternatives are shown for a single sentence only.")
         return {"translation": out, "details": [{"src": a, "norm": b, "tgt": c} for a, b, c in details], "notes": notes,
-                "alternatives": alts, "normalized": "\n".join(n for _, n, _ in details), "normalize": norm}
+                "alternatives": alts, "normalized": "\n".join(n for _, n, _ in details), "normalize": norm, "direction": direction}
 
     def batch(self, d):
+        direction = self.direction(d)
         lines = [l.rstrip() for l in str(d.get("text") or "").splitlines()]
         while lines and not lines[-1].strip():
             lines.pop()
@@ -63,7 +76,7 @@ class State:
         if sum(len(l) for l in lines) > MAX_CHARS * 4:
             raise ValueError("Teks terlalu panjang · the input is too long")
         with _lock:
-            tgt = self.engine.translate_lines([l.strip() for l in lines], normalize_input=d.get("normalize", True) is not False)
+            tgt = self.engine.translate_lines([l.strip() for l in lines], normalize_input=d.get("normalize", True) is not False, direction=direction)
         return {"rows": [{"src": s, "tgt": t} for s, t in zip(lines, tgt)]}
 
     def transcribe(self, data):
@@ -77,16 +90,17 @@ class State:
         return {"loaded": True, "q": q, **r, "found": any(r.values())}
 
     def explain(self, d):
+        direction = self.direction(d)
         sent = (d.get("text") or "").strip().split("\n")[0][:500]
         if not sent:
             raise ValueError("Teks kosong · the input is empty")
         words = []
-        for w in dict.fromkeys(re.findall(r"[\w'’\-]+", sent)):
+        for w in dict.fromkeys(re.findall(r"[\w'’\-]+", sent)) if direction == "ace-ind" else []:      # the word list is for Acehnese words
             hits = self.dictionary.lookup(w) if self.dictionary.loaded else []
             words.append({"word": w, "entries": hits[:3]})
         with _lock:
-            src, tgt = self.engine.explain(sent, d.get("translation") or None)
-        return {"sentence": sent, "words": words, "dictionary_loaded": self.dictionary.loaded, "src_tokens": src, "tgt_tokens": tgt}
+            src, tgt = self.engine.explain(sent, d.get("translation") or None, direction=direction)
+        return {"direction": direction, "sentence": sent, "words": words, "dictionary_loaded": self.dictionary.loaded, "src_tokens": src, "tgt_tokens": tgt}
 
     def feedback(self, d):
         rating = d.get("rating")
@@ -94,6 +108,7 @@ class State:
             raise ValueError("rating must be up or down")
         consent = d.get("consent") is True
         rec = {"time": datetime.datetime.now().isoformat(timespec="seconds"), "model": self.engine.model_id, "rating": rating,
+               "direction": self.direction(d),
                "consent": consent, "review": "pending"}
         if consent:                                       # texts are stored only with consent
             et = d.get("error_type")
@@ -106,7 +121,7 @@ class State:
 
     def feedback_csv(self):
         rows = [json.loads(l) for l in self.feedback_path.read_text(encoding="utf-8").splitlines() if l.strip()] if self.feedback_path.exists() else []
-        cols = ["time", "model", "rating", "consent", "review", "error_type", "source", "translation", "correction"]
+        cols = ["time", "model", "direction", "rating", "consent", "review", "error_type", "source", "translation", "correction"]
         buf = io.StringIO(); w = csv.DictWriter(buf, cols, extrasaction="ignore"); w.writeheader(); w.writerows(rows)
         return buf.getvalue()
 
@@ -116,9 +131,10 @@ class State:
             return {"available": False}
         names = {"nusax": "NusaX test (reviews, everyday text)", "flores": "FLORES devtest (Wikipedia-style text)",
                  "hikayat": "Hikayat Abu Sammah (verse, held-out pages)"}
+        rows = lambda tests: [{"set": names.get(k, k) if k != "golden" else "Golden corpus (validated by two people)", "n": t["n"],
+                               "base": t["base"].get("chrF++"), "model": t["finetuned"].get("chrF++")} for k, t in (tests or {}).items()]
         return {"available": True, "model_id": self.engine.model_id, "train_pairs": info.get("train_pairs"),
-                "rows": [{"set": names.get(k, k), "n": t["n"], "base": t["base"].get("chrF++"), "model": t["finetuned"].get("chrF++")}
-                         for k, t in info["tests"].items()]}
+                "rows": rows(info["tests"]), "rows_rev": rows(info.get("tests_rev"))}
 
 def make_handler(state):
     class H(BaseHTTPRequestHandler):

@@ -13,6 +13,22 @@
 
 `./run_app.sh --share` also prints a temporary public link (while the window stays open). `notebooks/demo_colab.ipynb` runs the app in Colab instead.
 
+## Prof's brief: AcehX sentences, manual validation, both directions
+
+1. **Each person translates 20–30 AcehX sentences.** Put the cleaned corpus in `data/raw/acehx/`, run `python -m acehid audit`, then
+   `python -m acehid make-packs --people "Name1,Name2,Name3,Name4" --per-person 25`. Everyone gets their own sheet in `data/human/packs/` (no sentence in two
+   packs) and `PACKS.md` says who checks whose pack: nobody checks their own. The translator fills `indonesian`; the checker fills `checker` and `verdict`
+   (`ok` = agree as it is, `fixed` = changed, say what in `notes`). Never machine translation.
+2. **Import:** `python -m acehid import-sheets --sentences data/human/packs/0*.csv`. Rows with a translator and a *different* checker become the
+   **parallel corpus** (`data/human/pairs.json`); those with verdict `ok` are also the **golden corpus** (`data/human/golden.json`): two people agree
+   without edits, so it is used only as a test set (`build-train --extra-test golden=data/human/golden.json`; the Colab notebook does this by itself when the file exists).
+3. **Both directions:** `python -m acehid train --direction both` (default) fine-tunes one NLLB model for Acehnese → Indonesian *and* Indonesian → Acehnese;
+   each direction is scored on its own test sets (`training_log.json`: `tests` and `tests_rev`). The app has a swap button; a direction that has no evaluation
+   yet is labelled as such. Use `DIRECTION = 'ace-ind'` in the notebook for the old one-way training.
+4. **New dictionaries:** `python -m acehid dict-build --maritim <Kemaritiman.pdf> --budaya <1-50.pdf> <50-100.pdf> <100-150.pdf> --bergambar <Bergambar.pdf>`
+   extracts them into `data/raw/kamus/books/` (git-ignored: copyrighted); the app's word lookup then covers all four dictionaries, each entry labelled with its book and page.
+   `examples.csv` there lists example sentences with a translation (status `clean`, `filled` or `needs_human`): candidates to put through step 1's validation, never trained on directly.
+
 ## Getting human-translated pairs (translation sheets)
 
 The Indonesian side must come from people who speak Acehnese, never from a machine (including AI assistants).
@@ -150,7 +166,7 @@ All output is `machine_draft`: excluded from the training split unless `--includ
 ## Data in this repo
 
 - `data/final/nusax/`: the 1,000 human-translated NusaX-MT pairs in Atlas format (**CC-BY-SA 4.0, share-alike; keep separate**). valid+test are the evaluation set, never train on them.
-- `reports/acehx_audit.md`: AcehX audit (164,778 lines, 3.0 % duplicates, **no Indonesian side**, mixed old/modern spelling).
+- `reports/acehx_audit.md`: AcehX audit of the cleaned corpus (63,367 lines, 0.1 % duplicates, **no Indonesian side**; the earlier version had 164,778 lines).
 - `reports/pipeline_report.md`: numbers and limitations. `DATASET_CARD.md`, `TRANSLATION_GUIDELINE.md`.
 - Raw/intermediate data stays local (`data/raw/` etc. are git-ignored). Song lyrics are **excluded** (copyrighted, garbled).
 

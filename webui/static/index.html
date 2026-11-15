@@ -67,7 +67,7 @@
         </div>
         <blockquote class="quote">“Melestarikan Bahasa Aceh,<br>Membangun Masa Depan”</blockquote>
       </div>
-      <div class="badges" id="badges"><span class="badge"><i data-i="zap"></i><span id="modelBadge">…</span></span><span class="badge" id="qualBadge" hidden><i data-i="chart"></i><span></span></span><span class="badge"><i data-i="globe"></i>Aceh → Indonesia</span></div>
+      <div class="badges" id="badges"><span class="badge"><i data-i="zap"></i><span id="modelBadge">…</span></span><span class="badge" id="qualBadge" hidden><i data-i="chart"></i><span></span></span><span class="badge"><i data-i="globe"></i><span id="dirBadge">Aceh → Indonesia</span></span></div>
     </header>
 
     <!-- TRANSLATE -->
@@ -75,7 +75,7 @@
       <div id="single">
         <div class="panes">
           <div class="pane" id="paneIn">
-            <div class="pane-head"><span class="lang"><span class="lang-ico"><i data-i="chat"></i></span>Bahasa Aceh</span>
+            <div class="pane-head"><span class="lang"><span class="lang-ico" id="icoIn"><i data-i="chat"></i></span><span id="langIn">Bahasa Aceh</span></span>
               <span class="tools">
                 <button class="chip round" id="mic" type="button" title="Bicara dalam bahasa Aceh (eksperimental) · speak Acehnese (experimental)" aria-label="Input suara"><i data-i="mic"></i></button>
                 <button class="chip" id="paste" type="button"><i data-i="clipboard"></i>Paste</button>
@@ -83,9 +83,9 @@
             <textarea id="inp" rows="7" maxlength="5000" spellcheck="false" placeholder="Tulis atau tempel teks Bahasa Aceh di sini…&#10;&#10;Contoh: Lon ka jak u blang." aria-label="Teks bahasa Aceh"></textarea>
             <div class="pane-foot"><span id="count">0 / 5000 karakter · 0 kata</span></div>
           </div>
-          <button class="go-arrow" id="swap" type="button" tabindex="-1" aria-hidden="true"><i data-i="arrow"></i></button>
+          <button class="go-arrow" id="swap" type="button" aria-label="Tukar arah terjemahan · swap direction" title="Tukar arah · swap direction"><i data-i="swap"></i></button>
           <div class="pane out" id="paneOut">
-            <div class="pane-head"><span class="lang"><span class="lang-ico flag"></span>Bahasa Indonesia</span>
+            <div class="pane-head"><span class="lang"><span class="lang-ico flag" id="icoOut"></span><span id="langOut">Bahasa Indonesia</span></span>
               <span class="tools"><button class="chip" id="copyOut" type="button" disabled><i data-i="copy"></i>Copy</button><button class="chip" id="download" type="button" disabled><i data-i="download"></i>Download</button></span></div>
             <div id="outText" class="out-text placeholder" aria-live="polite">Terjemahan akan muncul di sini…</div>
             <svg class="watermark" viewBox="0 0 64 64" aria-hidden="true"><rect x="6" y="10" width="34" height="34" rx="6" fill="currentColor" opacity=".55"/><text x="23" y="36" font-size="24" font-weight="700" text-anchor="middle" fill="#0e1b3d">A</text><rect x="26" y="26" width="32" height="30" rx="6" fill="currentColor" opacity=".8"/><text x="42" y="48" font-size="20" font-weight="700" text-anchor="middle" fill="#0e1b3d">文</text></svg>
@@ -107,6 +107,7 @@
           <label><input type="checkbox" id="optAlt"> Tampilkan alternatif <small>(satu kalimat)</small></label>
           <button class="link" id="viewNorm" type="button" hidden>Lihat teks ternormalisasi</button>
         </div>
+        <div id="dirNote" class="msg note" role="status" hidden></div>
         <div id="voiceMsg" class="msg note" role="status" hidden></div>
         <div id="msg" class="msg" role="alert" hidden></div>
         <pre id="normBox" class="box mono" hidden></pre>
@@ -176,6 +177,7 @@
     <section class="page" id="page-evaluation" hidden>
       <h2>Evaluasi model</h2>
       <div id="evalBox" class="muted">Memuat…</div>
+      <div id="evalRev"></div>
       <div class="box"><h3>Apa arti skor ini?</h3>
         <p><b>chrF++</b> (0–100, makin tinggi makin baik) membandingkan potongan huruf dan kata antara hasil model dan terjemahan manusia. Kalimat uji tidak pernah dipakai saat pelatihan.</p>
         <p class="muted">BLEU dan TER belum ditampilkan karena belum ada hasil evaluasi tercatat untuk keduanya. Skor di sini dibaca dari catatan pelatihan model, bukan contoh ilustrasi, dan terpisah dari masukan pengguna.</p></div>

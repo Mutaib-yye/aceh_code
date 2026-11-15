@@ -9,6 +9,7 @@
   --hero-fade:#050c1f;
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html,body{margin:0}
 body{font:16px/1.5 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--text);background:var(--bg)}
 :root[data-theme="dark"] body{background:radial-gradient(1100px 520px at 75% -8%,rgba(37,99,235,.28),transparent 62%),radial-gradient(800px 420px at 0% 100%,rgba(34,211,238,.12),transparent 60%),var(--bg)}

@@ -7,6 +7,7 @@ import os, re, csv, json, unicodedata
 
 BASE_MODEL = "facebook/nllb-200-distilled-600M"
 SRC, TGT = "ace_Latn", "ind_Latn"
+DIRECTIONS = {"ace-ind": ("ace_Latn", "ind_Latn"), "ind-ace": ("ind_Latn", "ace_Latn")}
 MAX_CHARS = 5000
 MIN_WORDS = 3
 
@@ -26,6 +27,12 @@ def normalize(s):
     for pat, rep in OLD:
         t = pat.sub(lambda m: _case(m.group(0), rep), t)
     return t.translate(DIAERESIS)
+
+def _normalizer(direction, normalize_input=True):
+    """Acehnese input gets the training-data spelling rules; anything else (or normalize_input=False) only has whitespace tidied."""
+    if direction == "ace-ind" and normalize_input:
+        return normalize
+    return lambda s: re.sub(r"\s+", " ", s).strip()
 
 def split_sentences(line):
     return [s for s in re.split(r"(?<=[.!?])\s+", line.strip()) if s]
@@ -164,34 +171,43 @@ class Engine:
         self.glossary = Glossary.load()
         self.cache = {}
 
-    def _generate(self, sents):
-        out = []
+    def _lang(self, direction):
+        """Set the tokenizer's source language for this direction -> id of the target language token (the forced first token)."""
+        if direction not in DIRECTIONS:
+            raise ValueError(f"unknown direction {direction!r}: use one of {sorted(DIRECTIONS)}")
+        src, tgt = DIRECTIONS[direction]
+        self.tok.src_lang = src
+        return self.tok.convert_tokens_to_ids(tgt)
+
+    def _generate(self, sents, direction="ace-ind"):
+        out, bos = [], self._lang(direction)
         for b in range(0, len(sents), self.batch_size):
             chunk = sents[b:b + self.batch_size]
             enc = self.tok(chunk, return_tensors="pt", padding=True, truncation=True, max_length=200).to(self.device)
             with self.torch.inference_mode():
-                gen = self.model.generate(**enc, forced_bos_token_id=self.bos, num_beams=self.beams,
+                gen = self.model.generate(**enc, forced_bos_token_id=bos, num_beams=self.beams,
                                           max_new_tokens=min(256, int(enc["input_ids"].shape[1] * 2) + 10))
             out += self.tok.batch_decode(gen, skip_special_tokens=True)
         return out
 
-    def translate_sentences(self, sents):
-        todo = sorted({s for s in sents if s not in self.cache}, key=len)      # similar lengths batch well
-        for s, t in zip(todo, self._generate(todo) if todo else []):
-            self.cache[s] = t
+    def translate_sentences(self, sents, direction="ace-ind"):
+        todo = sorted({s for s in sents if (direction, s) not in self.cache}, key=len)      # similar lengths batch well
+        for s, t in zip(todo, self._generate(todo, direction) if todo else []):
+            self.cache[(direction, s)] = t
         if len(self.cache) > 20000:
             self.cache.clear()
-        return [self.cache[s] for s in sents]
+        return [self.cache[(direction, s)] for s in sents]
 
-    def alternatives(self, sentence, n=2):
+    def alternatives(self, sentence, n=2, direction="ace-ind"):
         """Other beam-search candidates for ONE normalized sentence (not the main translation). They are the model's own
         runner-up outputs, so they can differ in wording or tone and are not guaranteed to be correct."""
+        bos = self._lang(direction)
         enc = self.tok([sentence], return_tensors="pt", truncation=True, max_length=200).to(self.device)
         beams = max(self.beams, n + 2)
         with self.torch.inference_mode():
-            gen = self.model.generate(**enc, forced_bos_token_id=self.bos, num_beams=beams, num_return_sequences=beams,
+            gen = self.model.generate(**enc, forced_bos_token_id=bos, num_beams=beams, num_return_sequences=beams,
                                       max_new_tokens=min(256, int(enc["input_ids"].shape[1] * 2) + 10))
-        main = self.translate_sentences([sentence])[0]
+        main = self.translate_sentences([sentence], direction)[0]
         out = []
         for t in self.tok.batch_decode(gen, skip_special_tokens=True):
             t = t.strip()
@@ -199,17 +215,19 @@ class Engine:
                 out.append(t)
         return out[:n]
 
-    def translate_lines(self, lines, normalize_input=True):
-        """One Indonesian string per input line (blank lines stay blank), for batch mode."""
-        prep = [[(normalize(s) if normalize_input else s) for s in split_sentences(l)] for l in lines]
+    def translate_lines(self, lines, normalize_input=True, direction="ace-ind"):
+        """One translated string per input line (blank lines stay blank), for batch mode."""
+        norm = _normalizer(direction, normalize_input)
+        prep = [[norm(s) for s in split_sentences(l)] for l in lines]
         flat = [s for l in prep for s in l]
-        res = dict(zip(flat, self.translate_sentences(flat)))
+        res = dict(zip(flat, self.translate_sentences(flat, direction)))
         return [" ".join(res[s] for s in l) for l in prep]
 
-    def translate(self, text, normalize_input=True):
-        """-> (indonesian_text, details [[acehnese, normalized, indonesian]], notes [str]). Keeps the line structure.
-        normalize_input=False sends the user's spelling to the model unchanged (only whitespace is tidied)."""
-        norm = normalize if normalize_input else (lambda s: re.sub(r"\s+", " ", s).strip())
+    def translate(self, text, normalize_input=True, direction="ace-ind"):
+        """-> (translation, details [[source, normalized source, translation]], notes [str]). Keeps the line structure.
+        direction: "ace-ind" (Acehnese -> Indonesian) or "ind-ace". normalize_input=False sends the user's spelling to the model
+        unchanged (only whitespace is tidied); Indonesian input is never spelling-normalized (the rules are for Acehnese)."""
+        norm = _normalizer(direction, normalize_input)
         notes = []
         text = (text or "").strip()
         if not text:
@@ -218,18 +236,19 @@ class Engine:
             text = text[:MAX_CHARS]; notes.append(f"Only the first {MAX_CHARS} characters were translated.")
         lines = [[(s, norm(s)) for s in split_sentences(l)] for l in text.splitlines()]
         flat = [n for l in lines for _, n in l]
-        res = dict(zip(flat, self.translate_sentences(flat)))
+        res = dict(zip(flat, self.translate_sentences(flat, direction)))
         out = "\n".join(" ".join(res[n] for _, n in l) for l in lines)
         details = [[s, n, res[n]] for l in lines for s, n in l]
         if any(len(n.split()) < MIN_WORDS for n in flat):
             notes.append("Single words and very short phrases are often ambiguous. A full sentence gives a better translation.")
         return out, details, notes
 
-    def explain(self, normalized, indonesian=None):
-        """The real subword tokens: what the encoder reads (Acehnese) and what the decoder writes (Indonesian)."""
+    def explain(self, normalized, indonesian=None, direction="ace-ind"):
+        """The real subword tokens: what the encoder reads (the source) and what the decoder writes (the translation)."""
+        self._lang(direction)
         src = self.tok.convert_ids_to_tokens(self.tok(normalized).input_ids)
         tgt = []
         if indonesian:
-            self.tok.tgt_lang = TGT
+            self.tok.tgt_lang = DIRECTIONS[direction][1]
             tgt = self.tok.convert_ids_to_tokens(self.tok(text_target=indonesian).input_ids)
         return src, tgt

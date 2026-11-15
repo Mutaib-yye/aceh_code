@@ -34,9 +34,9 @@ class FakeEngine(core.Engine):
     """Engine without a model: 'translates' by upper-casing, counting calls, so the text logic is tested exactly."""
     def __init__(self):
         self.model_id, self.info, self.cache, self.calls, self.beams = "fake", None, {}, [], 4
-    def _generate(self, sents):
+    def _generate(self, sents, direction="ace-ind"):
         self.calls.append(list(sents)); return [s.upper() for s in sents]
-    def explain(self, normalized, indonesian=None):
+    def explain(self, normalized, indonesian=None, direction="ace-ind"):
         return normalized.split(), (indonesian or "").split()
 
 def test_translate_keeps_lines_normalizes_caches_and_warns():

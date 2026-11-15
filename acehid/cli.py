@@ -22,8 +22,13 @@ def main(argv=None):
     p = sub.add_parser("flores", help="FLORES-200 ace_Latn/ind_Latn (tar, zip or folder) -> data/final/flores"); p.add_argument("path")
     p = sub.add_parser("make-sheets", help="translation sheets for Acehnese speakers: sentences + words (data/human/sheets/)")
     p.add_argument("--sentences", type=int, default=200); p.add_argument("--words", type=int, default=300)
+    p = sub.add_parser("make-packs", help="one pack of 20-30 AcehX sentences per person to translate, plus who checks whom (data/human/packs/)")
+    p.add_argument("--people", required=True, help='comma-separated names, e.g. "Mutaib,Andrie,Muttu"'); p.add_argument("--per-person", type=int, default=25)
+    p.add_argument("--seed", type=int, default=0)
+    p = sub.add_parser("dict-build", help="Balai Bahasa dictionary PDFs -> word lookup + example-sentence candidates (data/raw/kamus/books/, git-ignored)")
+    p.add_argument("--maritim"); p.add_argument("--budaya", nargs="*"); p.add_argument("--bergambar")
     p = sub.add_parser("import-sheets", help="import the filled sheets: only rows with a translator AND a different checker")
-    p.add_argument("--sentences"); p.add_argument("--words")
+    p.add_argument("--sentences", nargs="+", help="one or more filled sentence sheets (e.g. all the packs)"); p.add_argument("--words")
     p = sub.add_parser("scan-archive", help="inventory a RAR/ZIP/folder of PDFs: pages, text layer, language, bilingual candidates (counts only)")
     p.add_argument("src")
     p = sub.add_parser("hikayat-pairs", help="bilingual hikayat book (Acehnese section + Indonesian section) -> aligned pairs")
@@ -37,6 +42,7 @@ def main(argv=None):
     p = sub.add_parser("train", help="fine-tune NLLB on data/final/combined (GPU/Colab recommended)"); p.add_argument("--base", default="facebook/nllb-200-distilled-600M"); p.add_argument("--out", default="models/ace-id-nllb")
     p.add_argument("--data", default="data/final/combined"); p.add_argument("--epochs", type=int, default=10, help="maximum; stops early when validation stops improving")
     p.add_argument("--lr", type=float, default=1e-4); p.add_argument("--batch-size", type=int, default=8); p.add_argument("--patience", type=int, default=2)
+    p.add_argument("--direction", default="both", choices=["both", "ace-ind", "ind-ace"], help="both = Acehnese->Indonesian and Indonesian->Acehnese in one model")
     sub.add_parser("langid-build", help="retrain the language-check model from AcehX + NusaX train")
     p = sub.add_parser("import-tmx", help="OPUS TMX (Wikipedia ace-id) -> filtered pairs in data/final/wikipedia/pairs.json"); p.add_argument("tmx")
     p = sub.add_parser("malik-mawot", help="Hikayat Malik Mawot thesis PDF (verse + translation) -> data/human/malik_mawot_pairs.json"); p.add_argument("pdf")
@@ -106,6 +112,10 @@ def main(argv=None):
         from . import sheets; print(json.dumps({"sentences": sheets.make_sentence_sheet(n=a.sentences), "words": sheets.make_word_sheet(n=a.words)}))
     elif a.cmd == "import-sheets":
         from . import sheets; print(json.dumps(sheets.import_sheets(a.sentences, a.words)))
+    elif a.cmd == "dict-build":
+        from . import books; print(json.dumps(books.build(a.maritim, a.budaya, a.bergambar), ensure_ascii=False))
+    elif a.cmd == "make-packs":
+        from . import sheets; print(json.dumps(sheets.make_packs(a.people.split(","), a.per_person, a.seed)))
     elif a.cmd == "scan-archive":
         from . import archive_scan; archive_scan.scan(a.src)
     elif a.cmd == "hikayat-pairs":
@@ -117,7 +127,7 @@ def main(argv=None):
         from . import train, corpus
         if not (P(a.data) / "manifest.json").exists():
             corpus.build(a.data)
-        train.train(a.base, a.out, a.data, a.epochs, a.lr, a.batch_size, patience=a.patience)
+        train.train(a.base, a.out, a.data, a.epochs, a.lr, a.batch_size, patience=a.patience, direction=a.direction)
     elif a.cmd == "langid-build":
         from . import langid; print(json.dumps(langid.build(), indent=1))
     elif a.cmd == "import-tmx":

@@ -54,6 +54,7 @@ const ICONS = {
   spark: '<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/>',
   kbd: '<rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/>',
   chat: '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>',
+  swap: '<polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/>',
   wave: '<line x1="4" y1="10" x2="4" y2="14"/><line x1="8" y1="6" x2="8" y2="18"/><line x1="12" y1="3" x2="12" y2="21"/><line x1="16" y1="7" x2="16" y2="17"/><line x1="20" y1="10" x2="20" y2="14"/>',
 };
 document.querySelectorAll("i[data-i]").forEach(n => { n.innerHTML = `<svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[n.dataset.i] || ""}</svg>`; });
@@ -91,8 +92,46 @@ async function loadStatus() {
     $("aboutModel").textContent = `Model aktif: ${STATUS.model_id}.`;
     $("footModel").textContent = "· " + STATUS.model_id;
     $("inp").maxLength = STATUS.max_chars;
+    applyDirection();
   } catch (e) { $("modelBadge").textContent = "Server tidak terhubung"; }
 }
+
+/* ---------- direction: Acehnese -> Indonesian or Indonesian -> Acehnese ---------- */
+let DIR = store.get("direction", "ace-ind");
+if (DIR !== "ace-ind" && DIR !== "ind-ace") DIR = "ace-ind";
+const LANGS = { ace: { name: "Bahasa Aceh", ph: "Tulis atau tempel teks Bahasa Aceh di sini…\n\nContoh: Lon ka jak u blang." },
+                ind: { name: "Bahasa Indonesia", ph: "Tulis atau tempel teks Bahasa Indonesia di sini…\n\nContoh: Saya sudah pergi ke sawah." } };
+function setIcon(span, lang) {
+  span.className = "lang-ico" + (lang === "ind" ? " flag" : ""); span.replaceChildren();
+  if (lang === "ace") { const i = document.createElement("i"); i.dataset.i = "chat"; i.innerHTML = `<svg viewBox="0 0 24 24" aria-hidden="true">${ICONS.chat}</svg>`; span.append(i); }
+}
+function applyDirection() {
+  const [src, tgt] = DIR.split("-");
+  $("langIn").textContent = LANGS[src].name; $("langOut").textContent = LANGS[tgt].name; setIcon($("icoIn"), src); setIcon($("icoOut"), tgt);
+  inp.placeholder = LANGS[src].ph;
+  $("dirBadge").textContent = src === "ace" ? "Aceh → Indonesia" : "Indonesia → Aceh";
+  $("mic").disabled = $("cVoice").disabled = src !== "ace";
+  $("mic").title = src === "ace" ? "Bicara dalam bahasa Aceh (eksperimental) · speak Acehnese (experimental)" : "Input suara hanya untuk bahasa Aceh · voice input is for Acehnese only";
+  $("optNorm").disabled = src !== "ace"; $("setNorm").disabled = false;
+  const ev = (STATUS.directions || {})[DIR];
+  const mb = $("modelBadge"), good = !ev || ev.evaluated;               // badges describe THIS direction only
+  mb.textContent = good ? (STATUS.finetuned ? "Fine-tuned Model" : "Model dasar NLLB-200 · belum di-fine-tune") : "Model dasar untuk arah ini · belum di-fine-tune";
+  mb.parentElement.classList.toggle("warn", !good || !STATUS.finetuned);
+  const qb = $("qualBadge"); qb.hidden = !(DIR === "ace-ind" && qb.dataset.score);
+  const note = $("dirNote");
+  note.hidden = !(ev && !ev.evaluated);
+  if (ev && !ev.evaluated) note.textContent = DIR === "ind-ace"
+    ? "Arah Indonesia → Aceh belum di-fine-tune dan belum dievaluasi di model ini: kualitasnya bisa jauh lebih rendah dan harus diperiksa penutur bahasa Aceh. · This direction has not been fine-tuned or evaluated for this model yet."
+    : "Model ini belum punya skor evaluasi untuk arah ini.";
+  renderChips();
+}
+function swapDirection() {
+  const carry = LAST && !$("outText").classList.contains("placeholder") ? $("outText").textContent : "";
+  DIR = DIR === "ace-ind" ? "ind-ace" : "ace-ind"; store.set("direction", DIR);
+  inp.value = carry; LAST = null; setOut(""); ["alts", "explain", "feed", "normBox"].forEach(i => $(i).hidden = true); showMsg($("msg"), ""); showMsg($("voiceMsg"), "");
+  updateCount(); applyDirection(); inp.focus();
+}
+$("swap").addEventListener("click", swapDirection);
 
 /* ---------- translate ---------- */
 let LAST = null;                                          // {src, tgt, details}
@@ -118,14 +157,14 @@ async function doTranslate() {
   if (text.length > STATUS.max_chars) { showMsg($("msg"), `Teks terlalu panjang (maksimal ${STATUS.max_chars} karakter).`); return; }
   busy(true);
   try {
-    const d = await api("/api/translate", { text, normalize: $("optNorm").checked, alternatives: $("optAlt").checked });
-    LAST = { src: text, tgt: d.translation, details: d.details, norm: d.normalized };
+    const d = await api("/api/translate", { text, direction: DIR, normalize: $("optNorm").checked, alternatives: $("optAlt").checked });
+    LAST = { src: text, tgt: d.translation, details: d.details, norm: d.normalized, dir: DIR };
     setOut(d.translation); $("outFoot").textContent = `${words(d.translation)} kata`;
     if (d.notes.length) showMsg($("msg"), d.notes.join(" "), true);
     $("viewNorm").hidden = !(d.normalize && d.normalized.trim() !== text.replace(/\s+/g, " "));
     $("normBox").textContent = d.normalized;
     renderAlts(d.alternatives);
-    addHistory(text, d.translation);
+    addHistory(text, d.translation, DIR);
     $("fbMsg").textContent = "";
   } catch (e) { setOut(""); showMsg($("msg"), e.message); }
   finally { busy(false); }
@@ -159,7 +198,7 @@ $("batchBtn").addEventListener("click", () => showBatch(true)); $("batchBack").a
 function entryNode(e) {
   return el("div", { class: "entry" }, el("b", {}, e.word), e.variants && e.variants.length ? el("span", { class: "muted" }, "  (" + e.variants.join(", ") + ")") : null,
     e.status !== "unknown" ? el("span", { class: "tagpill" }, "belum divalidasi") : null, el("div", {}, e.meaning),
-    e.page ? el("div", { class: "muted" }, `Kamus Aceh–Indonesia (1985), hlm. ${e.page}`) : null);
+    (e.ipa ? el("div", { class: "muted" }, `/${e.ipa}/`) : null), el("div", { class: "muted" }, `${e.source || "Kamus"}${e.page ? ", hlm. " + e.page : ""}`));
 }
 function dictResult(box, d) {
   box.replaceChildren();
@@ -188,7 +227,7 @@ $("cExplain").addEventListener("click", async () => {
   if (!LAST) { showMsg($("msg"), "Terjemahkan sesuatu dulu, lalu klik Translation Explanation.", true); return; }
   box.hidden = false; box.replaceChildren(el("span", { class: "spin" }), " Memuat…");
   try {
-    const d = await api("/api/explain", { text: LAST.src, translation: LAST.tgt });
+    const d = await api("/api/explain", { text: LAST.src, translation: LAST.tgt, direction: LAST.dir || DIR });
     box.replaceChildren(el("h3", {}, "Penjelasan terjemahan"),
       el("p", { class: "muted" }, "Ini penjelasan linguistik dari kamus dan token yang dibaca/ditulis model. Ini bukan “alasan internal” model, dan hanya kalimat pertama yang dijelaskan."),
       el("h3", {}, "Kosakata (dari kamus)"),
@@ -206,7 +245,7 @@ async function sendFeedback(rating) {
   if (!LAST) return;
   const consent = $("fbConsent").checked;
   try {
-    const r = await api("/api/feedback", { rating, consent, source: LAST.src, translation: LAST.tgt, correction: $("fbFix").value, error_type: $("fbType").value });
+    const r = await api("/api/feedback", { rating, consent, direction: LAST.dir || DIR, source: LAST.src, translation: LAST.tgt, correction: $("fbFix").value, error_type: $("fbType").value });
     $("fbMsg").textContent = r.stored_text ? "Terima kasih! Masukan dan teks tersimpan untuk ditinjau." : "Terima kasih! Hanya penilaian yang disimpan (tanpa teks).";
   } catch (e) { $("fbMsg").textContent = e.message; }
 }
@@ -279,7 +318,7 @@ async function doBatch() {
   if (!text.trim()) { showMsg($("batchMsg"), "Teks masih kosong · please enter some lines."); return; }
   $("batchGo").disabled = true; $("batchGo").querySelector("span").textContent = "Menerjemahkan…";
   try {
-    const d = await api("/api/batch", { text, normalize: $("optNorm").checked });
+    const d = await api("/api/batch", { text, direction: DIR, normalize: $("optNorm").checked });
     BATCH = d.rows; const tb = $("batchRows"); tb.replaceChildren();
     d.rows.forEach((r, i) => tb.append(el("tr", {}, el("td", {}, r.src.trim() ? String(i + 1) : ""), el("td", {}, r.src), el("td", {}, r.tgt))));
     $("batchOut").hidden = false;
@@ -297,10 +336,10 @@ $("batchDl").addEventListener("click", () => {
 /* ---------- history (browser only) ---------- */
 const HK = "acehtranslate_history";
 const history = () => store.get(HK, []);
-function addHistory(src, tgt) {
+function addHistory(src, tgt, dir = "ace-ind") {
   if (!store.get("keepHistory", true)) return;
   const h = history().filter(x => !(x.src === src && x.tgt === tgt));
-  h.unshift({ id: Date.now() + Math.random(), src, tgt, t: new Date().toISOString() });
+  h.unshift({ id: Date.now() + Math.random(), src, tgt, dir, t: new Date().toISOString() });
   store.set(HK, h.slice(0, 500)); renderRecent();
 }
 function renderHistory() {
@@ -309,9 +348,9 @@ function renderHistory() {
   box.replaceChildren();
   if (!list.length) { box.append(el("p", { class: "muted" }, q ? "Tidak ada hasil." : "Belum ada riwayat. Terjemahan Anda akan muncul di sini.")); return; }
   list.forEach(x => box.append(el("div", { class: "hitem" },
-    el("div", { class: "t" }, new Date(x.t).toLocaleString()), el("div", { class: "src" }, x.src), el("div", {}, x.tgt),
+    el("div", { class: "t" }, new Date(x.t).toLocaleString() + (x.dir === "ind-ace" ? " · Indonesia → Aceh" : " · Aceh → Indonesia")), el("div", { class: "src" }, x.src), el("div", {}, x.tgt),
     el("div", { class: "row", style: "margin-top:8px" },
-      el("button", { class: "chip", onclick: () => { inp.value = x.src; location.hash = "translate"; updateCount(); setOut(x.tgt); LAST = { src: x.src, tgt: x.tgt, details: [] }; } }, "Buka"),
+      el("button", { class: "chip", onclick: () => { DIR = x.dir === "ind-ace" ? "ind-ace" : "ace-ind"; store.set("direction", DIR); inp.value = x.src; location.hash = "translate"; applyDirection(); updateCount(); setOut(x.tgt); LAST = { src: x.src, tgt: x.tgt, details: [], dir: DIR }; } }, "Buka"),
       el("button", { class: "chip", onclick: e => copy(x.tgt, e.target) }, "Copy"),
       el("button", { class: "chip", onclick: () => { store.set(HK, history().filter(y => y.id !== x.id)); renderHistory(); renderRecent(); } }, "Hapus")))));
 }
@@ -336,13 +375,15 @@ let dt; $("dq").addEventListener("input", () => { clearTimeout(dt); const v = $(
 
 /* ---------- evaluation ---------- */
 async function loadEval() {
-  const box = $("evalBox");
+  const box = $("evalBox"), rev = $("evalRev");
+  const table = rows => el("table", { class: "tbl" }, el("thead", {}, el("tr", {}, ["Set uji (belum pernah dilihat model)", "Kalimat", "NLLB dasar (chrF++)", "Model ini (chrF++)"].map(h => el("th", {}, h)))),
+    el("tbody", {}, rows.map(r => el("tr", {}, el("td", {}, r.set), el("td", {}, String(r.n)), el("td", {}, String(r.base)), el("td", {}, el("b", {}, String(r.model)))))));
   try {
     const d = await api("/api/evaluation");
-    if (!d.available) { box.replaceChildren(el("div", { class: "box" }, "Belum ada hasil evaluasi untuk model ini. Skor muncul setelah pelatihan di Colab selesai (training_log.json).")); return; }
-    box.replaceChildren(el("div", { class: "box" }, el("p", {}, `Model: ${d.model_id} · dilatih pada ${d.train_pairs ?? "?"} pasangan kalimat terjemahan manusia.`),
-      el("table", { class: "tbl" }, el("thead", {}, el("tr", {}, ["Set uji (belum pernah dilihat model)", "Kalimat", "NLLB dasar (chrF++)", "Model ini (chrF++)"].map(h => el("th", {}, h)))),
-        el("tbody", {}, d.rows.map(r => el("tr", {}, el("td", {}, r.set), el("td", {}, String(r.n)), el("td", {}, String(r.base)), el("td", {}, el("b", {}, String(r.model)))))))));
+    if (!d.available) { box.replaceChildren(el("div", { class: "box" }, "Belum ada hasil evaluasi untuk model ini. Skor muncul setelah pelatihan di Colab selesai (training_log.json).")); rev.replaceChildren(); return; }
+    box.replaceChildren(el("div", { class: "box" }, el("h3", {}, "Aceh → Indonesia"), el("p", {}, `Model: ${d.model_id} · dilatih pada ${d.train_pairs ?? "?"} pasangan kalimat terjemahan manusia.`), table(d.rows)));
+    rev.replaceChildren(el("div", { class: "box" }, el("h3", {}, "Indonesia → Aceh"),
+      d.rows_rev && d.rows_rev.length ? table(d.rows_rev) : el("p", { class: "muted" }, "Belum dievaluasi: model ini belum dilatih dua arah. Latih ulang dengan DIRECTION = 'both' di notebook Colab.")));
   } catch (e) { box.replaceChildren(el("p", { class: "msg" }, e.message)); }
 }
 
@@ -355,7 +396,7 @@ async function loadQuality() {
     box.className = ""; box.replaceChildren(el("div", { class: "qring" }, el("div", { class: "ring", style: `--p:${pct}` }, el("b", {}, String(best.model))),
       el("div", { class: "qlist" }, el("div", { class: "kv" }, el("span", {}, "Metrik"), el("b", {}, "chrF++")), el("div", { class: "kv" }, el("span", {}, "Set uji"), el("b", {}, best.set.split(" (")[0])),
         el("div", { class: "kv" }, el("span", {}, "NLLB dasar"), el("b", {}, String(best.base))))));
-    const qb = $("qualBadge"); qb.hidden = false; qb.querySelector("span").textContent = `chrF++ ${best.model}`;
+    const qb = $("qualBadge"); qb.dataset.score = best.model; qb.hidden = DIR !== "ace-ind"; qb.querySelector("span").textContent = `chrF++ ${best.model} (Aceh → Indonesia)`;
   } catch (e) { box.textContent = "Skor tidak bisa dimuat."; }
 }
 updateCount(); renderRecent(); route(); loadStatus(); loadQuality();

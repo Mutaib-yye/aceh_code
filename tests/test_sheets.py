@@ -42,3 +42,53 @@ def test_import_accepts_only_translator_plus_different_checker(tmp_path, monkeyp
     pairs = json.load(open(tmp_path / "human/pairs.json", encoding="utf-8"))
     assert [p["id"] for p in pairs] == ["S1"] and pairs[0]["ind"] == "Ibu bilang tidak."
     assert "human" in pairs[0]["source"]
+
+
+def _many(tmp_path, monkeypatch, n=60):
+    monkeypatch.setattr(sheets, "ROOT", tmp_path)
+    (tmp_path / "data/final/combined").mkdir(parents=True)
+    json.dump([], open(tmp_path / "data/final/combined/train.json", "w"))
+    rows = [{"src_file": "c.txt", "line": i, "ace_raw": f"gobnyan geujak u pasi rumoh {chr(97 + i % 26)}{i} ureueng nyan ka troh"} for i in range(n)]
+    write_jsonl(tmp_path / "data/extracted/acehx.jsonl", rows)
+    monkeypatch.setattr(sheets.langid, "classify", lambda t: ("ace", 1.0))
+
+
+def test_packs_give_each_person_distinct_sentences_and_a_different_checker(tmp_path, monkeypatch):
+    _many(tmp_path, monkeypatch)
+    r = sheets.make_packs(["Ana", "Budi", "Cut"], per_person=20, out=tmp_path / "packs")
+    assert r["sentences"] == 60
+    files = sorted((tmp_path / "packs").glob("0*.csv")); assert len(files) == 3
+    all_ids, all_text = [], []
+    for f, who in zip(files, ["Ana", "Budi", "Cut"]):
+        rows = list(csv.DictReader(open(f, encoding="utf-8-sig")))
+        assert len(rows) == 20 and all(x["translator"] == who and x["checker"] == "" and x["indonesian"] == "" for x in rows)
+        all_ids += [x["id"] for x in rows]; all_text += [x["acehnese"] for x in rows]
+    assert len(set(all_ids)) == 60 and len(set(all_text)) == 60                    # no sentence in two packs
+    md = (tmp_path / "packs/PACKS.md").read_text(encoding="utf-8")
+    assert "| Ana | 01_ana.csv | Cut |" in md and "| Budi | 02_budi.csv | Ana |" in md       # nobody checks their own pack
+
+
+def test_packs_refuse_bad_sizes_and_one_person(tmp_path, monkeypatch):
+    _many(tmp_path, monkeypatch)
+    import pytest
+    with pytest.raises(ValueError): sheets.make_packs(["Ana"], 20, out=tmp_path / "p")
+    with pytest.raises(ValueError): sheets.make_packs(["Ana", "Budi"], 19, out=tmp_path / "p")
+    with pytest.raises(ValueError): sheets.make_packs(["Ana", "Budi"], 31, out=tmp_path / "p")
+    with pytest.raises(ValueError, match="needed"): sheets.make_packs(["A", "B", "C", "D"], 30, out=tmp_path / "p")
+
+
+def test_import_builds_parallel_and_golden_corpus_from_several_packs(tmp_path, monkeypatch):
+    _project(tmp_path, monkeypatch)
+    def sheet(name, rows):
+        f = tmp_path / name
+        with open(f, "w", encoding="utf-8-sig", newline="") as h:
+            w = csv.DictWriter(h, sheets.SENT_COLS); w.writeheader(); [w.writerow(r) for r in rows]
+        return f
+    a = sheet("a.csv", [{"id": "P01-001", "acehnese": ACE[2], "indonesian": "Ibu bilang tidak.", "translator": "Ana", "checker": "Budi", "verdict": "ok"},
+                        {"id": "P01-002", "acehnese": ACE[3], "indonesian": "Ayah pergi.", "translator": "Ana", "checker": "Budi", "verdict": "fixed", "notes": "ubah kata"}])
+    b = sheet("b.csv", [{"id": "P02-001", "acehnese": ACE[4], "indonesian": "Kami makan.", "translator": "Budi", "checker": "Ana", "verdict": "OK"},
+                        {"id": "P02-002", "acehnese": ACE[5], "indonesian": "Dia datang.", "translator": "Budi", "checker": "Budi", "verdict": "ok"}])   # self-check: rejected
+    st = sheets.import_sheets(sentences=[a, b], outdir=tmp_path / "human")
+    assert st["sentences_in"] == 4 and st["sentences_accepted"] == 3 and st["golden"] == 2
+    par = json.load(open(tmp_path / "human/pairs.json", encoding="utf-8")); gold = json.load(open(tmp_path / "human/golden.json", encoding="utf-8"))
+    assert [r["id"] for r in par] == ["P01-001", "P01-002", "P02-001"] and [r["id"] for r in gold] == ["P01-001", "P02-001"]
