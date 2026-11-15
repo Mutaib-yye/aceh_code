@@ -204,6 +204,7 @@ def test_status_and_evaluation_tell_the_truth_about_each_direction(app):
     t = {"n": 5, "base": {"chrF++": 30.0}, "finetuned": {"chrF++": 40.0}}
     state.engine.info = {"train_pairs": 9, "tests": {"nusax": t}}
     assert J(call("/api/status"))[1]["directions"] == {"ace-ind": {"evaluated": True}, "ind-ace": {"evaluated": False}}
+    assert J(call("/api/status"))[1]["trained_direction"] == "ace-ind"
     e = J(call("/api/evaluation"))[1]; assert e["rows"][0]["model"] == 40.0 and e["rows_rev"] == []
     state.engine.info = {"train_pairs": 9, "tests": {"nusax": t, "golden": t}, "tests_rev": {"nusax": {**t, "finetuned": {"chrF++": 22.5}}}}
     e = J(call("/api/evaluation"))[1]; assert e["rows_rev"][0]["model"] == 22.5 and e["rows"][1]["set"].startswith("Golden corpus")

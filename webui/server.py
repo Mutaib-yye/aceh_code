@@ -34,7 +34,7 @@ class State:
         info = e.info or {}
         directions = {"ace-ind": {"evaluated": bool(info.get("tests"))},
                       "ind-ace": {"evaluated": bool(info.get("tests_rev"))}}
-        return {"model_id": e.model_id, "finetuned": bool(info.get("tests")), "directions": directions, "max_chars": MAX_CHARS,
+        return {"model_id": e.model_id, "finetuned": bool(info.get("tests")), "directions": directions, "trained_direction": info.get("direction") or ("ace-ind" if info.get("tests") else None), "max_chars": MAX_CHARS,
                 "max_batch_lines": MAX_BATCH_LINES, "dictionary": {"loaded": self.dictionary.loaded, "entries": len(self.dictionary.entries), "sources": self.dictionary.sources},
                 "voice": {"model": self.recognizer.model_id, "language": self.recognizer.lang, "loaded": self.recognizer.loaded,
                           "max_seconds": asr.MAX_SECONDS}}

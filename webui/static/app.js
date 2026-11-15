@@ -89,7 +89,7 @@ async function loadStatus() {
     const k = STATUS.dictionary || {};
     $("kEntries").textContent = k.loaded ? k.entries.toLocaleString("id-ID") : "–";
     $("kState").textContent = k.loaded ? "Aktif" : "Belum dimuat"; $("kState").classList.toggle("off", !k.loaded);
-    $("aboutModel").textContent = `Model aktif: ${STATUS.model_id}.`;
+    $("aboutModel").textContent = `Model aktif: ${STATUS.model_id}. Arah pelatihan: ${STATUS.trained_direction === "both" ? "dua arah" : STATUS.trained_direction === "ace-ind" ? "satu arah (Aceh → Indonesia, model lama)" : STATUS.trained_direction || "tidak diketahui"}.`;
     $("footModel").textContent = "· " + STATUS.model_id;
     $("inp").maxLength = STATUS.max_chars;
     applyDirection();

@@ -6,7 +6,7 @@ The trained model is looked for, in this order, and kept in models/ace-id-nllb/ 
   3. your Hugging Face account      (<you>/ace-id-nllb, saved there by the Colab notebook; needs your token once)
   4. otherwise the base NLLB-200 model (not fine-tuned), so the app still works.
 After the first run everything is on this computer and the app works offline."""
-import os, sys, shutil, zipfile, importlib.util
+import os, sys, json, shutil, zipfile, importlib.util
 from pathlib import Path
 from .common import ROOT
 
@@ -80,9 +80,32 @@ def run(model=None, share=False, port=7860, open_browser=True, **launch_extra):
     print(f"starting the app at http://127.0.0.1:{port}  (stop with Ctrl+C)")
     return load_space_app().start(model, share=share, server_name="127.0.0.1", server_port=port, inbrowser=open_browser, **launch_extra)
 
-def run_web(model=None, port=7860, open_browser=True):
+def remove_local_model(target=LOCAL):
+    """`--update-model`: delete the local copy of the trained model so the next start downloads the newest one from Hugging Face."""
+    target = Path(target)
+    if _has_model(target):
+        shutil.rmtree(target)
+        print(f"removed the old local model {target}; the newest one is downloaded now")
+        return True
+    print("no local model to replace")
+    return False
+
+def describe_model(path):
+    """One line about a model folder: which directions it was trained and scored for (from its training_log.json)."""
+    try:
+        log = json.loads((Path(path) / "training_log.json").read_text(encoding="utf-8"))
+    except Exception:
+        return "no training_log.json (base model or unknown)"
+    d = log.get("direction") or "ace-ind (older, one-way training)"
+    rev = "scored for Indonesian -> Acehnese" if log.get("tests_rev") else "NOT scored for Indonesian -> Acehnese"
+    return f"trained direction: {d}; {rev}; {log.get('train_pairs', '?')} training pairs"
+
+def run_web(model=None, port=7860, open_browser=True, update_model=False):
     """The AcehTranslate AI interface (webui/): plain Python server, no Gradio needed. Same model lookup as run()."""
+    if update_model and not model:
+        remove_local_model()
     model = model or ensure_model()
+    print("model details:", describe_model(model) if Path(model).is_dir() else "(from Hugging Face)")
     # No HF_HUB_OFFLINE here (unlike run()): a model folder loads without the network anyway, and the voice model must be able to
     # download itself the first time the microphone is used.
     _load("core", ROOT / "space/core.py")
@@ -115,7 +138,7 @@ def doctor(port=7860, model=None):
     target = Path(model) if model else LOCAL
     zips = list((Path.home() / "Downloads").glob("ace-id-nllb*.zip")) if (Path.home() / "Downloads").exists() else []
     add(True, "trained model",
-        f"found in {target}" if _has_model(target) else ("zip in Downloads (will be unpacked)" if zips else
+        f"found in {target} ({describe_model(target)})" if _has_model(target) else ("zip in Downloads (will be unpacked)" if zips else
         "not on this computer yet (normal before the first start): the app asks for the Hugging Face token and downloads it once"))
     from .dictionary import Dictionary
     d = Dictionary(); add(d.loaded, "dictionary", f"{len(d.entries)} entries from {d.path.name}" if d.loaded else "word list not found")

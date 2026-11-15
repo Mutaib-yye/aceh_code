@@ -64,3 +64,14 @@ def test_local_model_run_sets_offline_mode(tmp_path, monkeypatch):
     assert os.environ.get("HF_HUB_OFFLINE") == "1" and captured["model"] == str(d)
     assert captured["kw"]["server_name"] == "127.0.0.1" and captured["kw"]["server_port"] == 7860
     monkeypatch.delenv("HF_HUB_OFFLINE", raising=False)
+
+
+def test_update_model_removes_only_the_local_model_and_describes_it(tmp_path):
+    d = _model_dir(tmp_path / "models/ace-id-nllb")
+    assert "no training_log" in local_app.describe_model(d)
+    (d / "training_log.json").write_text(json.dumps({"train_pairs": 9, "tests": {"nusax": {}}}), encoding="utf-8")
+    assert "one-way" in local_app.describe_model(d) and "NOT scored for Indonesian" in local_app.describe_model(d)
+    (d / "training_log.json").write_text(json.dumps({"direction": "both", "train_pairs": 9, "tests": {"n": 1}, "tests_rev": {"n": 1}}), encoding="utf-8")
+    assert "both" in local_app.describe_model(d) and "NOT" not in local_app.describe_model(d)
+    assert local_app.remove_local_model(d) is True and not d.exists()
+    assert local_app.remove_local_model(d) is False
