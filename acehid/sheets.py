@@ -158,7 +158,10 @@ def import_sheets(sentences=None, words=None, outdir=ROOT / "data/human"):
     stats = {"sentences_in": 0, "sentences_accepted": 0, "golden": 0, "words_in": 0, "words_accepted": 0}
     pairs, golden = [], []
     if sentences:
-        for path in ([sentences] if isinstance(sentences, (str, Path)) else sentences):
+        import glob
+        given = [sentences] if isinstance(sentences, (str, Path)) else list(sentences)
+        files = [f for g in given for f in (sorted(glob.glob(str(g))) or [g])]       # Windows cmd does not expand 0*.csv itself
+        for path in files:
             for r in csv.DictReader(open(path, encoding="utf-8-sig")):
                 stats["sentences_in"] += 1
                 if _accepted(r, "indonesian") and "?" not in r["indonesian"]:

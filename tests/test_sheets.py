@@ -104,3 +104,13 @@ def test_packs_build_the_corpus_index_by_themselves_on_a_fresh_clone(tmp_path, m
     monkeypatch.setattr(sheets.langid, "classify", lambda t: ("ace", 1.0))
     r = sheets.make_packs(["Ana", "Budi"], per_person=20, out=tmp_path / "packs")
     assert r["sentences"] == 40 and (tmp_path / "data/extracted/acehx.jsonl").exists()
+
+
+def test_import_expands_wildcards_itself(tmp_path, monkeypatch):
+    _project(tmp_path, monkeypatch)
+    for n, who in (("01_a.csv", "Ana"), ("02_b.csv", "Budi")):
+        with open(tmp_path / n, "w", encoding="utf-8-sig", newline="") as h:
+            w = csv.DictWriter(h, sheets.SENT_COLS); w.writeheader()
+            w.writerow({"id": n, "acehnese": ACE[2], "indonesian": "Ibu bilang tidak.", "translator": who, "checker": "Cut", "verdict": "ok"})
+    st = sheets.import_sheets(sentences=[str(tmp_path / "0*.csv")], outdir=tmp_path / "human")
+    assert st["sentences_in"] == 2 and st["golden"] == 2
