@@ -114,7 +114,7 @@ class _FakeApi:
 def _cell(nb, marker):
     return next("".join(c["source"]) for c in nb["cells"] if c["cell_type"] == "code" and marker in "".join(c["source"]))
 
-def _run_save_cell(tmp_path, monkeypatch, trained, token="hf_test", download_zip=False):
+def _run_save_cell(tmp_path, monkeypatch, trained, token="hf_test", download_zip=False, log="x"):
     import huggingface_hub, os
     nb = json.load(open(ROOT / "notebooks/train_colab.ipynb", encoding="utf-8"))
     src = _cell(nb, "save your trained model")
@@ -123,7 +123,7 @@ def _run_save_cell(tmp_path, monkeypatch, trained, token="hf_test", download_zip
     monkeypatch.chdir(tmp_path)
     (tmp_path / "models/ace-id-nllb").mkdir(parents=True)
     for f in ("training_log.json", "RESULTS.md", "README.md"):
-        (tmp_path / "models/ace-id-nllb" / f).write_text("x")
+        (tmp_path / "models/ace-id-nllb" / f).write_text(log if f == "training_log.json" else "x")
     class Saver:
         def half(self): return self
         def save_pretrained(self, d): os.makedirs(d, exist_ok=True); open(os.path.join(d, "config.json"), "w").write("{}")
@@ -192,3 +192,12 @@ def test_notebook_adds_team_pairs_from_github_before_building():
     assert "USE_HUMAN_PAIRS = True" in src and "data/human/andrie_test_clean_pairs.json" in src and "data/human/cerpen_sentence_pairs.json" in src
     assert "raw.githubusercontent.com" in src and "extras.append(path)" in src
     assert src.index("extras.append(path)") < src.index("build-train {extra}")
+
+
+def test_notebook_says_clearly_whether_the_saved_model_is_two_way(tmp_path, monkeypatch, capsys):
+    import os
+    _run_save_cell(tmp_path, monkeypatch, trained=True)                                     # stub log is not JSON: no crash, says NO
+    out = capsys.readouterr().out; assert "Indonesian -> Acehnese scored: NO" in out and "NOT A TWO-WAY MODEL" in out
+    (tmp_path / "models").rename(tmp_path / "old_models")
+    _run_save_cell(tmp_path, monkeypatch, trained=True, log=json.dumps({"direction": "both", "tests": {"n": {}}, "tests_rev": {"n": {}}}))
+    out = capsys.readouterr().out; assert "trained direction: both" in out and "scored: YES" in out and "NOT A TWO-WAY" not in out
