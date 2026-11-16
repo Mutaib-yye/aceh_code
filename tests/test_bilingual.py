@@ -201,3 +201,38 @@ def test_notebook_says_clearly_whether_the_saved_model_is_two_way(tmp_path, monk
     (tmp_path / "models").rename(tmp_path / "old_models")
     _run_save_cell(tmp_path, monkeypatch, trained=True, log=json.dumps({"direction": "both", "tests": {"n": {}}, "tests_rev": {"n": {}}}))
     out = capsys.readouterr().out; assert "trained direction: both" in out and "scored: YES" in out and "NOT A TWO-WAY" not in out
+
+
+def _golden_block():
+    nb = json.load(open(ROOT / "notebooks/train_colab.ipynb", encoding="utf-8"))
+    src = _cell(nb, "build-train {extra}")
+    return src[src.index("GOLDEN ="):src.index("!python -m acehid build-train")]
+
+def _run_golden_block(tmp_path, monkeypatch, download):
+    import os, urllib.request
+    monkeypatch.chdir(tmp_path)
+    class R:
+        def __init__(s, b): s.b = b
+        def read(s): return s.b
+    def fake(url, timeout=0):
+        r = download(url)
+        if isinstance(r, Exception): raise r
+        return R(r)
+    monkeypatch.setattr(urllib.request, "urlopen", fake)
+    ns = {"os": os}
+    exec(_golden_block(), ns)
+    return ns["extra_test"]
+
+def test_notebook_golden_download_failing_never_leaves_an_empty_file_that_breaks_the_build(tmp_path, monkeypatch, capsys):
+    import os
+    assert _run_golden_block(tmp_path, monkeypatch, lambda u: RuntimeError("HTTP Error 404: Not Found")) == ""
+    assert not os.path.exists(tmp_path / "data/human/golden.json") and "no golden corpus yet" in capsys.readouterr().out
+
+def test_notebook_golden_stale_empty_file_is_removed_and_a_real_one_is_used(tmp_path, monkeypatch):
+    import os
+    (tmp_path / "data/human").mkdir(parents=True); (tmp_path / "data/human/golden.json").write_text("")      # left by the old notebook version
+    assert _run_golden_block(tmp_path, monkeypatch, lambda u: RuntimeError("404")) == "" and not os.path.exists(tmp_path / "data/human/golden.json")
+    good = json.dumps([{"ace": "a", "ind": "b"}]).encode()
+    assert _run_golden_block(tmp_path, monkeypatch, lambda u: good) == "--extra-test golden=data/human/golden.json"
+    assert json.load(open(tmp_path / "data/human/golden.json")) == [{"ace": "a", "ind": "b"}]
+    assert _run_golden_block(tmp_path, monkeypatch, lambda u: b"[]") == "--extra-test golden=data/human/golden.json"   # existing real file is kept

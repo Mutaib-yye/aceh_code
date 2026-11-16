@@ -94,7 +94,13 @@ def build(outdir="data/final/combined", extra=(), extra_test=(), flores_dir="dat
         train += _tag(_load(p), Path(p).stem)
     for spec in extra_test:
         name, p = spec.split("=", 1)
-        tests[name] = _tag(_load(p), name)
+        try:
+            rows = _load(p)
+        except (OSError, ValueError) as e:                      # missing, empty or broken file: skip this extra test set, never block the build
+            log("build-train", skipped_extra_test=name, why=str(e).splitlines()[0])
+            continue
+        if rows:
+            tests[name] = _tag(rows, name)
     held = valid + [r for t in tests.values() for r in t]
     n_before = len(train)
     train, stats = remove_leaks(train, held, near)

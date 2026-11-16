@@ -92,3 +92,12 @@ def test_evaluate_scores_a_trained_model_on_the_golden_file_without_training(tmp
     assert r["n"] == 3 and set(r["model"]) == {"ace-ind", "ind-ace"} == set(r["base"]) and set(r["model"]["ace-ind"]) == {"chrF++", "chrF", "BLEU"}
     empty = tmp_path / "empty.json"; empty.write_text("[]", encoding="utf-8")
     with pytest.raises(ValueError, match="import-sheets"): train.evaluate(base, str(empty))
+
+
+def test_build_train_skips_an_empty_or_broken_extra_test_file_instead_of_failing(tmp_path, data_root):
+    root, _ = data_root
+    (tmp_path / "empty.json").write_text(""); (tmp_path / "broken.json").write_text("{not json"); (tmp_path / "none.json")
+    (tmp_path / "ok.json").write_text(json.dumps([{"ace": "unik kalimat aceh satu dua", "ind": "kalimat indonesia unik satu dua"}]))
+    corpus.build(extra_test=[f"e={tmp_path / 'empty.json'}", f"b={tmp_path / 'broken.json'}", f"m={tmp_path / 'none.json'}", f"g={tmp_path / 'ok.json'}"])
+    m = json.load(open(root / "data/final/combined/manifest.json", encoding="utf-8"))
+    assert set(m["tests"]) == {"nusax", "flores", "g"}                       # the three bad ones are skipped, the good one is a test set
