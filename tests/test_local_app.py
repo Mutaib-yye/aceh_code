@@ -75,3 +75,15 @@ def test_update_model_removes_only_the_local_model_and_describes_it(tmp_path):
     assert "both" in local_app.describe_model(d) and "NOT" not in local_app.describe_model(d)
     assert local_app.remove_local_model(d) is True and not d.exists()
     assert local_app.remove_local_model(d) is False
+
+
+def test_update_model_skips_old_zips_in_downloads_and_goes_to_hugging_face(tmp_path, monkeypatch):
+    calls = {}
+    monkeypatch.setattr(local_app, "remove_local_model", lambda *a, **k: calls.setdefault("removed", True))
+    def fake_ensure(target=None, ask=None, zip_search="unset"):
+        calls["zip_search"] = zip_search; return "the-new-model"
+    monkeypatch.setattr(local_app, "ensure_model", fake_ensure)
+    assert local_app.resolve_model(None, update_model=True) == "the-new-model" and calls == {"removed": True, "zip_search": ()}     # no zip lookup
+    calls.clear()
+    assert local_app.resolve_model(None, update_model=False) == "the-new-model" and "removed" not in calls and calls["zip_search"] == "unset"
+    assert local_app.resolve_model("my/model", update_model=True) == "my/model" and "removed" not in calls                          # explicit model: untouched

@@ -100,12 +100,23 @@ def describe_model(path):
     rev = "scored for Indonesian -> Acehnese" if log.get("tests_rev") else "NOT scored for Indonesian -> Acehnese"
     return f"trained direction: {d}; {rev}; {log.get('train_pairs', '?')} training pairs"
 
+def resolve_model(model=None, update_model=False, ask=input):
+    """Which model to load. --update-model deletes the local copy and downloads the newest from Hugging Face, and deliberately does NOT
+    look in the Downloads folder: an old ace-id-nllb*.zip there would otherwise bring the OLD model straight back."""
+    if model:
+        return model
+    if update_model:
+        remove_local_model()
+        return ensure_model(zip_search=(), ask=ask)
+    return ensure_model(ask=ask)
+
 def run_web(model=None, port=7860, open_browser=True, update_model=False):
     """The AcehTranslate AI interface (webui/): plain Python server, no Gradio needed. Same model lookup as run()."""
-    if update_model and not model:
-        remove_local_model()
-    model = model or ensure_model()
-    print("model details:", describe_model(model) if Path(model).is_dir() else "(from Hugging Face)")
+    model = resolve_model(model, update_model)
+    print("=" * 70)
+    print("MODEL IN USE:", model)
+    print("model details:", describe_model(model) if Path(model).is_dir() else "(base model from Hugging Face, NOT your fine-tuned model)")
+    print("=" * 70)
     # No HF_HUB_OFFLINE here (unlike run()): a model folder loads without the network anyway, and the voice model must be able to
     # download itself the first time the microphone is used.
     _load("core", ROOT / "space/core.py")
