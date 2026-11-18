@@ -62,7 +62,7 @@ class State:
             elif d.get("alternatives"):
                 notes.append("Alternatif hanya tersedia untuk satu kalimat · alternatives are shown for a single sentence only.")
         return {"translation": out, "details": [{"src": a, "norm": b, "tgt": c} for a, b, c in details], "notes": notes,
-                "alternatives": alts, "normalized": "\n".join(n for _, n, _ in details), "normalize": norm, "direction": direction}
+                "alternatives": alts, "short": len(text.split()) <= 3, "normalized": "\n".join(n for _, n, _ in details), "normalize": norm, "direction": direction}
 
     def batch(self, d):
         direction = self.direction(d)

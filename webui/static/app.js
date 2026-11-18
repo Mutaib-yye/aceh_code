@@ -165,6 +165,7 @@ async function doTranslate() {
     $("normBox").textContent = d.normalized;
     renderAlts(d.alternatives);
     addHistory(text, d.translation, DIR);
+    if (d.short) shortHelp(text);
     $("fbMsg").textContent = "";
   } catch (e) { setOut(""); showMsg($("msg"), e.message); }
   finally { busy(false); }
@@ -214,6 +215,16 @@ function renderChips() {
   const ws = [...new Set(inp.value.match(/[\p{L}\p{N}'’\-]+/gu) || [])].slice(0, 60);
   const c = $("chips"); c.replaceChildren(...ws.map(w => el("button", { class: "chip", type: "button", onclick: ev => {
     c.querySelectorAll(".chip").forEach(x => x.classList.remove("on")); ev.target.classList.add("on"); lookup(w, $("wordOut")); } }, w)));
+}
+async function shortHelp(text) {                 // a word or two has no context for the model: show what the dictionary knows
+  const ws = [...new Set(text.match(/[\p{L}\p{N}'’\-]+/gu) || [])].slice(0, 3), box = $("wordOut");
+  if (!ws.length || !(STATUS.dictionary || {}).loaded) return;
+  $("words").hidden = false; renderChips(); box.replaceChildren();
+  for (const w of ws) {
+    const part = el("div", {}); box.append(el("h3", {}, `“${w}”`), part);
+    try { const d = await api("/api/dictionary?q=" + encodeURIComponent(w)); if (DIR === "ind-ace") { d.exact = []; d.prefix = []; d.found = d.meaning.length > 0; } dictResult(part, d); }
+    catch (e) { part.append(el("p", { class: "msg" }, e.message)); }
+  }
 }
 $("cDict").addEventListener("click", () => {
   $("words").hidden = false; renderChips();

@@ -228,3 +228,9 @@ def test_real_engine_translates_both_directions_with_the_right_language_tokens(t
     assert e.explain("saya", "lon", direction="ind-ace")[0]
     import pytest
     with pytest.raises(ValueError): e._lang("xx-yy")
+
+
+def test_short_input_is_flagged_so_the_page_can_show_the_dictionary(app):
+    call, _ = app
+    assert J(call("/api/translate", {"text": "daih"}))[1]["short"] is True
+    assert J(call("/api/translate", {"text": "Lon ka jak u blang"}))[1]["short"] is False

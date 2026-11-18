@@ -10,6 +10,7 @@ SRC, TGT = "ace_Latn", "ind_Latn"
 DIRECTIONS = {"ace-ind": ("ace_Latn", "ind_Latn"), "ind-ace": ("ind_Latn", "ace_Latn")}
 MAX_CHARS = 5000
 MIN_WORDS = 3
+MAX_CHUNK_WORDS = 40       # the model was trained on sentences of up to 128 tokens: longer pieces are cut off or garbled
 
 # --- normalization (copy of acehid/normalize.py, kept identical by a test) ---------------------------------------------
 DIAERESIS = str.maketrans({"ö": "o", "Ö": "O", "ë": "e", "Ë": "E", "ü": "u", "Ü": "U", "ï": "i", "Ï": "I", "ä": "a", "Ä": "A"})
@@ -27,6 +28,30 @@ def normalize(s):
     for pat, rep in OLD:
         t = pat.sub(lambda m: _case(m.group(0), rep), t)
     return t.translate(DIAERESIS)
+
+def chunk_long(s, max_words=MAX_CHUNK_WORDS):
+    """A sentence of more than max_words words (casual Acehnese often has no punctuation) -> pieces of at most max_words words, cut at
+    commas / semicolons / colons where possible, otherwise evenly. Short sentences come back unchanged as [s]."""
+    if len(s.split()) <= max_words:
+        return [s]
+    pieces = [p for p in re.split(r"(?<=[,;:])\s+", s) if p]
+    out, cur, n = [], [], 0
+    def flush():
+        nonlocal cur, n
+        if cur:
+            out.append(" ".join(cur)); cur, n = [], 0
+    for p in pieces:
+        w = p.split()
+        if len(w) > max_words:                                   # one long piece with no comma: split it evenly
+            flush()
+            k = -(-len(w) // max_words); size = -(-len(w) // k)
+            out += [" ".join(w[i:i + size]) for i in range(0, len(w), size)]
+            continue
+        if n + len(w) > max_words:
+            flush()
+        cur.append(p); n += len(w)
+    flush()
+    return out
 
 def _normalizer(direction, normalize_input=True):
     """Acehnese input gets the training-data spelling rules; anything else (or normalize_input=False) only has whitespace tidied."""
@@ -215,12 +240,19 @@ class Engine:
                 out.append(t)
         return out[:n]
 
+    def _translate_chunked(self, sents, direction):
+        """{sentence: translation}, and whether any sentence had to be cut into chunks (long sentences are translated piece by piece)."""
+        chunks = {x: chunk_long(x) for x in set(sents)}
+        flat = sorted({c for cs in chunks.values() for c in cs})
+        tr = dict(zip(flat, self.translate_sentences(flat, direction)))
+        return {x: " ".join(tr[c] for c in cs) for x, cs in chunks.items()}, any(len(cs) > 1 for cs in chunks.values())
+
     def translate_lines(self, lines, normalize_input=True, direction="ace-ind"):
         """One translated string per input line (blank lines stay blank), for batch mode."""
         norm = _normalizer(direction, normalize_input)
         prep = [[norm(s) for s in split_sentences(l)] for l in lines]
         flat = [s for l in prep for s in l]
-        res = dict(zip(flat, self.translate_sentences(flat, direction)))
+        res, _ = self._translate_chunked(flat, direction)
         return [" ".join(res[s] for s in l) for l in prep]
 
     def translate(self, text, normalize_input=True, direction="ace-ind"):
@@ -236,11 +268,13 @@ class Engine:
             text = text[:MAX_CHARS]; notes.append(f"Only the first {MAX_CHARS} characters were translated.")
         lines = [[(s, norm(s)) for s in split_sentences(l)] for l in text.splitlines()]
         flat = [n for l in lines for _, n in l]
-        res = dict(zip(flat, self.translate_sentences(flat, direction)))
+        res, chunked = self._translate_chunked(flat, direction)
         out = "\n".join(" ".join(res[n] for _, n in l) for l in lines)
         details = [[s, n, res[n]] for l in lines for s, n in l]
         if any(len(n.split()) < MIN_WORDS for n in flat):
-            notes.append("Single words and very short phrases are often ambiguous. A full sentence gives a better translation.")
+            notes.append("Kata atau frasa yang sangat pendek sering ambigu; arti kata dari kamus ditampilkan di bawah. · Single words and very short phrases are often ambiguous. A full sentence gives a better translation.")
+        if chunked:
+            notes.append(f"Kalimat yang lebih dari {MAX_CHUNK_WORDS} kata diterjemahkan potong demi potong agar tidak terpotong; konteks antar potongan bisa hilang. Beri tanda baca (. , ;) untuk hasil yang lebih baik. · Long sentences are translated in pieces of at most {MAX_CHUNK_WORDS} words.")
         return out, details, notes
 
     def explain(self, normalized, indonesian=None, direction="ace-ind"):

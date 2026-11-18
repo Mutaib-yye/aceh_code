@@ -163,3 +163,25 @@ def test_ensure_glossary_uses_the_fixed_place_or_downloads_it(tmp_path, monkeypa
     dest.parent.mkdir(parents=True); dest.write_text(HEAD + "zaaba,zaaba,none,none,none,x,0,rumah,neutral\n")
     assert core.ensure_glossary() == str(dest) and len(calls) == 1             # already there: no download
     assert "zaaba" in core.Glossary.load().entries
+
+
+def test_long_sentences_are_cut_into_safe_pieces_at_commas_or_evenly():
+    short = "gobnyan geujak u pasi uroe nyoe"
+    assert core.chunk_long(short) == [short]
+    words = " ".join(f"w{i}" for i in range(100))                       # 100 words, no punctuation at all
+    parts = core.chunk_long(words)
+    assert len(parts) == 3 and all(len(p.split()) <= 40 for p in parts) and " ".join(parts) == words
+    comma = ", ".join(" ".join(f"a{i}b{j}" for j in range(15)) for i in range(5))      # 5 pieces of 15 words with commas
+    parts = core.chunk_long(comma)
+    assert all(len(p.split()) <= 40 for p in parts) and all(p.rstrip().endswith(",") or p is parts[-1] for p in parts) and " ".join(parts) == comma
+
+
+def test_engine_translates_long_text_piece_by_piece_and_says_so():
+    e = FakeEngine()
+    words = " ".join(f"kata{i}" for i in range(90))
+    out, details, notes = e.translate(words)
+    assert out == words.upper() and len(details) == 1                      # joined back into one translation, one detail row
+    assert max(len(c.split()) for batch in e.calls for c in batch) <= 40 and any("potong demi potong" in n for n in notes)
+    e2 = FakeEngine(); out, _, notes = e2.translate("gobnyan geujak u pasi uroe nyoe")
+    assert not any("potong demi potong" in n for n in notes)
+    assert e.translate_lines([words, "", "gobnyan geujak"])[1] == "" and e.translate_lines([words])[0] == words.upper()
