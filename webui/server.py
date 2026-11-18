@@ -110,10 +110,11 @@ class State:
         rec = {"time": datetime.datetime.now().isoformat(timespec="seconds"), "model": self.engine.model_id, "rating": rating,
                "direction": self.direction(d),
                "consent": consent, "review": "pending"}
+        who = " ".join(str(d.get("corrector") or "").split())[:80]
         if consent:                                       # texts are stored only with consent
             et = d.get("error_type")
             rec.update(source=str(d.get("source") or "")[:MAX_CHARS], translation=str(d.get("translation") or "")[:MAX_CHARS],
-                       correction=str(d.get("correction") or "")[:MAX_CHARS], error_type=et if et in ERROR_TYPES else "")
+                       correction=str(d.get("correction") or "")[:MAX_CHARS], error_type=et if et in ERROR_TYPES else "", corrector=who)
         self.feedback_path.parent.mkdir(parents=True, exist_ok=True)
         with _lock, open(self.feedback_path, "a", encoding="utf-8") as f:
             f.write(json.dumps(rec, ensure_ascii=False) + "\n")
@@ -123,6 +124,14 @@ class State:
         rows = [json.loads(l) for l in self.feedback_path.read_text(encoding="utf-8").splitlines() if l.strip()] if self.feedback_path.exists() else []
         cols = ["time", "model", "direction", "rating", "consent", "review", "error_type", "source", "translation", "correction"]
         buf = io.StringIO(); w = csv.DictWriter(buf, cols, extrasaction="ignore"); w.writeheader(); w.writerows(rows)
+        return buf.getvalue()
+
+    def corrections_csv(self):
+        """The saved corrections as a validation sheet (same columns as the student sheets) for a second person to check."""
+        from acehid import sheets
+        recs = [json.loads(l) for l in self.feedback_path.read_text(encoding="utf-8").splitlines() if l.strip()] if self.feedback_path.exists() else []
+        buf = io.StringIO("")
+        buf.write("\ufeff"); w = csv.DictWriter(buf, sheets.SENT_COLS, lineterminator="\r\n"); w.writeheader(); w.writerows(sheets.corrections_rows(recs))
         return buf.getvalue()
 
     def evaluation(self):
@@ -153,6 +162,8 @@ def make_handler(state):
                 if u.path == "/api/status": return self._send(200, state.status())
                 if u.path == "/api/dictionary": return self._send(200, state.dictionary_search((q.get("q") or [""])[0][:100]))
                 if u.path == "/api/evaluation": return self._send(200, state.evaluation())
+                if u.path == "/api/corrections.csv":
+                    return self._send(200, state.corrections_csv(), "text/csv", {"Content-Disposition": 'attachment; filename="corrections_sheet.csv"'})
                 if u.path == "/api/feedback.csv":
                     return self._send(200, state.feedback_csv(), "text/csv", {"Content-Disposition": 'attachment; filename="feedback.csv"'})
             except Exception as e:

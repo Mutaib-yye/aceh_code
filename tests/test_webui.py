@@ -234,3 +234,14 @@ def test_short_input_is_flagged_so_the_page_can_show_the_dictionary(app):
     call, _ = app
     assert J(call("/api/translate", {"text": "daih"}))[1]["short"] is True
     assert J(call("/api/translate", {"text": "Lon ka jak u blang"}))[1]["short"] is False
+
+
+def test_corrections_are_stored_with_the_name_and_exported_as_a_sheet(app):
+    call, state = app
+    J(call("/api/feedback", {"rating": "down", "consent": True, "direction": "ind-ace", "source": "Saya pergi", "translation": "salah", "correction": "Lon jak", "corrector": "  Ana   B  "}))
+    rec = json.loads(state.feedback_path.read_text(encoding="utf-8").splitlines()[0]); assert rec["corrector"] == "Ana B" and rec["direction"] == "ind-ace"
+    code, body = call("/api/corrections.csv"); text = body.decode("utf-8-sig")
+    assert code == 200 and text.splitlines()[0].startswith("id,acehnese,indonesian,translator,checker,verdict,notes")
+    row = text.splitlines()[1]; assert row.startswith("C-0001,Lon jak,Saya pergi,Ana B,<NAMA PEMERIKSA>")                 # Acehnese side = the correction
+    J(call("/api/feedback", {"rating": "up", "consent": False, "source": "SECRET", "correction": "SECRET2"}))
+    assert "SECRET" not in call("/api/corrections.csv")[1].decode()                                                    # no consent: never exported

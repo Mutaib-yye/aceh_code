@@ -27,6 +27,10 @@
    **parallel corpus** (`data/human/pairs.json`); those with verdict `ok` are also the **golden corpus** (`data/human/golden.json`): two people agree
    without edits, so it is used only as a test set (`build-train --extra-test golden=data/human/golden.json`; the Colab notebook does this by itself when the file exists).
    To score a model you already trained on the golden corpus **without training again**: `acehid.bat eval-golden --with-base`.
+   **Corrections typed in the app** (either direction): translate, press *Give Feedback*, edit the translation into the right one, add your name, tick the
+   consent box and send. They are saved on the computer running the app (`data/feedback/`, git-ignored). `corrections-sheet` (or the *Unduh koreksi* link in the
+   panel) turns them into a sheet in the same format as the student sheets; **a different person checks it** (`checker`, `verdict`), then `import-sheets` accepts only
+   the checked rows into `pairs.json`. The next Colab training run uses `pairs.json`; nothing trains on unchecked corrections and the model never changes while the app runs.
 3. **Both directions:** `python -m acehid train --direction both` (default) fine-tunes one NLLB model for Acehnese → Indonesian *and* Indonesian → Acehnese;
    each direction is scored on its own test sets (`training_log.json`: `tests` and `tests_rev`). The app has a swap button; a direction that has no evaluation
    yet is labelled as such. Use `DIRECTION = 'ace-ind'` in the notebook for the old one-way training.

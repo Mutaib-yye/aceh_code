@@ -250,20 +250,24 @@ $("cExplain").addEventListener("click", async () => {
 });
 $("cFeed").addEventListener("click", () => {
   if (!LAST) { showMsg($("msg"), "Terjemahkan sesuatu dulu, lalu beri masukan.", true); return; }
-  $("feed").hidden = false; $("feed").scrollIntoView({ behavior: "smooth", block: "nearest" });
+  $("feed").hidden = false; $("fbFix").value = LAST.tgt; $("fbName").value = store.get("corrector", ""); $("feed").scrollIntoView({ behavior: "smooth", block: "nearest" });
 });
 async function sendFeedback(rating) {
   if (!LAST) return;
   const consent = $("fbConsent").checked;
   try {
-    const r = await api("/api/feedback", { rating, consent, direction: LAST.dir || DIR, source: LAST.src, translation: LAST.tgt, correction: $("fbFix").value, error_type: $("fbType").value });
+    const r = await api("/api/feedback", { rating, consent, direction: LAST.dir || DIR, source: LAST.src, translation: LAST.tgt, correction: $("fbFix").value, error_type: $("fbType").value, corrector: $("fbName").value });
     $("fbMsg").textContent = r.stored_text ? "Terima kasih! Masukan dan teks tersimpan untuk ditinjau." : "Terima kasih! Hanya penilaian yang disimpan (tanpa teks).";
   } catch (e) { $("fbMsg").textContent = e.message; }
 }
 $("up").addEventListener("click", () => sendFeedback("up"));
 $("down").addEventListener("click", () => sendFeedback("down"));
-$("fbSend").addEventListener("click", () => { if (!$("fbFix").value.trim()) { $("fbMsg").textContent = "Tulis koreksi dulu, atau pakai 👍/👎."; return; }
-  if (!$("fbConsent").checked) { $("fbMsg").textContent = "Centang persetujuan agar koreksi disimpan."; return; } sendFeedback("down"); });
+$("fbSend").addEventListener("click", () => {
+  const fix = $("fbFix").value.trim();
+  if (!fix || fix === LAST.tgt.trim()) { $("fbMsg").textContent = "Ubah teks terjemahan menjadi yang benar dulu, atau pakai 👍/👎."; return; }
+  if (!$("fbName").value.trim()) { $("fbMsg").textContent = "Isi nama Anda supaya orang lain tahu siapa pembuat koreksi."; return; }
+  if (!$("fbConsent").checked) { $("fbMsg").textContent = "Centang persetujuan agar koreksi disimpan."; return; }
+  store.set("corrector", $("fbName").value.trim()); sendFeedback("down"); });
 
 /* ---------- voice input (Meta MMS on this computer; experimental) ---------- */
 const VOICE_MIN_MS = 400;

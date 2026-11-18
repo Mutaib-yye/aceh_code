@@ -148,3 +148,38 @@ def test_a_sentence_two_students_both_got_is_imported_once(tmp_path, monkeypatch
             w.writerow({"id": n, "acehnese": ACE[2], "indonesian": "Ibu bilang tidak.", "translator": who, "checker": chk, "verdict": "ok"})
     st = sheets.import_sheets(sentences=paths, outdir=tmp_path / "human")
     assert st["sentences_in"] == 2 and st["sentences_accepted"] == 1 and st["duplicates"] == 1
+
+
+def test_app_corrections_become_sheet_rows_a_second_person_must_check(tmp_path, monkeypatch):
+    _project(tmp_path, monkeypatch)
+    recs = [
+        {"consent": True, "direction": "ace-ind", "source": ACE[2], "translation": "salah", "correction": "Ibu bilang tidak.", "corrector": "Ana"},
+        {"consent": True, "direction": "ind-ace", "source": "Saya pergi ke sawah.", "translation": "salah", "correction": ACE[3], "corrector": ""},
+        {"consent": False, "direction": "ace-ind", "source": ACE[4], "translation": "x", "correction": "y"},            # no consent: never used
+        {"consent": True, "direction": "ace-ind", "source": ACE[5], "translation": "sama", "correction": "sama"},         # unchanged: not a correction
+        {"consent": True, "direction": "ace-ind", "source": ACE[0], "translation": "x", "correction": ""},               # no correction text
+    ]
+    rows = sheets.corrections_rows(recs)
+    assert [r["id"] for r in rows] == ["C-0001", "C-0002"]
+    a, b = rows
+    assert (a["acehnese"], a["indonesian"], a["translator"]) == (ACE[2], "Ibu bilang tidak.", "Ana")                    # Acehnese -> Indonesian
+    assert (b["acehnese"], b["indonesian"], b["translator"]) == (ACE[3], "Saya pergi ke sawah.", sheets.PH_TRANSLATOR)  # Indonesian -> Acehnese: oriented (ace, ind)
+    assert a["checker"] == sheets.PH_CHECKER and a["verdict"] == ""
+
+def test_corrections_go_through_the_same_two_person_check_before_training(tmp_path, monkeypatch):
+    _project(tmp_path, monkeypatch)
+    fb = tmp_path / "fb.jsonl"
+    fb.write_text("\n".join(json.dumps(r) for r in [
+        {"consent": True, "direction": "ace-ind", "source": ACE[2], "translation": "salah", "correction": "Ibu bilang tidak.", "corrector": "Ana"},
+        {"consent": True, "direction": "ind-ace", "source": "Dia datang.", "translation": "salah", "correction": ACE[3], "corrector": "Budi"}]), encoding="utf-8")
+    out = tmp_path / "human/corrections_sheet.csv"
+    assert sheets.make_corrections_sheet(fb, out)["corrections"] == 2
+    rows = list(csv.DictReader(open(out, encoding="utf-8-sig")))
+    assert set(rows[0]) == set(sheets.SENT_COLS)
+    st = sheets.import_sheets(sentences=out, outdir=tmp_path / "h1"); assert st["sentences_accepted"] == 0              # nobody checked yet: nothing is trained on
+    rows[0].update(checker="Cut", verdict="ok"); rows[1].update(checker="Budi", verdict="ok")                          # row 2: checker == corrector: refused
+    with open(out, "w", encoding="utf-8-sig", newline="") as h:
+        w = csv.DictWriter(h, sheets.SENT_COLS); w.writeheader(); w.writerows(rows)
+    st = sheets.import_sheets(sentences=out, outdir=tmp_path / "h2")
+    assert st["sentences_accepted"] == 1 and st["golden"] == 1
+    pair = json.load(open(tmp_path / "h2/pairs.json", encoding="utf-8"))[0]; assert pair["ind"] == "Ibu bilang tidak." and pair["translator"] == "Ana" and pair["checker"] == "Cut"

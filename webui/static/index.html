@@ -124,12 +124,15 @@
         <div id="words" class="box" hidden><h3>Cari arti kata <small>(klik kata)</small></h3><div id="chips" class="chips"></div><div id="wordOut"></div></div>
         <div id="explain" class="box" hidden></div>
         <div id="feed" class="box" hidden>
-          <h3>Beri masukan · Feedback</h3>
+          <h3>Perbaiki terjemahan · Correct the translation</h3>
+          <p class="muted">Kalau terjemahan keliru, edit teks di bawah menjadi terjemahan yang benar. Koreksi Anda masuk ke lembar pemeriksaan: <b>orang lain memeriksanya</b> dulu, baru dipakai untuk melatih model di pelatihan berikutnya (tidak langsung, dan tidak otomatis).</p>
           <div class="row"><button class="chip" id="up" type="button" aria-label="Terjemahan bagus">👍</button><button class="chip" id="down" type="button" aria-label="Terjemahan kurang tepat">👎</button></div>
-          <label class="lab">Terjemahan yang lebih baik (opsional)<textarea id="fbFix" rows="2"></textarea></label>
+          <label class="lab">Terjemahan yang benar (edit teks ini) · the correct translation<textarea id="fbFix" rows="3"></textarea></label>
+          <label class="lab">Nama Anda (pembuat koreksi) · your name<input type="text" id="fbName" autocomplete="name" placeholder="nama Anda"></label>
           <label class="lab">Jenis kesalahan<select id="fbType"><option value="">–</option><option value="vocabulary">Kosakata</option><option value="word_order">Urutan kata</option><option value="missing_meaning">Makna hilang</option><option value="dialect">Dialek</option><option value="other">Lainnya</option></select></label>
-          <label class="check"><input type="checkbox" id="fbConsent"> Saya setuju teks dan koreksi saya disimpan untuk ditinjau manusia. Tanpa centang ini hanya penilaian 👍/👎 yang disimpan, tanpa teks. Data tidak dipakai melatih model secara otomatis.</label>
-          <button class="primary small" id="fbSend" type="button">Kirim</button> <span id="fbMsg" class="muted"></span>
+          <label class="check"><input type="checkbox" id="fbConsent"> Saya setuju teks dan koreksi saya disimpan untuk diperiksa orang lain dan dipakai melatih model. Tanpa centang ini hanya penilaian 👍/👎 yang disimpan, tanpa teks.</label>
+          <button class="primary small" id="fbSend" type="button">Kirim koreksi</button> <span id="fbMsg" class="muted"></span>
+          <p class="muted"><a href="/api/corrections.csv" id="corrLink">Unduh koreksi yang tersimpan (CSV untuk diperiksa)</a></p>
         </div>
 
         <div class="bottom">

@@ -83,6 +83,34 @@ def make_sentence_sheet(out=OUT, n=200, seed=0):
     return len(chosen)
 
 
+def corrections_rows(records):
+    """App feedback records -> validation-sheet rows, in the SAME format as the student sheets. Only records with consent, a source text
+    and a correction that differs from the model's output. The row is oriented as (Acehnese, Indonesian) whichever direction the user
+    was translating in: the corrected side is the one the person wrote. The corrector is the translator; a DIFFERENT person must check it
+    (verdict ok/fixed, name in `checker`) before import-sheets accepts it, exactly like the student sheets."""
+    rows = []
+    for i, r in enumerate(records, 1):
+        corr, src, model = ((r.get(k) or "").strip() for k in ("correction", "source", "translation"))
+        if not (r.get("consent") and corr and src) or corr == model:
+            continue
+        ace, ind = (src, corr) if r.get("direction", "ace-ind") == "ace-ind" else (corr, src)
+        rows.append({"id": f"C-{i:04d}", "acehnese": ace, "indonesian": ind, "translator": (r.get("corrector") or "").strip() or PH_TRANSLATOR,
+                     "checker": PH_CHECKER, "verdict": "", "notes": f"koreksi dari aplikasi ({r.get('direction', 'ace-ind')}); model: {model[:200]}"})
+    return rows
+
+
+def make_corrections_sheet(feedback=ROOT / "data/feedback/feedback.jsonl", out=ROOT / "data/human/corrections_sheet.csv"):
+    """Write the app's saved corrections as a sheet for a second person to check; then `import-sheets --sentences <this file>`."""
+    feedback = Path(feedback)
+    recs = [json.loads(l) for l in feedback.read_text(encoding="utf-8").splitlines() if l.strip()] if feedback.exists() else []
+    rows = corrections_rows(recs)
+    out = Path(out); out.parent.mkdir(parents=True, exist_ok=True)
+    with open(out, "w", encoding="utf-8-sig", newline="") as f:
+        w = csv.DictWriter(f, SENT_COLS); w.writeheader(); w.writerows(rows)
+    log("corrections-sheet", corrections=len(rows), feedback_records=len(recs))
+    return {"corrections": len(rows), "file": str(out)}
+
+
 def _slug(name):
     return re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-") or "person"
 
