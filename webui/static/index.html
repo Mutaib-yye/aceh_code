@@ -131,7 +131,9 @@
           <label class="lab">Nama Anda (pembuat koreksi) · your name<input type="text" id="fbName" autocomplete="name" placeholder="nama Anda"></label>
           <label class="lab">Jenis kesalahan<select id="fbType"><option value="">–</option><option value="vocabulary">Kosakata</option><option value="word_order">Urutan kata</option><option value="missing_meaning">Makna hilang</option><option value="dialect">Dialek</option><option value="other">Lainnya</option></select></label>
           <label class="check"><input type="checkbox" id="fbConsent"> Saya setuju teks dan koreksi saya disimpan untuk diperiksa orang lain dan dipakai melatih model. Tanpa centang ini hanya penilaian 👍/👎 yang disimpan, tanpa teks.</label>
-          <button class="primary small" id="fbSend" type="button">Kirim koreksi</button> <span id="fbMsg" class="muted"></span>
+          <button class="primary small" id="fbSend" type="button">Kirim koreksi</button>
+          <div id="fbBanner" class="msg" role="status" aria-live="polite" hidden></div>
+          <div id="fbList"></div>
           <p class="muted"><a href="/api/corrections.csv" id="corrLink">Unduh koreksi yang tersimpan (CSV untuk diperiksa)</a></p>
         </div>
 

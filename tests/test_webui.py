@@ -245,3 +245,28 @@ def test_corrections_are_stored_with_the_name_and_exported_as_a_sheet(app):
     row = text.splitlines()[1]; assert row.startswith("C-0001,Lon jak,Saya pergi,Ana B,<NAMA PEMERIKSA>")                 # Acehnese side = the correction
     J(call("/api/feedback", {"rating": "up", "consent": False, "source": "SECRET", "correction": "SECRET2"}))
     assert "SECRET" not in call("/api/corrections.csv")[1].decode()                                                    # no consent: never exported
+
+
+def test_feedback_reads_the_file_back_so_the_page_can_prove_it_saved(app):
+    call, state = app
+    code, d = J(call("/api/feedback", {"rating": "down", "consent": True, "direction": "ace-ind", "source": "Lon ka jak", "translation": "salah", "correction": "Saya sudah pergi", "corrector": "Ana"}))
+    assert code == 200 and d["stored_text"] is True and d["count"] == 1 and d["records"] == 1 and d["file"].endswith("feedback.jsonl")
+    assert d["items"][0]["correction"] == "Saya sudah pergi" and d["items"][0]["corrector"] == "Ana"
+    J(call("/api/feedback", {"rating": "up", "consent": False}))                                                    # a rating without text is not a correction
+    J(call("/api/feedback", {"rating": "down", "consent": True, "source": "a", "translation": "same", "correction": "same"}))   # unchanged: not a correction
+    code, c = J(call("/api/corrections")); assert code == 200 and c["count"] == 1 and c["records"] == 3 and len(c["items"]) == 1
+
+def test_an_unwritable_feedback_file_is_reported_as_a_clear_error_not_a_silent_success(tmp_path):
+    blocked = tmp_path / "file_not_folder"; blocked.write_text("x")                                                  # a FILE where the folder should be
+    state = server.State(FakeEngine(), Dictionary(tmp_path / "none.csv"), blocked / "feedback.jsonl", recognizer=FakeRecognizer())
+    import pytest
+    with pytest.raises(RuntimeError, match="Tidak bisa menulis"):
+        state.feedback({"rating": "down", "consent": True, "source": "a", "correction": "b"})
+    httpd = ThreadingHTTPServer(("127.0.0.1", 0), server.make_handler(state))
+    threading.Thread(target=httpd.serve_forever, daemon=True).start()
+    req = urllib.request.Request(f"http://127.0.0.1:{httpd.server_address[1]}/api/feedback", data=json.dumps({"rating": "up"}).encode(), headers={"Content-Type": "application/json"})
+    try:
+        with pytest.raises(urllib.error.HTTPError) as e: urllib.request.urlopen(req)
+        assert e.value.code == 500 and "Tidak bisa menulis" in json.loads(e.value.read())["error"]
+    finally:
+        httpd.shutdown(); httpd.server_close()

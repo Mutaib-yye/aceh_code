@@ -115,16 +115,37 @@ class State:
             et = d.get("error_type")
             rec.update(source=str(d.get("source") or "")[:MAX_CHARS], translation=str(d.get("translation") or "")[:MAX_CHARS],
                        correction=str(d.get("correction") or "")[:MAX_CHARS], error_type=et if et in ERROR_TYPES else "", corrector=who)
-        self.feedback_path.parent.mkdir(parents=True, exist_ok=True)
-        with _lock, open(self.feedback_path, "a", encoding="utf-8") as f:
-            f.write(json.dumps(rec, ensure_ascii=False) + "\n")
-        return {"ok": True, "stored_text": consent}
+        try:
+            self.feedback_path.parent.mkdir(parents=True, exist_ok=True)
+            with _lock, open(self.feedback_path, "a", encoding="utf-8") as f:
+                f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+        except OSError as e:
+            raise RuntimeError(f"Tidak bisa menulis {self.feedback_path}: {e}")
+        return {"ok": True, "stored_text": consent, **self.corrections()}
 
     def feedback_csv(self):
         rows = [json.loads(l) for l in self.feedback_path.read_text(encoding="utf-8").splitlines() if l.strip()] if self.feedback_path.exists() else []
         cols = ["time", "model", "direction", "rating", "consent", "review", "error_type", "source", "translation", "correction"]
         buf = io.StringIO(); w = csv.DictWriter(buf, cols, extrasaction="ignore"); w.writeheader(); w.writerows(rows)
         return buf.getvalue()
+
+    def _records(self):
+        if not self.feedback_path.exists():
+            return []
+        return [json.loads(l) for l in self.feedback_path.read_text(encoding="utf-8").splitlines() if l.strip()]
+
+    def corrections(self):
+        """Read the file back: how many usable corrections are saved, where, and the latest ones (so the page can SHOW that it saved)."""
+        from acehid import sheets
+        recs = self._records()
+        try:
+            shown = str(self.feedback_path.resolve().relative_to(ROOT))
+        except ValueError:
+            shown = str(self.feedback_path)
+        items = [{"time": r.get("time"), "direction": r.get("direction", "ace-ind"), "source": r.get("source", ""), "correction": r.get("correction", ""),
+                  "corrector": r.get("corrector", "")} for r in recs
+                 if r.get("consent") and (r.get("correction") or "").strip() and r.get("correction").strip() != (r.get("translation") or "").strip()]
+        return {"count": len(sheets.corrections_rows(recs)), "records": len(recs), "file": shown, "items": items[-15:][::-1]}
 
     def corrections_csv(self):
         """The saved corrections as a validation sheet (same columns as the student sheets) for a second person to check."""
@@ -162,6 +183,8 @@ def make_handler(state):
                 if u.path == "/api/status": return self._send(200, state.status())
                 if u.path == "/api/dictionary": return self._send(200, state.dictionary_search((q.get("q") or [""])[0][:100]))
                 if u.path == "/api/evaluation": return self._send(200, state.evaluation())
+                if u.path == "/api/corrections":
+                    return self._send(200, state.corrections())
                 if u.path == "/api/corrections.csv":
                     return self._send(200, state.corrections_csv(), "text/csv", {"Content-Disposition": 'attachment; filename="corrections_sheet.csv"'})
                 if u.path == "/api/feedback.csv":
@@ -196,7 +219,7 @@ def make_handler(state):
             except (ValueError, json.JSONDecodeError) as e:
                 self._send(400, {"error": str(e)})
             except Exception as e:
-                self._send(500, {"error": f"Model error: {e}"})
+                self._send(500, {"error": f"Server error: {e}"})
     return H
 
 def serve(engine, host="127.0.0.1", port=7860, open_browser=True, dictionary=None):

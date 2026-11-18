@@ -166,7 +166,7 @@ async function doTranslate() {
     renderAlts(d.alternatives);
     addHistory(text, d.translation, DIR);
     if (d.short) shortHelp(text);
-    $("fbMsg").textContent = "";
+    $("fbBanner").hidden = true;
   } catch (e) { setOut(""); showMsg($("msg"), e.message); }
   finally { busy(false); }
 }
@@ -250,23 +250,35 @@ $("cExplain").addEventListener("click", async () => {
 });
 $("cFeed").addEventListener("click", () => {
   if (!LAST) { showMsg($("msg"), "Terjemahkan sesuatu dulu, lalu beri masukan.", true); return; }
-  $("feed").hidden = false; $("fbFix").value = LAST.tgt; $("fbName").value = store.get("corrector", ""); $("feed").scrollIntoView({ behavior: "smooth", block: "nearest" });
+  $("feed").hidden = false; $("fbFix").value = LAST.tgt; $("fbName").value = store.get("corrector", ""); $("fbBanner").hidden = true; loadCorrections(); $("feed").scrollIntoView({ behavior: "smooth", block: "nearest" });
 });
+function fbBanner(kind, text) { const b = $("fbBanner"); b.className = "msg " + kind; b.hidden = false; b.replaceChildren(...(kind === "busy" ? [el("span", { class: "spin" }), " "] : []), text); }
+function renderCorrections(c) {
+  const box = $("fbList"); box.replaceChildren();
+  if (!c || !c.items || !c.items.length) return;
+  box.append(el("h3", {}, `Koreksi tersimpan (${c.count})`), el("p", { class: "muted" }, `File di komputer ini: ${c.file}`));
+  c.items.forEach(x => box.append(el("div", { class: "entry" }, el("div", { class: "muted" }, `${(x.time || "").replace("T", " ")} · ${x.direction === "ind-ace" ? "Indonesia → Aceh" : "Aceh → Indonesia"} · ${x.corrector || "tanpa nama"}`),
+    el("div", {}, x.source), el("div", {}, el("b", {}, x.correction)))));
+}
+async function loadCorrections() { try { renderCorrections(await api("/api/corrections")); } catch (e) { /* the list is optional */ } }
 async function sendFeedback(rating) {
   if (!LAST) return;
-  const consent = $("fbConsent").checked;
+  const consent = $("fbConsent").checked, btn = $("fbSend"); btn.disabled = true; btn.textContent = "Menyimpan…"; fbBanner("busy", "Menyimpan koreksi…");
   try {
     const r = await api("/api/feedback", { rating, consent, direction: LAST.dir || DIR, source: LAST.src, translation: LAST.tgt, correction: $("fbFix").value, error_type: $("fbType").value, corrector: $("fbName").value });
-    $("fbMsg").textContent = r.stored_text ? "Terima kasih! Masukan dan teks tersimpan untuk ditinjau." : "Terima kasih! Hanya penilaian yang disimpan (tanpa teks).";
-  } catch (e) { $("fbMsg").textContent = e.message; }
+    const back = await api("/api/corrections");                    // read the file back: the message below is only shown when the data is really there
+    renderCorrections(back);
+    fbBanner("ok", r.stored_text ? `✓ Tersimpan. ${back.count} koreksi tersimpan di ${back.file}. Orang lain akan memeriksanya sebelum dipakai melatih.` : "✓ Penilaian tersimpan (tanpa teks, karena persetujuan tidak dicentang).");
+  } catch (e) { fbBanner("bad", "✗ GAGAL menyimpan: " + e.message + " Koreksi Anda belum tersimpan."); }
+  finally { btn.disabled = false; btn.textContent = "Kirim koreksi"; }
 }
 $("up").addEventListener("click", () => sendFeedback("up"));
 $("down").addEventListener("click", () => sendFeedback("down"));
 $("fbSend").addEventListener("click", () => {
   const fix = $("fbFix").value.trim();
-  if (!fix || fix === LAST.tgt.trim()) { $("fbMsg").textContent = "Ubah teks terjemahan menjadi yang benar dulu, atau pakai 👍/👎."; return; }
-  if (!$("fbName").value.trim()) { $("fbMsg").textContent = "Isi nama Anda supaya orang lain tahu siapa pembuat koreksi."; return; }
-  if (!$("fbConsent").checked) { $("fbMsg").textContent = "Centang persetujuan agar koreksi disimpan."; return; }
+  if (!fix || fix === LAST.tgt.trim()) { fbBanner("note", "Ubah teks terjemahan menjadi yang benar dulu, atau pakai 👍/👎."); return; }
+  if (!$("fbName").value.trim()) { fbBanner("note", "Isi nama Anda supaya orang lain tahu siapa pembuat koreksi."); return; }
+  if (!$("fbConsent").checked) { fbBanner("note", "Centang persetujuan agar koreksi disimpan."); return; }
   store.set("corrector", $("fbName").value.trim()); sendFeedback("down"); });
 
 /* ---------- voice input (Meta MMS on this computer; experimental) ---------- */
